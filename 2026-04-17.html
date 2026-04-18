@@ -220,14 +220,18 @@
     });
   });
 
-  // Send button
+  // Send button — uses mailto on mobile (opens native Gmail app), Gmail web on desktop.
   document.getElementById('sendBtn').addEventListener('click', () => {
     const lines = ALL_IDS.filter(id => choices[id]).map(id => choices[id] + ' ' + id);
     if (!lines.length) return;
     const body = '# Scout decisions for ' + "2026-04-17" + '\n# Sent from the cart page\n\n' + lines.join('\n') + '\n';
-    const url = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(REPLY_TO) +
-                '&su=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body);
-    window.open(url, '_blank');
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const url = isMobile
+      ? 'mailto:' + encodeURIComponent(REPLY_TO) + '?subject=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body)
+      : 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(REPLY_TO) + '&su=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body);
+    // mailto must be same-window on iOS; _blank is fine for https
+    if (isMobile) window.location.href = url;
+    else window.open(url, '_blank');
   });
 
   // Clear button
