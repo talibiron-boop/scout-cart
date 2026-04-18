@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scout decisions — 2026-04-17</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; padding:0 0 180px 0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; background:#f8fafc; color:#0f172a; }
+  .container { max-width:760px; margin:0 auto; padding:24px 16px; }
+  h1 { font-size:22px; margin:0 0 8px 0; color:#1e40af; }
+  .sub { font-size:13px; color:#64748b; margin-bottom:20px; }
+  .help { background:#ecfeff; border:2px solid #0891b2; border-radius:8px; padding:14px 16px; margin-bottom:20px; font-size:13px; color:#164e63; line-height:1.5; }
+  .card { border:1px solid #e2e8f0; border-radius:10px; padding:16px; margin-bottom:14px; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.03); }
+  .card.is-rollover { border-color:#fbbf24; background:#fffbeb; }
+  .card.chosen-promote { border-color:#059669; box-shadow:0 0 0 2px #05966933; }
+  .card.chosen-skip { border-color:#dc2626; box-shadow:0 0 0 2px #dc262633; }
+  .card.chosen-more { border-color:#64748b; box-shadow:0 0 0 2px #64748b33; }
+  .rollover-badge { background:#fde68a; color:#78350f; font-size:11px; font-weight:700; padding:5px 10px; border-radius:10px; display:inline-block; margin-bottom:10px; }
+  .card-head { display:flex; justify-content:space-between; align-items:baseline; }
+  .pq-id { font-size:14px; font-weight:700; color:#1e40af; }
+  .verdict { font-size:12px; font-weight:700; }
+  .citation { margin-top:8px; font-size:14px; line-height:1.5; font-weight:500; }
+  .url { margin-top:4px; font-size:12px; }
+  .url a { color:#2563eb; }
+  .row { margin-top:8px; font-size:13px; color:#334155; line-height:1.5; }
+  .row b { color:#0f172a; }
+  .choice-row { display:flex; gap:8px; margin-top:14px; }
+  .choice { flex:1; padding:14px 8px; border-radius:8px; border:2px solid transparent; font-size:14px; font-weight:700; cursor:pointer; background:#f1f5f9; color:#475569; transition:all .15s; font-family:inherit; }
+  .choice:hover { transform:translateY(-1px); }
+  .choice.promote.active { background:#059669; color:#fff; border-color:#047857; }
+  .choice.skip.active { background:#dc2626; color:#fff; border-color:#b91c1c; }
+  .choice.more.active { background:#64748b; color:#fff; border-color:#475569; }
+  /* Sticky bottom bar */
+  .cart { position:fixed; bottom:0; left:0; right:0; background:#fff; border-top:2px solid #e2e8f0; box-shadow:0 -4px 12px rgba(0,0,0,.08); padding:12px 16px; z-index:100; }
+  .cart-inner { max-width:760px; margin:0 auto; }
+  .cart-summary { font-size:13px; color:#475569; margin-bottom:8px; line-height:1.4; }
+  .cart-summary b { color:#0f172a; }
+  .cart-summary .badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:700; margin-right:6px; }
+  .badge.promote { background:#d1fae5; color:#065f46; }
+  .badge.skip { background:#fee2e2; color:#991b1b; }
+  .badge.more { background:#e2e8f0; color:#334155; }
+  .badge.pending { background:#fef3c7; color:#92400e; }
+  .send-btn { display:block; width:100%; padding:16px; border:none; border-radius:8px; background:#0891b2; color:#fff; font-size:16px; font-weight:700; cursor:pointer; font-family:inherit; }
+  .send-btn:hover:not(:disabled) { background:#0e7490; }
+  .send-btn:disabled { background:#cbd5e1; cursor:not-allowed; }
+  .clear-link { display:inline-block; margin-top:6px; font-size:12px; color:#64748b; text-decoration:underline; cursor:pointer; background:none; border:none; padding:0; font-family:inherit; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Scout decisions — 2026-04-17</h1>
+  <div class="sub">6 source(s) to review. Choices auto-save in this browser.</div>
+
+  <div class="help">
+    Tap <b style="color:#059669;">Promote</b>, <b style="color:#dc2626;">Skip</b>, or <b style="color:#475569;">More info</b> on each card. The bar at the bottom keeps a running list of your choices. When you're done, hit the cyan <b>Send</b> button — Gmail opens with one email containing all your decisions. Hit Send in Gmail and you're done.
+  </div>
+
+  
+<section class="card" data-id="PQ-95-FU">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-95-FU</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Brodeur P, Koshy JM, Palepu A, et al. A prospective clinical feasibility study of a conversational diagnostic AI in an ambulatory primary care clinic. arXiv. 2026;2603.08448v2.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2603.08448v2" target="_blank" rel="noopener">https://arxiv.org/abs/2603.08448v2</a></div>
+  <div class="row"><b>Overview:</b> First prospective clinical feasibility study of Google&#39;s AMIE conversational diagnostic AI in real ambulatory primary care / urgent care. 100 adult patients engaged AMIE via secure text chat up to 5 days before appointment. Human safety supervisors monitored in real time. PCPs completed parallel blinded workups. Outcomes verified by 8-week chart review. Task: conversational/diagnostic. LLM: AMIE (Google DeepMind). Setting: BIDMC urgent care. N=100 real patients. Always human review (real-time safety supervision).</div><div class="row"><b>Eval question:</b> How should conversational diagnostic AI be evaluated prospectively in real clinical settings with real patients, and what safety scaffolding is necessary?</div><div class="row"><b>Methodology:</b> Prospective single-arm feasibility design. Real-time safety monitoring with pre-defined intervention criteria. Blinded PCP comparison (same patients, parallel workups). 8-week chart review for DDx verification against final diagnosis. Patient experience assessment pre/post.</div><div class="row"><b>Measurement:</b> DDx accuracy: 90% inclusion of final dx (top-10), 75% top-3. Safety: zero supervisor interventions. PCP comparison: p=0.6 (DDx), p=0.1 (mgmt appropriateness), p=1.0 (mgmt safety). Patient attitude change: p&lt;0.001.</div><div class="row"><b>Key findings:</b> AMIE DDx matched PCP-level quality on blinded review. 90% inclusion of final dx (8-week chart verified). Zero safety escalations in 100 encounters. Patients reported high satisfaction; attitudes toward AI improved significantly. PCPs rated AMIE output as useful with positive impact on appointment preparedness.</div><div class="row"><b>Soft spots:</b> Preprint, not peer-reviewed. Single site (urgent care only). N=100 — feasibility, not effectiveness. Google COI. Safety supervisor &#39;null&#39; result depends on supervisor quality/thresholds. Selected patient population may exclude highest-acuity cases.</div><div class="row"><b>Strengths:</b> One of very few truly prospective conversational diagnostic AI studies. Real patients, not simulated. Replicable safety monitoring methodology (real-time + criteria + chart review). Blinded PCP comparison. 8-week outcome verification (not self-report). Transparent methods.</div><div class="row"><b>Relevance:</b> Layer 1: Conversational/diagnostic — methodology template for prospective evaluation of patient-facing AI. Layer 2: Strengthens KTP #7 (benchmark-deployment gap). Complements PQ-38 (Grolleau MedAgentBrief) as the conversational analog of a prospective deployment study.</div><div class="row"><b>Verdict reasoning:</b> Full-paper review of PQ-95 confirms high-quality prospective design with real patients, replicable safety methodology, and 8-week outcome verification. Pattern (real-time supervisor + blinded comparator + chart review) is directly transferable. Preprint status and Google COI acknowledged but don&#39;t undermine the methodological value.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-95-FU">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-95-FU">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-95-FU">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-99-FU">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-99-FU</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Pan J, Jian B, Hager P, et al. Beyond benchmarks: dynamic, automatic and systematic red-teaming agents for trustworthy medical language models. arXiv. 2026;2508.00923v2.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2508.00923" target="_blank" rel="noopener">https://arxiv.org/abs/2508.00923</a></div>
+  <div class="row"><b>Overview:</b> Automated adversarial red-teaming framework (DAS) that stress-tests clinical LLMs across 4 safety axes: robustness, privacy, bias/fairness, hallucination. Strategy agents autonomously mutate test cases and evolve unsafe-triggering prompts. Validated against board-certified clinicians. Tested on 15 LLMs (frontier + open-source). Task: cross-task safety framework. Setting: medical QA with dynamic perturbations.</div><div class="row"><b>Eval question:</b> Can automated adversarial agents systematically evaluate clinical LLM safety across multiple domains, and how do automated and manual red-teaming compare?</div><div class="row"><b>Methodology:</b> Agent-based adversarial testing across 4 domains. Robustness: 6 mutation tools. Privacy: 4 disguise strategies. Bias: identity, linguistic, emotional, cognitive-bias manipulations. Hallucination: 7-category taxonomy. Strategy agents select perturbation most likely to flip the initial correct answer. Iterative escalation. Validated against board-certified clinicians.</div><div class="row"><b>Measurement:</b> Robustness: % correct answers flipped by adversarial perturbation. Bias jailbreak rate: cognitive-bias priming 81.1%; emotional/identity/linguistic comparable. Concordance with clinician judgment: &#39;high&#39; (specific metric not fully available).</div><div class="row"><b>Key findings:</b> 94% of previously correct MedQA answers failed dynamic robustness tests. Median MedQA accuracy &gt;80% masks profound fragility under perturbation. Cognitive-bias priming is the most potent attack (81.1% jailbreak rate). Privacy and bias vulnerabilities persist across frontier and open-source models. Automated adversarial testing scales in ways manual cannot.</div><div class="row"><b>Soft spots:</b> Preprint v2 with long revision cycle (v1 Aug 2025 → v2 Mar 2026). Primarily MedQA-based (benchmark QA, not deployment). 94% may overstate real-world vulnerability (adversarial selection bias). &#39;High concordance with clinicians&#39; not fully quantified. 4-domain framework complexity — reliability of automated judgments unclear at scale.</div><div class="row"><b>Strengths:</b> Most comprehensive automated medical LLM safety framework to date. 15 LLMs tested. 4-domain coverage. Strong institutional backing (TUM, Oxford, Imperial). 94% is a powerful concrete number for challenging benchmark-only evaluations. Cognitive-bias priming (81.1%) novel and actionable.</div><div class="row"><b>Relevance:</b> Layer 1: Cross-task safety — automated adversarial testing complements manual red-teaming (PQ-77). Layer 2: Strengthens KTP #7 (94% flip rate is the strongest documented evidence). Strengthens KTP #9 (pre-deployment adversarial testing). Cognitive-bias priming as dominant attack vector adds to PQ-59 and PQ-77.</div><div class="row"><b>Verdict reasoning:</b> Ambitious 4-domain framework with striking 94% headline and novel cognitive-bias finding. Strong institutional backing. But still preprint, MedQA-based not deployment-based, and the automated-judge reliability across 4 domains deserves peer review before promotion. User&#39;s &#39;need more info&#39; validated — keep tracking for peer-reviewed publication.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-99-FU">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-99-FU">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-99-FU">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-100">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-100</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Chung P, Fong N, Walters AM, et al. Verifying facts in patient care documents generated by large language models using electronic health records. NEJM AI. 2026. doi:10.1056/AIdbp2500418.</div>
+  <div class="url"><a href="https://ai.nejm.org/doi/full/10.1056/AIdbp2500418" target="_blank" rel="noopener">https://ai.nejm.org/doi/full/10.1056/AIdbp2500418</a></div>
+  <div class="row"><b>Overview:</b> Stanford-developed VeriFact combines RAG with LLM-as-Judge to verify whether LLM-generated clinical documentation is factually supported by a patient&#39;s EHR. VeriFact-BHC benchmark: 100 patients, 13,070 statements from LLM-generated brief hospital courses, each triple-annotated by clinicians. VeriFact achieved 93.2% agreement with clinicians — higher than the best clinician-clinician agreement of 88.5%. Task: fact verification (summarization QA). Setting: brief hospital courses, MIMIC-III. Triple annotation for ground truth.</div><div class="row"><b>Eval question:</b> Can an RAG + LLM-as-judge system automatically verify factual accuracy of LLM-generated clinical text at a quality approaching or exceeding human clinicians?</div><div class="row"><b>Methodology:</b> Brief hospital courses generated from MIMIC-III by source LLM. Each statement annotated Supported/Not Supported/Not Addressable by 3+ clinicians. VeriFact retrieves relevant EHR evidence and uses LLM-as-judge for verdict. Direction: document statements → EHR (backward grounding check). Inter-rater agreement among clinicians as baseline.</div><div class="row"><b>Measurement:</b> VeriFact-clinician agreement: 93.2%. Best clinician-clinician agreement: 88.5%. Statement-level ternary classification.</div><div class="row"><b>Key findings:</b> Automated fact verification can exceed clinician-clinician agreement. Statement-level verification is more tractable than document-level scoring. RAG grounding + LLM judge beats LLM judge alone. Open benchmark enables reproducibility.</div><div class="row"><b>Soft spots:</b> Single LLM and single generation pipeline for source summaries. MIMIC-III basis limits generalizability (critical care, US, English). Reference standard is clinician consensus, not objective ground truth. &#39;Higher than human&#39; agreement is partly an artifact of clinician disagreement (ceiling effect). Does not test on live clinical notes or other summarization targets.</div><div class="row"><b>Strengths:</b> NEJM AI peer review. Large statement-level annotated dataset (13,070). Triple annotation reduces label noise. Open source enables replication. Directly operationalizes the statement-level factuality pattern (aligns with PQ-45, PQ-47). First robust evidence that LLM-as-judge can meet/exceed human agreement for factuality.</div><div class="row"><b>Relevance:</b> Layer 1: Summarization — statement-level fact verification with LLM-as-judge. Layer 2: Directly relevant to Nuclear Medicine Summarization and Discharge Letter kits. NM kit already uses per-statement Supported/Not Supported/Fabricated — VeriFact validates this approach at scale with LLM automation. Strengthens KTP #8 (LLM-as-judge validated).</div><div class="row"><b>Verdict reasoning:</b> NEJM AI publication. First robust, peer-reviewed evidence that RAG + LLM-as-judge for statement-level fact verification can reach/exceed clinician-clinician agreement. Open-source with 13,070 annotated statements. Directly validates Nuclear Medicine kit&#39;s per-statement methodology and strengthens KTP #8. The &#39;higher than human&#39; framing requires care (ceiling effect), but the methodology is sound and immediately actionable.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-100">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-100">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-100">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-101">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-101</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Wen A, Lu Q, Chuang YN, et al. Context matching is not reasoning when performing generalized clinical evaluation of generative language models. npj Digit Med. 2026;9:71. doi:10.1038/s41746-025-02253-2.</div>
+  <div class="url"><a href="https://www.nature.com/articles/s41746-025-02253-2" target="_blank" rel="noopener">https://www.nature.com/articles/s41746-025-02253-2</a></div>
+  <div class="row"><b>Overview:</b> Systematic perturbation study of clinical LLM benchmarks. Tests whether licensing-exam-derived MCQ benchmarks measure reasoning or context matching (surface pattern recognition). Applies controlled perturbations (distractor changes, null-answer injection, reasoning-chain disruption) across large and small models including reasoning-tuned variants. Demonstrates that conventional benchmarks over-estimate clinical reasoning capability.</div><div class="row"><b>Eval question:</b> Do standard clinical LLM benchmarks measure reasoning, or do they measure context matching (surface pattern recognition)?</div><div class="row"><b>Methodology:</b> Controlled perturbation of MCQ benchmarks. Null-answer injection to test reasoning vs memorization. Distractor modification to probe answer stability. Comparison across large, small, and reasoning-tuned models. Multiple benchmark families tested.</div><div class="row"><b>Measurement:</b> Performance drop under perturbation. Null-answer failure rate. Size × perturbation interaction analysis. Reasoning-model specific breakdown.</div><div class="row"><b>Key findings:</b> Large models more resilient to perturbation than small models — BUT this resilience is globally invalidated for reasoning-tuned models (disproportionate degradation). Small models show memorization despite retained knowledge. All models fail significantly in null-answer scenarios (can&#39;t say &#39;none of the above&#39;). Recommends benchmark adaptations that better reflect real-world conditions.</div><div class="row"><b>Soft spots:</b> Focused on MCQ benchmarks (may not generalize to generative tasks). Perturbation design choices affect results. &#39;Context matching vs reasoning&#39; is a conceptual frame, not a sharp distinction. Does not test deployed systems.</div><div class="row"><b>Strengths:</b> npj Digital Medicine peer review. Cross-model-size systematic design. Null-answer finding is novel and immediately actionable. Reasoning-model failure pattern challenges industry assumption that reasoning tuning solves evaluation. Clear recommendations for benchmark redesign.</div><div class="row"><b>Relevance:</b> Layer 1: Cross-task — benchmark evaluation methodology. Layer 2: Strengthens KTP #7 (benchmark insufficiency) with the sharpest distinction to date between context matching and reasoning. Null-answer finding is directly relevant to any classification kit where &#39;no class applies&#39; is a possible correct answer (complements VAP and Lung Cancer Screening kits).</div><div class="row"><b>Verdict reasoning:</b> npj Digital Medicine. Named benchmark-reality concept (&#39;context matching is not reasoning&#39;) gives KTP #7 a sharper conceptual tool than the existing &#39;benchmark-reality gap&#39; framing. Null-answer failure is directly actionable — any classification kit should test negative/null cases explicitly. Fits the existing evidence stack (PQ-53, PQ-62, PQ-64) but adds conceptual clarity and an experimental design pattern (perturbation-based stress testing).</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-101">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-101">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-101">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-102">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-102</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Normand O, Borsi E, Fruin M, et al. A real-world evaluation of LLM medication safety reviews in NHS primary care. arXiv. 2025;2512.21127.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2512.21127" target="_blank" rel="noopener">https://arxiv.org/abs/2512.21127</a></div>
+  <div class="row"><b>Overview:</b> Retrospective real-world evaluation of an LLM medication safety review system in NHS Cheshire and Merseyside, drawing from a population-scale EHR of 2.1M adults. 277 patients strategically sampled for clinical complexity and medication safety risk. Expert clinician reviewed and graded system-identified issues and proposed interventions. Critical finding: task-level sensitivity of 100% but patient-level complete-correctness of only 46.9%.</div><div class="row"><b>Eval question:</b> How do task-level performance metrics (sensitivity/specificity) compare to patient-level complete-correctness in real-world clinical LLM deployment?</div><div class="row"><b>Methodology:</b> Strategic sampling across clinical complexity and medication safety risk strata. Expert clinician reviewed system output and graded every identified issue and proposed intervention. Failure mode analysis with detailed vignettes. Separate reporting of task-level vs patient-level metrics.</div><div class="row"><b>Measurement:</b> Sensitivity (issue presence): 100% [95% CI 98.2–100]. Specificity: 83.1% [95% CI 72.7–90.1]. Patient-level all-correct rate: 46.9% [95% CI 41.1–52.8]. 45 detailed failure vignettes.</div><div class="row"><b>Key findings:</b> Task-level sensitivity/specificity hide patient-level failure. Five dominant failure mechanisms: (1) overconfidence in uncertainty, (2) applying guidelines without patient context adjustment, (3) misunderstanding healthcare delivery practices, (4) factual errors, (5) process blindness (missing that the care plan already addresses the issue). 100% sensitivity is a task-level artifact when patient-level is 46.9%. Deployment gap documented with real patients in real EHR context.</div><div class="row"><b>Soft spots:</b> Preprint, not peer-reviewed. 277 patients modest relative to 2.1M population. Strategic sampling not random — results may not generalize. Single LLM system (proprietary). Expert clinician singular grader for much of the review — inter-rater not established. Single NHS region.</div><div class="row"><b>Strengths:</b> Real-world NHS deployment (rare). Population-scale EHR (2.1M) context. Named five failure mechanisms — immediately actionable taxonomy. Task-level vs patient-level distinction is a crucial methodology contribution. 45 detailed vignettes support the failure taxonomy. Strong institutional backing (NHS, UK academic).</div><div class="row"><b>Relevance:</b> Layer 1: Extraction/classification/alerting — task-level vs patient-level metrics for multi-issue review tasks. Layer 2: Highly relevant to VAP Extraction, Delirium, Consultation Quality kits — any task where per-patient correctness requires multiple per-item extractions to all be correct. The 100% task-sensitivity vs 46.9% patient-complete gap should be measured explicitly when reporting kit performance. Strengthens G-03 (context_dependency.md) and KTP #7.</div><div class="row"><b>Verdict reasoning:</b> Real-world NHS deployment is rare and valuable. The task-level/patient-level distinction is a concrete methodology gap in our existing kits — we report per-item sensitivity/specificity but may not explicitly report patient-level complete-correctness for multi-item tasks. Five failure mechanisms constitute an actionable error taxonomy. Preprint status noted, but the methodology contribution is immediately applicable and the real-world NHS context is distinctive.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-102">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-102">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-102">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-103">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-103</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Zhao X, Blotske K, Cargile M, et al. Rx-LLM: a benchmarking suite to evaluate safe large language model performance for medication-related tasks. medRxiv. 2025. doi:10.1101/2025.12.01.25341004.</div>
+  <div class="url"><a href="https://www.medrxiv.org/content/10.64898/2025.12.01.25341004v2" target="_blank" rel="noopener">https://www.medrxiv.org/content/10.64898/2025.12.01.25341004v2</a></div>
+  <div class="row"><b>Overview:</b> Benchmarking suite aligned with Comprehensive Medication Management (CMM) standard of care. Six benchmark tasks: drug formulation matching, drug order (sig) generation, drug route matching, drug-drug interaction identification, renal dose identification, drug-indication matching. Each model evaluated three times per instance with different seeds; prediction variability quantified with standard deviation across runs. Reports both baseline accuracy and reliability.</div><div class="row"><b>Eval question:</b> How should LLM medication safety performance be benchmarked such that both accuracy and run-to-run reliability are captured?</div><div class="row"><b>Methodology:</b> Six CMM-aligned benchmark tasks. Three runs per instance with different random seeds. Standard deviation across runs reported as reliability metric. Baseline accuracy reported per task and per model.</div><div class="row"><b>Measurement:</b> Per-task accuracy (task-dependent). Prediction variability: SD across 3 runs. Per-model reliability profile across 6 tasks.</div><div class="row"><b>Key findings:</b> Variability differs substantially across tasks and models. Explicitly operationalizes non-determinism measurement for a clinical benchmark. Identifies reliability as a first-class evaluation dimension (complements accuracy). CMM alignment provides clinical grounding for the tasks.</div><div class="row"><b>Soft spots:</b> Preprint. SD across 3 runs is a minimal reliability estimate (larger N would be more stable). Some of the 6 tasks are narrow (drug formulation/route matching) — may not represent the hardest safety tasks. No deployment evaluation. Task-level only, no patient-level aggregation.</div><div class="row"><b>Strengths:</b> CMM framework grounds the benchmark in clinical reality. Multi-run reliability is methodologically sound and rare in LLM benchmarks. Reliability as a separate dimension aligns with PQ-91 (accuracy–determinism tradeoff). Replicable methodology.</div><div class="row"><b>Relevance:</b> Layer 1: Classification/extraction — multi-run reliability methodology. Layer 2: Reinforces PQ-91 non-determinism methodology in Extraction §2 of evaluation_methods_by_task.md. For any kit using advanced prompting (VAP, Lung Cancer), 3+ runs per case should be the minimum reliability check.</div><div class="row"><b>Verdict reasoning:</b> Good methodology contribution on reliability (multi-run SD) that reinforces PQ-91. But preprint status and task narrowness (drug formulation/route matching are the simplest safety tasks) limit the novelty. Track for peer review. Promote if the peer-reviewed version reports more granular reliability findings and broader task coverage.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-103">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-103">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-103">? More info</button>
+  </div>
+</section>
+</div>
+
+<div class="cart">
+  <div class="cart-inner">
+    <div class="cart-summary" id="summary">No choices yet. Tap a button on a card above.</div>
+    <button class="send-btn" id="sendBtn" disabled>Send 0 / 6 decisions</button>
+    <button class="clear-link" id="clearBtn">Clear all my choices</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const ALL_IDS = ["PQ-95-FU","PQ-99-FU","PQ-100","PQ-101","PQ-102","PQ-103"];
+  const REPLY_TO = "tali.biron@gmail.com";
+  const REPLY_SUBJECT = "Re: Scout 2026-04-17 — 6 source(s) (PQ-95-FU, PQ-99-FU, PQ-100, PQ-101, PQ-102, PQ-103)";
+  const STORAGE_KEY = "scout-cart-2026-04-17";
+
+  // Load saved state from localStorage (so refresh doesn't lose progress)
+  let choices = {};
+  try { choices = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) {}
+
+  function saveAndRender() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(choices));
+
+    // Re-style each card based on choice
+    document.querySelectorAll('.card').forEach(card => {
+      const id = card.dataset.id;
+      card.classList.remove('chosen-promote', 'chosen-skip', 'chosen-more');
+      card.querySelectorAll('.choice').forEach(b => b.classList.remove('active'));
+      const c = choices[id];
+      if (c) {
+        card.classList.add('chosen-' + c);
+        card.querySelector('.choice.' + c).classList.add('active');
+      }
+    });
+
+    // Update sticky summary + send button
+    const made = ALL_IDS.filter(id => choices[id]);
+    const pending = ALL_IDS.filter(id => !choices[id]);
+    const counts = { promote:0, skip:0, more:0 };
+    made.forEach(id => counts[choices[id]]++);
+
+    let html = '';
+    if (counts.promote) html += '<span class="badge promote">' + counts.promote + ' promote</span>';
+    if (counts.skip)    html += '<span class="badge skip">' + counts.skip + ' skip</span>';
+    if (counts.more)    html += '<span class="badge more">' + counts.more + ' more</span>';
+    if (pending.length) html += '<span class="badge pending">' + pending.length + ' pending</span>';
+    if (!made.length && !pending.length) html = 'No choices yet.';
+    document.getElementById('summary').innerHTML = html || 'No choices yet.';
+
+    const btn = document.getElementById('sendBtn');
+    btn.disabled = made.length === 0;
+    btn.textContent = 'Send ' + made.length + ' / ' + ALL_IDS.length + ' decisions';
+  }
+
+  // Wire button clicks
+  document.querySelectorAll('.choice').forEach(b => {
+    b.addEventListener('click', () => {
+      const id = b.dataset.id;
+      const choice = b.dataset.choice;
+      // Toggle off if same choice clicked again
+      if (choices[id] === choice) delete choices[id];
+      else choices[id] = choice;
+      saveAndRender();
+    });
+  });
+
+  // Send button
+  document.getElementById('sendBtn').addEventListener('click', () => {
+    const lines = ALL_IDS.filter(id => choices[id]).map(id => choices[id] + ' ' + id);
+    if (!lines.length) return;
+    const body = '# Scout decisions for ' + "2026-04-17" + '\n# Sent from the cart page\n\n' + lines.join('\n') + '\n';
+    const url = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(REPLY_TO) +
+                '&su=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body);
+    window.open(url, '_blank');
+  });
+
+  // Clear button
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    if (!confirm('Clear all your choices on this page?')) return;
+    choices = {};
+    saveAndRender();
+  });
+
+  saveAndRender();
+})();
+</script>
+</body>
+</html>
