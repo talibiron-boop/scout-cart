@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scout decisions — 2026-04-19</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; padding:0 0 180px 0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; background:#f8fafc; color:#0f172a; }
+  .container { max-width:760px; margin:0 auto; padding:24px 16px; }
+  h1 { font-size:22px; margin:0 0 8px 0; color:#1e40af; }
+  .sub { font-size:13px; color:#64748b; margin-bottom:20px; }
+  .help { background:#ecfeff; border:2px solid #0891b2; border-radius:8px; padding:14px 16px; margin-bottom:20px; font-size:13px; color:#164e63; line-height:1.5; }
+  .card { border:1px solid #e2e8f0; border-radius:10px; padding:16px; margin-bottom:14px; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.03); }
+  .card.is-rollover { border-color:#fbbf24; background:#fffbeb; }
+  .card.chosen-promote { border-color:#059669; box-shadow:0 0 0 2px #05966933; }
+  .card.chosen-skip { border-color:#dc2626; box-shadow:0 0 0 2px #dc262633; }
+  .card.chosen-more { border-color:#64748b; box-shadow:0 0 0 2px #64748b33; }
+  .rollover-badge { background:#fde68a; color:#78350f; font-size:11px; font-weight:700; padding:5px 10px; border-radius:10px; display:inline-block; margin-bottom:10px; }
+  .card-head { display:flex; justify-content:space-between; align-items:baseline; }
+  .pq-id { font-size:14px; font-weight:700; color:#1e40af; }
+  .verdict { font-size:12px; font-weight:700; }
+  .citation { margin-top:8px; font-size:14px; line-height:1.5; font-weight:500; }
+  .url { margin-top:4px; font-size:12px; }
+  .url a { color:#2563eb; }
+  .row { margin-top:8px; font-size:13px; color:#334155; line-height:1.5; }
+  .row b { color:#0f172a; }
+  .choice-row { display:flex; gap:8px; margin-top:14px; }
+  .choice { flex:1; padding:14px 8px; border-radius:8px; border:2px solid transparent; font-size:14px; font-weight:700; cursor:pointer; background:#f1f5f9; color:#475569; transition:all .15s; font-family:inherit; }
+  .choice:hover { transform:translateY(-1px); }
+  .choice.promote.active { background:#059669; color:#fff; border-color:#047857; }
+  .choice.skip.active { background:#dc2626; color:#fff; border-color:#b91c1c; }
+  .choice.more.active { background:#64748b; color:#fff; border-color:#475569; }
+  /* Sticky bottom bar */
+  .cart { position:fixed; bottom:0; left:0; right:0; background:#fff; border-top:2px solid #e2e8f0; box-shadow:0 -4px 12px rgba(0,0,0,.08); padding:12px 16px; z-index:100; }
+  .cart-inner { max-width:760px; margin:0 auto; }
+  .cart-summary { font-size:13px; color:#475569; margin-bottom:8px; line-height:1.4; }
+  .cart-summary b { color:#0f172a; }
+  .cart-summary .badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:700; margin-right:6px; }
+  .badge.promote { background:#d1fae5; color:#065f46; }
+  .badge.skip { background:#fee2e2; color:#991b1b; }
+  .badge.more { background:#e2e8f0; color:#334155; }
+  .badge.pending { background:#fef3c7; color:#92400e; }
+  .send-btn { display:block; width:100%; padding:16px; border:none; border-radius:8px; background:#0891b2; color:#fff; font-size:16px; font-weight:700; cursor:pointer; font-family:inherit; }
+  .send-btn:hover:not(:disabled) { background:#0e7490; }
+  .send-btn:disabled { background:#cbd5e1; cursor:not-allowed; }
+  .clear-link { display:inline-block; margin-top:6px; font-size:12px; color:#64748b; text-decoration:underline; cursor:pointer; background:none; border:none; padding:0; font-family:inherit; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Scout decisions — 2026-04-19</h1>
+  <div class="sub">7 source(s) to review. Choices auto-save in this browser.</div>
+
+  <div class="help">
+    Tap <b style="color:#059669;">Promote</b>, <b style="color:#dc2626;">Skip</b>, or <b style="color:#475569;">More info</b> on each card. The bar at the bottom keeps a running list of your choices. When you're done, hit the cyan <b>Send</b> button — Gmail opens with one email containing all your decisions. Hit Send in Gmail and you're done.
+  </div>
+
+  
+<section class="card" data-id="PQ-110">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-110</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Genovese A, Hegstrom L, Prabha S, et al. Artificial Authority: The Promise and Perils of LLM Judges in Healthcare. Bioengineering (Basel). 2026;13(1):108. doi:10.3390/bioengineering13010108</div>
+  <div class="url"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12837895/" target="_blank" rel="noopener">https://pmc.ncbi.nlm.nih.gov/articles/PMC12837895/</a></div>
+  <div class="row"><b>Overview:</b> Narrative review mapping the LLM-as-judge landscape in healthcare AI. Catalogues three dominant architectures — G-EVAL, Prometheus 2, Panel-of-LLM Evaluators — and surveys applications in summarization, QA, and therapeutic conversations. Central finding: judge reliability tracks task objectivity. Judges approach or exceed clinician agreement on objective dimensions (factuality, grammaticality) but degrade on subjective ones (empathy, harm perception). Task: cross-task methodology synthesis. Clinical setting: summarization, QA, conversations. Signal: both explicit and interpretive.</div><div class="row"><b>Eval question:</b> When does LLM-as-judge substitute for human review, and what architectural or methodological choices control the reliability ceiling?</div><div class="row"><b>Methodology:</b> Structured narrative review. Organizes literature by judge architecture (G-EVAL=CoT prompting; Prometheus 2=fine-tuned judge; Panel=consensus of diverse judges) and by task. Compares validation approaches across studies. No new empirical data.</div><div class="row"><b>Measurement:</b> Review-level. Identifies structural reliability patterns: unit decomposition + chain-of-thought prompting both improve per-criterion agreement.</div><div class="row"><b>Key findings:</b> Objective criteria (factuality, grammaticality): LLM judges match or exceed inter-clinician agreement. Subjective criteria (empathy, harm perception): substantial degradation, not reliable stand-alone. Decomposition + CoT consistently improve both. Most field evidence is still preprint. Imbalanced training data creates blind spots for rare failure modes.</div><div class="row"><b>Soft spots:</b> Narrative (non-systematic) review — selection bias possible. Bioengineering (MDPI) is broad-scope, not clinical-AI specialist. No new primary data or head-to-head architecture comparison. &#39;Approaches or exceeds inter-clinician agreement&#39; is ceiling-effect sensitive.</div><div class="row"><b>Strengths:</b> First structured synthesis of the three dominant judge architectures. Explicit objective-vs-subjective reliability gradient is a clear teaching frame. Names structural patterns (decomposition, CoT) that are directly actionable. Peer-reviewed in a field still dominated by preprints. Honest about training-data blind spots.</div><div class="row"><b>Relevance:</b> Layer 1: Cross-task — LLM-as-judge architectural synthesis. Layer 2: Extends KTP #8 (LLM-as-judge validated but bounded) with architectural taxonomy. Relevant to Consultation Quality kit (interpretive → expect lower reliability), Nuclear Medicine kit (factual → expect high reliability). Provides a ready frame for kit-level decisions on whether LLM-as-judge is viable. Complements PQ-100 (VeriFact ceiling), PQ-78 (reasoning eval), PQ-109 (calibrated jury).</div><div class="row"><b>Verdict reasoning:</b> Peer-reviewed synthesis that gives /evaluate and the Guidance library a ready frame for LLM-as-judge architecture selection and realistic reliability ceilings. Objective-vs-subjective gradient is consistent with our existing evidence. Structural-reliability patterns (decomposition, CoT) match Nuclear Medicine kit&#39;s existing approach. MDPI is mid-tier but the contribution is organizational, not empirical — synthesis quality is the relevant criterion.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-110">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-110">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-110">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-111">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-111</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Liu D, Long Y, Zuoqiu S, et al. Reliability of Large Language Model Generated Clinical Reasoning in Assisted Reproductive Technology: Blinded Comparative Evaluation Study. J Med Internet Res. 2026;28:e85206. doi:10.2196/85206</div>
+  <div class="url"><a href="https://www.jmir.org/2026/1/e85206/" target="_blank" rel="noopener">https://www.jmir.org/2026/1/e85206/</a></div>
+  <div class="row"><b>Overview:</b> Blinded comparative evaluation of LLM-generated clinical chains-of-thought (CoTs) on 200 real ART cases — IVF 70%, ICSI 19%, PGT 11%. Three prompt strategies compared head-to-head: zero-shot, random few-shot, selective few-shot. Two board-certified reproductive physicians (&gt;10 yrs each) scored independently on 5-point Likert across Logical Coherence and Clarity (LCC), Use and Coverage of Key Information (UCKI), Plausibility and Clinical Accuracy of Reasoning (PCAR), after a pre-calibration session. Critical finding: selective few-shot significantly outperformed both alternatives — but GPT-4o as AI evaluator rated all three conditions within a 0.04 Likert range (3.96-4.00), failing to detect the clinically meaningful differences humans identified.</div><div class="row"><b>Eval question:</b> Can LLM-as-judge reliably discriminate between prompt strategies on clinical reasoning quality, or does it smooth over clinically meaningful differences?</div><div class="row"><b>Methodology:</b> 200 real ART cases across IVF/ICSI/PGT. Three prompt strategies compared. Two board-certified physicians (&gt;10 yrs) independently blinded-scored on 5-point Likert across three dimensions (LCC, UCKI, PCAR), with pre-calibration session. GPT-4o scored in parallel as AI evaluator for comparison. Linear weighted kappa planned but ceiling effects invalidated it — authors report adjacent-agreement (88-100%) instead.</div><div class="row"><b>Measurement:</b> 5-point Likert per dimension. Adjacent-agreement rates (88-100%); disagreement rates (0-12%). Target: selective &gt; random &gt; zero-shot on all three dimensions.</div><div class="row"><b>Key findings:</b> Zero-shot: LCC 4.18, UCKI 4.30, PCAR 3.85. Random few-shot: LCC 4.31, UCKI 4.42, PCAR 3.91 (NOT significantly different from zero-shot on PCAR, p&gt;0.05). Selective few-shot: LCC 4.56, UCKI 4.66, PCAR 4.18 — significantly better on all three. AI evaluator (GPT-4o): 3.96-4.00 across all conditions (range 0.04), failed to detect the differences humans caught. Selective strategy&#39;s edge attributed to &#39;gold-standard depth&#39; + &#39;representative diversity&#39; in example selection.</div><div class="row"><b>Soft spots:</b> Single specialty (reproductive medicine). 200 cases is moderate; Likert ceilings limit discrimination. Only two raters — minimal for inter-rater reliability on a 5-point scale. Selective few-shot requires expert-curated examples (labor cost not quantified). GPT-4o as sole AI evaluator — newer/specialized judges may differ.</div><div class="row"><b>Strengths:</b> Real clinical cases. Pre-calibration session AND head-to-head of three prompt strategies — rare. AI-evaluator-vs-human comparison with a clear failure mode makes the finding quantitatively sharp. Adjacent-agreement reporting (instead of ceiling-capped κ) is methodologically honest. Directly testable implication: pre-validate the judge before adopting it for interpretive A/Bs.</div><div class="row"><b>Relevance:</b> Layer 1: Generation, clinical reasoning, prompt optimization, LLM-as-judge discrimination. Layer 2: Strong confirmation of KTP #8 (bounded). Adds a testable protocol to Prompt_Optimization_Guide.md: before using LLM-as-judge to compare prompt variants, run a human-vs-judge discrimination test. Relevant to Consultation Quality and Nuclear Medicine kits. Directly relevant to /optimize — prompt strategy comparisons should use human-in-the-loop during A/B, not rely on LLM-as-judge alone.</div><div class="row"><b>Verdict reasoning:</b> Peer-reviewed JMIR, real clinical cases, head-to-head with a clear failure mode. The AI-evaluator-failure finding (GPT-4o range 0.04 across strategies humans clearly differentiated) is a clean, operationalizable constraint on LLM-as-judge use. Selective few-shot result also useful for prompt_interventions_by_task.md. Single-specialty and single-judge-model limitations don&#39;t undercut the core methodology contribution.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-111">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-111">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-111">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-112">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-112</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Gupta M, Kumar D. Diagnosing LLM Judge Reliability: Conformal Prediction Sets and Transitivity Violations. arXiv:2604.15302 [cs.AI]. 2026. https://doi.org/10.48550/arXiv.2604.15302</div>
+  <div class="url"><a href="https://arxiv.org/abs/2604.15302" target="_blank" rel="noopener">https://arxiv.org/abs/2604.15302</a></div>
+  <div class="row"><b>Overview:</b> Methods paper proposing two per-instance LLM-judge reliability diagnostics: (1) split conformal prediction over a 1-5 Likert scale yielding prediction sets with (1-alpha) theoretical coverage — set width = per-instance reliability proxy; (2) transitivity analysis detecting directed 3-cycles in preference graphs (A&gt;B, B&gt;C, C&gt;A = nonsense). Applied on SummEval (news summarization) across four judges × four criteria (relevance, coherence, fluency, consistency), N=1,918 documents for correlation analysis. Methodology is transferable; primary evidence is non-clinical.</div><div class="row"><b>Eval question:</b> How do you detect when an LLM judge is unreliable on a specific instance, not just in aggregate?</div><div class="row"><b>Methodology:</b> Split conformal prediction across 1-5 Likert scores with theoretically-guaranteed (1-alpha) coverage. Set width = per-instance reliability proxy. Transitivity analysis: directed 3-cycle detection in preference graphs. Cross-judge correlation of set widths to test if judges agree on which instances are unreliable.</div><div class="row"><b>Measurement:</b> Aggregate violation rate (3-cycles / total triples): 0.8-4.1%. Document-level violation rate (&gt;=1 3-cycle per doc): 33-67%. Spearman correlation (set width vs reliability): +0.576 (N=1,918, p&lt;10^-100). Cross-judge set-width correlation: r̄=0.32-0.38. Criterion set sizes: relevance ~3.0 (most reliable) → fluency/consistency ~4.9 (least).</div><div class="row"><b>Key findings:</b> Aggregate consistency (0.8-4.1%) is deceptively high — per-document transitivity violation (33-67%) is the norm, not the exception. Prediction set width is a defensible per-instance reliability proxy (strong Spearman). Judges partially agree on which instances are difficult — enough signal to flag. Criterion-level reliability gradient matches the clinical objective-vs-subjective pattern independently reported.</div><div class="row"><b>Soft spots:</b> arXiv preprint, under review, not peer-reviewed. Applied to SummEval (news) — not clinical. Single Likert range (1-5); does not test binary or ordinal tasks. Conformal coverage assumes exchangeability of calibration and test sets — may not hold under deployment drift. Methodology complexity limits easy deployment.</div><div class="row"><b>Strengths:</b> Moves LLM-judge reliability analysis from aggregate to per-instance (rare and useful). Conformal prediction provides theoretical coverage guarantees. Transitivity violations are easy to explain (A&gt;B&gt;C&gt;A = nonsense). Spearman correlation (+0.576, extreme p) is strong evidence the proxy tracks reliability. Criterion-level gradient aligns with independent clinical evidence (PQ-110) — converging support.</div><div class="row"><b>Relevance:</b> Layer 1: Cross-task — LLM-as-judge reliability diagnostics. Layer 2: Methodological complement to KTP #8 — adds per-instance reliability checking to the existing &#39;validated but bounded&#39; framing. Candidate Statistician_Guide.md technique once a clinical replication exists. Transitivity violations could be tested on any LLM-judge-scored kit output today.</div><div class="row"><b>Verdict reasoning:</b> Methodologically rigorous, statistically sophisticated, addresses a real gap (per-instance vs aggregate judge reliability). But preprint, non-clinical corpus, no clinical replication. Transitivity finding (33-67% per-doc) is striking enough to be worth tracking; conformal-prediction machinery is defensible if someone ports it to a clinical benchmark. Verify: watch for peer-review acceptance and clinical replication in the next 3-6 months.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-112">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-112">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-112">? More info</button>
+  </div>
+</section>
+
+<section class="card is-rollover" data-id="PQ-82">
+  <div class="rollover-badge">📌 Still pending from 2026-03-31 · seen 3× · auto-skip in 1 more weeks</div>
+  <header class="card-head">
+    <span class="pq-id">PQ-82</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">EMA and FDA. Guiding Principles of Good AI Practice in Drug Development. 2026-01-14. https://www.ema.europa.eu/en/news/ema-fda-set-common-principles-ai-medicine-development-0</div>
+  <div class="url"><a href="https://www.ema.europa.eu/en/news/ema-fda-set-common-principles-ai-medicine-development-0" target="_blank" rel="noopener">https://www.ema.europa.eu/en/news/ema-fda-set-common-principles-ai-medicine-development-0</a></div>
+  <div class="row"><b>Overview:</b> First joint EMA-FDA guidance on AI in drug development. 10 high-level principles emphasizing human-centric risk-based AI adoption, proportional validation, context-of-use definition, data governance, multidisciplinary oversight, lifecycle performance monitoring, and transparent communication of model limitations. Non-binding as of January 2026 but expected to seed future detailed guidance in both jurisdictions. Primarily drug development scope (nonclinical, clinical, post-marketing, manufacturing) — applicability to clinical LLMs is partial.</div><div class="row"><b>Eval question:</b> What regulatory frame does joint FDA-EMA thinking place on AI validation in clinical drug development contexts?</div><div class="row"><b>Methodology:</b> Joint regulatory principles document. 10 high-level principles, consensus-based. No empirical methodology.</div><div class="row"><b>Measurement:</b> Not applicable — principles-level.</div><div class="row"><b>Key findings:</b> 10 principles. Key themes: context-of-use, proportionality, multidisciplinary expertise, lifecycle monitoring, transparent communication. Non-binding.</div><div class="row"><b>Soft spots:</b> Primarily drug-development scope, not clinical LLM deployment; non-binding; high-level (no validation protocols specified).</div><div class="row"><b>Strengths:</b> First joint EMA-FDA principles; signals convergence between jurisdictions; sets direction for future binding guidance.</div><div class="row"><b>Relevance:</b> Layer 1: Cross-task — regulatory framing. Layer 2: Useful background for any kit positioned for regulatory pathway (VAP in a hospital deployment may be affected; Nuclear Medicine kit more distant). Less directly actionable than use-case papers.</div><div class="row"><b>Verdict reasoning:</b> Rolled over from 2026-03-31. Awaiting user decision — this is primarily regulatory background; the question is whether this repo tracks regulatory signal. If Promote, goes to papers.md with Background tag.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-82">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-82">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-82">? More info</button>
+  </div>
+</section>
+
+<section class="card is-rollover" data-id="PQ-84">
+  <div class="rollover-badge">📌 Still pending from 2026-04-02 · seen 3× · auto-skip in 1 more weeks</div>
+  <header class="card-head">
+    <span class="pq-id">PQ-84</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">CPB-Bench authors. Clinical Patient Behavior Benchmark — 692 adversarial patient dialogues across behavioral dimensions. arXiv. 2026.</div>
+  <div class="url"><a href="https://arxiv.org/abs/..." target="_blank" rel="noopener">https://arxiv.org/abs/...</a></div>
+  <div class="row"><b>Overview:</b> Adversarial patient-behavior benchmark (CPB-Bench) for conversational clinical LLMs. 692 dialogues across behavioral dimensions (deception, disengagement, hostility, hypochondria, emotional lability). Tests whether LLMs can maintain safe and effective clinical conversation under non-cooperative patient behavior.</div><div class="row"><b>Eval question:</b> How do clinical LLMs handle adversarial or non-cooperative patient behavior in conversational settings?</div><div class="row"><b>Methodology:</b> Adversarial dialogue construction across behavioral dimensions; multi-model testing. Detailed methodology pending user decision.</div><div class="row"><b>Measurement:</b> Task-appropriate: dialogue-level safety rates, clinical appropriateness scores. Detailed metrics pending.</div><div class="row"><b>Key findings:</b> Concrete metrics pending — see original scan card.</div><div class="row"><b>Soft spots:</b> Preprint. Simulated adversarial dialogues (not real). Behavioral dimension taxonomy novel — coverage may be incomplete.</div><div class="row"><b>Strengths:</b> Conversational LLM safety methodology. 692 dialogues is a meaningful benchmark size. Direct adversarial-testing contribution.</div><div class="row"><b>Relevance:</b> Layer 1: Conversational clinical AI, safety evaluation. Layer 2: Would support KTP #9 (adversarial testing) for any future conversational kit. Complements PQ-77 (red-teaming medical AI) and PQ-99-FU (DAS).</div><div class="row"><b>Verdict reasoning:</b> Rolled over from 2026-04-02. Awaiting user decision — adjacent to current kit roster (no conversational kits yet). Promote only if repo is ready to track conversational methodology.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-84">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-84">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-84">? More info</button>
+  </div>
+</section>
+
+<section class="card is-rollover" data-id="PQ-86">
+  <div class="rollover-badge">📌 Still pending from 2026-04-02 · seen 3× · auto-skip in 1 more weeks</div>
+  <header class="card-head">
+    <span class="pq-id">PQ-86</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Human Evaluation Standardization Gaps review authors. 142-study systematic review of human evaluation methodologies for clinical LLMs. npj Health Systems. 2025.</div>
+  <div class="url"><a href="https://www.nature.com/npjhealthsys/" target="_blank" rel="noopener">https://www.nature.com/npjhealthsys/</a></div>
+  <div class="row"><b>Overview:</b> 142-study systematic review documenting the standardization gaps in human evaluation methodologies for clinical LLMs. Identifies heterogeneity in rubric design, rater qualification, agreement reporting, and outcome measurement as a primary source of non-comparability across clinical LLM studies.</div><div class="row"><b>Eval question:</b> How standardized is human evaluation across clinical LLM studies, and where are the key gaps that undermine cross-study comparability?</div><div class="row"><b>Methodology:</b> Systematic review (142 studies). Detailed taxonomy of evaluation components. Detailed methodology pending user decision.</div><div class="row"><b>Measurement:</b> Review-level; reports prevalence of specific methodology choices.</div><div class="row"><b>Key findings:</b> Concrete findings pending — see original scan card. Directionally: agreement metrics inconsistently reported, rater calibration rare, effect sizes rarely interpreted clinically.</div><div class="row"><b>Soft spots:</b> Review scope may be dated (depending on search cutoff); classification choices in the taxonomy may debatable.</div><div class="row"><b>Strengths:</b> Meta-level evidence on the state of human evaluation methodology. Relevant to every kit that uses human raters.</div><div class="row"><b>Relevance:</b> Layer 1: Cross-task — human evaluation methodology meta-review. Layer 2: Could inform Statistician_Guide.md agreement-reporting section. Relevant to every kit.</div><div class="row"><b>Verdict reasoning:</b> Rolled over from 2026-04-02. Awaiting user decision — meta-level methodology evidence. Promote would add a standing reference; not urgent.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-86">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-86">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-86">? More info</button>
+  </div>
+</section>
+
+<section class="card is-rollover" data-id="PQ-92">
+  <div class="rollover-badge">📌 Still pending from 2026-04-10 · seen 2× · auto-skip in 2 more weeks</div>
+  <header class="card-head">
+    <span class="pq-id">PQ-92</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Myles T, et al. Automated prompt optimization (GEPA) for medical error detection. EACL 2026.</div>
+  <div class="url"><a href="https://arxiv.org/abs/..." target="_blank" rel="noopener">https://arxiv.org/abs/...</a></div>
+  <div class="row"><b>Overview:</b> GEPA (Gradient-Enhanced Prompt Alignment) automated prompt optimization applied to medical error detection. Reports +11pp accuracy over baseline prompts. Direct methodology contribution for the /optimize skill.</div><div class="row"><b>Eval question:</b> Can automated prompt optimization replace manual iterative prompt engineering for clinical tasks?</div><div class="row"><b>Methodology:</b> GEPA-style automated prompt search with gradient-like optimization signal. Medical error detection as benchmark task. Detailed methodology pending user decision.</div><div class="row"><b>Measurement:</b> +11pp accuracy over baseline; per-task gains.</div><div class="row"><b>Key findings:</b> Automated prompt optimization outperforms hand-written baseline prompts on medical error detection. GEPA is reported at EACL 2026 venue.</div><div class="row"><b>Soft spots:</b> Single benchmark (medical error detection). Generalization to other clinical tasks untested in this work. Labor cost of setting up GEPA not discussed.</div><div class="row"><b>Strengths:</b> Peer-reviewed venue (EACL). Direct /optimize relevance. +11pp is a meaningful clinical-task gain.</div><div class="row"><b>Relevance:</b> Layer 1: Prompt optimization, generation, classification. Layer 2: Direct contribution to Prompt_Optimization_Guide.md and prompt_interventions_by_task.md. May reshape the /optimize skill&#39;s default approach (manual iteration vs automated).</div><div class="row"><b>Verdict reasoning:</b> Rolled over from 2026-04-10. Awaiting user decision — would extend /optimize with automated methods. Promote if repo wants to track automated prompt-optimization methodology.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-92">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-92">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-92">? More info</button>
+  </div>
+</section>
+</div>
+
+<div class="cart">
+  <div class="cart-inner">
+    <div class="cart-summary" id="summary">No choices yet. Tap a button on a card above.</div>
+    <button class="send-btn" id="sendBtn" disabled>Send 0 / 7 decisions</button>
+    <button class="clear-link" id="clearBtn">Clear all my choices</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const ALL_IDS = ["PQ-110","PQ-111","PQ-112","PQ-82","PQ-84","PQ-86","PQ-92"];
+  const REPLY_TO = "tali.biron@gmail.com";
+  const REPLY_SUBJECT = "Re: Scout 2026-04-19 — 7 source(s) (PQ-110, PQ-111, PQ-112, PQ-82, PQ-84, PQ-86, PQ-92)";
+  const STORAGE_KEY = "scout-cart-2026-04-19";
+
+  // Load saved state from localStorage (so refresh doesn't lose progress)
+  let choices = {};
+  try { choices = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) {}
+
+  function saveAndRender() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(choices));
+
+    // Re-style each card based on choice
+    document.querySelectorAll('.card').forEach(card => {
+      const id = card.dataset.id;
+      card.classList.remove('chosen-promote', 'chosen-skip', 'chosen-more');
+      card.querySelectorAll('.choice').forEach(b => b.classList.remove('active'));
+      const c = choices[id];
+      if (c) {
+        card.classList.add('chosen-' + c);
+        card.querySelector('.choice.' + c).classList.add('active');
+      }
+    });
+
+    // Update sticky summary + send button
+    const made = ALL_IDS.filter(id => choices[id]);
+    const pending = ALL_IDS.filter(id => !choices[id]);
+    const counts = { promote:0, skip:0, more:0 };
+    made.forEach(id => counts[choices[id]]++);
+
+    let html = '';
+    if (counts.promote) html += '<span class="badge promote">' + counts.promote + ' promote</span>';
+    if (counts.skip)    html += '<span class="badge skip">' + counts.skip + ' skip</span>';
+    if (counts.more)    html += '<span class="badge more">' + counts.more + ' more</span>';
+    if (pending.length) html += '<span class="badge pending">' + pending.length + ' pending</span>';
+    if (!made.length && !pending.length) html = 'No choices yet.';
+    document.getElementById('summary').innerHTML = html || 'No choices yet.';
+
+    const btn = document.getElementById('sendBtn');
+    btn.disabled = made.length === 0;
+    btn.textContent = 'Send ' + made.length + ' / ' + ALL_IDS.length + ' decisions';
+  }
+
+  // Wire button clicks
+  document.querySelectorAll('.choice').forEach(b => {
+    b.addEventListener('click', () => {
+      const id = b.dataset.id;
+      const choice = b.dataset.choice;
+      // Toggle off if same choice clicked again
+      if (choices[id] === choice) delete choices[id];
+      else choices[id] = choice;
+      saveAndRender();
+    });
+  });
+
+  // Send button — uses mailto on mobile (opens native Gmail app), Gmail web on desktop.
+  document.getElementById('sendBtn').addEventListener('click', () => {
+    const lines = ALL_IDS.filter(id => choices[id]).map(id => choices[id] + ' ' + id);
+    if (!lines.length) return;
+    const body = '# Scout decisions for ' + "2026-04-19" + '\n# Sent from the cart page\n\n' + lines.join('\n') + '\n';
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const url = isMobile
+      ? 'mailto:' + encodeURIComponent(REPLY_TO) + '?subject=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body)
+      : 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(REPLY_TO) + '&su=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body);
+    // mailto must be same-window on iOS; _blank is fine for https
+    if (isMobile) window.location.href = url;
+    else window.open(url, '_blank');
+  });
+
+  // Clear button
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    if (!confirm('Clear all your choices on this page?')) return;
+    choices = {};
+    saveAndRender();
+  });
+
+  saveAndRender();
+})();
+</script>
+</body>
+</html>
