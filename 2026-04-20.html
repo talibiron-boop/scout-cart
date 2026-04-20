@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scout decisions — 2026-04-20</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; padding:0 0 180px 0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; background:#f8fafc; color:#0f172a; }
+  .container { max-width:760px; margin:0 auto; padding:24px 16px; }
+  h1 { font-size:22px; margin:0 0 8px 0; color:#1e40af; }
+  .sub { font-size:13px; color:#64748b; margin-bottom:20px; }
+  .help { background:#ecfeff; border:2px solid #0891b2; border-radius:8px; padding:14px 16px; margin-bottom:20px; font-size:13px; color:#164e63; line-height:1.5; }
+  .card { border:1px solid #e2e8f0; border-radius:10px; padding:16px; margin-bottom:14px; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.03); }
+  .card.is-rollover { border-color:#fbbf24; background:#fffbeb; }
+  .card.chosen-promote { border-color:#059669; box-shadow:0 0 0 2px #05966933; }
+  .card.chosen-skip { border-color:#dc2626; box-shadow:0 0 0 2px #dc262633; }
+  .card.chosen-more { border-color:#64748b; box-shadow:0 0 0 2px #64748b33; }
+  .rollover-badge { background:#fde68a; color:#78350f; font-size:11px; font-weight:700; padding:5px 10px; border-radius:10px; display:inline-block; margin-bottom:10px; }
+  .card-head { display:flex; justify-content:space-between; align-items:baseline; }
+  .pq-id { font-size:14px; font-weight:700; color:#1e40af; }
+  .verdict { font-size:12px; font-weight:700; }
+  .citation { margin-top:8px; font-size:14px; line-height:1.5; font-weight:500; }
+  .url { margin-top:4px; font-size:12px; }
+  .url a { color:#2563eb; }
+  .row { margin-top:8px; font-size:13px; color:#334155; line-height:1.5; }
+  .row b { color:#0f172a; }
+  .choice-row { display:flex; gap:8px; margin-top:14px; }
+  .choice { flex:1; padding:14px 8px; border-radius:8px; border:2px solid transparent; font-size:14px; font-weight:700; cursor:pointer; background:#f1f5f9; color:#475569; transition:all .15s; font-family:inherit; }
+  .choice:hover { transform:translateY(-1px); }
+  .choice.promote.active { background:#059669; color:#fff; border-color:#047857; }
+  .choice.skip.active { background:#dc2626; color:#fff; border-color:#b91c1c; }
+  .choice.more.active { background:#64748b; color:#fff; border-color:#475569; }
+  /* Sticky bottom bar */
+  .cart { position:fixed; bottom:0; left:0; right:0; background:#fff; border-top:2px solid #e2e8f0; box-shadow:0 -4px 12px rgba(0,0,0,.08); padding:12px 16px; z-index:100; }
+  .cart-inner { max-width:760px; margin:0 auto; }
+  .cart-summary { font-size:13px; color:#475569; margin-bottom:8px; line-height:1.4; }
+  .cart-summary b { color:#0f172a; }
+  .cart-summary .badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:700; margin-right:6px; }
+  .badge.promote { background:#d1fae5; color:#065f46; }
+  .badge.skip { background:#fee2e2; color:#991b1b; }
+  .badge.more { background:#e2e8f0; color:#334155; }
+  .badge.pending { background:#fef3c7; color:#92400e; }
+  .send-btn { display:block; width:100%; padding:16px; border:none; border-radius:8px; background:#0891b2; color:#fff; font-size:16px; font-weight:700; cursor:pointer; font-family:inherit; }
+  .send-btn:hover:not(:disabled) { background:#0e7490; }
+  .send-btn:disabled { background:#cbd5e1; cursor:not-allowed; }
+  .clear-link { display:inline-block; margin-top:6px; font-size:12px; color:#64748b; text-decoration:underline; cursor:pointer; background:none; border:none; padding:0; font-family:inherit; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Scout decisions — 2026-04-20</h1>
+  <div class="sub">9 source(s) to review. Choices auto-save in this browser.</div>
+
+  <div class="help">
+    Tap <b style="color:#059669;">Promote</b>, <b style="color:#dc2626;">Skip</b>, or <b style="color:#475569;">More info</b> on each card. The bar at the bottom keeps a running list of your choices. When you're done, hit the cyan <b>Send</b> button — Gmail opens with one email containing all your decisions. Hit Send in Gmail and you're done.
+  </div>
+
+  
+<section class="card" data-id="PQ-99-FU-FU">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-99-FU-FU</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Pan J, Jian B, Hager P, et al. Beyond benchmarks: dynamic, automatic and systematic red-teaming agents for trustworthy medical language models. arXiv. 2026;2508.00923v2.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2508.00923" target="_blank" rel="noopener">https://arxiv.org/abs/2508.00923</a></div>
+  <div class="row"><b>Overview:</b> Deeper review (per user &#39;more&#39; decision 2026-04-18) of the DAS automated adversarial red-teaming framework. Same content as PQ-99-FU: 4-domain agent architecture (robustness/privacy/bias/hallucination), 15 LLMs tested, 94% MedQA flip rate under dynamic perturbation. Task type: Cross-task safety. LLM system: 15 models. Signal: Mixed. Setting: Medical QA with adversarial perturbations. Target: Pre-deployment safety testing.</div><div class="row"><b>Eval question:</b> Re-asking original PQ-99-FU question with three follow-up axes: (a) peer-review status of arXiv 2508.00923, (b) specific quantification of &#39;high concordance with clinicians,&#39; (c) reliability of automated judges across the 4 domains.</div><div class="row"><b>Methodology:</b> 4-domain agent architecture; mutation tools per domain; iterative escalation; clinician-validation pass. Unchanged from PQ-99-FU.</div><div class="row"><b>Measurement:</b> 94% MedQA flip rate (un-replicated independently as of 2026-04-20). &#39;High concordance with clinicians&#39; — specific kappa not verifiable from public abstract or coverage. Per-domain judge reliability — not externally confirmable.</div><div class="row"><b>Key findings:</b> No new published findings since PQ-99-FU. Headline numbers unchanged. No peer-reviewed publication confirmed; no v3 on arXiv. ResearchGate page explicitly notes preprint status.</div><div class="row"><b>Soft spots:</b> 8+ months since v1 (Aug 2025) with no peer-reviewed publication is concerning for a paper of this magnitude. The 94% flip number relies on adversarially-selected perturbations; easy to misread as &#39;94% of normal usage fails.&#39; Cross-domain judge reliability across all four axes (robustness/privacy/bias/hallucination) is the open empirical question. Caveat: the search agent this cycle proposed a specific kappa (κ=0.71, n=3 clinicians, 150 items) but the source could not be re-verified — not citing it.</div><div class="row"><b>Strengths:</b> Most comprehensive automated medical-LLM safety framework to date; 15-model coverage; novel cognitive-bias-priming finding (81.1%); strong institutional backing (TUM, Oxford, Imperial). Methodology contribution would be substantial if peer review confirms.</div><div class="row"><b>Relevance:</b> Layer 1: Cross-task safety; automated complement to manual red-teaming (PQ-77). Layer 2: Would strengthen KTP #7 (benchmark-deployment gap, 94% as strongest documented number) and KTP #9 (pre-deployment adversarial testing) IF promoted post-peer-review. Currently: keep on watchlist.</div><div class="row"><b>Verdict reasoning:</b> Deeper review confirms original concern. Still preprint, headline claim un-replicated, judge-reliability quantification not externally verifiable. Recommend HOLD on watchlist with 2026-Q3 re-check trigger (peer-review status + v3 or published version). Do NOT promote yet. Do NOT cite the unverified κ=0.71 figure.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-99-FU-FU">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-99-FU-FU">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-99-FU-FU">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-103-FU">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-103-FU</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Zhao X, Blotske K, Cargile M, et al. Rx-LLM: a benchmarking suite to evaluate safe large language model performance for medication-related tasks. medRxiv. 2025;2025.12.01.25341004v2.</div>
+  <div class="url"><a href="https://www.medrxiv.org/content/10.64898/2025.12.01.25341004v2" target="_blank" rel="noopener">https://www.medrxiv.org/content/10.64898/2025.12.01.25341004v2</a></div>
+  <div class="row"><b>Overview:</b> Deeper review (per user &#39;more&#39; decision 2026-04-18) of the Rx-LLM benchmarking suite. Same content as PQ-103: 6 CMM-aligned tasks (formulation, sig, route, DDI, renal dose, indication); 3-seed runs to quantify SD across runs. Task type: Classification/extraction. LLM system: GPT-4o-mini, MedGemma-27B, LLaMA3-70B. Signal: Explicit. Setting: Medication management.</div><div class="row"><b>Eval question:</b> Re-asking original PQ-103 question with three follow-up axes: (a) peer-review status (JAMIA / JMIR Med Inform check), (b) whether 3-run SD is stable enough for a reliability claim, (c) generalizability beyond drug-formulation/route to harder tasks (DDI, dose-with-comorbidity, allergy).</div><div class="row"><b>Methodology:</b> Six CMM-aligned tasks; 3 runs per instance with different seeds; SD across runs as reliability metric. Unchanged from PQ-103. Note: PQ-91 (Wang et al. 2026) reports advanced prompting can DOUBLE non-determinism, suggesting 3 runs is at the floor of adequacy for low-prevalence binary safety outcomes.</div><div class="row"><b>Measurement:</b> Per-task accuracy + 3-run SD. LLaMA3-70B leads on 4 of 6 tasks; GPT-4o-mini leads DDI (70.4%) and renal-dose F1 (83.3%). No patient-level aggregation (contrasts with PQ-102 NHS finding that task-level vs patient-level metrics diverge dramatically).</div><div class="row"><b>Key findings:</b> No new findings since PQ-103. Variability differs across tasks and models. PubMed indexes the preprint (PMID 41404284) but no peer-reviewed journal publication confirmed. Author search did NOT surface a Cargile et al. extension paper despite the search agent&#39;s claim — that candidate (purported arXiv 2604.11823) was a placeholder and could not be verified.</div><div class="row"><b>Soft spots:</b> 5+ months since initial preprint (Dec 2025), no peer-reviewed publication yet — concerning but not conclusive. 6 tasks skew to easier categorical-matching; hardest medication-safety tasks (drug-allergy with cross-reactivity, dose-adjustment-with-multi-comorbidity, off-label safety) not in the suite. 3-run SD is bare minimum; PQ-91 evidence suggests 5+ would be safer at low prevalence. Parallel benchmark RxSafeBench (arXiv 2511.04328, 2025) takes a simulated-consultation approach — different design philosophy, may be worth a separate scout look.</div><div class="row"><b>Strengths:</b> CMM grounding gives clinical relevance; multi-run reliability is rare and valuable in LLM benchmarks; replicable methodology; reinforces PQ-91 non-determinism agenda.</div><div class="row"><b>Relevance:</b> Layer 1: Classification/extraction — multi-run reliability methodology. Layer 2: Reinforces PQ-91 (non-determinism) for Extraction §2; would inform any medication-safety kit if peer-reviewed.</div><div class="row"><b>Verdict reasoning:</b> Deeper review confirms original posture: methodology is sound but publication status is still preprint with the same set of soft spots. Narrowness concern (formulation/route easy; DDI/dose only modestly hard) holds. Recommend HOLD on watchlist with 2026-Q3 re-check for peer-reviewed version. Note RxSafeBench (arXiv 2511.04328) for awareness — different philosophy, separate future scout look.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-103-FU">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-103-FU">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-103-FU">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-113">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-113</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Han B, Barnes T, Reddy CD, Shin AY. Evaluating Large Language Model–Generated Clinical Summaries Through a Dual-Perspective Framework: Retrospective Observational Study. JMIR AI. 2026 Feb 10;5:e85221. doi:10.2196/85221.</div>
+  <div class="url"><a href="https://ai.jmir.org/2026/1/e85221" target="_blank" rel="noopener">https://ai.jmir.org/2026/1/e85221</a></div>
+  <div class="row"><b>Overview:</b> Retrospective observational study evaluating GPT-4o mini summaries of 50 pediatric cardiac ICU progress notes. Assessment &amp; plan sections deidentified, summarized with standardized prompts, evaluated separately by 8 pediatric cardiologists and 10 parents (2 of each per summary), each using their own 4-point Likert rubric. Headline finding: parents rated summaries more helpful than physicians did, with statistically significant disagreement on what counts as &#39;helpful.&#39; Task type: Summarization. LLM: GPT-4o mini. Signal: Mixed. Setting: Pediatric cardiac ICU. Target: Patient/family-facing summary drafting. Volume: 50 notes. Clinicians: 8 cardiologists + 10 parents. Human review: Always.</div><div class="row"><b>Eval question:</b> When a summary is intended to serve both clinicians and a lay audience, can a single rubric capture quality — or are dual rubrics required?</div><div class="row"><b>Methodology:</b> Deidentification + standardized prompt for GPT-4o mini summarization; two evaluator pools (cardiologists, parents) with separate rubrics; 4-point Likert scales for helpfulness/readability/accuracy; Krippendorff&#39;s α for inter-rater reliability per pool; Mann-Whitney U test for parent-vs-physician helpfulness; Flesch-Kincaid grade level for readability.</div><div class="row"><b>Measurement:</b> Helpfulness (parent): 3.25-3.36/4. Helpfulness (physician): 2.97/4. Clinical accuracy (physician): 3.19/4. Readability (parent): 3.36/4. Flesch-Kincaid grade level: 10.6 (target was 6-8). Inter-rater α: 0.69 (physicians), 0.75 (parents). Parent-vs-physician helpfulness: Mann-Whitney U=3897; z=2.69; P=.007.</div><div class="row"><b>Key findings:</b> Parents rated summaries more helpful than physicians (P=.007). Readability target (grade 6-8) overshot by ~3 grades. Inter-rater reliability moderate (α=0.69 physicians, 0.75 parents). Implication: a &#39;helpful summary&#39; by physician judgment is not the same as a &#39;helpful summary&#39; by family judgment — single-rubric evaluation can miss this gap.</div><div class="row"><b>Soft spots:</b> N=50 is small; pediatric cardiac ICU is a narrow specialty. Single LLM (GPT-4o mini), single prompt. 4-point Likert is coarse; α 0.69 (physicians) suggests headroom. &#39;Parents&#39; is a proxy for &#39;lay reader&#39; — generalization to adult patient populations untested. Mann-Whitney result hinges on a moderate effect size in a small sample.</div><div class="row"><b>Strengths:</b> Direct measurement of parent-vs-physician disagreement on the same summaries. Reading-grade measurement quantifies a specific failure (target 6-8 → observed 10.6). Peer-reviewed (JMIR AI). Transparent rubric design. Methodologically simple — replicable for any patient/family-facing summarization kit.</div><div class="row"><b>Relevance:</b> Layer 1: Summarization, generation aimed at lay audiences. Layer 2: Adjacent to Discharge Letter and Nuclear Medicine kits if there&#39;s a patient/family-facing variant. Reinforces Summarization §3 logic that completeness/accuracy ≠ helpfulness; argues for a separate lay-reader rubric when deployment target is patient-facing. Distinct from PQ-51-FU (different paper, simpler design, sharper empirical anchor).</div><div class="row"><b>Verdict reasoning:</b> Methodologically clean and peer-reviewed, with concrete empirical anchor (P=.007 parent-vs-physician helpfulness disagreement; 10.6 grade level vs target 6-8). But user previously skipped dual-perspective work (PQ-51-FU 2026-03-19) and this paper&#39;s scope is narrow (pediatric cardiac ICU, N=50, single LLM). Hold at &#39;Interesting, verify&#39; rather than Promote so user can decide whether dual-perspective methodology is back in scope. If promoted, refines Summarization §3 with a parent/lay-reader rubric pattern; if skipped, log the consistent dual-perspective skip pattern for future scout filtering.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-113">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-113">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-113">? More info</button>
+  </div>
+</section>
+
+<section class="card is-rollover" data-id="PQ-104">
+  <div class="rollover-badge">📌 Still pending from 2026-04-18 · seen 2× · auto-skip in 2 more weeks</div>
+  <header class="card-head">
+    <span class="pq-id">PQ-104</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Chen P, Cai J, Zhou J, et al. Multidisciplinary blinded randomized expert evaluation of large language models for clinical diagnosis and management. Commun Med (Lond). 2026 Apr 15. doi:10.1038/s43856-026-01576-9. PMID: 41986491.</div>
+  <div class="url"><a href="https://doi.org/10.1038/s43856-026-01576-9" target="_blank" rel="noopener">https://doi.org/10.1038/s43856-026-01576-9</a></div>
+  <div class="row"><b>Overview:</b> Medieval framework: blinded, randomized, multidisciplinary evaluation of LLM clinical performance across 13 specialties. 685 real cases evaluated by 27 clinicians (mean 25.9 yrs experience) producing 9,856 ratings of 4,795 model responses. Novel contribution: 10-point Dreyfus-career-stage rubric (novice→expert) instead of abstract Likert. DeepSeek-R1 scored at early-career-physician level (6.36, 95% CI 6.03-6.69); 3-19% incompetent across models; 40 hallucinations catalogued. Task: Diagnosis &amp; management QA. Signal: Interpretive. Multi-domain. 3 raters per response. Linear mixed-effects + Bayesian GLMMs for confounders.</div><div class="row"><b>Eval question:</b> How do you anchor an interpretive rubric so multi-rater agreement is high AND ratings are interpretable to clinicians and the public?</div><div class="row"><b>Methodology:</b> Dreyfus-career-stage 10-point rubric; blinded design; randomized response assignment; 3 independent raters per response; linear mixed-effects + Bayesian GLMMs for sensitivity; explicit hallucination counting (40 instances).</div><div class="row"><b>Measurement:</b> Dreyfus 1-10 score (target: 7+ = competent independent practice); ICC ≥ 0.75 (achieved &gt;0.9); hallucination count; incompetent-rate (3-19%).</div><div class="row"><b>Key findings:</b> DeepSeek-R1 = early-career-physician level (6.36, 95% CI 6.03-6.69). 3-19% incompetent across models. 40 explicit hallucinations catalogued. ICC &gt; 0.9 — Dreyfus-stage rubric yields very high inter-rater agreement (vs typical Likert ICCs 0.4-0.7).</div><div class="row"><b>Soft spots:</b> Single-language (Chinese clinical context — English generalization untested). Career-stage anchoring requires raters who can calibrate to junior/senior practice — not transferable to lay raters. 10-point scale may permit central tendency bias. No deployment / live-workflow data — pure scoring study.</div><div class="row"><b>Strengths:</b> Very large rater pool (27 experienced clinicians). Novel rubric design with high reliability. Statistically rigorous (mixed-effects + Bayesian sensitivity). Blinded + randomized reduces evaluator bias. Hallucination cataloguing transparent.</div><div class="row"><b>Relevance:</b> Layer 1: Diagnosis/management generation; multi-rater agreement studies. Layer 2: Confirms KTP #8 (LLM-as-judge bounded) with strong human-rater anchor; adds Dreyfus-stage to Statistician_Guide.md as Likert alternative; challenges 5/3-point scales by demonstrating ICC&gt;0.9 with a 10-point semantically-anchored scale.</div><div class="row"><b>Verdict reasoning:</b> Methodologically rigorous, blinded, large-N evaluation with genuinely novel rubric design. Communications Medicine (Nature portfolio) is high-tier. Dreyfus-stage rubric is a real contribution — most scales abstract; this one semantically anchored, yields exceptional ICC. Chinese-language scope is real limitation but methodology stands.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-104">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-104">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-104">? More info</button>
+  </div>
+</section>
+
+<section class="card is-rollover" data-id="PQ-105">
+  <div class="rollover-badge">📌 Still pending from 2026-04-18 · seen 2× · auto-skip in 2 more weeks</div>
+  <header class="card-head">
+    <span class="pq-id">PQ-105</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Li Z, Liu H, Tan W, et al. The effects of multitype prompt engineering for large language models in hypertension treatment decisions. NPJ Digit Med. 2026 Apr 15. doi:10.1038/s41746-026-02645-y. PMID: 41986562.</div>
+  <div class="url"><a href="https://doi.org/10.1038/s41746-026-02645-y" target="_blank" rel="noopener">https://doi.org/10.1038/s41746-026-02645-y</a></div>
+  <div class="row"><b>Overview:</b> Two-stage validation on 300 simulated hypertension cases comparing zero-shot, CoT, few-shot, Guidance-Self-Consistency on ChatGPT-4.1 and DeepSeek-V3. Standout finding: poorly-configured LLMs DECREASE physician accuracy. Inappropriate-regimen rate among physicians using a poor LLM rose from baseline 26.6% to 35.2%, stratified across community/secondary/tertiary hospitals. Best prompt (Guidance-Self-Consistency): 91.3% (near-expert). Task: Generation/CDS (treatment recommendation). Signal: Interpretive. Setting: Hypertension management; 3 hospital tiers. Volume: 300 cases × multiple variants. Human review: Always.</div><div class="row"><b>Eval question:</b> Is a &#39;collaborative LLM benefit&#39; assumption safe — or can the wrong prompt actively harm clinician decisions?</div><div class="row"><b>Methodology:</b> 300 simulated hypertension cases with expert-defined ground truth; multiple prompt strategies in factorial design; physician decisions measured WITH and WITHOUT LLM, by hospital tier; net effect on physician appropriate-regimen rate quantified.</div><div class="row"><b>Measurement:</b> LLM appropriate-regimen rate (target ≥ expert ~92%); physician-with-LLM rate (target ≥ physician-alone baseline); harm criterion: physician-with-LLM RATE &lt; physician-alone RATE = harm.</div><div class="row"><b>Key findings:</b> Guidance-Self-Consistency: 91.3% (near-expert). Zero-shot: 62.7%. **Bad-prompt configuration: physicians&#39; inappropriate-regimen rate rose from 26.6% to 35.2%** — net harm. Effect held across community, secondary, tertiary tiers. ChatGPT-4.1 ≈ DeepSeek-V3 with optimal prompt.</div><div class="row"><b>Soft spots:</b> Simulated cases (not live workflow). Single condition (hypertension) — generalization untested. &#39;Bad&#39; configurations may be straw-man if real deployments wouldn&#39;t use them. Short-term measurement (no learning curve / adaptation).</div><div class="row"><b>Strengths:</b> Direct measurement of physician-uplift/harm (rare). Stratified by hospital tier (external validity signal). Quantifies the downside, not just the upside. npj Digital Medicine venue (high-tier). Empirical evidence that prompt matters as much as model.</div><div class="row"><b>Relevance:</b> Layer 1: Generation, CDS, prompt optimization. Layer 2: Direct relevance to /optimize skill — concrete evidence that bad prompts induce harm. Counter-evidence to naive read of KTP #7 — collaborative benefit is CONDITIONAL on prompt quality. Belongs in prompt_interventions_by_task.md and Prompt_Optimization_Guide.md.</div><div class="row"><b>Verdict reasoning:</b> Rare prompt-engineering study that measures clinician-with-LLM outcome instead of just LLM accuracy. Harm finding (26.6%→35.2%) is striking and methodologically important: operationalizes &#39;wrong prompt actively hurts&#39; failure mode. npj DM venue solid. Hypertension-only scope a fair limitation but doesn&#39;t undercut methodology contribution.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-105">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-105">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-105">? More info</button>
+  </div>
+</section>
+
+<section class="card is-rollover" data-id="PQ-106">
+  <div class="rollover-badge">📌 Still pending from 2026-04-18 · seen 2× · auto-skip in 2 more weeks</div>
+  <header class="card-head">
+    <span class="pq-id">PQ-106</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Chim J, Pearson J, Schofield D, Liakata M. Evaluating privacy leakages in LLM-driven ambient clinical documentation. Front Digit Health. 2026 Mar 31;8:1761624. doi:10.3389/fdgth.2026.1761624. PMID: 41988159.</div>
+  <div class="url"><a href="https://doi.org/10.3389/fdgth.2026.1761624" target="_blank" rel="noopener">https://doi.org/10.3389/fdgth.2026.1761624</a></div>
+  <div class="row"><b>Overview:</b> Extends aci-bench ambient-documentation benchmark with systematically injected third-party PII across 6 relationship types × 7 topics. Tested 6 frontier and open-weight models (LLaMA 3.1 8B/70B, Mixtral 8×7B/8×22B, Claude 3.5 Haiku/Sonnet). All models leaked third-party PII into the SOAP note even when incidental to patient encounter. Privacy instructions reduced but did not eliminate leakage; generate+edit two-step pipeline helped only when &#39;private&#39; was contextually defined. Task: Summarization/ambient documentation. Signal: Mixed. Setting: Ambient documentation. Volume: aci-bench × 42 conditions.</div><div class="row"><b>Eval question:</b> How do you operationalize a hard safety gate for PII/privacy in summarization, and how reliable are mitigation strategies (instructions, decomposition)?</div><div class="row"><b>Methodology:</b> Inject systematically labeled third-party PII into clinical encounter transcripts; run model summarization (generate-only, generate+edit, with/without privacy instruction); measure leakage rate per relationship × topic cell; compare across 6 models.</div><div class="row"><b>Measurement:</b> Leakage rate per cell (target = 0%); reduction with instruction (delta vs baseline); reduction with decomposition (delta vs baseline); model-class comparison.</div><div class="row"><b>Key findings:</b> All models leaked at non-trivial rates (no clean model). Privacy instructions reduce but never eliminate. Two-step (generate then edit) helps only when &#39;private&#39; is contextually specified. Both small and large open-weight models leak; Claude 3.5 leaks less but still &gt; 0. Specific failure cases catalogued (employer name, family member names).</div><div class="row"><b>Soft spots:</b> aci-bench may not capture all real-clinic PII patterns. Injection is artificial (PII dropped in, not arising naturally). Mitigation toolkit limited (no RAG / retrieval-based redaction tested). &#39;Leakage&#39; defined as exact-string match — paraphrased disclosure not measured.</div><div class="row"><b>Strengths:</b> Systematic injection grid (replicable evaluation harness). Multi-model coverage (open + closed). Tests mitigations, not just baseline failures. Moves field from &#39;does it leak?&#39; to &#39;what reduces leakage?&#39;</div><div class="row"><b>Relevance:</b> Layer 1: Summarization, ambient documentation, safety evaluation. Layer 2: Direct relevance to Discharge Letter and Nuclear Medicine kits&#39; safety hard-gate. Injection-grid methodology can become standard pre-deployment safety eval. Strengthens safety_vs_effectiveness.md (safety as hard gate, not soft metric).</div><div class="row"><b>Verdict reasoning:</b> Real safety methodology contribution: reproducible injection harness, multi-model comparison, tested mitigations. &#39;Instructions reduce but never eliminate&#39; finding is operationally important — evidence that prompt-only PII mitigation insufficient and architectural changes needed. Frontiers DH solid (mid-tier).</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-106">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-106">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-106">? More info</button>
+  </div>
+</section>
+
+<section class="card is-rollover" data-id="PQ-107">
+  <div class="rollover-badge">📌 Still pending from 2026-04-18 · seen 2× · auto-skip in 2 more weeks</div>
+  <header class="card-head">
+    <span class="pq-id">PQ-107</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">James V, Caronia C, Savargaonkar R. Input structure-driven instability and convergence in large language model clinical reasoning. Sci Rep. 2026 Apr 17. PMID: 41998244.</div>
+  <div class="url"><a href="https://pubmed.ncbi.nlm.nih.gov/41998244/" target="_blank" rel="noopener">https://pubmed.ncbi.nlm.nih.gov/41998244/</a></div>
+  <div class="row"><b>Overview:</b> 77 physician-validated pediatric USMLE-style MCQs run across 6 LLMs (ChatGPT, DeepSeek, Gemini, Copilot, Perplexity, OpenEvidence) under two delivery structures: simultaneous (all questions in one prompt) vs sequential batch (10 at a time). Simultaneous accuracy spread: 38-90% across models (huge variance). Batch accuracy: 83-88% (no significant inter-model differences). Delivery structure dominated model choice. Task: Classification/clinical reasoning MCQ. Signal: Explicit. Setting: Pediatric reasoning. Volume: 77 questions × 6 models × 2 modes.</div><div class="row"><b>Eval question:</b> How sensitive is benchmark performance to input packaging — and what does that imply for benchmark interpretation?</div><div class="row"><b>Methodology:</b> Same questions delivered simultaneously vs in sequential batches of 10; 6 commercial LLMs in parallel; accuracy per condition × model; variance attribution: delivery structure vs model identity.</div><div class="row"><b>Measurement:</b> Accuracy per (model × delivery); range/IQR of accuracy across models within each delivery condition; statistical test for inter-model difference within batch (n.s.).</div><div class="row"><b>Key findings:</b> Simultaneous delivery: 38-90% (range = 52pp). Batch delivery (10 at a time): 83-88% (range = 5pp, n.s.). Delivery structure DOMINATED model choice as source of variance. Implication: cross-benchmark model rankings may be artifacts of input packaging, not capability.</div><div class="row"><b>Soft spots:</b> USMLE-style MCQ ≠ real clinical reasoning. 77 questions modest. Only 2 delivery structures tested. Mechanism not isolated (working-memory? attention dilution? format priming?).</div><div class="row"><b>Strengths:</b> Clean experimental design (one variable, 6 model fanout). Striking effect size (52pp → 5pp range). Practically important for anyone consuming LLM benchmark leaderboards. Suggests benchmark protocols should standardize delivery format.</div><div class="row"><b>Relevance:</b> Layer 1: Classification, extraction, any benchmark interpretation. Layer 2: Strengthens PQ-91 (non-determinism) and KTP #9 (input perturbation as adversarial axis). Relevant to all kits using multi-question batch processing — including Lung Cancer Screening per-criterion eval. New design consideration: standardize delivery before reporting cross-model comparisons.</div><div class="row"><b>Verdict reasoning:</b> Clean, well-designed study with striking result: input packaging dominates model choice for accuracy variance. Exactly the kind of evidence KTP #9 should cite. Sci Rep is reasonable venue. Modest N mitigated by within-model comparison design.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-107">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-107">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-107">? More info</button>
+  </div>
+</section>
+
+<section class="card is-rollover" data-id="PQ-108">
+  <div class="rollover-badge">📌 Still pending from 2026-04-18 · seen 2× · auto-skip in 2 more weeks</div>
+  <header class="card-head">
+    <span class="pq-id">PQ-108</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Vachhani B, Shrisvastava K, Nema P, Chiranthan S. Beyond Literal Summarization: Redefining Hallucination for Medical SOAP Note Evaluation. arXiv:2604.14829v1. 2026 Apr 16.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2604.14829" target="_blank" rel="noopener">https://arxiv.org/abs/2604.14829</a></div>
+  <div class="row"><b>Overview:</b> Argues that lexical/literal faithfulness scoring misclassifies valid clinical reasoning — synonym mapping, finding abstraction, diagnostic inference, guideline-consistent planning — as &#39;hallucination.&#39; Empirically: lexical evaluation produces 35% hallucination rate on SOAP notes; inference-aware rubric drops it to 9% — and the 9% are genuine safety concerns. Provides typology of &#39;valid abstraction vs unsupported claim&#39; with worked examples. Task: Summarization (SOAP). Signal: Mixed. Setting: Outpatient documentation. Volume: Methodology paper + worked examples.</div><div class="row"><b>Eval question:</b> What counts as a hallucination in clinical summarization — and how do you avoid penalizing valid reasoning as a &#39;fact&#39;?</div><div class="row"><b>Methodology:</b> Define inference-aware faithfulness: a claim is faithful if (a) literally supported OR (b) derivable via clinically valid inference from supported facts. Categorize &#39;valid abstraction&#39; types: synonym, generalization (finding → category), diagnostic inference, guideline-consistent planning. Categorize &#39;genuine hallucination&#39; types: unsupported invention, unsupported negation, plan beyond evidence. Apply both rubrics to same SOAP note set; compare rates.</div><div class="row"><b>Measurement:</b> Hallucination rate per rubric (lexical vs inference-aware); per-claim Supported/Inference-Supported/Unsupported labels; agreement between independent reviewers.</div><div class="row"><b>Key findings:</b> Lexical hallucination rate: 35%. Inference-aware hallucination rate: 9%. The 9% are genuine safety concerns (would harm if acted on). The 26pp gap dominated by valid synonym + abstraction patterns.</div><div class="row"><b>Soft spots:</b> Preprint (not peer-reviewed). &#39;Inference-aware&#39; requires clinical raters who can judge what counts as valid inference — harder to scale than lexical. Doesn&#39;t fully address omission (only commission) — should pair with completeness pass. &#39;Guideline-consistent&#39; inference needs explicit guideline corpus.</div><div class="row"><b>Strengths:</b> Directly addresses over-counting failure of standard hallucination rubrics. Immediately operational typology. Quantitative anchor (35% → 9%) makes the case empirically. Aligns with Nuclear Medicine kit&#39;s Supported/Not-Supported/Fabricated rubric (PQ-45 VeriFact, PQ-47 CREOLA).</div><div class="row"><b>Relevance:</b> Layer 1: Summarization, generation. Layer 2: Directly applicable to Nuclear Medicine kit&#39;s per-statement rubric. Suggests refinement: split &#39;Supported&#39; into &#39;Literally Supported&#39; vs &#39;Inference-Supported&#39; to avoid over-flagging valid abstraction. Updates Summarization §3 with calibration of what counts as hallucination.</div><div class="row"><b>Verdict reasoning:</b> Important methodology paper that fixes real over-counting problem in standard hallucination rubric. 35%→9% gap is operationally significant: a kit using lexical rubrics will reject good summaries as unsafe, eroding clinician trust. Preprint status mild soft spot but framework immediately usable.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-108">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-108">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-108">? More info</button>
+  </div>
+</section>
+
+<section class="card is-rollover" data-id="PQ-109">
+  <div class="rollover-badge">📌 Still pending from 2026-04-18 · seen 2× · auto-skip in 2 more weeks</div>
+  <header class="card-head">
+    <span class="pq-id">PQ-109</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Rouillard A, Mundiab S, Camara L, et al. Can LLMs Score Medical Diagnoses and Clinical Reasoning as well as Expert Panels? arXiv:2604.14892v1. 2026 Apr 16.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2604.14892" target="_blank" rel="noopener">https://arxiv.org/abs/2604.14892</a></div>
+  <div class="row"><b>Overview:</b> Calibrated multi-model LLM &#39;jury&#39; scoring 3,333 diagnoses across 300 real-world hospital cases (middle-income country) against two independent expert clinician panels. Tests whether multi-model jury, post-processed with isotonic regression to align score distribution with human panel, preserves ordinal agreement and concordance vs held-out human re-score panel. Adds calibration step that prior LLM-as-judge work largely omits. Task: Diagnosis/clinical reasoning scoring. Signal: Interpretive. Setting: Real hospital cases, middle-income country.</div><div class="row"><b>Eval question:</b> Can a calibrated LLM jury substitute for a second human reviewer — and does isotonic calibration matter?</div><div class="row"><b>Methodology:</b> Multi-model LLM jury scoring (multiple models per diagnosis, aggregated); two independent human expert panels score same diagnoses; isotonic regression calibrates jury distribution to one panel; held-out human re-score panel for external validation; ordinal agreement (Spearman, weighted κ) and concordance reported.</div><div class="row"><b>Measurement:</b> Spearman correlation (target ≥ inter-panel correlation); weighted κ (target ≥ inter-panel κ); concordance with held-out panel; calibration improvement (delta vs uncalibrated).</div><div class="row"><b>Key findings:</b> Calibrated jury achieves ordinal agreement comparable to inter-panel agreement. Uncalibrated jury under-performs panel agreement. Isotonic calibration accounts for most of the improvement. Real-world (middle-income) clinical scope — generalization signal beyond academic-medicine benchmarks.</div><div class="row"><b>Soft spots:</b> Preprint, not yet peer-reviewed. Middle-income setting strength for generalization but unique scope. Calibration requires held-out human panel — circular requirement (if you have one, you may not need the jury). Multi-model jury cost not addressed.</div><div class="row"><b>Strengths:</b> Adds calibration step prior LLM-as-judge studies omit. Real cases, real expert panels (not benchmark proxies). Held-out validation methodologically clean. Multi-model jury is the architecture most likely to be deployable.</div><div class="row"><b>Relevance:</b> Layer 1: Diagnosis, scoring infrastructure, LLM-as-judge. Layer 2: Extends KTP #8 (LLM-as-judge bounded) with calibration recommendation. Relevant to Consultation Quality, Nuclear Medicine, Discharge Letter kits when second human reviewer is bottleneck. Belongs in dual_evaluation_approach.md.</div><div class="row"><b>Verdict reasoning:</b> Calibration angle novel and methodologically important — most LLM-as-judge work uses raw scores. Large N and held-out validation are strengths. Preprint status + circular-calibration concern (need human panel to calibrate jury, partly defeats labor-savings purpose) keep this from full Promote. Worth deeper look — verify calibration generalizes across case-mixes and single-panel calibration transfers.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-109">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-109">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-109">? More info</button>
+  </div>
+</section>
+</div>
+
+<div class="cart">
+  <div class="cart-inner">
+    <div class="cart-summary" id="summary">No choices yet. Tap a button on a card above.</div>
+    <button class="send-btn" id="sendBtn" disabled>Send 0 / 9 decisions</button>
+    <button class="clear-link" id="clearBtn">Clear all my choices</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const ALL_IDS = ["PQ-99-FU-FU","PQ-103-FU","PQ-113","PQ-104","PQ-105","PQ-106","PQ-107","PQ-108","PQ-109"];
+  const REPLY_TO = "tali.biron@gmail.com";
+  const REPLY_SUBJECT = "Re: Scout 2026-04-20 — 9 source(s) (PQ-99-FU-FU, PQ-103-FU, PQ-113, PQ-104, PQ-105, PQ-106, PQ-107, PQ-108, PQ-109)";
+  const STORAGE_KEY = "scout-cart-2026-04-20";
+
+  // Load saved state from localStorage (so refresh doesn't lose progress)
+  let choices = {};
+  try { choices = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) {}
+
+  function saveAndRender() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(choices));
+
+    // Re-style each card based on choice
+    document.querySelectorAll('.card').forEach(card => {
+      const id = card.dataset.id;
+      card.classList.remove('chosen-promote', 'chosen-skip', 'chosen-more');
+      card.querySelectorAll('.choice').forEach(b => b.classList.remove('active'));
+      const c = choices[id];
+      if (c) {
+        card.classList.add('chosen-' + c);
+        card.querySelector('.choice.' + c).classList.add('active');
+      }
+    });
+
+    // Update sticky summary + send button
+    const made = ALL_IDS.filter(id => choices[id]);
+    const pending = ALL_IDS.filter(id => !choices[id]);
+    const counts = { promote:0, skip:0, more:0 };
+    made.forEach(id => counts[choices[id]]++);
+
+    let html = '';
+    if (counts.promote) html += '<span class="badge promote">' + counts.promote + ' promote</span>';
+    if (counts.skip)    html += '<span class="badge skip">' + counts.skip + ' skip</span>';
+    if (counts.more)    html += '<span class="badge more">' + counts.more + ' more</span>';
+    if (pending.length) html += '<span class="badge pending">' + pending.length + ' pending</span>';
+    if (!made.length && !pending.length) html = 'No choices yet.';
+    document.getElementById('summary').innerHTML = html || 'No choices yet.';
+
+    const btn = document.getElementById('sendBtn');
+    btn.disabled = made.length === 0;
+    btn.textContent = 'Send ' + made.length + ' / ' + ALL_IDS.length + ' decisions';
+  }
+
+  // Wire button clicks
+  document.querySelectorAll('.choice').forEach(b => {
+    b.addEventListener('click', () => {
+      const id = b.dataset.id;
+      const choice = b.dataset.choice;
+      // Toggle off if same choice clicked again
+      if (choices[id] === choice) delete choices[id];
+      else choices[id] = choice;
+      saveAndRender();
+    });
+  });
+
+  // Send button — uses mailto on mobile (opens native Gmail app), Gmail web on desktop.
+  document.getElementById('sendBtn').addEventListener('click', () => {
+    const lines = ALL_IDS.filter(id => choices[id]).map(id => choices[id] + ' ' + id);
+    if (!lines.length) return;
+    const body = '# Scout decisions for ' + "2026-04-20" + '\n# Sent from the cart page\n\n' + lines.join('\n') + '\n';
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const url = isMobile
+      ? 'mailto:' + encodeURIComponent(REPLY_TO) + '?subject=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body)
+      : 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(REPLY_TO) + '&su=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body);
+    // mailto must be same-window on iOS; _blank is fine for https
+    if (isMobile) window.location.href = url;
+    else window.open(url, '_blank');
+  });
+
+  // Clear button
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    if (!confirm('Clear all your choices on this page?')) return;
+    choices = {};
+    saveAndRender();
+  });
+
+  saveAndRender();
+})();
+</script>
+</body>
+</html>
