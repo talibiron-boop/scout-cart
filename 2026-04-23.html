@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scout decisions — 2026-04-23</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; padding:0 0 180px 0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; background:#f8fafc; color:#0f172a; }
+  .container { max-width:760px; margin:0 auto; padding:24px 16px; }
+  h1 { font-size:22px; margin:0 0 8px 0; color:#1e40af; }
+  .sub { font-size:13px; color:#64748b; margin-bottom:20px; }
+  .help { background:#ecfeff; border:2px solid #0891b2; border-radius:8px; padding:14px 16px; margin-bottom:20px; font-size:13px; color:#164e63; line-height:1.5; }
+  .card { border:1px solid #e2e8f0; border-radius:10px; padding:16px; margin-bottom:14px; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.03); }
+  .card.is-rollover { border-color:#fbbf24; background:#fffbeb; }
+  .card.chosen-promote { border-color:#059669; box-shadow:0 0 0 2px #05966933; }
+  .card.chosen-skip { border-color:#dc2626; box-shadow:0 0 0 2px #dc262633; }
+  .card.chosen-more { border-color:#64748b; box-shadow:0 0 0 2px #64748b33; }
+  .rollover-badge { background:#fde68a; color:#78350f; font-size:11px; font-weight:700; padding:5px 10px; border-radius:10px; display:inline-block; margin-bottom:10px; }
+  .card-head { display:flex; justify-content:space-between; align-items:baseline; }
+  .pq-id { font-size:14px; font-weight:700; color:#1e40af; }
+  .verdict { font-size:12px; font-weight:700; }
+  .citation { margin-top:8px; font-size:14px; line-height:1.5; font-weight:500; }
+  .url { margin-top:4px; font-size:12px; }
+  .url a { color:#2563eb; }
+  .row { margin-top:8px; font-size:13px; color:#334155; line-height:1.5; }
+  .row b { color:#0f172a; }
+  .choice-row { display:flex; gap:8px; margin-top:14px; }
+  .choice { flex:1; padding:14px 8px; border-radius:8px; border:2px solid transparent; font-size:14px; font-weight:700; cursor:pointer; background:#f1f5f9; color:#475569; transition:all .15s; font-family:inherit; }
+  .choice:hover { transform:translateY(-1px); }
+  .choice.promote.active { background:#059669; color:#fff; border-color:#047857; }
+  .choice.skip.active { background:#dc2626; color:#fff; border-color:#b91c1c; }
+  .choice.more.active { background:#64748b; color:#fff; border-color:#475569; }
+  /* Sticky bottom bar */
+  .cart { position:fixed; bottom:0; left:0; right:0; background:#fff; border-top:2px solid #e2e8f0; box-shadow:0 -4px 12px rgba(0,0,0,.08); padding:12px 16px; z-index:100; }
+  .cart-inner { max-width:760px; margin:0 auto; }
+  .cart-summary { font-size:13px; color:#475569; margin-bottom:8px; line-height:1.4; }
+  .cart-summary b { color:#0f172a; }
+  .cart-summary .badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:700; margin-right:6px; }
+  .badge.promote { background:#d1fae5; color:#065f46; }
+  .badge.skip { background:#fee2e2; color:#991b1b; }
+  .badge.more { background:#e2e8f0; color:#334155; }
+  .badge.pending { background:#fef3c7; color:#92400e; }
+  .send-btn { display:block; width:100%; padding:16px; border:none; border-radius:8px; background:#0891b2; color:#fff; font-size:16px; font-weight:700; cursor:pointer; font-family:inherit; }
+  .send-btn:hover:not(:disabled) { background:#0e7490; }
+  .send-btn:disabled { background:#cbd5e1; cursor:not-allowed; }
+  .clear-link { display:inline-block; margin-top:6px; font-size:12px; color:#64748b; text-decoration:underline; cursor:pointer; background:none; border:none; padding:0; font-family:inherit; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Scout decisions — 2026-04-23</h1>
+  <div class="sub">3 source(s) to review. Choices auto-save in this browser.</div>
+
+  <div class="help">
+    Tap <b style="color:#059669;">Promote</b>, <b style="color:#dc2626;">Skip</b>, or <b style="color:#475569;">More info</b> on each card. The bar at the bottom keeps a running list of your choices. When you're done, hit the cyan <b>Send</b> button — Gmail opens with one email containing all your decisions. Hit Send in Gmail and you're done.
+  </div>
+
+  
+<section class="card" data-id="PQ-114">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-114</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Bassett BA, Rouillard A, Mundia S, Gramanie MC, Camara L, Dangor Z, Madhi SA, Morar K, Ncube MT, Kalla I, Saloojee H. Evaluating Multimodal LLMs for Inpatient Diagnosis: Real-World Performance, Safety, and Cost Across Ten Frontier Models. arXiv:2604.16980v1. 2026 Apr 18.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2604.16980" target="_blank" rel="noopener">https://arxiv.org/abs/2604.16980</a></div>
+  <div class="row"><b>Overview:</b> Real-world prospective evaluation of 10 frontier multimodal LLMs (incl. GPT-5.1, Gemini variants) on 539 inpatient cases at a South African tertiary public hospital. Inputs were the full admission packet — imaging, labs, notes, vitals — not text-only QA. Critically, the analysis prices each model and reports a Pareto-style cost-performance frontier. The LMIC framing differentiates it from the predominantly North-American/high-income KB literature. Task: multimodal diagnosis. LLMs: 10 frontier models. Setting: South African tertiary hospital. Volume: 539 inpatient cases. Comparator: routine ward diagnoses + expert panel.</div><div class="row"><b>Eval question:</b> How should multimodal LLM evaluation in healthcare account for deployment cost as a co-equal axis with accuracy and safety, and does the cost-performance frontier change which model a hospital should pick — especially in resource-constrained settings?</div><div class="row"><b>Methodology:</b> Prospective real-world inpatient cohort; 10 multimodal LLMs head-to-head on the same case material; multimodal inputs (imaging + labs + notes + vitals); diagnostic accuracy + expert-panel safety scoring; routine ward diagnoses as a real-world clinical comparator; per-model cost folded into a cost/performance Pareto comparison.</div><div class="row"><b>Measurement:</b> Composite diagnostic accuracy score; safety score against expert panel; cross-model performance variation: &lt;15%; cost-per-case (USD) plotted against composite score; comparison to routine ward diagnoses (significant outperformance on average).</div><div class="row"><b>Key findings:</b> Performance was tightly clustered (&lt;15% variation) across all 10 frontier models despite cost differences exceeding an order of magnitude. All models significantly outperformed routine ward diagnoses on average diagnostic and safety scores. GPT-5.1 ranked top on combined accuracy + safety. Several lower-cost models came within the 15% band of GPT-5.1 — in resource-constrained settings, affordability + robustness can dominate marginal accuracy gains. The Pareto frontier suggests the &#39;best clinical buy&#39; is not the most expensive model.</div><div class="row"><b>Soft spots:</b> Preprint, not yet peer-reviewed. Single-site (one South African tertiary hospital) — generalization to other LMICs (let alone HICs) unproven. Multimodal data preparation pipeline not fully detailed in abstract. Comparator quality (trainee vs senior ward calls) needs verification before the &#39;outperforms ward diagnoses&#39; framing is taken at face value. 10-model snapshot — Pareto positions shift with each release. No subgroup analysis on case complexity / specialty surfaced. Cost framing assumes API pricing; doesn&#39;t include integration / safety-monitoring cost.</div><div class="row"><b>Strengths:</b> Real prospective inpatient data — not benchmark proxies. LMIC setting is rare in our KB and methodologically important. Cost as a first-class evaluation axis is novel in clinical LLM evaluation. Multimodal real-world inputs (imaging + labs + notes + vitals) closer to deployment reality than text-only QA. 10-model head-to-head minimizes cherry-picking. Named clinical authors (Madhi, Saloojee — established academic clinicians) add credibility.</div><div class="row"><b>Relevance:</b> Layer 1: Diagnosis, multimodal evaluation, cost-effectiveness, deployment evaluation, LMIC context. Layer 2: No direct existing-kit overlap (current kits are extraction/summarization/alerting), but the cost-performance methodology and LMIC context-dependency signal would belong in context_dependency.md and shape the Methodology table when a multimodal diagnostic kit is built. Useful background for any future kit considering &#39;which model do we pick&#39; — challenges the &#39;always use the most capable&#39; default.</div><div class="row"><b>Verdict reasoning:</b> This is the kind of study the KB has been thin on — real prospective patient data outside North America/Europe, with cost surfaced as a first-class evaluation axis. The single-site preprint status is a real soft spot, but the methodology (10-model head-to-head on real cases with explicit cost analysis) is sound and the LMIC framing addresses a genuine equity-and-access gap. The headline finding (&lt;15% variation across 10× cost) is operationally consequential — it changes the model-selection conversation. Worth promoting now and re-checking on peer review.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-114">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-114">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-114">? More info</button>
+  </div>
+</section>
+
+<section class="card is-rollover" data-id="PQ-93">
+  <div class="rollover-badge">📌 Still pending from 2026-04-12 · seen 2× · auto-skip in 2 more weeks</div>
+  <header class="card-head">
+    <span class="pq-id">PQ-93</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Mahbub M, Dams GM, Arnold J, Rizy C, Srinivasan S, Fielstein EM, Aghevli MA, Craig KL, Oliva EM, Erdos J, Trafton J, Danciu I. A multi-stage validation framework for trustworthy large-scale clinical information extraction using large language models. arXiv:2604.06028. 2026 Apr.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2604.06028" target="_blank" rel="noopener">https://arxiv.org/abs/2604.06028</a></div>
+  <div class="row"><b>Overview:</b> Six-stage validation pipeline for LLM clinical IE at massive scale — 919,783 VA notes, substance use disorder diagnoses across 11 categories. Stages: prompt calibration → rule-based plausibility → semantic grounding → independent higher-capacity judge LLM → selective expert review → external predictive validity. Demonstrates trustworthy extraction at a scale where full expert review is infeasible. Task: extraction. Setting: VA. Volume: 919,783 clinical notes.</div><div class="row"><b>Eval question:</b> How is LLM extraction validated when volume makes full expert review infeasible? Can multi-stage automated validation achieve trustworthy results at scale?</div><div class="row"><b>Methodology:</b> Six stages: prompt calibration → rule plausibility filtering → semantic grounding → judge LLM → expert sample → external predictive validity (extraction quality measured by downstream clinical outcome — SUD specialty care engagement).</div><div class="row"><b>Measurement:</b> Rule + semantic filtering removed 14.59% unreliable extractions. Judge LLM vs expert: Gwet&#39;s AC1 = 0.80. Primary LLM F1 = 0.80 (relaxed). External predictive validity AUC = 0.80 for SUD specialty care engagement (outperforms structured EHR codes alone).</div><div class="row"><b>Key findings:</b> Multi-stage filtering catches ~15% of unreliable extractions before any human review; judge LLM achieves substantial agreement with experts (AC1=0.80) as a scalable QC gate; LLM-extracted diagnoses MORE predictive of actual care than structured EHR codes; per-stage decomposition enables diagnostic troubleshooting; pipeline enables trustworthy extraction at a scale where full expert annotation is impossible.</div><div class="row"><b>Soft spots:</b> Preprint; single domain (SUD); VA-specific environment; &#39;relaxed matching&#39; for F1 (strict would be lower); Gwet&#39;s AC1 inflated by high-agreement asymmetry (correct choice but limits comparability across studies); judge LLM has its own error patterns (not perfect ground truth).</div><div class="row"><b>Strengths:</b> Quantified per-stage contribution; massive real-world scale; novel external predictive validity step (extraction quality measured by downstream clinical utility, not just agreement); statistically sophisticated (Gwet&#39;s AC1 used appropriately for high-agreement scenarios); each stage independently analyzable; real VA data, not synthetic.</div><div class="row"><b>Relevance:</b> Layer 1: Extraction — multi-stage validation pipeline at scale. Layer 2: Direct relevance to VAP Extraction kit — staged validation mirrors our sanity check → retrospective pipeline at much larger scale. Predictive validity could inform production monitoring design (does extraction quality predict clinical outcomes?). Gwet&#39;s AC1 usage aligns with rare_events_evaluation.md.</div><div class="row"><b>Verdict reasoning:</b> Addresses a genuine methodology gap — validation at scale where full expert annotation is infeasible. Practical 6-stage pipeline with quantified per-stage contribution. The external predictive validity step is novel and principled. Preprint limitation offset by massive scale, real data, clear methodology, and appropriate metric choices.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-93">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-93">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-93">? More info</button>
+  </div>
+</section>
+
+<section class="card is-rollover" data-id="PQ-94">
+  <div class="rollover-badge">📌 Still pending from 2026-04-12 · seen 2× · auto-skip in 2 more weeks</div>
+  <header class="card-head">
+    <span class="pq-id">PQ-94</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Hussain K, Malin BA, Yin Z, Rose SL, Kantarcioglu M. Blending human and LLM expertise to detect hallucinations and omissions in mental health chatbot responses. arXiv:2604.06216. 2026 Mar.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2604.06216" target="_blank" rel="noopener">https://arxiv.org/abs/2604.06216</a></div>
+  <div class="row"><b>Overview:</b> Demonstrates that leading LLM judges achieve only ~52% accuracy for hallucination detection in mental health counseling data — near random. Proposes a hybrid: human domain expertise drives 5-dimension feature extraction (logical consistency, entity verification, factual accuracy, linguistic uncertainty, professional appropriateness) which feeds traditional ML classifiers. Hybrid F1: 0.717 (custom dataset), 0.849 (public benchmark). Omission detection harder (0.59-0.64 F1). Task: classification (hallucination + omission). Setting: mental health counseling chatbots.</div><div class="row"><b>Eval question:</b> How reliable are pure LLM-as-judge approaches for hallucination detection in clinical conversational AI, and can human+LLM hybrid methods close the gap?</div><div class="row"><b>Methodology:</b> Baseline test of leading LLM judges on mental health counseling data; hybrid approach with 5-dimension feature extraction (clinically grounded); traditional ML classifiers trained on those features; evaluated on custom annotated dataset + public benchmark; addresses both hallucination and omission detection.</div><div class="row"><b>Measurement:</b> LLM-as-judge baseline ~52% accuracy (near random); hybrid F1 0.717 (custom) and 0.849 (public benchmark); omission detection 0.59-0.64 F1 across all methods.</div><div class="row"><b>Key findings:</b> Pure LLM judges fail dramatically on mental-health-counseling data (~52%); failure is domain-specific — judges trained on factual domains miss nuanced therapeutic communication; hybrid substantially outperforms pure LLM-as-judge; omission detection harder than hallucination across all methods; interpretable features enable diagnostic analysis of failure modes.</div><div class="row"><b>Soft spots:</b> Preprint; mental-health-chatbot is a specialized subdomain — 52% failure may not generalize; custom dataset details not fully available from abstract; hybrid feature engineering requires domain expertise (may not scale); traditional ML on extracted features less flexible than end-to-end approaches.</div><div class="row"><b>Strengths:</b> Quantifies a critical LLM-as-judge limitation (52% on mental health) most studies miss because they focus on factual tasks; 5-dimension feature framework is interpretable and clinically grounded; addresses both hallucination AND omission; directly challenges the assumption that LLM-as-judge generalizes across clinical domains.</div><div class="row"><b>Relevance:</b> Layer 1: Cross-task — LLM-as-judge limitations, hallucination + omission methodology. Layer 2: Extends KTP #8 — LLM-as-judge fails in domains needing nuanced clinical judgment (mental health counseling). Reinforces &#39;objective criteria good, subjective criteria poor&#39; pattern. Omission &gt; hallucination difficulty aligns with PQ-47 (CREOLA omission rates 3.45% &gt; hallucination 1.47%).</div><div class="row"><b>Verdict reasoning:</b> 52% LLM-as-judge failure is an important data point extending KTP #8. Mental-health-chatbot is a specialized subdomain, paper is preprint, and applicability to current core kits (extraction, summarization) is indirect. Hybrid methodology requires domain-specific feature engineering. Worth tracking as evidence for LLM-as-judge boundaries; not immediately actionable for the current kit portfolio.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-94">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-94">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-94">? More info</button>
+  </div>
+</section>
+</div>
+
+<div class="cart">
+  <div class="cart-inner">
+    <div class="cart-summary" id="summary">No choices yet. Tap a button on a card above.</div>
+    <button class="send-btn" id="sendBtn" disabled>Send 0 / 3 decisions</button>
+    <button class="clear-link" id="clearBtn">Clear all my choices</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const ALL_IDS = ["PQ-114","PQ-93","PQ-94"];
+  const REPLY_TO = "tali.biron@gmail.com";
+  const REPLY_SUBJECT = "Re: Scout 2026-04-23 — 3 source(s) (PQ-114, PQ-93, PQ-94)";
+  const STORAGE_KEY = "scout-cart-2026-04-23";
+
+  // Load saved state from localStorage (so refresh doesn't lose progress)
+  let choices = {};
+  try { choices = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) {}
+
+  function saveAndRender() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(choices));
+
+    // Re-style each card based on choice
+    document.querySelectorAll('.card').forEach(card => {
+      const id = card.dataset.id;
+      card.classList.remove('chosen-promote', 'chosen-skip', 'chosen-more');
+      card.querySelectorAll('.choice').forEach(b => b.classList.remove('active'));
+      const c = choices[id];
+      if (c) {
+        card.classList.add('chosen-' + c);
+        card.querySelector('.choice.' + c).classList.add('active');
+      }
+    });
+
+    // Update sticky summary + send button
+    const made = ALL_IDS.filter(id => choices[id]);
+    const pending = ALL_IDS.filter(id => !choices[id]);
+    const counts = { promote:0, skip:0, more:0 };
+    made.forEach(id => counts[choices[id]]++);
+
+    let html = '';
+    if (counts.promote) html += '<span class="badge promote">' + counts.promote + ' promote</span>';
+    if (counts.skip)    html += '<span class="badge skip">' + counts.skip + ' skip</span>';
+    if (counts.more)    html += '<span class="badge more">' + counts.more + ' more</span>';
+    if (pending.length) html += '<span class="badge pending">' + pending.length + ' pending</span>';
+    if (!made.length && !pending.length) html = 'No choices yet.';
+    document.getElementById('summary').innerHTML = html || 'No choices yet.';
+
+    const btn = document.getElementById('sendBtn');
+    btn.disabled = made.length === 0;
+    btn.textContent = 'Send ' + made.length + ' / ' + ALL_IDS.length + ' decisions';
+  }
+
+  // Wire button clicks
+  document.querySelectorAll('.choice').forEach(b => {
+    b.addEventListener('click', () => {
+      const id = b.dataset.id;
+      const choice = b.dataset.choice;
+      // Toggle off if same choice clicked again
+      if (choices[id] === choice) delete choices[id];
+      else choices[id] = choice;
+      saveAndRender();
+    });
+  });
+
+  // Send button — uses mailto on mobile (opens native Gmail app), Gmail web on desktop.
+  document.getElementById('sendBtn').addEventListener('click', () => {
+    const lines = ALL_IDS.filter(id => choices[id]).map(id => choices[id] + ' ' + id);
+    if (!lines.length) return;
+    const body = '# Scout decisions for ' + "2026-04-23" + '\n# Sent from the cart page\n\n' + lines.join('\n') + '\n';
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const url = isMobile
+      ? 'mailto:' + encodeURIComponent(REPLY_TO) + '?subject=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body)
+      : 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(REPLY_TO) + '&su=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body);
+    // mailto must be same-window on iOS; _blank is fine for https
+    if (isMobile) window.location.href = url;
+    else window.open(url, '_blank');
+  });
+
+  // Clear button
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    if (!confirm('Clear all your choices on this page?')) return;
+    choices = {};
+    saveAndRender();
+  });
+
+  saveAndRender();
+})();
+</script>
+</body>
+</html>
