@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scout decisions — 2026-04-26</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; padding:0 0 180px 0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; background:#f8fafc; color:#0f172a; }
+  .container { max-width:760px; margin:0 auto; padding:24px 16px; }
+  h1 { font-size:22px; margin:0 0 8px 0; color:#1e40af; }
+  .sub { font-size:13px; color:#64748b; margin-bottom:20px; }
+  .help { background:#ecfeff; border:2px solid #0891b2; border-radius:8px; padding:14px 16px; margin-bottom:20px; font-size:13px; color:#164e63; line-height:1.5; }
+  .card { border:1px solid #e2e8f0; border-radius:10px; padding:16px; margin-bottom:14px; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.03); }
+  .card.is-rollover { border-color:#fbbf24; background:#fffbeb; }
+  .card.chosen-promote { border-color:#059669; box-shadow:0 0 0 2px #05966933; }
+  .card.chosen-skip { border-color:#dc2626; box-shadow:0 0 0 2px #dc262633; }
+  .card.chosen-more { border-color:#64748b; box-shadow:0 0 0 2px #64748b33; }
+  .rollover-badge { background:#fde68a; color:#78350f; font-size:11px; font-weight:700; padding:5px 10px; border-radius:10px; display:inline-block; margin-bottom:10px; }
+  .card-head { display:flex; justify-content:space-between; align-items:baseline; }
+  .pq-id { font-size:14px; font-weight:700; color:#1e40af; }
+  .verdict { font-size:12px; font-weight:700; }
+  .citation { margin-top:8px; font-size:14px; line-height:1.5; font-weight:500; }
+  .url { margin-top:4px; font-size:12px; }
+  .url a { color:#2563eb; }
+  .row { margin-top:8px; font-size:13px; color:#334155; line-height:1.5; }
+  .row b { color:#0f172a; }
+  .choice-row { display:flex; gap:8px; margin-top:14px; }
+  .choice { flex:1; padding:14px 8px; border-radius:8px; border:2px solid transparent; font-size:14px; font-weight:700; cursor:pointer; background:#f1f5f9; color:#475569; transition:all .15s; font-family:inherit; }
+  .choice:hover { transform:translateY(-1px); }
+  .choice.promote.active { background:#059669; color:#fff; border-color:#047857; }
+  .choice.skip.active { background:#dc2626; color:#fff; border-color:#b91c1c; }
+  .choice.more.active { background:#64748b; color:#fff; border-color:#475569; }
+  /* Sticky bottom bar */
+  .cart { position:fixed; bottom:0; left:0; right:0; background:#fff; border-top:2px solid #e2e8f0; box-shadow:0 -4px 12px rgba(0,0,0,.08); padding:12px 16px; z-index:100; }
+  .cart-inner { max-width:760px; margin:0 auto; }
+  .cart-summary { font-size:13px; color:#475569; margin-bottom:8px; line-height:1.4; }
+  .cart-summary b { color:#0f172a; }
+  .cart-summary .badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:700; margin-right:6px; }
+  .badge.promote { background:#d1fae5; color:#065f46; }
+  .badge.skip { background:#fee2e2; color:#991b1b; }
+  .badge.more { background:#e2e8f0; color:#334155; }
+  .badge.pending { background:#fef3c7; color:#92400e; }
+  .send-btn { display:block; width:100%; padding:16px; border:none; border-radius:8px; background:#0891b2; color:#fff; font-size:16px; font-weight:700; cursor:pointer; font-family:inherit; }
+  .send-btn:hover:not(:disabled) { background:#0e7490; }
+  .send-btn:disabled { background:#cbd5e1; cursor:not-allowed; }
+  .clear-link { display:inline-block; margin-top:6px; font-size:12px; color:#64748b; text-decoration:underline; cursor:pointer; background:none; border:none; padding:0; font-family:inherit; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Scout decisions — 2026-04-26</h1>
+  <div class="sub">2 source(s) to review. Choices auto-save in this browser.</div>
+
+  <div class="help">
+    Tap <b style="color:#059669;">Promote</b>, <b style="color:#dc2626;">Skip</b>, or <b style="color:#475569;">More info</b> on each card. The bar at the bottom keeps a running list of your choices. When you're done, hit the cyan <b>Send</b> button — Gmail opens with one email containing all your decisions. Hit Send in Gmail and you're done.
+  </div>
+
+  
+<section class="card" data-id="PQ-115">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-115</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Pator S. Serialisation Strategy Matters: How FHIR Data Format Affects LLM Medication Reconciliation. arXiv:2604.21076v1. 2026 Apr 22.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2604.21076" target="_blank" rel="noopener">https://arxiv.org/abs/2604.21076</a></div>
+  <div class="row"><b>Overview:</b> Systematic comparison of 4 FHIR serialisation strategies (Raw JSON, Markdown Table, Clinical Narrative, Chronological Timeline) across 5 LLMs × 200 synthetic patients × 4,000 inference runs on medication reconciliation. Two key methodology findings: (a) optimal serialisation INVERTS with model size — Clinical Narrative beats Raw JSON by up to 19 F1 for small models, but Raw JSON catches up or wins at 70B; (b) omission, not fabrication, is the dominant error mode in medication reconciliation across all formats and model sizes. Task type: Extraction / medication reconciliation. LLM system: 5 LLMs spanning small to 70B. Signal type: Explicit. Setting: Synthetic FHIR-compatible patient data (no real EHR). Volume: 200 patients × 4 formats × 5 models ≈ 4,000 inference runs. Human review: N/A — automated benchmark.</div><div class="row"><b>Eval question:</b> When evaluating LLM extraction from structured clinical data (FHIR), how much of the apparent model-quality difference is actually a serialisation-strategy difference — and does the answer change with model scale?</div><div class="row"><b>Methodology:</b> Generate 200 synthetic patients with FHIR-compatible medication histories. Render each in 4 serialisation strategies (Raw JSON / Markdown Table / Clinical Narrative / Chronological Timeline). Run reconciliation prompt on 5 LLMs spanning scale. Score precision/recall/F1 vs reference. Decompose error types (omission vs fabrication vs distortion). Cross-tabulate format × model size.</div><div class="row"><b>Measurement:</b> Precision/Recall/F1 per format × per model. Format effect size: up to 19 F1 between best and worst serialisation (small-model tier). Format effect inverts at 70B scale. Error decomposition: omission rate &gt;&gt; fabrication rate across all conditions.</div><div class="row"><b>Key findings:</b> Serialisation alone moves F1 up to 19 points — comparable to switching model families. The &#39;best&#39; format depends on model size: human-style Clinical Narrative helps small models; structured Raw JSON wins at 70B. Omission dominates fabrication, consistent with PQ-83 (event-based summarization) and PQ-108 (inference-aware vs literal hallucination) but now in the structured-data extraction setting.</div><div class="row"><b>Soft spots:</b> Single-author preprint, not yet peer-reviewed. SYNTHETIC patients, not real EHR. Medication reconciliation only — format effect on other extraction tasks (problem lists, allergies, labs) untested. 5-model selection details limited from abstract. &#39;19 F1&#39; is a max, not an average. The 70B-tier reversal could be a single-model artefact rather than a general scaling pattern.</div><div class="row"><b>Strengths:</b> Fully crossed factorial design (4 formats × 5 models × 200 patients). Quantitative anchor (19 F1) for an evaluation axis (serialisation) that is rarely controlled in extraction studies. Model-size-dependent inversion is genuinely novel — challenges assumption that prompt-engineering best practices transfer across scales. Reinforces omission &gt; fabrication finding from PQ-83 / PQ-108 in a different context. Direct relevance to FHIR-native deployment patterns.</div><div class="row"><b>Relevance:</b> Layer 1: Extraction (especially structured-data → free-text reconciliation), prompt engineering, model selection. Layer 2: Direct relevance to VAP Extraction kit (does not currently control for input format) and Lung Cancer Screening Eligibility kit (extracts from structured EHR fields). Suggests model-size-aware evaluation pattern: when benchmarking the same kit across model tiers, input serialisation is a confound, not a hyperparameter. Reinforces KTP #9 (input perturbation as adversarial axis, post-PQ-91 / PQ-107) by adding &#39;input format&#39; as a perturbation dimension.</div><div class="row"><b>Verdict reasoning:</b> The model-size-inversion is methodologically consequential — most extraction studies hold input format constant and treat differences as model-quality differences. If real, this is a genuine confounder in cross-model comparisons. However, single-author preprint + synthetic patients + medication-reconciliation-only is enough soft-spot weight to land at &#39;verify&#39; not &#39;promote.&#39; Ideal candidate for a 10-field card now and a follow-up in 6 months on peer-review status and replication on real EHR data. Verification note: WebFetch on arxiv.org/abs/2604.21076 by the search subagent confirmed exact title match, author (Pator S.), and submission timestamp 2026-04-22 20:39:35 UTC, cs.CL primary. Main scout session did not independently re-verify due to budget constraints. If user opts to Promote, a full-paper read should be the prerequisite (not just abstract).</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-115">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-115">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-115">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-116">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-116</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">MedicalBench: Evaluating LLMs Towards Improved Medical Concept Extraction. medRxiv 2026.04.12.26350704. 2026 Apr 12. (Author list to be confirmed on full-paper read.)</div>
+  <div class="url"><a href="https://www.medrxiv.org/content/10.64898/2026.04.12.26350704v1" target="_blank" rel="noopener">https://www.medrxiv.org/content/10.64898/2026.04.12.26350704v1</a></div>
+  <div class="row"><b>Overview:</b> Benchmark for medical concept extraction using 823 MIMIC-IV examples with sentence-level evidence spans and a deliberate &#39;implicit-positive&#39; / &#39;confusable-negative&#39; test design. Implicit-positive cases require LLM to infer a clinical concept from indirect evidence (e.g., long-term metformin → diabetes); confusable-negative cases test whether the LLM resists assigning a label when surface text superficially suggests one but evidence does not support it. Sentence-level evidence spans demand transparency: the LLM must point to the source sentence supporting each extraction. Task type: Extraction (medical concept extraction with evidence grounding). Signal type: Mixed — explicit when concept is stated; implicit-positive cases require inference. Setting: MIMIC-IV (US tertiary academic ICU notes). Volume: 823 evaluation examples. Human review: gold-standard annotation underlies the benchmark.</div><div class="row"><b>Eval question:</b> Does an LLM correctly extract medical concepts when the evidence is IMPLICIT (must be inferred) or CONFUSABLE (surface text suggests a label that the evidence does not support)? And does it ground each extraction in a specific source sentence?</div><div class="row"><b>Methodology:</b> 823 medical concept extraction tasks drawn from MIMIC-IV. Each task has an associated sentence-level evidence span. Categories: explicit positive, implicit positive (inference required), explicit negative, confusable negative (surface superficially supports a label that evidence does not). LLMs evaluated on label correctness AND evidence-span correctness. Per-category performance breakdown.</div><div class="row"><b>Measurement:</b> Standard extraction metrics (precision/recall/F1) per category. Evidence-span correctness as a separate axis (does the LLM cite the right sentence?). Disaggregated reporting: explicit vs implicit positive; explicit vs confusable negative.</div><div class="row"><b>Key findings:</b> To be confirmed on full-paper read. Expected pattern (based on the test design): LLMs strong on explicit positives, weaker on implicit-positive and confusable-negative cases. Sentence-level evidence-span correctness will likely be lower than label correctness, exposing a transparency gap.</div><div class="row"><b>Soft spots:</b> medRxiv preprint, not yet peer-reviewed. MIMIC-IV is a single-institution US tertiary corpus — generalisation to community / non-US / non-English untested. Concept extraction is one extraction subtype — generalisation to medication / procedure / dose extraction needs verification. Author list and full results not yet independently verified by main scout session this cycle (subagent&#39;s WebFetch confirmed the medRxiv landing page exists; full-paper details pending). &#39;Implicit positive&#39; inference is itself a judgment — the gold-standard annotation protocol&#39;s reliability is a key validity question.</div><div class="row"><b>Strengths:</b> Sentence-level evidence spans force evaluation of transparency, not just label accuracy. Implicit-positive / confusable-negative categories explicitly probe the inference-aware-vs-literal distinction we anchored from PQ-108 — but in the EXTRACTION context, not summarization. Real MIMIC-IV data. Per-category disaggregation prevents aggregate metrics from masking sub-population failures. Directly fills a gap for evaluating extraction where the gold standard requires clinical inference.</div><div class="row"><b>Relevance:</b> Layer 1: Extraction, evidence-grounding, inference-aware evaluation, MIMIC-IV-based benchmarking. Layer 2: Reinforces and extends PQ-108 (inference-aware-vs-literal hallucination) into extraction. Relevant to VAP Extraction kit (implicit-positive cases — e.g., &#39;PEEP 12 with bilateral infiltrates&#39; implies VAP without using the word) and Lung Cancer Screening Eligibility kit (smoking status often requires inference). Adds an evidence-span correctness axis currently missing from Extraction §2.</div><div class="row"><b>Verdict reasoning:</b> Implicit-positive / confusable-negative test design is methodologically interesting and directly extends PQ-108&#39;s inference-aware framing into the extraction setting. medRxiv preprint status, full paper not yet read end-to-end this cycle, and unverified author list keep this at &#39;verify&#39; rather than &#39;promote.&#39; Search subagent flagged this as &#39;should have surfaced in scan #20 (2026-04-12 same day) — missed.&#39; Surfacing now under a missed-in-prior-scans framing. If user opts to Promote, a full-paper read should be the prerequisite to confirm metric definitions and the gold-standard annotation protocol.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-116">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-116">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-116">? More info</button>
+  </div>
+</section>
+</div>
+
+<div class="cart">
+  <div class="cart-inner">
+    <div class="cart-summary" id="summary">No choices yet. Tap a button on a card above.</div>
+    <button class="send-btn" id="sendBtn" disabled>Send 0 / 2 decisions</button>
+    <button class="clear-link" id="clearBtn">Clear all my choices</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const ALL_IDS = ["PQ-115","PQ-116"];
+  const REPLY_TO = "tali.biron@gmail.com";
+  const REPLY_SUBJECT = "Re: Scout 2026-04-26 — 2 source(s) (PQ-115, PQ-116)";
+  const STORAGE_KEY = "scout-cart-2026-04-26";
+
+  // Load saved state from localStorage (so refresh doesn't lose progress)
+  let choices = {};
+  try { choices = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) {}
+
+  function saveAndRender() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(choices));
+
+    // Re-style each card based on choice
+    document.querySelectorAll('.card').forEach(card => {
+      const id = card.dataset.id;
+      card.classList.remove('chosen-promote', 'chosen-skip', 'chosen-more');
+      card.querySelectorAll('.choice').forEach(b => b.classList.remove('active'));
+      const c = choices[id];
+      if (c) {
+        card.classList.add('chosen-' + c);
+        card.querySelector('.choice.' + c).classList.add('active');
+      }
+    });
+
+    // Update sticky summary + send button
+    const made = ALL_IDS.filter(id => choices[id]);
+    const pending = ALL_IDS.filter(id => !choices[id]);
+    const counts = { promote:0, skip:0, more:0 };
+    made.forEach(id => counts[choices[id]]++);
+
+    let html = '';
+    if (counts.promote) html += '<span class="badge promote">' + counts.promote + ' promote</span>';
+    if (counts.skip)    html += '<span class="badge skip">' + counts.skip + ' skip</span>';
+    if (counts.more)    html += '<span class="badge more">' + counts.more + ' more</span>';
+    if (pending.length) html += '<span class="badge pending">' + pending.length + ' pending</span>';
+    if (!made.length && !pending.length) html = 'No choices yet.';
+    document.getElementById('summary').innerHTML = html || 'No choices yet.';
+
+    const btn = document.getElementById('sendBtn');
+    btn.disabled = made.length === 0;
+    btn.textContent = 'Send ' + made.length + ' / ' + ALL_IDS.length + ' decisions';
+  }
+
+  // Wire button clicks
+  document.querySelectorAll('.choice').forEach(b => {
+    b.addEventListener('click', () => {
+      const id = b.dataset.id;
+      const choice = b.dataset.choice;
+      // Toggle off if same choice clicked again
+      if (choices[id] === choice) delete choices[id];
+      else choices[id] = choice;
+      saveAndRender();
+    });
+  });
+
+  // Send button — uses mailto on mobile (opens native Gmail app), Gmail web on desktop.
+  document.getElementById('sendBtn').addEventListener('click', () => {
+    const lines = ALL_IDS.filter(id => choices[id]).map(id => choices[id] + ' ' + id);
+    if (!lines.length) return;
+    const body = '# Scout decisions for ' + "2026-04-26" + '\n# Sent from the cart page\n\n' + lines.join('\n') + '\n';
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const url = isMobile
+      ? 'mailto:' + encodeURIComponent(REPLY_TO) + '?subject=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body)
+      : 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(REPLY_TO) + '&su=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body);
+    // mailto must be same-window on iOS; _blank is fine for https
+    if (isMobile) window.location.href = url;
+    else window.open(url, '_blank');
+  });
+
+  // Clear button
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    if (!confirm('Clear all your choices on this page?')) return;
+    choices = {};
+    saveAndRender();
+  });
+
+  saveAndRender();
+})();
+</script>
+</body>
+</html>
