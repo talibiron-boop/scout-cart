@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scout decisions — 2026-04-28</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; padding:0 0 180px 0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; background:#f8fafc; color:#0f172a; }
+  .container { max-width:760px; margin:0 auto; padding:24px 16px; }
+  h1 { font-size:22px; margin:0 0 8px 0; color:#1e40af; }
+  .sub { font-size:13px; color:#64748b; margin-bottom:20px; }
+  .help { background:#ecfeff; border:2px solid #0891b2; border-radius:8px; padding:14px 16px; margin-bottom:20px; font-size:13px; color:#164e63; line-height:1.5; }
+  .card { border:1px solid #e2e8f0; border-radius:10px; padding:16px; margin-bottom:14px; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.03); }
+  .card.is-rollover { border-color:#fbbf24; background:#fffbeb; }
+  .card.chosen-promote { border-color:#059669; box-shadow:0 0 0 2px #05966933; }
+  .card.chosen-skip { border-color:#dc2626; box-shadow:0 0 0 2px #dc262633; }
+  .card.chosen-more { border-color:#64748b; box-shadow:0 0 0 2px #64748b33; }
+  .rollover-badge { background:#fde68a; color:#78350f; font-size:11px; font-weight:700; padding:5px 10px; border-radius:10px; display:inline-block; margin-bottom:10px; }
+  .card-head { display:flex; justify-content:space-between; align-items:baseline; }
+  .pq-id { font-size:14px; font-weight:700; color:#1e40af; }
+  .verdict { font-size:12px; font-weight:700; }
+  .citation { margin-top:8px; font-size:14px; line-height:1.5; font-weight:500; }
+  .url { margin-top:4px; font-size:12px; }
+  .url a { color:#2563eb; }
+  .row { margin-top:8px; font-size:13px; color:#334155; line-height:1.5; }
+  .row b { color:#0f172a; }
+  .choice-row { display:flex; gap:8px; margin-top:14px; }
+  .choice { flex:1; padding:14px 8px; border-radius:8px; border:2px solid transparent; font-size:14px; font-weight:700; cursor:pointer; background:#f1f5f9; color:#475569; transition:all .15s; font-family:inherit; }
+  .choice:hover { transform:translateY(-1px); }
+  .choice.promote.active { background:#059669; color:#fff; border-color:#047857; }
+  .choice.skip.active { background:#dc2626; color:#fff; border-color:#b91c1c; }
+  .choice.more.active { background:#64748b; color:#fff; border-color:#475569; }
+  /* Sticky bottom bar */
+  .cart { position:fixed; bottom:0; left:0; right:0; background:#fff; border-top:2px solid #e2e8f0; box-shadow:0 -4px 12px rgba(0,0,0,.08); padding:12px 16px; z-index:100; }
+  .cart-inner { max-width:760px; margin:0 auto; }
+  .cart-summary { font-size:13px; color:#475569; margin-bottom:8px; line-height:1.4; }
+  .cart-summary b { color:#0f172a; }
+  .cart-summary .badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:700; margin-right:6px; }
+  .badge.promote { background:#d1fae5; color:#065f46; }
+  .badge.skip { background:#fee2e2; color:#991b1b; }
+  .badge.more { background:#e2e8f0; color:#334155; }
+  .badge.pending { background:#fef3c7; color:#92400e; }
+  .send-btn { display:block; width:100%; padding:16px; border:none; border-radius:8px; background:#0891b2; color:#fff; font-size:16px; font-weight:700; cursor:pointer; font-family:inherit; }
+  .send-btn:hover:not(:disabled) { background:#0e7490; }
+  .send-btn:disabled { background:#cbd5e1; cursor:not-allowed; }
+  .clear-link { display:inline-block; margin-top:6px; font-size:12px; color:#64748b; text-decoration:underline; cursor:pointer; background:none; border:none; padding:0; font-family:inherit; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Scout decisions — 2026-04-28</h1>
+  <div class="sub">3 source(s) to review. Choices auto-save in this browser.</div>
+
+  <div class="help">
+    Tap <b style="color:#059669;">Promote</b>, <b style="color:#dc2626;">Skip</b>, or <b style="color:#475569;">More info</b> on each card. The bar at the bottom keeps a running list of your choices. When you're done, hit the cyan <b>Send</b> button — Gmail opens with one email containing all your decisions. Hit Send in Gmail and you're done.
+  </div>
+
+  
+<section class="card" data-id="PQ-118">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-118</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Spitzer P, Hendriks D, Rudolph J, Schlaeger S, Ricke J, Kühl N, Hoppe BF, Feuerriegel S. The effect of medical explanations from large language models on diagnostic accuracy in radiology. npj Digital Medicine. 2026 Apr 23;9(1). doi:10.1038/s41746-026-02619-0. PMID 42026140.</div>
+  <div class="url"><a href="https://www.nature.com/articles/s41746-026-02619-0" target="_blank" rel="noopener">https://www.nature.com/articles/s41746-026-02619-0</a></div>
+  <div class="row"><b>Overview:</b> Randomized four-arm experiment of how the *format* of LLM-generated explanations affects radiologist diagnostic accuracy. Radiologists reviewed standardized cases with imaging under: (i) no LLM support (control); (ii) standard LLM diagnosis without explanation; (iii) differential-diagnosis explanation format; (iv) chain-of-thought (CoT) reasoning explanation. The contribution is that explanation format itself — not just the presence of LLM output — significantly changes the physician&#39;s final accuracy. Task type: Generation / clinical decision support; explanation-format evaluation. LLM system: single LLM with explanation-format conditions varied. Setting: standardized radiology cases with imaging. Volume: 2,020 radiologist assessments across 4 arms. Human review: radiologists are the *evaluators* — physician final accuracy is the outcome.</div><div class="row"><b>Eval question:</b> When LLMs assist physicians with diagnostic tasks, does the *type* of explanation provided change whether physicians correctly accept or override the LLM&#39;s diagnosis? Specifically, does CoT-style reasoning beat differential-diagnosis lists or no-explanation outputs?</div><div class="row"><b>Methodology:</b> Randomized assignment of radiologists to one of four explanation-format conditions; identical underlying LLM diagnosis across the three LLM-supported arms — only the *presentation format* varies. Per-case accuracy = primary endpoint (correct vs incorrect final reading). Pairwise comparisons across formats with p-values reported. Active-control design (LLM-without-explanation arm) isolates explanation-format effect from LLM-presence effect.</div><div class="row"><b>Measurement:</b> Diagnostic accuracy (binary: correct vs incorrect final reading), per case. Per-arm accuracy with pairwise comparisons: CoT vs control +12.2% (p=0.001); CoT vs standard (no explanation) +7.2% (p=0.040); CoT vs differential format +9.7% (p=0.004).</div><div class="row"><b>Key findings:</b> CoT-format LLM explanations produce the largest gain in physician diagnostic accuracy (+12.2% vs no-LLM control). Differential-diagnosis lists outperform no-explanation, but CoT outperforms differential lists by 9.7% (p=0.004). The presence-of-LLM-output is *not* sufficient — format matters. Mechanism interpretation: physicians audit reasoning, not just conclusions; CoT exposes reasoning, lists and one-liners do not.</div><div class="row"><b>Soft spots:</b> Vignette-style standardized cases — physicians spent more time per case than in typical reads; generalization to time-pressured workflow open. Number of unique radiologists vs total assessments not summarized in our retrieval (clustering / random-effects modeling unclear). Cases drawn from a structured set; rare or atypical presentations may behave differently. Did not benchmark CoT correctness itself — measures *physician outcome*, not LLM reasoning fidelity (a wrong-but-plausible CoT could still help if it triggers physician correction).</div><div class="row"><b>Strengths:</b> Active-controlled four-arm design isolates the explanation-format effect — most prior work compared LLM-vs-no-LLM only. N=2,020 → tight CIs and statistical separation between arms. Peer-reviewed npj Digital Medicine (not preprint). Outcome is the right one for clinical AI evaluation: did the *physician* end up correct, not did the LLM end up correct. Mechanism interpretation (audit-the-reasoning) is consistent with KTP #7 collaborative-benefit conditional on prompt quality.</div><div class="row"><b>Relevance:</b> Layer 1 (task type): Generation (clinical reasoning explanations) and decision support — directly relevant to evaluating LLM-as-supporter rather than LLM-as-decider. Layer 2 (existing kit): Strongly connects to Nuclear Medicine Summarization kit (interpretive support to physicians) and the upcoming Lung Cancer Screening Eligibility kit (per-criterion explanations). Extends KTP #7 (collaborative-benefit-conditional) — provides the missing &#39;how explanation format mediates collaborative benefit&#39; anchor. Reinforces PQ-105 (bad prompts hurt physicians) and PQ-104 (Dreyfus-stage rubric semantically anchored).</div><div class="row"><b>Verdict reasoning:</b> Peer-reviewed npj Digital Medicine, randomized active-controlled four-arm design, large N (2,020 assessments), and the outcome variable is physician accuracy — exactly what matters for clinical decision-support evaluation. The vignette setting limits external validity to time-pressured live-workflow reads, but the core methodological contribution (explanation format as a measured factor) is directly importable. If promoted: extend evaluation_methods_by_task.md Generation §4 + KTP #7 with &#39;explanation format mediates collaborative benefit&#39; anchor and the +12.2% CoT-vs-control number.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-118">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-118">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-118">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-119">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-119</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Gui G, Zandi P, Taylor J, Joshi A. Optimal Question Selection from a Large Question Bank for Clinical Field Recovery in Conversational Psychiatric Intake. arXiv:2604.22067 [cs.CL]. 2026 Apr 23.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2604.22067" target="_blank" rel="noopener">https://arxiv.org/abs/2604.22067</a></div>
+  <div class="row"><b>Overview:</b> Benchmark + comparative evaluation of question-selection strategies during simulated psychiatric intake. Frames intake as an adaptive information-gathering optimization with a fixed time budget. Three policies compared head-to-head: (i) random questioning, (ii) clinician-ordered fixed-form baseline, (iii) LLM-guided adaptive selection. Evaluated against simulated patients exhibiting five behavioral conditions including a &#39;guarded-concise&#39; non-cooperative archetype. Task type: Conversational LLM / adaptive information-gathering; psychiatric intake. Question bank: 655 clinician-authored psychiatric intake questions. Volume: 300 sessions × 4 synthetic patients × 5 behavioral conditions.</div><div class="row"><b>Eval question:</b> When an LLM-driven conversational system has limited time to gather clinical history, does adaptive (LLM-guided) question selection outperform a fixed clinical form? And does the answer depend on patient cooperation?</div><div class="row"><b>Methodology:</b> 655 clinician-authored psychiatric intake questions form the question bank. 4 synthetic patient profiles × 5 behavioral conditions = 20 patient-behavior cells. Three policies tested per cell: random / fixed-form / LLM-adaptive. Primary metric: clinical-field recovery — proportion of target fields elicited within budget. Stratified analysis: gain over fixed form per behavioral condition.</div><div class="row"><b>Measurement:</b> Field-recovery rate per session (proportion of pre-specified target fields successfully elicited within budget). Stratified by patient behavior. Adaptive-vs-fixed gain reported per condition.</div><div class="row"><b>Key findings:</b> Fixed clinical form substantially outperforms random selection (confirms structured intake matters as a baseline). LLM-guided adaptive policy achieves strongest overall recovery. Adaptive advantage grows sharply under non-cooperative (&#39;guarded-concise&#39;) conditions — exactly where structure matters most.</div><div class="row"><b>Soft spots:</b> Synthetic patient vignettes, not real patients; behavioral conditions are operationalized constructs. Only 4 unique synthetic patients × 5 conditions (re-sampling within cells gives 300 sessions but limits patient-level variance). Preprint; not peer-reviewed. &#39;Recovery&#39; measured against a pre-defined target — assumes the right fields are specified upfront; in real intake, salient fields can shift mid-conversation.</div><div class="row"><b>Strengths:</b> Clinician-authored 655-question bank (coverage credibility). Three-arm comparison cleanly isolates the structure effect from the adaptation effect. Stratification by patient behavior is a real methodological contribution — most LLM dialogue benchmarks do not stratify by patient cooperativeness. Reproducible (benchmark released).</div><div class="row"><b>Relevance:</b> Layer 1 (task type): Conversational / adaptive information-gathering LLMs in clinical workflows — currently underrepresented in evaluation_methods_by_task.md. Closest existing category is Extraction, but methodology differs for *conversational* extraction. Layer 2 (existing kit): No direct kit fit. Useful for *future* kits involving virtual-patient intake (history-taking) or AI-scribe pre-visit triage. Reinforces stratification-by-patient-behavior pattern, complementing PQ-104 (Dreyfus-rubric stratification) and PQ-101 (matched-context for stratified physician benefit).</div><div class="row"><b>Verdict reasoning:</b> Strong methodological contribution, but: (a) preprint without peer review yet; (b) synthetic patients limit external validity; (c) no current evaluation kit slot directly applies. Promotion-worthy if paired with a real-patient validation study or once peer-reviewed. For now: file under papers.md as PQ-119 with &#39;verify&#39; tag; do NOT yet update Guidance — wait for peer-reviewed version or real-patient validation.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-119">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-119">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-119">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-120">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-120</span>
+    <span class="verdict" style="color:#64748b;">Background</span>
+  </header>
+  <div class="citation">Causio FA, et al. (20-author consortium). EuropeMedQA Study Protocol: A Multilingual, Multimodal Medical Examination Dataset for Language Model Evaluation. arXiv:2604.14306v2 [cs.CL]. v2 revision posted 2026 Apr 23.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2604.14306" target="_blank" rel="noopener">https://arxiv.org/abs/2604.14306</a></div>
+  <div class="row"><b>Overview:</b> Study *protocol* (not a results paper) for a multilingual + multimodal medical-exam benchmark sourced from official regulatory licensing exams in Italy, France, Spain, and Portugal. Designed as a contamination-resistant benchmark for cross-lingual transfer in medical LLMs. The contribution at this stage is the dataset construction methodology (FAIR + SPIRIT-AI compliant), not findings. Task type: Question-answering / multilingual evaluation. Setting: four European national licensing exams (IT, FR, ES, PT). Volume: TBD; sample size not yet specified. Human review: translation pipeline is automated (a meta-evaluation issue itself).</div><div class="row"><b>Eval question:</b> Can multimodal LLMs maintain performance across European national medical-licensing exams in non-English languages, on a benchmark designed to resist pretraining contamination?</div><div class="row"><b>Methodology:</b> Curation pipeline from official IT/FR/ES/PT national medical-licensing exams. Automated translation pipeline (translation quality is itself a meta-evaluation issue not addressed in the protocol). Zero-shot constrained prompting protocol. FAIR + SPIRIT-AI compliance for dataset publication.</div><div class="row"><b>Measurement:</b> TBD — protocol announces zero-shot accuracy on multilingual exam items as the primary endpoint.</div><div class="row"><b>Key findings:</b> No results yet (this is a protocol).</div><div class="row"><b>Soft spots:</b> Protocol-only — no benchmark numbers reported. Translation pipeline is automated; translation quality is itself an LLM-evaluation pitfall not addressed in the protocol. Licensing-exam questions optimize for medical-knowledge recall, not clinical-reasoning depth (a known limitation of MCQ-style benchmarks — see KTP #7 and PQ-53 benchmark-reality gap).</div><div class="row"><b>Strengths:</b> Fills a real gap (non-English clinical LLM benchmarks). FAIR + SPIRIT-AI compliance signals careful planning. 20-author multinational consortium suggests genuine ecosystem effort.</div><div class="row"><b>Relevance:</b> Layer 1 (task type): Question-answering / multilingual evaluation — broadly relevant. Layer 2: No existing kit fit; valuable as background reference for KTP #6 (benchmark-reality gap) — once results land, will provide a multilingual data point.</div><div class="row"><b>Verdict reasoning:</b> Log as PQ-120 in papers.md as a study protocol with a &#39;follow up when results posted&#39; tag. Do NOT update Guidance based on a protocol. Watch for the v3+ results paper.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-120">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-120">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-120">? More info</button>
+  </div>
+</section>
+</div>
+
+<div class="cart">
+  <div class="cart-inner">
+    <div class="cart-summary" id="summary">No choices yet. Tap a button on a card above.</div>
+    <button class="send-btn" id="sendBtn" disabled>Send 0 / 3 decisions</button>
+    <button class="clear-link" id="clearBtn">Clear all my choices</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const ALL_IDS = ["PQ-118","PQ-119","PQ-120"];
+  const REPLY_TO = "tali.biron@gmail.com";
+  const REPLY_SUBJECT = "Re: Scout 2026-04-28 — 3 source(s) (PQ-118, PQ-119, PQ-120)";
+  const STORAGE_KEY = "scout-cart-2026-04-28";
+
+  // Load saved state from localStorage (so refresh doesn't lose progress)
+  let choices = {};
+  try { choices = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) {}
+
+  function saveAndRender() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(choices));
+
+    // Re-style each card based on choice
+    document.querySelectorAll('.card').forEach(card => {
+      const id = card.dataset.id;
+      card.classList.remove('chosen-promote', 'chosen-skip', 'chosen-more');
+      card.querySelectorAll('.choice').forEach(b => b.classList.remove('active'));
+      const c = choices[id];
+      if (c) {
+        card.classList.add('chosen-' + c);
+        card.querySelector('.choice.' + c).classList.add('active');
+      }
+    });
+
+    // Update sticky summary + send button
+    const made = ALL_IDS.filter(id => choices[id]);
+    const pending = ALL_IDS.filter(id => !choices[id]);
+    const counts = { promote:0, skip:0, more:0 };
+    made.forEach(id => counts[choices[id]]++);
+
+    let html = '';
+    if (counts.promote) html += '<span class="badge promote">' + counts.promote + ' promote</span>';
+    if (counts.skip)    html += '<span class="badge skip">' + counts.skip + ' skip</span>';
+    if (counts.more)    html += '<span class="badge more">' + counts.more + ' more</span>';
+    if (pending.length) html += '<span class="badge pending">' + pending.length + ' pending</span>';
+    if (!made.length && !pending.length) html = 'No choices yet.';
+    document.getElementById('summary').innerHTML = html || 'No choices yet.';
+
+    const btn = document.getElementById('sendBtn');
+    btn.disabled = made.length === 0;
+    btn.textContent = 'Send ' + made.length + ' / ' + ALL_IDS.length + ' decisions';
+  }
+
+  // Wire button clicks
+  document.querySelectorAll('.choice').forEach(b => {
+    b.addEventListener('click', () => {
+      const id = b.dataset.id;
+      const choice = b.dataset.choice;
+      // Toggle off if same choice clicked again
+      if (choices[id] === choice) delete choices[id];
+      else choices[id] = choice;
+      saveAndRender();
+    });
+  });
+
+  // Send button — uses mailto on mobile (opens native Gmail app), Gmail web on desktop.
+  document.getElementById('sendBtn').addEventListener('click', () => {
+    const lines = ALL_IDS.filter(id => choices[id]).map(id => choices[id] + ' ' + id);
+    if (!lines.length) return;
+    const body = '# Scout decisions for ' + "2026-04-28" + '\n# Sent from the cart page\n\n' + lines.join('\n') + '\n';
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const url = isMobile
+      ? 'mailto:' + encodeURIComponent(REPLY_TO) + '?subject=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body)
+      : 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(REPLY_TO) + '&su=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body);
+    // mailto must be same-window on iOS; _blank is fine for https
+    if (isMobile) window.location.href = url;
+    else window.open(url, '_blank');
+  });
+
+  // Clear button
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    if (!confirm('Clear all your choices on this page?')) return;
+    choices = {};
+    saveAndRender();
+  });
+
+  saveAndRender();
+})();
+</script>
+</body>
+</html>
