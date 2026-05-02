@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scout decisions — 2026-05-02</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; padding:0 0 180px 0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; background:#f8fafc; color:#0f172a; }
+  .container { max-width:760px; margin:0 auto; padding:24px 16px; }
+  h1 { font-size:22px; margin:0 0 8px 0; color:#1e40af; }
+  .sub { font-size:13px; color:#64748b; margin-bottom:20px; }
+  .help { background:#ecfeff; border:2px solid #0891b2; border-radius:8px; padding:14px 16px; margin-bottom:20px; font-size:13px; color:#164e63; line-height:1.5; }
+  .card { border:1px solid #e2e8f0; border-radius:10px; padding:16px; margin-bottom:14px; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.03); }
+  .card.is-rollover { border-color:#fbbf24; background:#fffbeb; }
+  .card.chosen-promote { border-color:#059669; box-shadow:0 0 0 2px #05966933; }
+  .card.chosen-skip { border-color:#dc2626; box-shadow:0 0 0 2px #dc262633; }
+  .card.chosen-more { border-color:#64748b; box-shadow:0 0 0 2px #64748b33; }
+  .rollover-badge { background:#fde68a; color:#78350f; font-size:11px; font-weight:700; padding:5px 10px; border-radius:10px; display:inline-block; margin-bottom:10px; }
+  .card-head { display:flex; justify-content:space-between; align-items:baseline; }
+  .pq-id { font-size:14px; font-weight:700; color:#1e40af; }
+  .verdict { font-size:12px; font-weight:700; }
+  .citation { margin-top:8px; font-size:14px; line-height:1.5; font-weight:500; }
+  .url { margin-top:4px; font-size:12px; }
+  .url a { color:#2563eb; }
+  .row { margin-top:8px; font-size:13px; color:#334155; line-height:1.5; }
+  .row b { color:#0f172a; }
+  .choice-row { display:flex; gap:8px; margin-top:14px; }
+  .choice { flex:1; padding:14px 8px; border-radius:8px; border:2px solid transparent; font-size:14px; font-weight:700; cursor:pointer; background:#f1f5f9; color:#475569; transition:all .15s; font-family:inherit; }
+  .choice:hover { transform:translateY(-1px); }
+  .choice.promote.active { background:#059669; color:#fff; border-color:#047857; }
+  .choice.skip.active { background:#dc2626; color:#fff; border-color:#b91c1c; }
+  .choice.more.active { background:#64748b; color:#fff; border-color:#475569; }
+  /* Sticky bottom bar */
+  .cart { position:fixed; bottom:0; left:0; right:0; background:#fff; border-top:2px solid #e2e8f0; box-shadow:0 -4px 12px rgba(0,0,0,.08); padding:12px 16px; z-index:100; }
+  .cart-inner { max-width:760px; margin:0 auto; }
+  .cart-summary { font-size:13px; color:#475569; margin-bottom:8px; line-height:1.4; }
+  .cart-summary b { color:#0f172a; }
+  .cart-summary .badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:700; margin-right:6px; }
+  .badge.promote { background:#d1fae5; color:#065f46; }
+  .badge.skip { background:#fee2e2; color:#991b1b; }
+  .badge.more { background:#e2e8f0; color:#334155; }
+  .badge.pending { background:#fef3c7; color:#92400e; }
+  .send-btn { display:block; width:100%; padding:16px; border:none; border-radius:8px; background:#0891b2; color:#fff; font-size:16px; font-weight:700; cursor:pointer; font-family:inherit; }
+  .send-btn:hover:not(:disabled) { background:#0e7490; }
+  .send-btn:disabled { background:#cbd5e1; cursor:not-allowed; }
+  .clear-link { display:inline-block; margin-top:6px; font-size:12px; color:#64748b; text-decoration:underline; cursor:pointer; background:none; border:none; padding:0; font-family:inherit; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Scout decisions — 2026-05-02</h1>
+  <div class="sub">7 source(s) to review. Choices auto-save in this browser.</div>
+
+  <div class="help">
+    Tap <b style="color:#059669;">Promote</b>, <b style="color:#dc2626;">Skip</b>, or <b style="color:#475569;">More info</b> on each card. The bar at the bottom keeps a running list of your choices. When you're done, hit the cyan <b>Send</b> button — Gmail opens with one email containing all your decisions. Hit Send in Gmail and you're done.
+  </div>
+
+  
+<section class="card is-rollover" data-id="PQ-118">
+  <div class="rollover-badge">📌 Still pending from 2026-04-28 · seen 2× · auto-skip in 2 more weeks</div>
+  <header class="card-head">
+    <span class="pq-id">PQ-118</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Spitzer P, Hendriks D, Rudolph J, Schlaeger S, Ricke J, Kühl N, Hoppe BF, Feuerriegel S. The effect of medical explanations from large language models on diagnostic accuracy in radiology. npj Digital Medicine. 2026 Apr 23;9(1). doi:10.1038/s41746-026-02619-0. PMID 42026140.</div>
+  <div class="url"><a href="https://www.nature.com/articles/s41746-026-02619-0" target="_blank" rel="noopener">https://www.nature.com/articles/s41746-026-02619-0</a></div>
+  <div class="row"><b>Overview:</b> Randomized four-arm experiment of how the *format* of LLM-generated explanations affects radiologist diagnostic accuracy. Radiologists reviewed standardized cases with imaging under: (i) no LLM support (control); (ii) standard LLM diagnosis without explanation; (iii) differential-diagnosis explanation format; (iv) chain-of-thought (CoT) reasoning explanation. The contribution is that explanation format itself — not just the presence of LLM output — significantly changes the physician&#39;s final accuracy. Task type: Generation / clinical decision support; explanation-format evaluation. LLM system: single LLM with explanation-format conditions varied. Setting: standardized radiology cases with imaging. Volume: 2,020 radiologist assessments across 4 arms. Human review: radiologists are the *evaluators* — physician final accuracy is the outcome.</div><div class="row"><b>Eval question:</b> When LLMs assist physicians with diagnostic tasks, does the *type* of explanation provided change whether physicians correctly accept or override the LLM&#39;s diagnosis? Specifically, does CoT-style reasoning beat differential-diagnosis lists or no-explanation outputs?</div><div class="row"><b>Methodology:</b> Randomized assignment of radiologists to one of four explanation-format conditions; identical underlying LLM diagnosis across the three LLM-supported arms — only the *presentation format* varies. Per-case accuracy = primary endpoint (correct vs incorrect final reading). Pairwise comparisons across formats with p-values reported. Active-control design (LLM-without-explanation arm) isolates explanation-format effect from LLM-presence effect.</div><div class="row"><b>Measurement:</b> Diagnostic accuracy (binary: correct vs incorrect final reading), per case. Per-arm accuracy with pairwise comparisons: CoT vs control +12.2% (p=0.001); CoT vs standard (no explanation) +7.2% (p=0.040); CoT vs differential format +9.7% (p=0.004).</div><div class="row"><b>Key findings:</b> CoT-format LLM explanations produce the largest gain in physician diagnostic accuracy (+12.2% vs no-LLM control). Differential-diagnosis lists outperform no-explanation, but CoT outperforms differential lists by 9.7% (p=0.004). The presence-of-LLM-output is *not* sufficient — format matters. Mechanism interpretation: physicians audit reasoning, not just conclusions; CoT exposes reasoning, lists and one-liners do not.</div><div class="row"><b>Soft spots:</b> Vignette-style standardized cases — physicians spent more time per case than in typical reads; generalization to time-pressured workflow open. Number of unique radiologists vs total assessments not summarized in our retrieval (clustering / random-effects modeling unclear). Cases drawn from a structured set; rare or atypical presentations may behave differently. Did not benchmark CoT correctness itself — measures *physician outcome*, not LLM reasoning fidelity (a wrong-but-plausible CoT could still help if it triggers physician correction).</div><div class="row"><b>Strengths:</b> Active-controlled four-arm design isolates the explanation-format effect — most prior work compared LLM-vs-no-LLM only. N=2,020 → tight CIs and statistical separation between arms. Peer-reviewed npj Digital Medicine (not preprint). Outcome is the right one for clinical AI evaluation: did the *physician* end up correct, not did the LLM end up correct. Mechanism interpretation (audit-the-reasoning) is consistent with KTP #7 collaborative-benefit conditional on prompt quality.</div><div class="row"><b>Relevance:</b> Layer 1 (task type): Generation (clinical reasoning explanations) and decision support — directly relevant to evaluating LLM-as-supporter rather than LLM-as-decider. Layer 2 (existing kit): Strongly connects to Nuclear Medicine Summarization kit (interpretive support to physicians) and the upcoming Lung Cancer Screening Eligibility kit (per-criterion explanations). Extends KTP #7 (collaborative-benefit-conditional) — provides the missing &#39;how explanation format mediates collaborative benefit&#39; anchor. Reinforces PQ-105 (bad prompts hurt physicians) and PQ-104 (Dreyfus-stage rubric semantically anchored).</div><div class="row"><b>Verdict reasoning:</b> Peer-reviewed npj Digital Medicine, randomized active-controlled four-arm design, large N (2,020 assessments), and the outcome variable is physician accuracy — exactly what matters for clinical decision-support evaluation. The vignette setting limits external validity to time-pressured live-workflow reads, but the core methodological contribution (explanation format as a measured factor) is directly importable. If promoted: extend evaluation_methods_by_task.md Generation §4 + KTP #7 with &#39;explanation format mediates collaborative benefit&#39; anchor and the +12.2% CoT-vs-control number.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-118">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-118">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-118">? More info</button>
+  </div>
+</section>
+
+<section class="card is-rollover" data-id="PQ-119">
+  <div class="rollover-badge">📌 Still pending from 2026-04-28 · seen 2× · auto-skip in 2 more weeks</div>
+  <header class="card-head">
+    <span class="pq-id">PQ-119</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Gui G, Zandi P, Taylor J, Joshi A. Optimal Question Selection from a Large Question Bank for Clinical Field Recovery in Conversational Psychiatric Intake. arXiv:2604.22067 [cs.CL]. 2026 Apr 23.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2604.22067" target="_blank" rel="noopener">https://arxiv.org/abs/2604.22067</a></div>
+  <div class="row"><b>Overview:</b> Benchmark + comparative evaluation of question-selection strategies during simulated psychiatric intake. Frames intake as an adaptive information-gathering optimization with a fixed time budget. Three policies compared head-to-head: (i) random questioning, (ii) clinician-ordered fixed-form baseline, (iii) LLM-guided adaptive selection. Evaluated against simulated patients exhibiting five behavioral conditions including a &#39;guarded-concise&#39; non-cooperative archetype. Task type: Conversational LLM / adaptive information-gathering; psychiatric intake. Question bank: 655 clinician-authored psychiatric intake questions. Volume: 300 sessions × 4 synthetic patients × 5 behavioral conditions.</div><div class="row"><b>Eval question:</b> When an LLM-driven conversational system has limited time to gather clinical history, does adaptive (LLM-guided) question selection outperform a fixed clinical form? And does the answer depend on patient cooperation?</div><div class="row"><b>Methodology:</b> 655 clinician-authored psychiatric intake questions form the question bank. 4 synthetic patient profiles × 5 behavioral conditions = 20 patient-behavior cells. Three policies tested per cell: random / fixed-form / LLM-adaptive. Primary metric: clinical-field recovery — proportion of target fields elicited within budget. Stratified analysis: gain over fixed form per behavioral condition.</div><div class="row"><b>Measurement:</b> Field-recovery rate per session (proportion of pre-specified target fields successfully elicited within budget). Stratified by patient behavior. Adaptive-vs-fixed gain reported per condition.</div><div class="row"><b>Key findings:</b> Fixed clinical form substantially outperforms random selection (confirms structured intake matters as a baseline). LLM-guided adaptive policy achieves strongest overall recovery. Adaptive advantage grows sharply under non-cooperative (&#39;guarded-concise&#39;) conditions — exactly where structure matters most.</div><div class="row"><b>Soft spots:</b> Synthetic patient vignettes, not real patients; behavioral conditions are operationalized constructs. Only 4 unique synthetic patients × 5 conditions (re-sampling within cells gives 300 sessions but limits patient-level variance). Preprint; not peer-reviewed. &#39;Recovery&#39; measured against a pre-defined target — assumes the right fields are specified upfront; in real intake, salient fields can shift mid-conversation.</div><div class="row"><b>Strengths:</b> Clinician-authored 655-question bank (coverage credibility). Three-arm comparison cleanly isolates the structure effect from the adaptation effect. Stratification by patient behavior is a real methodological contribution — most LLM dialogue benchmarks do not stratify by patient cooperativeness. Reproducible (benchmark released).</div><div class="row"><b>Relevance:</b> Layer 1 (task type): Conversational / adaptive information-gathering LLMs in clinical workflows — currently underrepresented in evaluation_methods_by_task.md. Closest existing category is Extraction, but methodology differs for *conversational* extraction. Layer 2 (existing kit): No direct kit fit. Useful for *future* kits involving virtual-patient intake (history-taking) or AI-scribe pre-visit triage. Reinforces stratification-by-patient-behavior pattern, complementing PQ-104 (Dreyfus-rubric stratification) and PQ-101 (matched-context for stratified physician benefit).</div><div class="row"><b>Verdict reasoning:</b> Strong methodological contribution, but: (a) preprint without peer review yet; (b) synthetic patients limit external validity; (c) no current evaluation kit slot directly applies. Promotion-worthy if paired with a real-patient validation study or once peer-reviewed. For now: file under papers.md as PQ-119 with &#39;verify&#39; tag; do NOT yet update Guidance — wait for peer-reviewed version or real-patient validation.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-119">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-119">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-119">? More info</button>
+  </div>
+</section>
+
+<section class="card is-rollover" data-id="PQ-120">
+  <div class="rollover-badge">📌 Still pending from 2026-04-28 · seen 2× · auto-skip in 2 more weeks</div>
+  <header class="card-head">
+    <span class="pq-id">PQ-120</span>
+    <span class="verdict" style="color:#64748b;">Background</span>
+  </header>
+  <div class="citation">Causio FA, et al. (20-author consortium). EuropeMedQA Study Protocol: A Multilingual, Multimodal Medical Examination Dataset for Language Model Evaluation. arXiv:2604.14306v2 [cs.CL]. v2 revision posted 2026 Apr 23.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2604.14306" target="_blank" rel="noopener">https://arxiv.org/abs/2604.14306</a></div>
+  <div class="row"><b>Overview:</b> Study *protocol* (not a results paper) for a multilingual + multimodal medical-exam benchmark sourced from official regulatory licensing exams in Italy, France, Spain, and Portugal. Designed as a contamination-resistant benchmark for cross-lingual transfer in medical LLMs. The contribution at this stage is the dataset construction methodology (FAIR + SPIRIT-AI compliant), not findings. Task type: Question-answering / multilingual evaluation. Setting: four European national licensing exams (IT, FR, ES, PT). Volume: TBD; sample size not yet specified. Human review: translation pipeline is automated (a meta-evaluation issue itself).</div><div class="row"><b>Eval question:</b> Can multimodal LLMs maintain performance across European national medical-licensing exams in non-English languages, on a benchmark designed to resist pretraining contamination?</div><div class="row"><b>Methodology:</b> Curation pipeline from official IT/FR/ES/PT national medical-licensing exams. Automated translation pipeline (translation quality is itself a meta-evaluation issue not addressed in the protocol). Zero-shot constrained prompting protocol. FAIR + SPIRIT-AI compliance for dataset publication.</div><div class="row"><b>Measurement:</b> TBD — protocol announces zero-shot accuracy on multilingual exam items as the primary endpoint.</div><div class="row"><b>Key findings:</b> No results yet (this is a protocol).</div><div class="row"><b>Soft spots:</b> Protocol-only — no benchmark numbers reported. Translation pipeline is automated; translation quality is itself an LLM-evaluation pitfall not addressed in the protocol. Licensing-exam questions optimize for medical-knowledge recall, not clinical-reasoning depth (a known limitation of MCQ-style benchmarks — see KTP #7 and PQ-53 benchmark-reality gap).</div><div class="row"><b>Strengths:</b> Fills a real gap (non-English clinical LLM benchmarks). FAIR + SPIRIT-AI compliance signals careful planning. 20-author multinational consortium suggests genuine ecosystem effort.</div><div class="row"><b>Relevance:</b> Layer 1 (task type): Question-answering / multilingual evaluation — broadly relevant. Layer 2: No existing kit fit; valuable as background reference for KTP #6 (benchmark-reality gap) — once results land, will provide a multilingual data point.</div><div class="row"><b>Verdict reasoning:</b> Log as PQ-120 in papers.md as a study protocol with a &#39;follow up when results posted&#39; tag. Do NOT update Guidance based on a protocol. Watch for the v3+ results paper.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-120">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-120">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-120">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-124">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-124</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Brodeur PG, Buckley TA, Kanjee Z, Goh E, Ling EB, Jain P, Cabral S, Abdulnour RE, Haimovich AD, Freed JA, Olson A, Morgan DJ, Hom J, Gallo R, McCoy LG, Mombini H, Lucas C, Fotoohi M, Gwiazdon M, Restifo D, Restrepo D, Horvitz E, Chen J, Manrai AK, Rodman A. Performance of a large language model on the reasoning tasks of a physician. Science. 2026 Apr 30. doi:10.1126/science.adz4433.</div>
+  <div class="url"><a href="https://www.science.org/doi/10.1126/science.adz4433" target="_blank" rel="noopener">https://www.science.org/doi/10.1126/science.adz4433</a></div>
+  <div class="row"><b>Overview:</b> Peer-reviewed Science publication (Apr 30, 2026) by the Brodeur/Manrai/Rodman group at Harvard/BIDMC evaluating OpenAI&#39;s o1-preview against attending physicians on physician-graded clinical reasoning tasks. Five experiments measure differential diagnosis generation, displayed diagnostic reasoning, triage differential, probabilistic reasoning, and management reasoning, all adjudicated by physician experts using validated psychometric instruments. Capped by a real-world prospective comparison of LLM vs physician second-opinions on 76 randomly-selected emergency-department patients at a tertiary academic medical center (Beth Israel Deaconess). Headline finding: o1-preview reached the correct primary diagnosis on 67.1% of real ED cases vs 55.3% / 50.0% for the two attending physician comparators. Authors are explicit that this is not a license for deployment but a quantitative threshold that justifies moving to prospective interventional trials.</div><div class="row"><b>Eval question:</b> Can a frontier reasoning LLM match or exceed attending physicians on canonical clinical reasoning tasks under physician-graded, psychometrically validated rubrics — both on curated cases and in the real ED? What evaluation design provides credible evidence at that threshold?</div><div class="row"><b>Methodology:</b> Multi-experiment design: (1) curated benchmark cases with hundreds of physicians as comparators, (2) experiments stratified by reasoning sub-task (differential, triage, probabilistic, management) each with its own validated instrument, (3) real-world ED prospective second-opinion arm where the model receives only the data available at each decision point in the EHR. Adjudication by blinded physician experts. Psychometric validation of rubrics is an explicit step. Critical methodological detail (verified independently): real-world ED data was passed to the model verbatim from the EHR — no preprocessing — to reflect actual deployment conditions.</div><div class="row"><b>Measurement:</b> Physician-rated accuracy and reasoning quality scores per sub-task; primary-diagnosis accuracy at the ED case level (67.1% LLM vs 55.3%/50.0% physicians). Inter-rater reliability and rubric psychometrics reported. Statistical comparison physician-vs-LLM on each instrument.</div><div class="row"><b>Key findings:</b> LLM matched or exceeded attending physicians across most reasoning sub-tasks; on the real ED subset (N=76), LLM outperformed both physician comparators on primary diagnosis. On management-reasoning tasks (antibiotic stewardship, goals-of-care conversations), o1-preview significantly outperformed prior AI models AND humans-using-conventional-aids (Google + UpToDate). Authors emphasize this is necessary but not sufficient evidence — call explicitly for rigorous prospective clinical trials before deployment.</div><div class="row"><b>Soft spots:</b> Single LLM (o1-preview) tested; no per-specialty stratification; real-world arm is N=76 from one tertiary academic ED — generalizability to community/LMIC settings unestablished. &#39;Physician second opinion&#39; is a contrived comparator (physicians had access to same EHR data but not bedside exam). Outcome is diagnostic accuracy; downstream clinical impact (treatment decisions, harm) not measured. The &#39;no preprocessing&#39; design is realistic but does not test how the model behaves on noisier or lower-quality EHRs (private practice, LMIC settings).</div><div class="row"><b>Strengths:</b> Peer-reviewed in Science. Multi-experiment, multi-rubric design with psychometric validation — sets a quality bar for benchmark design. Explicit articulation that benchmark performance does not imply clinical readiness; recommends prospective trials. Real-world ED arm grounds the synthetic-benchmark numbers in realistic clinical context. The &#39;no preprocessing of EHR data&#39; methodological choice is a gold-standard design move that future kits should adopt.</div><div class="row"><b>Relevance:</b> Layer 1 (task type): Classification + Generation (differential diagnosis), decision-support reasoning. Most relevant to evaluation_methods_by_task.md §Classification (clinical reasoning evaluation) and §Generation (reasoning quality). Layer 2 (kit connection): Strongly relevant to the Lung Cancer Screening Eligibility kit (alerting + reasoning) and to the Missed Consultation Alert kit (decision-support evaluation). Provides a published anchor for the &#39;benchmark performance does not equal clinical readiness&#39; principle already in KTP #8 — extends from qualitative assertion to quantitative evidence (67.1% on real ED cases as a real-world performance reference point).</div><div class="row"><b>Verdict reasoning:</b> Highest-signal LLM clinical evaluation paper of the week. Peer-reviewed in Science, from the Manrai/Rodman group whose prior work (McCoy NEJM AI = S-12, AMIE = PQ-95) is already canonical in the KB. Five-experiment design with psychometric validation directly extends KTP #8 (LLM benchmarks bounded). Real-world ED arm provides the missing quantitative evidence of the benchmark-vs-deployment gap that KTP #8 currently asserts qualitatively. Independently verified via Harvard Magazine, EurekAlert, Science News (not just Science abstract). Promote with high confidence.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-124">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-124">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-124">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-125">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-125</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Li AJ. Green Shielding: A User-Centric Approach Towards Trustworthy AI — LLM-Assisted Medical Diagnosis as a Case Study. arXiv:2604.24700. 2026 Apr 27.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2604.24700" target="_blank" rel="noopener">https://arxiv.org/abs/2604.24700</a></div>
+  <div class="row"><b>Overview:</b> Single-author arXiv preprint (Apr 27, 2026) proposing the &#39;Green Shielding&#39; agenda for evidence-backed deployment guidance: characterize how *benign* (non-adversarial) input variation shifts LLM behavior. Operationalized via the **CUE** criteria — Context (benchmarks reflect authentic deployment context), Utility (reference standards and metrics capture true clinical utility), Elicitation (perturbations reflect realistic variation in how users phrase queries). Instantiated in medical diagnosis through a new benchmark, **HealthCareMagic-Diagnosis (HCM-Dx)**, of patient-authored queries with structured reference diagnosis sets and clinically grounded metrics for differential-diagnosis lists. Built under the PCS (Predictability, Computability, Stability) framework, developed with practicing physicians.</div><div class="row"><b>Eval question:</b> How sensitive are clinical LLM outputs to *non-adversarial* user-phrasing variation — and what evaluation design captures that sensitivity in a way that is decision-relevant for deployment?</div><div class="row"><b>Methodology:</b> Framework paper + benchmark release. Benchmark (HCM-Dx) uses real patient-authored queries (not clinician-rephrased vignettes), with structured reference diagnosis sets and clinically grounded scoring. Perturbation methodology systematically varies how the *same* clinical question is phrased and measures resulting model-output drift. Aligned with PCS framework.</div><div class="row"><b>Measurement:</b> Sensitivity-to-perturbation metrics on differential-diagnosis lists (reference-set-based scoring); drift in top-K accuracy under benign rephrasings; clinical utility metrics defined with practicing physicians.</div><div class="row"><b>Key findings:</b> Establishes that benign phrasing variation — distinct from adversarial red-teaming — produces non-trivial drift in clinical LLM outputs; existing eval pipelines that use clinician-curated phrasings systematically under-report this. CUE criteria proposed as a deployment-readiness checklist that is more discriminating than aggregate accuracy.</div><div class="row"><b>Soft spots:</b> Single-author preprint, not peer-reviewed. HCM-Dx is built from a public Q&amp;A dataset (HealthCareMagic) — unclear how representative of US clinical population. CUE is presented as an agenda; concrete thresholds for &#39;acceptable&#39; elicitation-stability are not yet operationalized. No comparison vs existing perturbation benchmarks (e.g. MedQA noise variants).</div><div class="row"><b>Strengths:</b> Cleanly distinguishes adversarial robustness (already in KTP #9) from *benign elicitation stability* — a gap in the current Guidance. Patient-authored queries instead of clinician-rephrased ones is a concrete, actionable design move. Co-developed with practicing physicians.</div><div class="row"><b>Relevance:</b> Layer 1 (task type): Classification (diagnosis) + Conversational. Relevant to evaluation_methods_by_task.md §Classification (input-sensitivity testing) and to a potential new subsection on *patient-facing* LLM evaluation. Layer 2 (kit connection): Most relevant to any future patient-facing kit (the Discharge Letter Summarization kit currently treats output side; CUE adds an *input* dimension). Could extend KTP #9 to distinguish adversarial vs benign elicitation.</div><div class="row"><b>Verdict reasoning:</b> Methodologically novel (CUE / benign-elicitation framing is not currently in the KB) and timely, but single-author preprint with no empirical results table in the abstract. Verify with the full text before promoting — specifically (i) the benchmark numbers across models, (ii) whether HCM-Dx is releasable with PHI-safe terms, (iii) inter-rater reliability of the clinically grounded metrics. If those check out, this would justify a new sub-bullet under KTP #9.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-125">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-125">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-125">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-126">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-126</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Pugh SL, Yang E, Sutherland AM, Breschi A. Detecting Clinical Discrepancies in Health Coaching Agents: A Dual-Stream Memory and Reconciliation Architecture. arXiv:2604.27045. 2026 Apr 29.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2604.27045" target="_blank" rel="noopener">https://arxiv.org/abs/2604.27045</a></div>
+  <div class="row"><b>Overview:</b> Verily Health team arXiv preprint (Apr 29, 2026) addressing the evaluation of *longitudinal* LLM health-coaching agents that must reconcile two imperfect sources of truth: the patient&#39;s evolving narrative (free-text conversational history) and the structured EHR (FHIR resources). Proposes a Dual-Stream Memory Architecture that strictly separates the two streams and a Reconciliation Engine that surfaces clinically meaningful discrepancies (e.g., patient says &#39;I stopped that medication&#39; but FHIR still lists it as active). Includes a discrepancy-detection evaluation harness and taxonomy.</div><div class="row"><b>Eval question:</b> How should we evaluate LLM agents that operate over *longitudinal* care, where two parallel imperfect data sources (patient narrative vs structured EHR) routinely disagree — and where a &#39;correct&#39; answer is the *detection* of the disagreement rather than picking a side?</div><div class="row"><b>Methodology:</b> Architecture proposal + evaluation harness. Dual-stream memory keeps narrative and FHIR strictly separate; the Reconciliation Engine flags discrepancies for human review. Evaluation taxonomy categorizes discrepancy types; discrepancy detection is measured against a curated discrepancy set.</div><div class="row"><b>Measurement:</b> Discrepancy detection sensitivity / specificity per discrepancy class (medication mismatch, condition contradiction, dose drift, etc.); end-to-end agent reliability over multi-session interactions.</div><div class="row"><b>Key findings:</b> Treating the two information sources as a single context (standard RAG-over-everything) systematically suppresses clinically meaningful discrepancies; explicit dual-stream + reconciliation reveals them. Frames longitudinal care as a fundamentally different evaluation problem than single-turn QA.</div><div class="row"><b>Soft spots:</b> Industry preprint from Verily — possible publication bias toward their architecture. No public benchmark released (as far as the abstract indicates). Discrepancy detection ground truth is hard to establish at scale; inter-rater agreement on what counts as &#39;clinically meaningful&#39; is not yet reported. No head-to-head against simpler reconciliation baselines.</div><div class="row"><b>Strengths:</b> Reframes longitudinal LLM agent evaluation around discrepancy detection rather than single-turn accuracy — a genuinely under-served evaluation pattern in the current KB. Aligns with the operational reality of ambient scribe / chronic-care assistant deployments (Abridge, Tortus). FHIR-grounded structured side is healthcare-realistic.</div><div class="row"><b>Relevance:</b> Layer 1 (task type): Conversational + Extraction (discrepancy = a form of cross-source extraction). Relevant to evaluation_methods_by_task.md §Extraction (discrepancy as a class of extraction error) and to a potential new section on *longitudinal/agentic* evaluation. Layer 2 (kit connection): No current kit fits cleanly; closest is the Missed Consultation Alert kit (alert-pattern evaluation). Most actionable as input to any future longitudinal-care kit.</div><div class="row"><b>Verdict reasoning:</b> The dual-stream/reconciliation framing is methodologically novel for the KB, and &#39;discrepancy detection as the primary evaluation target&#39; is a useful generalization of safety-gate thinking. But the paper is a Verily-internal architecture preprint with no public benchmark or external validation. Verify the empirical content of the full text — specifically the discrepancy taxonomy and detection metrics — before promoting. Strong candidate for KTP extension if the methodology is well-grounded.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-126">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-126">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-126">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-127">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-127</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Iglesias G, Bello-Orgaz G, Navas-Loro M, Ramirez-Atencia C, Salvador Robert M, Baca-Garcia E. Fidelity, Diversity, and Privacy: A Multi-Dimensional LLM Evaluation for Clinical Data Augmentation. arXiv:2604.27014. 2026 Apr 29.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2604.27014" target="_blank" rel="noopener">https://arxiv.org/abs/2604.27014</a></div>
+  <div class="row"><b>Overview:</b> arXiv preprint (Apr 29, 2026, Universidad Autónoma de Madrid + clinical co-authors) proposing a three-axis evaluation methodology for LLM-generated synthetic clinical text: **semantic fidelity** (does the synthetic text match the conditioning ICD-10 code clinically?), **lexical diversity** (does the generator collapse onto a few templates?), and **privacy/plagiarism** (does the generator reproduce training-set fragments verbatim?). Applied to mental health evaluation reports generated by DeepSeek-R1, OpenBioLLM-Llama3, and Qwen 3.5 conditioned on ICD-10 codes.</div><div class="row"><b>Eval question:</b> When LLMs are used to generate synthetic clinical text for downstream training (data augmentation under privacy constraints), what evaluation axes are necessary to certify that the synthetic data is clinically faithful, diverse enough to be useful, and not a privacy-leakage vector?</div><div class="row"><b>Methodology:</b> Three-axis evaluation: semantic fidelity (compared against held-out real reports for the same ICD-10 code), lexical diversity (vocabulary entropy / type-token ratios), privacy (n-gram overlap and near-duplicate detection against the training set). Applied to three open-source LLM generators across multiple ICD-10 categories in mental health.</div><div class="row"><b>Measurement:</b> Semantic fidelity scores (model-vs-real similarity per ICD-10 code), diversity indices, plagiarism rates (verbatim and near-duplicate hit rates). Per-model and per-ICD-10-class breakdown.</div><div class="row"><b>Key findings:</b> All three tested LLMs produced clinically coherent, diverse, and privacy-safe synthetic mental health reports — but the per-model and per-condition profile differs substantially, so any data-augmentation pipeline needs the three-axis evaluation rather than picking a model on fidelity alone.</div><div class="row"><b>Soft spots:</b> Mental-health single-domain study; whether the same three axes generalize to non-psychiatric clinical text (e.g., discharge summaries, oncology notes) is not tested. &#39;Privacy-safe&#39; claim depends on n-gram-overlap detection — does not bound membership-inference risk. No downstream-utility test (does training on the synthetic data actually improve a clinical NLP task?). Spanish-language clinical context may not transfer to English-only pipelines.</div><div class="row"><b>Strengths:</b> Three-axis framing (fidelity / diversity / privacy) is a clean evaluation rubric for the under-served question of *generator quality for data augmentation*. ICD-10 conditioning is a realistic clinical anchor. Multi-model comparison demonstrates that the axes are discriminating.</div><div class="row"><b>Relevance:</b> Layer 1 (task type): Generation (synthetic clinical text) + cross-cutting evaluation methodology for data-augmentation pipelines. Relevant to evaluation_methods_by_task.md §Generation (synthetic data quality evaluation) and adjacent to safety_vs_effectiveness.md (privacy as an effectiveness-bounded safety axis). Layer 2 (kit connection): No current kit uses synthetic data augmentation, but this is an emerging pattern; would inform any future kit that proposes synthetic augmentation as a solution to small-N retrospective design.</div><div class="row"><b>Verdict reasoning:</b> Useful three-axis rubric for an evaluation question (synthetic clinical data generation quality) that is currently absent from the KB. But mental-health-only, no downstream-utility test, preprint. The fidelity/diversity/privacy framing is the durable contribution; specific findings are domain-bound. Verify the full text for (i) effect sizes on each axis, (ii) whether the privacy test is more rigorous than n-gram overlap, before promoting. Better as &#39;Interesting, verify&#39; for now.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-127">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-127">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-127">? More info</button>
+  </div>
+</section>
+</div>
+
+<div class="cart">
+  <div class="cart-inner">
+    <div class="cart-summary" id="summary">No choices yet. Tap a button on a card above.</div>
+    <button class="send-btn" id="sendBtn" disabled>Send 0 / 7 decisions</button>
+    <button class="clear-link" id="clearBtn">Clear all my choices</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const ALL_IDS = ["PQ-118","PQ-119","PQ-120","PQ-124","PQ-125","PQ-126","PQ-127"];
+  const REPLY_TO = "tali.biron@gmail.com";
+  const REPLY_SUBJECT = "Re: Scout 2026-05-02 — 7 source(s) (PQ-118, PQ-119, PQ-120, PQ-124, PQ-125, PQ-126, PQ-127)";
+  const STORAGE_KEY = "scout-cart-2026-05-02";
+
+  // Load saved state from localStorage (so refresh doesn't lose progress)
+  let choices = {};
+  try { choices = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) {}
+
+  function saveAndRender() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(choices));
+
+    // Re-style each card based on choice
+    document.querySelectorAll('.card').forEach(card => {
+      const id = card.dataset.id;
+      card.classList.remove('chosen-promote', 'chosen-skip', 'chosen-more');
+      card.querySelectorAll('.choice').forEach(b => b.classList.remove('active'));
+      const c = choices[id];
+      if (c) {
+        card.classList.add('chosen-' + c);
+        card.querySelector('.choice.' + c).classList.add('active');
+      }
+    });
+
+    // Update sticky summary + send button
+    const made = ALL_IDS.filter(id => choices[id]);
+    const pending = ALL_IDS.filter(id => !choices[id]);
+    const counts = { promote:0, skip:0, more:0 };
+    made.forEach(id => counts[choices[id]]++);
+
+    let html = '';
+    if (counts.promote) html += '<span class="badge promote">' + counts.promote + ' promote</span>';
+    if (counts.skip)    html += '<span class="badge skip">' + counts.skip + ' skip</span>';
+    if (counts.more)    html += '<span class="badge more">' + counts.more + ' more</span>';
+    if (pending.length) html += '<span class="badge pending">' + pending.length + ' pending</span>';
+    if (!made.length && !pending.length) html = 'No choices yet.';
+    document.getElementById('summary').innerHTML = html || 'No choices yet.';
+
+    const btn = document.getElementById('sendBtn');
+    btn.disabled = made.length === 0;
+    btn.textContent = 'Send ' + made.length + ' / ' + ALL_IDS.length + ' decisions';
+  }
+
+  // Wire button clicks
+  document.querySelectorAll('.choice').forEach(b => {
+    b.addEventListener('click', () => {
+      const id = b.dataset.id;
+      const choice = b.dataset.choice;
+      // Toggle off if same choice clicked again
+      if (choices[id] === choice) delete choices[id];
+      else choices[id] = choice;
+      saveAndRender();
+    });
+  });
+
+  // Send button — uses mailto on mobile (opens native Gmail app), Gmail web on desktop.
+  document.getElementById('sendBtn').addEventListener('click', () => {
+    const lines = ALL_IDS.filter(id => choices[id]).map(id => choices[id] + ' ' + id);
+    if (!lines.length) return;
+    const body = '# Scout decisions for ' + "2026-05-02" + '\n# Sent from the cart page\n\n' + lines.join('\n') + '\n';
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const url = isMobile
+      ? 'mailto:' + encodeURIComponent(REPLY_TO) + '?subject=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body)
+      : 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(REPLY_TO) + '&su=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body);
+    // mailto must be same-window on iOS; _blank is fine for https
+    if (isMobile) window.location.href = url;
+    else window.open(url, '_blank');
+  });
+
+  // Clear button
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    if (!confirm('Clear all your choices on this page?')) return;
+    choices = {};
+    saveAndRender();
+  });
+
+  saveAndRender();
+})();
+</script>
+</body>
+</html>
