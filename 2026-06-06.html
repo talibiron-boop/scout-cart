@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scout decisions — 2026-06-06</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; padding:0 0 180px 0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; background:#f8fafc; color:#0f172a; }
+  .container { max-width:760px; margin:0 auto; padding:24px 16px; }
+  h1 { font-size:22px; margin:0 0 8px 0; color:#1e40af; }
+  .sub { font-size:13px; color:#64748b; margin-bottom:20px; }
+  .help { background:#ecfeff; border:2px solid #0891b2; border-radius:8px; padding:14px 16px; margin-bottom:20px; font-size:13px; color:#164e63; line-height:1.5; }
+  .card { border:1px solid #e2e8f0; border-radius:10px; padding:16px; margin-bottom:14px; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.03); }
+  .card.is-rollover { border-color:#fbbf24; background:#fffbeb; }
+  .card.chosen-promote { border-color:#059669; box-shadow:0 0 0 2px #05966933; }
+  .card.chosen-skip { border-color:#dc2626; box-shadow:0 0 0 2px #dc262633; }
+  .card.chosen-more { border-color:#64748b; box-shadow:0 0 0 2px #64748b33; }
+  .rollover-badge { background:#fde68a; color:#78350f; font-size:11px; font-weight:700; padding:5px 10px; border-radius:10px; display:inline-block; margin-bottom:10px; }
+  .card-head { display:flex; justify-content:space-between; align-items:baseline; }
+  .pq-id { font-size:14px; font-weight:700; color:#1e40af; }
+  .verdict { font-size:12px; font-weight:700; }
+  .citation { margin-top:8px; font-size:14px; line-height:1.5; font-weight:500; }
+  .url { margin-top:4px; font-size:12px; }
+  .url a { color:#2563eb; }
+  .row { margin-top:8px; font-size:13px; color:#334155; line-height:1.5; }
+  .row b { color:#0f172a; }
+  .choice-row { display:flex; gap:8px; margin-top:14px; }
+  .choice { flex:1; padding:14px 8px; border-radius:8px; border:2px solid transparent; font-size:14px; font-weight:700; cursor:pointer; background:#f1f5f9; color:#475569; transition:all .15s; font-family:inherit; }
+  .choice:hover { transform:translateY(-1px); }
+  .choice.promote.active { background:#059669; color:#fff; border-color:#047857; }
+  .choice.skip.active { background:#dc2626; color:#fff; border-color:#b91c1c; }
+  .choice.more.active { background:#64748b; color:#fff; border-color:#475569; }
+  /* Sticky bottom bar */
+  .cart { position:fixed; bottom:0; left:0; right:0; background:#fff; border-top:2px solid #e2e8f0; box-shadow:0 -4px 12px rgba(0,0,0,.08); padding:12px 16px; z-index:100; }
+  .cart-inner { max-width:760px; margin:0 auto; }
+  .cart-summary { font-size:13px; color:#475569; margin-bottom:8px; line-height:1.4; }
+  .cart-summary b { color:#0f172a; }
+  .cart-summary .badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:700; margin-right:6px; }
+  .badge.promote { background:#d1fae5; color:#065f46; }
+  .badge.skip { background:#fee2e2; color:#991b1b; }
+  .badge.more { background:#e2e8f0; color:#334155; }
+  .badge.pending { background:#fef3c7; color:#92400e; }
+  .send-btn { display:block; width:100%; padding:16px; border:none; border-radius:8px; background:#0891b2; color:#fff; font-size:16px; font-weight:700; cursor:pointer; font-family:inherit; }
+  .send-btn:hover:not(:disabled) { background:#0e7490; }
+  .send-btn:disabled { background:#cbd5e1; cursor:not-allowed; }
+  .clear-link { display:inline-block; margin-top:6px; font-size:12px; color:#64748b; text-decoration:underline; cursor:pointer; background:none; border:none; padding:0; font-family:inherit; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Scout decisions — 2026-06-06</h1>
+  <div class="sub">1 source(s) to review. Choices auto-save in this browser.</div>
+
+  <div class="help">
+    Tap <b style="color:#059669;">Promote</b>, <b style="color:#dc2626;">Skip</b>, or <b style="color:#475569;">More info</b> on each card. The bar at the bottom keeps a running list of your choices. When you're done, hit the cyan <b>Send</b> button — Gmail opens with one email containing all your decisions. Hit Send in Gmail and you're done.
+  </div>
+
+  
+<section class="card" data-id="PB-07">
+  
+  <header class="card-head">
+    <span class="pq-id">PB-07</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Thinking Machines Lab (He H, et al.). Defeating Nondeterminism in LLM Inference. Thinking Machines Lab — Connectionism (blog). 2025. Reference code: github.com/thinking-machines-lab/batch-invariant-ops</div>
+  <div class="url"><a href="https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/" target="_blank" rel="noopener">https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/</a></div>
+  <div class="row"><b>Overview:</b> Engineering blog (you asked to route this one through scout). Explains why production LLM endpoints return DIFFERENT completions for the SAME prompt even at temperature 0, and ships open-source batch-invariant kernels that remove the effect. Source type: engineering blog (infrastructure, not clinical-specific). System: LLM inference servers (vLLM-class), GPU reduction kernels (RMSNorm/matmul/attention). Task type: reproducibility/determinism infrastructure — cross-cutting, applies to any evaluation. Clinical content: none (foundational LLM methodology).</div><div class="row"><b>Eval question:</b> When is &#39;same input → same output&#39; (numerical reproducibility) a property an evaluator actually HOLDS — versus one they ASSUME from setting temperature 0? Separates the decoding knobs from the serving-stack behavior that really controls reproducibility.</div><div class="row"><b>Methodology:</b> • Diagnoses the cause: dynamic request BATCHING changes the numerical reduction order, so identical inputs round differently depending on co-tenant server load. • Shows most forward-pass kernels are bitwise-repeatable for a FIXED input shape, but inference is SYSTEM-level nondeterministic because output depends on batch size. • Implements batch-invariant RMSNorm/matmul/attention kernels (fixed reduction order, padding-safe). • Demonstrates bitwise-identical outputs across varying batch sizes / concurrency.</div><div class="row"><b>Measurement:</b> Determinism criterion = bitwise-identical output across varying batch size and server load. Qualitative engineering demonstration; no clinical metric or threshold.</div><div class="row"><b>Key findings:</b> • Primary cause of temp-0 nondeterminism is BATCH NON-INVARIANCE, not floating-point atomics. • With batch-invariant kernels, outputs are reproducible regardless of concurrency — at a performance cost. • Practical levers when you control the stack: temperature 0 + top_k 1 + top_p 1, FP32 where stability beats speed, and TEST UNDER REAL CONCURRENCY, not a single local loop.</div><div class="row"><b>Soft spots:</b> • Non-clinical; makes no healthcare claim. • The fix requires CONTROL of the inference stack (open weights / self-host / vLLM) — NOT available on most multi-tenant commercial APIs, which is the typical clinical deployment. • Addresses only NUMERICAL reproducibility — silent on behavioral/semantic stability (paraphrase robustness, adversarial hallucination), which is the PQ-91 / PQ-59 / PQ-107 axis. • Performance overhead may be unacceptable in latency-sensitive serving.</div><div class="row"><b>Strengths:</b> • Named expert; open-source, independently verifiable reference library. • Specific, falsifiable mechanism; corrects a widespread misconception (&#39;temp 0 ⇒ deterministic&#39;). • Engineering-honest about the speed tradeoff. • Canonical reference for a distinction the KB already half-makes (PQ-91, PQ-59).</div><div class="row"><b>Relevance:</b> Layer 1 (task types): cross-cutting — every task type. Most directly reinforces Extraction §2 &#39;Non-Determinism as Evaluation Metric&#39; (PQ-91) and clarifies it is DISTINCT from PQ-59&#39;s behavioral (adversarial-hallucination) non-determinism. Layer 2 (kit connection): any kit that claims reproducibility BECAUSE temperature is 0 should instead MEASURE it (R repeats; report run-to-run variability). Directly relevant to VAP and CTA-PR extraction on multi-tenant endpoints, where batching variance is not user-controllable. Canonical anchor for the draft &#39;Two Determinisms&#39; / &#39;R-Selector&#39; one-pagers in Incoming/for planner/.</div><div class="row"><b>Verdict reasoning:</b> By the strict healthcare scope this is borderline (non-clinical engineering blog → often &#39;Background&#39;). It clears the bar because it is the canonical, independently-verifiable reference for a claim the KB already relies on and practitioners frequently get wrong: temperature 0 is a precision setting, not a guarantee of reproducibility, and the residual non-determinism is a SERVING-STACK property (batch non-invariance) you cannot control on a multi-tenant endpoint. Guidance impact would be a conceptual reinforcement — a short note under Extraction §2 separating numerical reproducibility (serving-stack, measure with R) from behavioral stability (PQ-59/PQ-91) — not a clinical-methodology change. Passes all blog-credibility checks. Your call.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PB-07">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PB-07">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PB-07">? More info</button>
+  </div>
+</section>
+</div>
+
+<div class="cart">
+  <div class="cart-inner">
+    <div class="cart-summary" id="summary">No choices yet. Tap a button on a card above.</div>
+    <button class="send-btn" id="sendBtn" disabled>Send 0 / 1 decisions</button>
+    <button class="clear-link" id="clearBtn">Clear all my choices</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const ALL_IDS = ["PB-07"];
+  const REPLY_TO = "tali.biron@gmail.com";
+  const REPLY_SUBJECT = "Re: Scout 2026-06-06 — 1 source(s) (PB-07)";
+  const STORAGE_KEY = "scout-cart-2026-06-06";
+
+  // Load saved state from localStorage (so refresh doesn't lose progress)
+  let choices = {};
+  try { choices = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) {}
+
+  function saveAndRender() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(choices));
+
+    // Re-style each card based on choice
+    document.querySelectorAll('.card').forEach(card => {
+      const id = card.dataset.id;
+      card.classList.remove('chosen-promote', 'chosen-skip', 'chosen-more');
+      card.querySelectorAll('.choice').forEach(b => b.classList.remove('active'));
+      const c = choices[id];
+      if (c) {
+        card.classList.add('chosen-' + c);
+        card.querySelector('.choice.' + c).classList.add('active');
+      }
+    });
+
+    // Update sticky summary + send button
+    const made = ALL_IDS.filter(id => choices[id]);
+    const pending = ALL_IDS.filter(id => !choices[id]);
+    const counts = { promote:0, skip:0, more:0 };
+    made.forEach(id => counts[choices[id]]++);
+
+    let html = '';
+    if (counts.promote) html += '<span class="badge promote">' + counts.promote + ' promote</span>';
+    if (counts.skip)    html += '<span class="badge skip">' + counts.skip + ' skip</span>';
+    if (counts.more)    html += '<span class="badge more">' + counts.more + ' more</span>';
+    if (pending.length) html += '<span class="badge pending">' + pending.length + ' pending</span>';
+    if (!made.length && !pending.length) html = 'No choices yet.';
+    document.getElementById('summary').innerHTML = html || 'No choices yet.';
+
+    const btn = document.getElementById('sendBtn');
+    btn.disabled = made.length === 0;
+    btn.textContent = 'Send ' + made.length + ' / ' + ALL_IDS.length + ' decisions';
+  }
+
+  // Wire button clicks
+  document.querySelectorAll('.choice').forEach(b => {
+    b.addEventListener('click', () => {
+      const id = b.dataset.id;
+      const choice = b.dataset.choice;
+      // Toggle off if same choice clicked again
+      if (choices[id] === choice) delete choices[id];
+      else choices[id] = choice;
+      saveAndRender();
+    });
+  });
+
+  // Send button — uses mailto on mobile (opens native Gmail app), Gmail web on desktop.
+  document.getElementById('sendBtn').addEventListener('click', () => {
+    const lines = ALL_IDS.filter(id => choices[id]).map(id => choices[id] + ' ' + id);
+    if (!lines.length) return;
+    const body = '# Scout decisions for ' + "2026-06-06" + '\n# Sent from the cart page\n\n' + lines.join('\n') + '\n';
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const url = isMobile
+      ? 'mailto:' + encodeURIComponent(REPLY_TO) + '?subject=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body)
+      : 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(REPLY_TO) + '&su=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body);
+    // mailto must be same-window on iOS; _blank is fine for https
+    if (isMobile) window.location.href = url;
+    else window.open(url, '_blank');
+  });
+
+  // Clear button
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    if (!confirm('Clear all your choices on this page?')) return;
+    choices = {};
+    saveAndRender();
+  });
+
+  saveAndRender();
+})();
+</script>
+</body>
+</html>
