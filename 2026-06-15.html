@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scout decisions — 2026-06-15</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; padding:0 0 180px 0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; background:#f8fafc; color:#0f172a; }
+  .container { max-width:760px; margin:0 auto; padding:24px 16px; }
+  h1 { font-size:22px; margin:0 0 8px 0; color:#1e40af; }
+  .sub { font-size:13px; color:#64748b; margin-bottom:20px; }
+  .help { background:#ecfeff; border:2px solid #0891b2; border-radius:8px; padding:14px 16px; margin-bottom:20px; font-size:13px; color:#164e63; line-height:1.5; }
+  .card { border:1px solid #e2e8f0; border-radius:10px; padding:16px; margin-bottom:14px; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.03); }
+  .card.is-rollover { border-color:#fbbf24; background:#fffbeb; }
+  .card.chosen-promote { border-color:#059669; box-shadow:0 0 0 2px #05966933; }
+  .card.chosen-skip { border-color:#dc2626; box-shadow:0 0 0 2px #dc262633; }
+  .card.chosen-more { border-color:#64748b; box-shadow:0 0 0 2px #64748b33; }
+  .rollover-badge { background:#fde68a; color:#78350f; font-size:11px; font-weight:700; padding:5px 10px; border-radius:10px; display:inline-block; margin-bottom:10px; }
+  .card-head { display:flex; justify-content:space-between; align-items:baseline; }
+  .pq-id { font-size:14px; font-weight:700; color:#1e40af; }
+  .verdict { font-size:12px; font-weight:700; }
+  .citation { margin-top:8px; font-size:14px; line-height:1.5; font-weight:500; }
+  .url { margin-top:4px; font-size:12px; }
+  .url a { color:#2563eb; }
+  .row { margin-top:8px; font-size:13px; color:#334155; line-height:1.5; }
+  .row b { color:#0f172a; }
+  .choice-row { display:flex; gap:8px; margin-top:14px; }
+  .choice { flex:1; padding:14px 8px; border-radius:8px; border:2px solid transparent; font-size:14px; font-weight:700; cursor:pointer; background:#f1f5f9; color:#475569; transition:all .15s; font-family:inherit; }
+  .choice:hover { transform:translateY(-1px); }
+  .choice.promote.active { background:#059669; color:#fff; border-color:#047857; }
+  .choice.skip.active { background:#dc2626; color:#fff; border-color:#b91c1c; }
+  .choice.more.active { background:#64748b; color:#fff; border-color:#475569; }
+  /* Sticky bottom bar */
+  .cart { position:fixed; bottom:0; left:0; right:0; background:#fff; border-top:2px solid #e2e8f0; box-shadow:0 -4px 12px rgba(0,0,0,.08); padding:12px 16px; z-index:100; }
+  .cart-inner { max-width:760px; margin:0 auto; }
+  .cart-summary { font-size:13px; color:#475569; margin-bottom:8px; line-height:1.4; }
+  .cart-summary b { color:#0f172a; }
+  .cart-summary .badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:700; margin-right:6px; }
+  .badge.promote { background:#d1fae5; color:#065f46; }
+  .badge.skip { background:#fee2e2; color:#991b1b; }
+  .badge.more { background:#e2e8f0; color:#334155; }
+  .badge.pending { background:#fef3c7; color:#92400e; }
+  .send-btn { display:block; width:100%; padding:16px; border:none; border-radius:8px; background:#0891b2; color:#fff; font-size:16px; font-weight:700; cursor:pointer; font-family:inherit; }
+  .send-btn:hover:not(:disabled) { background:#0e7490; }
+  .send-btn:disabled { background:#cbd5e1; cursor:not-allowed; }
+  .clear-link { display:inline-block; margin-top:6px; font-size:12px; color:#64748b; text-decoration:underline; cursor:pointer; background:none; border:none; padding:0; font-family:inherit; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Scout decisions — 2026-06-15</h1>
+  <div class="sub">3 source(s) to review. Choices auto-save in this browser.</div>
+
+  <div class="help">
+    Tap <b style="color:#059669;">Promote</b>, <b style="color:#dc2626;">Skip</b>, or <b style="color:#475569;">More info</b> on each card. The bar at the bottom keeps a running list of your choices. When you're done, hit the cyan <b>Send</b> button — Gmail opens with one email containing all your decisions. Hit Send in Gmail and you're done.
+  </div>
+
+  
+<section class="card" data-id="PQ-141">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-141</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Shyr C, Ren B, Hsu C-Y, Tinker RJ, Cassini TA, Hamid R, Wright A, Bastarache L, Peterson JF, Malin BA, Xu H. A statistical framework for evaluating repeatability and reproducibility of large language models in diagnostic reasoning. medRxiv (preprint). 2025 Nov 4. doi:10.1101/2025.08.06.25333170</div>
+  <div class="url"><a href="https://www.medrxiv.org/content/10.1101/2025.08.06.25333170" target="_blank" rel="noopener">https://www.medrxiv.org/content/10.1101/2025.08.06.25333170</a></div>
+  <div class="row"><b>Overview:</b> Methods paper giving clinical evaluators a way to QUANTIFY LLM output consistency separately from accuracy, using FDA-draft-guidance vocabulary. Distinguishes repeatability (same prompt, repeated runs) from reproducibility (across prompts), and within each, semantic (clinical meaning) from internal (token-level) variability. Models: ChatGPT-4, ChatGPT-4o-mini, Llama-3.2-1B. Datasets: 518 MedQA (USMLE) + 90 Undiagnosed Diseases Network rare-disease cases. 912,000 generations (R=100 runs per prompt-case-model). Vanderbilt informatics group.</div><div class="row"><b>Eval question:</b> Consistency (&#39;same input → same output&#39;) is usually assumed, not measured. How do you measure whether an LLM is consistent — and is consistency the same as being correct? (Answer: no.)</div><div class="row"><b>Methodology:</b> Four 0–1 metrics: Semantic Repeatability (mean pairwise cosine similarity of MedEmbed-Large-v1 embeddings across runs); Internal Repeatability (mean across-run entropy, rescaled); Semantic Reproducibility (cosine similarity of prompt-specific mean embeddings across 5 prompts); Internal Reproducibility (mean abs diff in mean entropy across prompt pairs). 5 diagnostic-reasoning CoT prompts (Traditional/Differential/Intuitive/Analytic/Bayesian). R=100 runs; temp 0.5, top-k 30.</div><div class="row"><b>Measurement:</b> Consistency reported 0–1 per metric; no fixed pass/fail threshold (the contribution is the measurement framework). Pairs with the existing Extraction §2 &#39;report run-to-run variability with R repeats&#39; guidance (PQ-91).</div><div class="row"><b>Key findings:</b> Repeatability and reproducibility did NOT correlate with diagnostic accuracy — a model can be right without being consistent. Bayesian-reasoning CoT had significantly higher semantic repeatability. UDN rare-disease cases varied less across prompts than USMLE. Only for intuitive CoT was higher internal repeatability associated with accuracy (p&lt;0.001); no association for the other four prompts.</div><div class="row"><b>Soft spots:</b> Preprint; 3 models only; single temperature (0.5), so &#39;repeatability&#39; blends decoding stochasticity with serving-stack non-determinism (the batching cause PB-07 isolates); embedding-based semantic similarity inherits the embedding model&#39;s blind spots; diagnostic-reasoning QA, not extraction/classification — porting needs adaptation.</div><div class="row"><b>Strengths:</b> First clinical, large-N operationalization of the FDA repeatability/reproducibility vocabulary for LLMs; the accuracy≠consistency dissociation is clean and decision-relevant; separates semantic from internal variability rather than a single &#39;stability&#39; number.</div><div class="row"><b>Relevance:</b> Cross-cutting; most directly Extraction §2 (Non-Determinism as Evaluation Metric) and any generation/diagnostic-reasoning kit. The clinical statistical complement to PB-07 (PB-07 explains WHY numerical non-determinism exists; this gives clinicians HOW to measure it and shows it is orthogonal to accuracy). Anchors the R-Selector / Two-Determinisms planner drafts. If promoted: candidate note in Statistician_Guide.md (R repeats, semantic vs internal, FDA definitions) + Extraction §2 (operationalizes &#39;measure with R&#39;).</div><div class="row"><b>Verdict reasoning:</b> This is the source scan #29 flagged as the verify-next-cycle lead (then 403&#39;d), now reachable and fully verified. It closes the determinism thread: PB-07 (cause) + PQ-91 (accuracy-determinism tradeoff) + PQ-141 (clinical measurement framework, accuracy≠consistency). Preprint → cite as methodology, not as a fixed-threshold source.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-141">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-141">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-141">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-142">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-142</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Ye J(T), Tawfik D, Goodell AJ, Kotha NV, Buyyounouski MK, Bayati M. Scalable Stewardship of an LLM-Assisted Clinical Benchmark with Physician Oversight. arXiv (preprint). 2026 Apr 13. arXiv:2512.19691v3.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2512.19691" target="_blank" rel="noopener">https://arxiv.org/abs/2512.19691</a></div>
+  <div class="row"><b>Overview:</b> Methods paper on a validity problem the field mostly ignores: when a clinical benchmark&#39;s labels are LLM-assisted, how many are wrong and how do you fix them without re-labeling everything by hand? Proposes a three-phase stewardship protocol and shows corrected labels change both model rankings and downstream training. Stanford (Bayati group). 1,047 test instances; 50 physician-adjudicated for ground truth.</div><div class="row"><b>Eval question:</b> If the reference standard is partly machine-generated, the leaderboard may be measuring label noise. How do you audit and correct an LLM-assisted benchmark at scale while spending scarce physician time only where it matters?</div><div class="row"><b>Methodology:</b> Phase 1 — automated audit: tool-augmented LLM verifiers check labels against derivation metadata, flag suspect cases by supermajority across 5 runs. Phase 2 — independent recomputation: separate LLM agents recompute labels from the patient narrative alone (blinded), flag disagreements beyond ±5%. Phase 3 — physician adjudication of the highest-disagreement instances → ground truth.</div><div class="row"><b>Measurement:</b> Label agreement vs physician ground truth (95% CIs); downstream model accuracy on physician-labeled tests; mislabel/incomputable rate.</div><div class="row"><b>Key findings:</b> ≥27.3% of 1,047 instances likely mislabeled or incomputable. Recomputed labels: 74% physician agreement (95% CI 60–84%) vs 20% (11–33%) for originals. RL-trained models on corrected labels beat originals by +13.5pp (95% CI 10.6–16.6%). Frontier models re-scored on corrected labels: 16–23pp higher than originally reported.</div><div class="row"><b>Soft spots:</b> Single benchmark; preprint. The audit/recompute layers are themselves LLM-based — circularity mitigated by physician adjudication on the residual, but non-adjudicated corrections rest on LLM consensus. ±5% tolerance and supermajority-of-5 are design choices, not derived.</div><div class="row"><b>Strengths:</b> Quantifies a usually-invisible failure mode (benchmark label noise) and shows it flips conclusions; spends physician time only on the highest-disagreement residual (scalable); reports CIs and a downstream-utility test, not just agreement.</div><div class="row"><b>Relevance:</b> Classification / Extraction / any benchmark-based evaluation. Strengthens KTP #7 (benchmark scores ≠ clinical performance) and KTP #8 (LLM-as-judge validated but bounded) with a concrete label-quality mechanism; methodologically adjacent to PQ-93 (Mahbub multi-stage validation) and PQ-140 (human + LLM-judge co-validation). If promoted: a note that LLM-assisted reference labels need an audit-and-adjudicate pass before they gate a decision.</div><div class="row"><b>Verdict reasoning:</b> Clean, quantified contribution on benchmark label validity — directly relevant to anyone trusting an LLM-assisted reference standard. Preprint → cite the protocol and the 27.3% / 74%-vs-20% numbers with the single-benchmark caveat.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-142">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-142">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-142">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-143">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-143</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">He Q, Bi D, Lu J, Yang M, Chen Z, et al. MLB: A Scenario-Driven Benchmark for Evaluating Large Language Models in Clinical Applications. arXiv (preprint). 2026 Jan 8. arXiv:2601.06193.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2601.06193" target="_blank" rel="noopener">https://arxiv.org/abs/2601.06193</a></div>
+  <div class="row"><b>Overview:</b> A large clinical benchmark organized by usage SCENARIO (medical reasoning vs patient-facing service vs safety), scored by an expert-SFT-trained judge model rather than string metrics. 22 datasets (17 new), 64 specialties, 300 licensed-physician annotators; judge trained on 19,000 expert-annotated samples. 10 models evaluated (largely non-US: Kimi-K2-Instruct, Baichuan-M2-32B).</div><div class="row"><b>Eval question:</b> Can a judge model fine-tuned on expert annotations give reproducible, expert-aligned scoring across heterogeneous clinical scenarios — and does aggregate accuracy hide scenario-specific weakness?</div><div class="row"><b>Methodology:</b> Scenario-partitioned datasets; judge model via SFT on 19K expert annotations, validated against held-out human judgment; 10 models scored with per-scenario disaggregation.</div><div class="row"><b>Measurement:</b> Judge–human consistency: accuracy 92.1%, F1 94.37%, Cohen&#39;s κ 81.3%. Per-scenario accuracy plus a safety score.</div><div class="row"><b>Key findings:</b> Top model (Kimi-K2-Instruct) 77.3% overall but 61.3% in patient-facing vs 87.8% in medical-reasoning — large scenario gap. A smaller model (Baichuan-M2-32B) scored highest on safety (90.6%) — targeted training beats scale for safety.</div><div class="row"><b>Soft spots:</b> Preprint; mostly non-US models, so phrasing/guideline transfer to a US/Hebrew clinical setting is unclear; judge-validation is in-distribution (same annotation style for train and test); the &#39;scenario&#39; taxonomy is bespoke, reusability unproven.</div><div class="row"><b>Strengths:</b> Per-scenario disaggregation surfaces the patient-facing drop (reinforces PQ-102 task-vs-patient gap and PQ-101 patient-facing weakness); expert-SFT judge with reported agreement is a reusable pattern where a fixed rubric judge is too rigid.</div><div class="row"><b>Relevance:</b> Classification / Generation / conversational; LLM-as-judge. Reinforces (does not introduce) the scenario/patient-facing-gap theme (PQ-102, PQ-101) and the validated-judge theme (KTP #8, PQ-135). Adds an expert-SFT-judge variant to the LLM-as-judge toolkit.</div><div class="row"><b>Verdict reasoning:</b> Solid annotation scale and a useful judge-training pattern, but it mainly reinforces existing KB positions and uses non-US models on a bespoke taxonomy. Verify-grade rather than Promote; worth the user&#39;s eyes for the expert-SFT-judge idea.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-143">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-143">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-143">? More info</button>
+  </div>
+</section>
+</div>
+
+<div class="cart">
+  <div class="cart-inner">
+    <div class="cart-summary" id="summary">No choices yet. Tap a button on a card above.</div>
+    <button class="send-btn" id="sendBtn" disabled>Send 0 / 3 decisions</button>
+    <button class="clear-link" id="clearBtn">Clear all my choices</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const ALL_IDS = ["PQ-141","PQ-142","PQ-143"];
+  const REPLY_TO = "tali.biron@gmail.com";
+  const REPLY_SUBJECT = "Re: Scout 2026-06-15 — 3 source(s) (PQ-141, PQ-142, PQ-143)";
+  const STORAGE_KEY = "scout-cart-2026-06-15";
+
+  // Load saved state from localStorage (so refresh doesn't lose progress)
+  let choices = {};
+  try { choices = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) {}
+
+  function saveAndRender() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(choices));
+
+    // Re-style each card based on choice
+    document.querySelectorAll('.card').forEach(card => {
+      const id = card.dataset.id;
+      card.classList.remove('chosen-promote', 'chosen-skip', 'chosen-more');
+      card.querySelectorAll('.choice').forEach(b => b.classList.remove('active'));
+      const c = choices[id];
+      if (c) {
+        card.classList.add('chosen-' + c);
+        card.querySelector('.choice.' + c).classList.add('active');
+      }
+    });
+
+    // Update sticky summary + send button
+    const made = ALL_IDS.filter(id => choices[id]);
+    const pending = ALL_IDS.filter(id => !choices[id]);
+    const counts = { promote:0, skip:0, more:0 };
+    made.forEach(id => counts[choices[id]]++);
+
+    let html = '';
+    if (counts.promote) html += '<span class="badge promote">' + counts.promote + ' promote</span>';
+    if (counts.skip)    html += '<span class="badge skip">' + counts.skip + ' skip</span>';
+    if (counts.more)    html += '<span class="badge more">' + counts.more + ' more</span>';
+    if (pending.length) html += '<span class="badge pending">' + pending.length + ' pending</span>';
+    if (!made.length && !pending.length) html = 'No choices yet.';
+    document.getElementById('summary').innerHTML = html || 'No choices yet.';
+
+    const btn = document.getElementById('sendBtn');
+    btn.disabled = made.length === 0;
+    btn.textContent = 'Send ' + made.length + ' / ' + ALL_IDS.length + ' decisions';
+  }
+
+  // Wire button clicks
+  document.querySelectorAll('.choice').forEach(b => {
+    b.addEventListener('click', () => {
+      const id = b.dataset.id;
+      const choice = b.dataset.choice;
+      // Toggle off if same choice clicked again
+      if (choices[id] === choice) delete choices[id];
+      else choices[id] = choice;
+      saveAndRender();
+    });
+  });
+
+  // Send button — uses mailto on mobile (opens native Gmail app), Gmail web on desktop.
+  document.getElementById('sendBtn').addEventListener('click', () => {
+    const lines = ALL_IDS.filter(id => choices[id]).map(id => choices[id] + ' ' + id);
+    if (!lines.length) return;
+    const body = '# Scout decisions for ' + "2026-06-15" + '\n# Sent from the cart page\n\n' + lines.join('\n') + '\n';
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const url = isMobile
+      ? 'mailto:' + encodeURIComponent(REPLY_TO) + '?subject=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body)
+      : 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(REPLY_TO) + '&su=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body);
+    // mailto must be same-window on iOS; _blank is fine for https
+    if (isMobile) window.location.href = url;
+    else window.open(url, '_blank');
+  });
+
+  // Clear button
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    if (!confirm('Clear all your choices on this page?')) return;
+    choices = {};
+    saveAndRender();
+  });
+
+  saveAndRender();
+})();
+</script>
+</body>
+</html>
