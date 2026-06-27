@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scout decisions — 2026-06-27</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; padding:0 0 180px 0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; background:#f8fafc; color:#0f172a; }
+  .container { max-width:760px; margin:0 auto; padding:24px 16px; }
+  h1 { font-size:22px; margin:0 0 8px 0; color:#1e40af; }
+  .sub { font-size:13px; color:#64748b; margin-bottom:20px; }
+  .help { background:#ecfeff; border:2px solid #0891b2; border-radius:8px; padding:14px 16px; margin-bottom:20px; font-size:13px; color:#164e63; line-height:1.5; }
+  .card { border:1px solid #e2e8f0; border-radius:10px; padding:16px; margin-bottom:14px; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.03); }
+  .card.is-rollover { border-color:#fbbf24; background:#fffbeb; }
+  .card.chosen-promote { border-color:#059669; box-shadow:0 0 0 2px #05966933; }
+  .card.chosen-skip { border-color:#dc2626; box-shadow:0 0 0 2px #dc262633; }
+  .card.chosen-more { border-color:#64748b; box-shadow:0 0 0 2px #64748b33; }
+  .rollover-badge { background:#fde68a; color:#78350f; font-size:11px; font-weight:700; padding:5px 10px; border-radius:10px; display:inline-block; margin-bottom:10px; }
+  .card-head { display:flex; justify-content:space-between; align-items:baseline; }
+  .pq-id { font-size:14px; font-weight:700; color:#1e40af; }
+  .verdict { font-size:12px; font-weight:700; }
+  .citation { margin-top:8px; font-size:14px; line-height:1.5; font-weight:500; }
+  .url { margin-top:4px; font-size:12px; }
+  .url a { color:#2563eb; }
+  .row { margin-top:8px; font-size:13px; color:#334155; line-height:1.5; }
+  .row b { color:#0f172a; }
+  .choice-row { display:flex; gap:8px; margin-top:14px; }
+  .choice { flex:1; padding:14px 8px; border-radius:8px; border:2px solid transparent; font-size:14px; font-weight:700; cursor:pointer; background:#f1f5f9; color:#475569; transition:all .15s; font-family:inherit; }
+  .choice:hover { transform:translateY(-1px); }
+  .choice.promote.active { background:#059669; color:#fff; border-color:#047857; }
+  .choice.skip.active { background:#dc2626; color:#fff; border-color:#b91c1c; }
+  .choice.more.active { background:#64748b; color:#fff; border-color:#475569; }
+  /* Sticky bottom bar */
+  .cart { position:fixed; bottom:0; left:0; right:0; background:#fff; border-top:2px solid #e2e8f0; box-shadow:0 -4px 12px rgba(0,0,0,.08); padding:12px 16px; z-index:100; }
+  .cart-inner { max-width:760px; margin:0 auto; }
+  .cart-summary { font-size:13px; color:#475569; margin-bottom:8px; line-height:1.4; }
+  .cart-summary b { color:#0f172a; }
+  .cart-summary .badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:700; margin-right:6px; }
+  .badge.promote { background:#d1fae5; color:#065f46; }
+  .badge.skip { background:#fee2e2; color:#991b1b; }
+  .badge.more { background:#e2e8f0; color:#334155; }
+  .badge.pending { background:#fef3c7; color:#92400e; }
+  .send-btn { display:block; width:100%; padding:16px; border:none; border-radius:8px; background:#0891b2; color:#fff; font-size:16px; font-weight:700; cursor:pointer; font-family:inherit; }
+  .send-btn:hover:not(:disabled) { background:#0e7490; }
+  .send-btn:disabled { background:#cbd5e1; cursor:not-allowed; }
+  .clear-link { display:inline-block; margin-top:6px; font-size:12px; color:#64748b; text-decoration:underline; cursor:pointer; background:none; border:none; padding:0; font-family:inherit; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Scout decisions — 2026-06-27</h1>
+  <div class="sub">5 source(s) to review. Choices auto-save in this browser.</div>
+
+  <div class="help">
+    Tap <b style="color:#059669;">Promote</b>, <b style="color:#dc2626;">Skip</b>, or <b style="color:#475569;">More info</b> on each card. The bar at the bottom keeps a running list of your choices. When you're done, hit the cyan <b>Send</b> button — Gmail opens with one email containing all your decisions. Hit Send in Gmail and you're done.
+  </div>
+
+  
+<section class="card" data-id="PQ-141-FU">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-141-FU</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">[FOLLOW-UP of PQ-141 — Promote/Skip] Shyr C, Ren B, Hsu C-Y, Tinker RJ, Cassini TA, Hamid R, Wright A, Bastarache L, Peterson JF, Malin BA, Xu H. A statistical framework for evaluating repeatability and reproducibility of large language models in diagnostic reasoning. medRxiv (preprint, v2). 2025 Nov 4. doi:10.1101/2025.08.06.25333170</div>
+  <div class="url"><a href="https://www.medrxiv.org/content/10.1101/2025.08.06.25333170" target="_blank" rel="noopener">https://www.medrxiv.org/content/10.1101/2025.08.06.25333170</a></div>
+  <div class="row"><b>Overview:</b> Full-text deep-dive resolving the scan-#30 &#39;more&#39; questions (exact numbers? thresholds? does it port to labeling?). Operationalizes FDA-draft-guidance consistency vocabulary for LLMs: repeatability (same prompt, repeated runs) vs reproducibility (across prompts), each split into semantic (clinical meaning) and internal (token-level) variability. ChatGPT-4, ChatGPT-4o-mini, Llama-3.2-1B; 518 MedQA + 90 Undiagnosed Diseases Network cases; 912,000 generations (R=100). Vanderbilt (Bastarache/Malin/Xu).</div><div class="row"><b>Eval question:</b> Is an LLM&#39;s consistency the same thing as its correctness, and how do you measure consistency on a 0–1 scale clinicians can act on?</div><div class="row"><b>Methodology:</b> Four 0–1 metrics (semantic/internal × repeatability/reproducibility); 5 CoT prompts (Traditional/Differential/Intuitive/Analytic/Bayesian). DEEP-DIVE CONFIRMED: statistics are two-sided multivariate Kruskal-Wallis tests at the 0.05 level.</div><div class="row"><b>Measurement:</b> DEEP-DIVE FINDING: no exact per-model/per-prompt numeric table — results are CONTOUR PLOTS (Figs 2–3) with only qualitative text. NO operational thresholds/cut-points proposed. The contribution is a measurement vocabulary, not a pass/fail bar.</div><div class="row"><b>Key findings:</b> Across 4 of 5 prompts there was NO significant difference in repeatability between correctly and incorrectly diagnosed cases. Only for intuitive CoT did higher internal repeatability track accuracy (p&lt;0.001). Reproducibility showed NO association with accuracy for any prompt. Net: consistency and accuracy are largely orthogonal — a model can be confidently consistent and wrong, or correct and unstable.</div><div class="row"><b>Soft spots:</b> Numbers are plots-only (no liftable per-model figure). No thresholds (tells you how to measure, not what is good enough). Single temperature (0.5) blends decoding stochasticity with serving-stack non-determinism (the batching cause PB-07 isolates). Called &#39;generalizable&#39; but NO extraction/classification example given. Authors&#39; own limits: breadth-over-depth, embedding-model dependence, future hallucination/factuality integration needed.</div><div class="row"><b>Strengths:</b> First clinical, large-N operationalization of the FDA repeatability/reproducibility vocabulary for LLMs; the accuracy≠consistency dissociation is clean and decision-relevant; separates semantic from internal variability rather than a single &#39;stability&#39; score.</div><div class="row"><b>Relevance:</b> Cross-cutting; most directly Extraction §2 (Non-Determinism as Evaluation Metric). Clinical statistical complement to PB-07 (cause) and PQ-91 (accuracy-determinism tradeoff). If promoted: a Statistician_Guide.md note on the repeatability/reproducibility vocabulary (R repeats; semantic vs internal; FDA definitions; report consistency SEPARATELY from accuracy because they are orthogonal) — explicitly WITHOUT a numeric threshold — plus an Extraction §2 line operationalizing &#39;measure with R&#39;. Anchors the R-Selector / Two-Determinisms planner drafts.</div><div class="row"><b>Verdict reasoning:</b> Promote as a methodology/vocabulary source, not a threshold source. The deep-dive confirms the parent&#39;s value (the orthogonality finding is the keeper) and sharpens the caveats: plots-only, no cut-points, preprint, QA-not-labeling.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-141-FU">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-141-FU">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-141-FU">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-143-FU">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-143-FU</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">[FOLLOW-UP of PQ-143 — Promote/Skip] He Q, Bi D, Lu J, Yang M, Chen Z, et al. MLB: A Scenario-Driven Benchmark for Evaluating Large Language Models in Clinical Applications. arXiv (preprint, v1). 2026 Jan 8. arXiv:2601.06193.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2601.06193" target="_blank" rel="noopener">https://arxiv.org/abs/2601.06193</a></div>
+  <div class="row"><b>Overview:</b> Deep-dive to resolve the scan-#30 &#39;more&#39; — specifically whether the expert-SFT judge model&#39;s validation is in-distribution or held-out (the load-bearing concern for trusting its κ=81.3%). Benchmark partitions clinical work into five NAMED scenarios: MedKQA (knowledge), MedSE (safety &amp; ethics), MedRU (record understanding), SmartServ (patient-facing), SmartCare (smart healthcare). Judge SFT-trained on 19,000 expert annotations (300 physicians, 64 specialties). 10 models, largely non-US.</div><div class="row"><b>Eval question:</b> Can a fine-tuned judge give reproducible, expert-aligned scoring across heterogeneous scenarios — and is that validation trustworthy enough to reuse?</div><div class="row"><b>Methodology:</b> Scenario-partitioned datasets (22, 17 new); judge via SFT on 19K expert annotations; per-scenario disaggregation across 10 models.</div><div class="row"><b>Measurement:</b> Judge–human consistency acc 92.1% / F1 94.37% / Cohen&#39;s κ 81.3% (aggregate). DEEP-DIVE FINDING: per-scenario judge breakdowns NOT provided, and whether judge validation was in-distribution vs held-out is NOT stated — the central &#39;more&#39;-decision question is UNRESOLVED.</div><div class="row"><b>Key findings:</b> Top model (Kimi-K2-Instruct) 77.3% overall, 87.8% MedRU vs 61.3% SmartServ (patient-facing) — large scenario gap reinforcing PQ-102 (task-vs-patient) and PQ-101 (patient-facing weakness). Baichuan-M2-32B highest on safety (MedSE) 90.6% — targeted training beats scale for safety. 8 of 10 model names not surfaced; US/non-US split unspecified.</div><div class="row"><b>Soft spots:</b> In-distribution-vs-held-out judge validation unspecified (deep-dive could not resolve it). Preprint; mostly non-US models — transfer to US/Hebrew setting unclear. Bespoke scenario taxonomy; reuse outside this benchmark unproven.</div><div class="row"><b>Strengths:</b> Per-scenario disaggregation surfaces the patient-facing drop; expert-SFT judge with a reported (aggregate) agreement is a reusable pattern where a fixed rubric is too rigid.</div><div class="row"><b>Relevance:</b> Classification / Generation / conversational; LLM-as-judge. REINFORCES (does not introduce) the scenario/patient-facing-gap theme (PQ-102, PQ-101) and the validated-judge theme (KTP #8, PQ-135). Adds an expert-SFT-judge variant — but the validation gap means it should not be cited as evidence the pattern is well-validated.</div><div class="row"><b>Verdict reasoning:</b> The deep-dive sharpened the taxonomy and confirmed the patient-facing gap but could NOT clear the core in-distribution-validation concern, so it stays verify-grade and reinforces-only. Reasonable to Skip unless the expert-SFT-judge pattern is wanted as a documented variant; no Guidance change warranted on current evidence.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-143-FU">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-143-FU">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-143-FU">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-146">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-146</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Zheng T, Liu J, Feng S, Jiang Z. Fine-grained evaluation of large language models in medicine using non-parametric cognitive diagnostic modeling. Scientific Reports. 2026 Jan 28. doi:10.1038/s41598-026-36627-7. PMID 41593156.</div>
+  <div class="url"><a href="https://doi.org/10.1038/s41598-026-36627-7" target="_blank" rel="noopener">https://doi.org/10.1038/s41598-026-36627-7</a></div>
+  <div class="row"><b>Overview:</b> Carried &#39;verify-before-carding&#39; lead from scan #30 (was reCAPTCHA-blocked), now fetched and verified. Applies non-parametric cognitive diagnostic modeling (CDM) — a psychometric method — to profile WHICH medical-knowledge attributes an LLM has mastered, instead of one accuracy number. 41 LLMs (OpenAI-o1, Gemini-1.5/2.5-Pro, Qwen, GLM, MedGemma…) on 2,809 MCQs across 22 medical subdomains (China NCHPED item bank). Peer-reviewed.</div><div class="row"><b>Eval question:</b> Does aggregate benchmark accuracy hide which competencies a model actually has, and can psychometric profiling expose domain-specific mastery/gaps that similarly-scoring models don&#39;t share?</div><div class="row"><b>Methodology:</b> Non-parametric CDM over an attribute × item Q-matrix (22 subdomains as attributes) → per-model attribute-mastery profiles rather than a scalar score.</div><div class="row"><b>Measurement:</b> Attribute-mastery counts (e.g., 20/22 for top models vs 17–19 weaker) and per-field mastery rates; no agreement metric (single-rater MCQ key).</div><div class="row"><b>Key findings:</b> Similarly-scoring models show DIFFERENT domain strengths — aggregate accuracy masks competency structure. Concrete gaps: ECG &amp; hypertension 0%, liver disorders 0%, radiology 87.8%; 15 fields at 100% (cardiology, dermatology, endocrinology). Model size does NOT guarantee comprehensive knowledge.</div><div class="row"><b>Soft spots:</b> MCQ-only knowledge-recall — not reasoning, extraction, or deployment behavior. Single Chinese item bank; transfer to US/Hebrew content unverified. CDM attribute definitions are a design choice; mastery cut-points are model-internal, not clinically calibrated.</div><div class="row"><b>Strengths:</b> Brings a mature psychometric lens (competency profiling) to LLM evaluation; the &#39;equal scores ≠ equal competencies&#39; result is a clean argument against single-number leaderboards; 41-model breadth; peer-reviewed.</div><div class="row"><b>Relevance:</b> Cross-cutting evaluation methodology. Complements PQ-80 (same group&#39;s CAT/IRT paper — CAT samples efficiently, CDM profiles competencies); reinforces KTP #7 (benchmark scores ≠ clinical readiness) by showing accuracy hides competency structure. If promoted: a short evaluation_methods_by_task.md / KTP #7 note that aggregate accuracy can mask domain-specific competency gaps, with CDM/IRT profiling as the diagnostic lens — framework-only (MCQ caveat).</div><div class="row"><b>Verdict reasoning:</b> Peer-reviewed and a genuinely different evaluation lens (psychometric competency profiling), but MCQ-only on a non-US item bank limits direct clinical transfer. Promote the idea (profiles over scalars) with the MCQ caveat; do not import the specific mastery numbers as clinical anchors.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-146">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-146">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-146">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-147">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-147</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Unell A, Dullerud N, Boneh N, Jagadeesan M, Hashimoto T, Shah N, Koyejo S. Metric Match: A Subset Selection Approach to Evaluating LLM Judge Reliability. arXiv (preprint, v1). 2026 Jun 12. arXiv:2606.15029.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2606.15029" target="_blank" rel="noopener">https://arxiv.org/abs/2606.15029</a></div>
+  <div class="row"><b>Overview:</b> A sample-sizing/sample-SELECTION method for the validation step that gates every LLM-as-judge: estimating a judge&#39;s correlation-based reliability against human raters from as few human annotations as possible. Metric Match chooses the subset of items to send for human labeling such that the subset&#39;s reliability estimate matches the population value. Stanford (Shah, Koyejo). General-domain method with an explicit medical case study.</div><div class="row"><b>Eval question:</b> &#39;Validate the judge before you trust it&#39; is standard advice — but how many human labels does that take, and which items should you spend them on?</div><div class="row"><b>Methodology:</b> Acquire cheap synthetic (LLM-judge) labels on the full set; select a human-annotation subset whose reliability metric reproduces the population reliability metric. Extends from reliability ESTIMATION to deployment-THRESHOLD classification (is the judge reliable enough to deploy?).</div><div class="row"><b>Measurement:</b> Correlation-based judge–human reliability metrics; estimation error vs annotation budget; win-rate vs random subset selection.</div><div class="row"><b>Key findings:</b> 0.838 win-rate against random selection across 4 correlation metrics / 15 datasets. 18.7% lower average estimation error; 32.5% fewer annotations for the same estimate. Medical case study: ~$1,041.67 expert-annotation savings vs random.</div><div class="row"><b>Soft spots:</b> Preprint; general-domain method — clinical evidence is a single case study, not a clinical validation. Correlation-metric framing; mapping to κ/ICC agreement language used in our kits needs a translation step. Relies on synthetic (judge) labels on the full set to choose the human subset — quality depends on the judge not being pathologically miscalibrated.</div><div class="row"><b>Strengths:</b> Directly attacks the cost wall of judge validation with a quantified, generalizable method; reports win-rate + error + budget, not an anecdote; estimation→deployment-threshold extension matches a real go/no-go decision.</div><div class="row"><b>Relevance:</b> Cross-cutting; LLM-as-judge validation / sample sizing. Natural companion to PQ-140 (Kim — doubly-robust human+LLM-judge co-validation) in the new Statistician_Guide.md &#39;Sample Sizing for Human + LLM-Judge Co-Validated Evaluation&#39; section: PQ-140 sizes HOW MANY human reviews; Metric Match selects WHICH items to spend them on. Strengthens KTP #8 (validated-but-bounded judge). If promoted: add as a sub-point in that Statistician_Guide section + KTP #8.</div><div class="row"><b>Verdict reasoning:</b> Strongest in-window candidate: a clean, quantified method that plugs directly into the co-validation/sample-sizing guidance we added for PQ-140, from credible authors, with a healthcare case study. Preprint and correlation-framed → cite the method + efficiency numbers, translate to our κ/ICC language, hold the dollar figure as illustrative.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-147">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-147">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-147">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-148">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-148</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Ding J, Jiang C, Lu L, Pang W, Bian M, Gao Z, Chen J, Peng X, Chen R, Ren S, Lu R, Zhong Y, Han B, Liu M, Xu J. MedBench v5: A Dynamic, Process-Oriented, and Hallucination-Aware Benchmark for Clinical Multimodal Models. arXiv (preprint, v3). 2026 Jun 25 (v1 2026 Jun 23). arXiv:2606.24155.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2606.24155" target="_blank" rel="noopener">https://arxiv.org/abs/2606.24155</a></div>
+  <div class="row"><b>Overview:</b> An evaluation-infrastructure paper that audits the REASONING PROCESS and hallucination TRAJECTORY of clinical multimodal models, not just final-answer accuracy. Two axes: Clinical Cognitive Responsiveness (14 sub-dimensions) and Medical Atomic Skills (4 agent environments), 63 tasks. Adds switchable information-flow stressors, a process-audit protocol over reasoning nodes, and stage-wise hallucination monitoring.</div><div class="row"><b>Eval question:</b> Can a benchmark measure HOW a model reasons and WHERE a hallucination originates and spreads — producing model-specific failure fingerprints — rather than only whether the final answer is right?</div><div class="row"><b>Methodology:</b> Clinical Cognitive Responsiveness: 14 sub-dimensions. Medical Atomic Skills: 4 agent environments; 63 tasks. Controllable stress testing: 3 switchable information-flow stressors — omission, contradiction, evidence delay. Process audit: 5 reasoning nodes → model-specific failure fingerprints. Hallucination trajectory: initiation → propagation → anchoring → contradiction interaction.</div><div class="row"><b>Measurement:</b> Capability profiling per sub-dimension/skill; process-audit pass/fail at each reasoning node; hallucination-stage tracking. Exact metric definitions and per-model scores NOT extracted this cycle (verify in full text).</div><div class="row"><b>Key findings:</b> Headline numbers not extracted at abstract level this cycle (verify-grade). The contribution is the METHOD: process-visible, stressor-driven, hallucination-trajectory evaluation for clinical multimodal models.</div><div class="row"><b>Soft spots:</b> Multimodal/vision-language scope brushes the repository&#39;s imaging-exclusion boundary — must confirm the text/agentic-reasoning share is the in-scope core (CLAUDE.md includes &#39;multimodal reasoning&#39; but excludes imaging classifiers). Bespoke 14+4 taxonomy; cross-lab reproducibility of the process-audit unproven. Preprint, rapidly revised; per-model results not yet verified.</div><div class="row"><b>Strengths:</b> Operationalizes process-level and hallucination-TRAJECTORY auditing (most benchmarks stop at final-answer accuracy); the switchable stressors (omission/contradiction/evidence-delay) are a concrete, reusable adversarial-robustness design directly relevant to KTP #9; capability profiling aligns with the competency-profiling theme (PQ-146).</div><div class="row"><b>Relevance:</b> Cross-cutting — agentic / generation / multimodal clinical reasoning; adversarial &amp; hallucination evaluation. The stressor + process-audit design extends KTP #9 (adversarial/stress testing — cf. PQ-77/PQ-59/PQ-130 and benign-elicitation PQ-125-FU) toward trajectory-level hallucination analysis; the capability-profiling axis is adjacent to PQ-146 (CDM) and PQ-91/PB-07 (reasoning stability). If promoted: a KTP #9 note on process-audit + information-flow-stressor evaluation, conditional on confirming the text/agentic share.</div><div class="row"><b>Verdict reasoning:</b> A genuinely novel evaluation methodology (process-visibility + hallucination-trajectory + switchable stressors) and squarely in-window, but the multimodal framing needs a scope check (text/agentic vs imaging) and the per-model evidence is unverified. Verify-grade; worth the user&#39;s eyes for the stressor/process-audit design even if the multimodal benchmark itself sits at the edge of scope.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-148">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-148">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-148">? More info</button>
+  </div>
+</section>
+</div>
+
+<div class="cart">
+  <div class="cart-inner">
+    <div class="cart-summary" id="summary">No choices yet. Tap a button on a card above.</div>
+    <button class="send-btn" id="sendBtn" disabled>Send 0 / 5 decisions</button>
+    <button class="clear-link" id="clearBtn">Clear all my choices</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const ALL_IDS = ["PQ-141-FU","PQ-143-FU","PQ-146","PQ-147","PQ-148"];
+  const REPLY_TO = "tali.biron@gmail.com";
+  const REPLY_SUBJECT = "Re: Scout 2026-06-27 — 5 source(s) (PQ-141-FU, PQ-143-FU, PQ-146, PQ-147, PQ-148)";
+  const STORAGE_KEY = "scout-cart-2026-06-27";
+
+  // Load saved state from localStorage (so refresh doesn't lose progress)
+  let choices = {};
+  try { choices = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) {}
+
+  function saveAndRender() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(choices));
+
+    // Re-style each card based on choice
+    document.querySelectorAll('.card').forEach(card => {
+      const id = card.dataset.id;
+      card.classList.remove('chosen-promote', 'chosen-skip', 'chosen-more');
+      card.querySelectorAll('.choice').forEach(b => b.classList.remove('active'));
+      const c = choices[id];
+      if (c) {
+        card.classList.add('chosen-' + c);
+        card.querySelector('.choice.' + c).classList.add('active');
+      }
+    });
+
+    // Update sticky summary + send button
+    const made = ALL_IDS.filter(id => choices[id]);
+    const pending = ALL_IDS.filter(id => !choices[id]);
+    const counts = { promote:0, skip:0, more:0 };
+    made.forEach(id => counts[choices[id]]++);
+
+    let html = '';
+    if (counts.promote) html += '<span class="badge promote">' + counts.promote + ' promote</span>';
+    if (counts.skip)    html += '<span class="badge skip">' + counts.skip + ' skip</span>';
+    if (counts.more)    html += '<span class="badge more">' + counts.more + ' more</span>';
+    if (pending.length) html += '<span class="badge pending">' + pending.length + ' pending</span>';
+    if (!made.length && !pending.length) html = 'No choices yet.';
+    document.getElementById('summary').innerHTML = html || 'No choices yet.';
+
+    const btn = document.getElementById('sendBtn');
+    btn.disabled = made.length === 0;
+    btn.textContent = 'Send ' + made.length + ' / ' + ALL_IDS.length + ' decisions';
+  }
+
+  // Wire button clicks
+  document.querySelectorAll('.choice').forEach(b => {
+    b.addEventListener('click', () => {
+      const id = b.dataset.id;
+      const choice = b.dataset.choice;
+      // Toggle off if same choice clicked again
+      if (choices[id] === choice) delete choices[id];
+      else choices[id] = choice;
+      saveAndRender();
+    });
+  });
+
+  // Send button — uses mailto on mobile (opens native Gmail app), Gmail web on desktop.
+  document.getElementById('sendBtn').addEventListener('click', () => {
+    const lines = ALL_IDS.filter(id => choices[id]).map(id => choices[id] + ' ' + id);
+    if (!lines.length) return;
+    const body = '# Scout decisions for ' + "2026-06-27" + '\n# Sent from the cart page\n\n' + lines.join('\n') + '\n';
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const url = isMobile
+      ? 'mailto:' + encodeURIComponent(REPLY_TO) + '?subject=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body)
+      : 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(REPLY_TO) + '&su=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body);
+    // mailto must be same-window on iOS; _blank is fine for https
+    if (isMobile) window.location.href = url;
+    else window.open(url, '_blank');
+  });
+
+  // Clear button
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    if (!confirm('Clear all your choices on this page?')) return;
+    choices = {};
+    saveAndRender();
+  });
+
+  saveAndRender();
+})();
+</script>
+</body>
+</html>
