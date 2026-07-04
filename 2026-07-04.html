@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scout decisions — 2026-07-04</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; padding:0 0 180px 0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; background:#f8fafc; color:#0f172a; }
+  .container { max-width:760px; margin:0 auto; padding:24px 16px; }
+  h1 { font-size:22px; margin:0 0 8px 0; color:#1e40af; }
+  .sub { font-size:13px; color:#64748b; margin-bottom:20px; }
+  .help { background:#ecfeff; border:2px solid #0891b2; border-radius:8px; padding:14px 16px; margin-bottom:20px; font-size:13px; color:#164e63; line-height:1.5; }
+  .card { border:1px solid #e2e8f0; border-radius:10px; padding:16px; margin-bottom:14px; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.03); }
+  .card.is-rollover { border-color:#fbbf24; background:#fffbeb; }
+  .card.chosen-promote { border-color:#059669; box-shadow:0 0 0 2px #05966933; }
+  .card.chosen-skip { border-color:#dc2626; box-shadow:0 0 0 2px #dc262633; }
+  .card.chosen-more { border-color:#64748b; box-shadow:0 0 0 2px #64748b33; }
+  .rollover-badge { background:#fde68a; color:#78350f; font-size:11px; font-weight:700; padding:5px 10px; border-radius:10px; display:inline-block; margin-bottom:10px; }
+  .card-head { display:flex; justify-content:space-between; align-items:baseline; }
+  .pq-id { font-size:14px; font-weight:700; color:#1e40af; }
+  .verdict { font-size:12px; font-weight:700; }
+  .citation { margin-top:8px; font-size:14px; line-height:1.5; font-weight:500; }
+  .url { margin-top:4px; font-size:12px; }
+  .url a { color:#2563eb; }
+  .row { margin-top:8px; font-size:13px; color:#334155; line-height:1.5; }
+  .row b { color:#0f172a; }
+  .choice-row { display:flex; gap:8px; margin-top:14px; }
+  .choice { flex:1; padding:14px 8px; border-radius:8px; border:2px solid transparent; font-size:14px; font-weight:700; cursor:pointer; background:#f1f5f9; color:#475569; transition:all .15s; font-family:inherit; }
+  .choice:hover { transform:translateY(-1px); }
+  .choice.promote.active { background:#059669; color:#fff; border-color:#047857; }
+  .choice.skip.active { background:#dc2626; color:#fff; border-color:#b91c1c; }
+  .choice.more.active { background:#64748b; color:#fff; border-color:#475569; }
+  /* Sticky bottom bar */
+  .cart { position:fixed; bottom:0; left:0; right:0; background:#fff; border-top:2px solid #e2e8f0; box-shadow:0 -4px 12px rgba(0,0,0,.08); padding:12px 16px; z-index:100; }
+  .cart-inner { max-width:760px; margin:0 auto; }
+  .cart-summary { font-size:13px; color:#475569; margin-bottom:8px; line-height:1.4; }
+  .cart-summary b { color:#0f172a; }
+  .cart-summary .badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:700; margin-right:6px; }
+  .badge.promote { background:#d1fae5; color:#065f46; }
+  .badge.skip { background:#fee2e2; color:#991b1b; }
+  .badge.more { background:#e2e8f0; color:#334155; }
+  .badge.pending { background:#fef3c7; color:#92400e; }
+  .send-btn { display:block; width:100%; padding:16px; border:none; border-radius:8px; background:#0891b2; color:#fff; font-size:16px; font-weight:700; cursor:pointer; font-family:inherit; }
+  .send-btn:hover:not(:disabled) { background:#0e7490; }
+  .send-btn:disabled { background:#cbd5e1; cursor:not-allowed; }
+  .clear-link { display:inline-block; margin-top:6px; font-size:12px; color:#64748b; text-decoration:underline; cursor:pointer; background:none; border:none; padding:0; font-family:inherit; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Scout decisions — 2026-07-04</h1>
+  <div class="sub">3 source(s) to review. Choices auto-save in this browser.</div>
+
+  <div class="help">
+    Tap <b style="color:#059669;">Promote</b>, <b style="color:#dc2626;">Skip</b>, or <b style="color:#475569;">More info</b> on each card. The bar at the bottom keeps a running list of your choices. When you're done, hit the cyan <b>Send</b> button — Gmail opens with one email containing all your decisions. Hit Send in Gmail and you're done.
+  </div>
+
+  
+<section class="card" data-id="PQ-149">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-149</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Philipp W, Fassbender F, Langer T, et al. Clinician-Level Agreement Without Clinical Caution: LLM Evaluator Limits in Medical AI Benchmarking. arXiv (preprint, v1). 2026 Jul 1. arXiv:2607.01103.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2607.01103" target="_blank" rel="noopener">https://arxiv.org/abs/2607.01103</a></div>
+  <div class="row"><b>Overview:</b> Tests whether an LLM-as-judge can score OPEN-RESPONSE medical assessments the way physicians do — on accuracy AND appropriate caution. Builds MedQADE, a standardized German open-response clinical benchmark (3,800 items); responses scored by 10 practicing physicians + 9 LLM evaluators; LLM-vs-physician agreement compared against the physician-vs-physician ceiling. Task: LLM-as-judge / open-response scoring. Systems: 9 evaluators incl. Gemini 3 Flash. Signal: interpretive. Setting: German clinical exam items, 10 physician raters.</div><div class="row"><b>Eval question:</b> Once an LLM-judge reaches clinician-level statistical agreement, is it safe to trust — or does agreement mask over-confidence, no abstention, and self-preference that a clinician rater would not exhibit?</div><div class="row"><b>Methodology:</b> Open-response scoring of MedQADE by 10 physicians + 9 LLM evaluators; chance-corrected agreement (Cohen&#39;s κ) for LLM-vs-physician vs the physician ceiling; abstention-behavior and cross-model scoring-bias analysis.</div><div class="row"><b>Measurement:</b> Cohen&#39;s κ vs physician ceiling; abstention rate on difficult items; self-preference (scores to architecturally similar vs dissimilar models).</div><div class="row"><b>Key findings:</b> Top evaluator Gemini 3 Flash κ=0.694 vs physician ceiling κ=0.709 (statistically clinician-level, wide CIs). BUT physicians abstained on difficult items while frontier models scored every case → &#39;near-absent clinical metacognition.&#39; Systematic self-preference bias toward architecturally similar models. Conclusion: statistical alignment does not ensure clinical caution.</div><div class="row"><b>Soft spots:</b> Preprint; single German-language benchmark (US/Hebrew transfer unverified); wide CIs on the headline κ; self-preference measured only within this evaluator set.</div><div class="row"><b>Strengths:</b> Directly tests the necessary-but-not-sufficient nature of the human-agreement-band test — a judge can sit inside the band yet lack abstention and carry self-preference bias. Real physician raters + abstention as an explicit axis (rare). Names a concrete failure mode (no metacognition) that band-membership hides.</div><div class="row"><b>Relevance:</b> Layer 1: LLM-as-judge validation; open-response quality scoring. Layer 2: a direct caveat to KTP #8 and the human-inter-rater-band method (PQ-144/PQ-145) — reaching the physician κ band is necessary but not sufficient; also test abstention/metacognition and self-preference. Connects to PQ-131 (bias axis) and PQ-128 (judge order/position bias). If promoted: KTP #8 sub-point + cross-link from the band-test subsection.</div><div class="row"><b>Verdict reasoning:</b> Strongest in-window find: plugs a real hole in the judge-validation/band-test guidance by showing statistical agreement can coexist with absent metacognition and self-preference bias. Preprint + single-language caveats → cite the mechanism and abstention/self-preference findings; treat the specific κ as illustrative.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-149">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-149">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-149">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-150">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-150</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Patel NA. Clinical Reasoning Graphs: Structured Evaluation of LLM Diagnostic Reasoning Reveals Competence Without Consistency. arXiv (preprint, v1). 2026 Jun 29. arXiv:2606.29876. (UCSF.)</div>
+  <div class="url"><a href="https://arxiv.org/abs/2606.29876" target="_blank" rel="noopener">https://arxiv.org/abs/2606.29876</a></div>
+  <div class="row"><b>Overview:</b> Asks whether LLMs that score 60–70% on diagnosis reason with stable, clinically-grounded schemas or just pattern-match. Diagnostic chain-of-thought traces are converted into clinical reasoning graphs (domain-grounded ontology: 5 node types, 7 edge types); tests whether clinically similar cases yield similar reasoning-graph structures. Task: diagnostic-reasoning / structural reasoning evaluation. Systems: 5 LLMs. Setting: 50 NEJM cases × 3 prompt conditions → 750 traces.</div><div class="row"><b>Eval question:</b> Behind a respectable accuracy number, is an LLM&#39;s reasoning consistent and schema-stable across clinically similar cases, or is accuracy achieved without reproducible clinical logic?</div><div class="row"><b>Methodology:</b> Extract clinical reasoning graphs from traces via a domain-grounded ontology; compare within-cluster vs between-cluster graph similarity for clinically similar cases; stratify similarity by correctness of model pairs.</div><div class="row"><b>Measurement:</b> Graph-similarity scores; within- vs between-cluster comparison with multiple-comparison correction.</div><div class="row"><b>Key findings:</b> Within-cluster and between-cluster graph similarity nearly equal, n.s. after correction — no case-specific schema stability. Graph similarity virtually identical whether model pairs both correct (0.488) or both incorrect (0.484). Interpretation: LLMs reach accuracy WITHOUT stable, schema-level reasoning — &#39;competence without consistency.&#39;</div><div class="row"><b>Soft spots:</b> Small case set (50 NEJM cases), 5 models, single author, preprint; bespoke ontology/similarity metric (cross-lab reproducibility unproven); NEJM cases are hard/atypical, may not generalize to routine reasoning.</div><div class="row"><b>Strengths:</b> A genuinely different STRUCTURAL lens on reasoning consistency (graphs, not just answer variance). The correct-vs-incorrect similarity parity (0.488 vs 0.484) is a clean argument that accuracy ≠ reasoning stability. Complements the token/semantic consistency axis of PQ-141-FU.</div><div class="row"><b>Relevance:</b> Layer 1: diagnostic-reasoning / generation evaluation; reasoning consistency. Layer 2: the reasoning-structure companion to PQ-141-FU (Shyr measures accuracy≠consistency on outputs; Patel on reasoning structure) and to PQ-91/PB-07 (stability). If promoted: an Extraction §2 / consistency-axis note that reasoning-schema stability is a third consistency lens beyond semantic and internal output variability — framework-only (small-N caveat).</div><div class="row"><b>Verdict reasoning:</b> Provocative and timely — independently corroborates accuracy≠consistency from a reasoning-structure angle — but small-N, single-author, bespoke-ontology preprint. Promote the lens if wanted; hold the similarity numbers as illustrative.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-150">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-150">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-150">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-151">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-151</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Ajmal M, Roy A, Kanniyan AS, Kabeer JA, James J, Nakov P, Xie Z. CLExEval: A Human-in-the-Loop Framework for Qualitative Evaluation of LLM Clinical Reasoning. arXiv (preprint, v1). 2026 Jun 30. arXiv:2606.31608.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2606.31608" target="_blank" rel="noopener">https://arxiv.org/abs/2606.31608</a></div>
+  <div class="row"><b>Overview:</b> A human-in-the-loop framework for evaluating clinical reasoning when fluent explanations can mask incorrect diagnoses (the &#39;evaluation illusion&#39;). Combines expert-physician annotations with progressive information masking of reasoning traces, and separately measures how well an LLM-judge catches clinically incorrect outputs. Task: clinical-reasoning evaluation; LLM-as-judge reliability. Systems: incl. GPT-4o-mini (subject and evaluator) + a specialist model. Setting: 40 rare diagnostic cases; 200 traces; 5,600 expert annotations.</div><div class="row"><b>Eval question:</b> Does an evaluation pipeline overestimate reliability because it rewards fluent-but-wrong reasoning — and can an LLM-judge be trusted to flag clinically incorrect outputs?</div><div class="row"><b>Methodology:</b> Expert-physician annotation of 200 reasoning traces across 40 rare diagnostic cases (5,600 annotations); progressive information masking to test reasoning robustness under scarcity; LLM-as-evaluator reliability vs expert ground truth.</div><div class="row"><b>Measurement:</b> Diagnostic accuracy under masking; reasoning-output mismatch rate; LLM-judge false-approval rate vs expert ground truth.</div><div class="row"><b>Key findings:</b> GPT-4o-mini accuracy 95.0%→32.5% under information scarcity (verbosity bias). 68.6% reasoning-output mismatch (correct diagnosis in the reasoning but absent from the final answer). GPT-4o-mini as evaluator approved 47.9% of clinically incorrect outputs — quantifies the &#39;evaluation illusion.&#39; A specialist model reached 92.5% max potential but failed reliable knowledge retrieval.</div><div class="row"><b>Soft spots:</b> Preprint; 40 rare diagnostic cases — hard-case focus may overstate failure rates vs routine care; bespoke masking protocol (reproducibility unproven); dramatic accuracy drop is partly by construction (adversarial masking).</div><div class="row"><b>Strengths:</b> Concrete KTP #8 anchor: a 47.9% LLM-judge false-approval rate on clinically incorrect outputs is a citable &#39;validate the judge&#39; number. The 68.6% reasoning-output mismatch argues for scoring the final answer, not the reasoning narrative. Progressive-masking is a reusable robustness/adversarial protocol.</div><div class="row"><b>Relevance:</b> Layer 1: LLM-as-judge validation; clinical-reasoning / generation evaluation; robustness. Layer 2: reinforces KTP #8 (validated-but-bounded judge — 47.9% false-approval quantifies the risk of an unvalidated judge) and PQ-111 (human-vs-judge discrimination); the masking protocol extends KTP #9 (adversarial/stress testing, cf. PQ-125-FU, PQ-77/PQ-59). If promoted: a KTP #8 false-approval anchor + a KTP #9 progressive-masking note.</div><div class="row"><b>Verdict reasoning:</b> Strong, concrete failure-mode quantification from credible authors (Nakov), directly relevant to judge validation and reasoning robustness. Preprint + rare-case-only caveats → verify-grade, but the 47.9% judge false-approval and 68.6% reasoning-output-mismatch numbers are the keepers if promoted.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-151">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-151">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-151">? More info</button>
+  </div>
+</section>
+</div>
+
+<div class="cart">
+  <div class="cart-inner">
+    <div class="cart-summary" id="summary">No choices yet. Tap a button on a card above.</div>
+    <button class="send-btn" id="sendBtn" disabled>Send 0 / 3 decisions</button>
+    <button class="clear-link" id="clearBtn">Clear all my choices</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const ALL_IDS = ["PQ-149","PQ-150","PQ-151"];
+  const REPLY_TO = "tali.biron@gmail.com";
+  const REPLY_SUBJECT = "Re: Scout 2026-07-04 — 3 source(s) (PQ-149, PQ-150, PQ-151)";
+  const STORAGE_KEY = "scout-cart-2026-07-04";
+
+  // Load saved state from localStorage (so refresh doesn't lose progress)
+  let choices = {};
+  try { choices = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) {}
+
+  function saveAndRender() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(choices));
+
+    // Re-style each card based on choice
+    document.querySelectorAll('.card').forEach(card => {
+      const id = card.dataset.id;
+      card.classList.remove('chosen-promote', 'chosen-skip', 'chosen-more');
+      card.querySelectorAll('.choice').forEach(b => b.classList.remove('active'));
+      const c = choices[id];
+      if (c) {
+        card.classList.add('chosen-' + c);
+        card.querySelector('.choice.' + c).classList.add('active');
+      }
+    });
+
+    // Update sticky summary + send button
+    const made = ALL_IDS.filter(id => choices[id]);
+    const pending = ALL_IDS.filter(id => !choices[id]);
+    const counts = { promote:0, skip:0, more:0 };
+    made.forEach(id => counts[choices[id]]++);
+
+    let html = '';
+    if (counts.promote) html += '<span class="badge promote">' + counts.promote + ' promote</span>';
+    if (counts.skip)    html += '<span class="badge skip">' + counts.skip + ' skip</span>';
+    if (counts.more)    html += '<span class="badge more">' + counts.more + ' more</span>';
+    if (pending.length) html += '<span class="badge pending">' + pending.length + ' pending</span>';
+    if (!made.length && !pending.length) html = 'No choices yet.';
+    document.getElementById('summary').innerHTML = html || 'No choices yet.';
+
+    const btn = document.getElementById('sendBtn');
+    btn.disabled = made.length === 0;
+    btn.textContent = 'Send ' + made.length + ' / ' + ALL_IDS.length + ' decisions';
+  }
+
+  // Wire button clicks
+  document.querySelectorAll('.choice').forEach(b => {
+    b.addEventListener('click', () => {
+      const id = b.dataset.id;
+      const choice = b.dataset.choice;
+      // Toggle off if same choice clicked again
+      if (choices[id] === choice) delete choices[id];
+      else choices[id] = choice;
+      saveAndRender();
+    });
+  });
+
+  // Send button — uses mailto on mobile (opens native Gmail app), Gmail web on desktop.
+  document.getElementById('sendBtn').addEventListener('click', () => {
+    const lines = ALL_IDS.filter(id => choices[id]).map(id => choices[id] + ' ' + id);
+    if (!lines.length) return;
+    const body = '# Scout decisions for ' + "2026-07-04" + '\n# Sent from the cart page\n\n' + lines.join('\n') + '\n';
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const url = isMobile
+      ? 'mailto:' + encodeURIComponent(REPLY_TO) + '?subject=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body)
+      : 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(REPLY_TO) + '&su=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body);
+    // mailto must be same-window on iOS; _blank is fine for https
+    if (isMobile) window.location.href = url;
+    else window.open(url, '_blank');
+  });
+
+  // Clear button
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    if (!confirm('Clear all your choices on this page?')) return;
+    choices = {};
+    saveAndRender();
+  });
+
+  saveAndRender();
+})();
+</script>
+</body>
+</html>
