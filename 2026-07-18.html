@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scout decisions — 2026-07-18</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; padding:0 0 180px 0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; background:#f8fafc; color:#0f172a; }
+  .container { max-width:760px; margin:0 auto; padding:24px 16px; }
+  h1 { font-size:22px; margin:0 0 8px 0; color:#1e40af; }
+  .sub { font-size:13px; color:#64748b; margin-bottom:20px; }
+  .help { background:#ecfeff; border:2px solid #0891b2; border-radius:8px; padding:14px 16px; margin-bottom:20px; font-size:13px; color:#164e63; line-height:1.5; }
+  .card { border:1px solid #e2e8f0; border-radius:10px; padding:16px; margin-bottom:14px; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.03); }
+  .card.is-rollover { border-color:#fbbf24; background:#fffbeb; }
+  .card.chosen-promote { border-color:#059669; box-shadow:0 0 0 2px #05966933; }
+  .card.chosen-skip { border-color:#dc2626; box-shadow:0 0 0 2px #dc262633; }
+  .card.chosen-more { border-color:#64748b; box-shadow:0 0 0 2px #64748b33; }
+  .rollover-badge { background:#fde68a; color:#78350f; font-size:11px; font-weight:700; padding:5px 10px; border-radius:10px; display:inline-block; margin-bottom:10px; }
+  .card-head { display:flex; justify-content:space-between; align-items:baseline; }
+  .pq-id { font-size:14px; font-weight:700; color:#1e40af; }
+  .verdict { font-size:12px; font-weight:700; }
+  .citation { margin-top:8px; font-size:14px; line-height:1.5; font-weight:500; }
+  .url { margin-top:4px; font-size:12px; }
+  .url a { color:#2563eb; }
+  .row { margin-top:8px; font-size:13px; color:#334155; line-height:1.5; }
+  .row b { color:#0f172a; }
+  .choice-row { display:flex; gap:8px; margin-top:14px; }
+  .choice { flex:1; padding:14px 8px; border-radius:8px; border:2px solid transparent; font-size:14px; font-weight:700; cursor:pointer; background:#f1f5f9; color:#475569; transition:all .15s; font-family:inherit; }
+  .choice:hover { transform:translateY(-1px); }
+  .choice.promote.active { background:#059669; color:#fff; border-color:#047857; }
+  .choice.skip.active { background:#dc2626; color:#fff; border-color:#b91c1c; }
+  .choice.more.active { background:#64748b; color:#fff; border-color:#475569; }
+  /* Sticky bottom bar */
+  .cart { position:fixed; bottom:0; left:0; right:0; background:#fff; border-top:2px solid #e2e8f0; box-shadow:0 -4px 12px rgba(0,0,0,.08); padding:12px 16px; z-index:100; }
+  .cart-inner { max-width:760px; margin:0 auto; }
+  .cart-summary { font-size:13px; color:#475569; margin-bottom:8px; line-height:1.4; }
+  .cart-summary b { color:#0f172a; }
+  .cart-summary .badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:700; margin-right:6px; }
+  .badge.promote { background:#d1fae5; color:#065f46; }
+  .badge.skip { background:#fee2e2; color:#991b1b; }
+  .badge.more { background:#e2e8f0; color:#334155; }
+  .badge.pending { background:#fef3c7; color:#92400e; }
+  .send-btn { display:block; width:100%; padding:16px; border:none; border-radius:8px; background:#0891b2; color:#fff; font-size:16px; font-weight:700; cursor:pointer; font-family:inherit; }
+  .send-btn:hover:not(:disabled) { background:#0e7490; }
+  .send-btn:disabled { background:#cbd5e1; cursor:not-allowed; }
+  .clear-link { display:inline-block; margin-top:6px; font-size:12px; color:#64748b; text-decoration:underline; cursor:pointer; background:none; border:none; padding:0; font-family:inherit; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Scout decisions — 2026-07-18</h1>
+  <div class="sub">8 source(s) to review. Choices auto-save in this browser.</div>
+
+  <div class="help">
+    Tap <b style="color:#059669;">Promote</b>, <b style="color:#dc2626;">Skip</b>, or <b style="color:#475569;">More info</b> on each card. The bar at the bottom keeps a running list of your choices. When you're done, hit the cyan <b>Send</b> button — Gmail opens with one email containing all your decisions. Hit Send in Gmail and you're done.
+  </div>
+
+  
+<section class="card" data-id="PQ-151-FU">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-151-FU</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Ajmal M, Roy A, Kanniyan AS, Kabeer JA, James J, Nakov P, Xie Z. CLExEval: A Human-in-the-Loop Framework for Qualitative Evaluation of LLM Clinical Reasoning. arXiv (preprint, v1). 2026 Jun 30. arXiv:2606.31608.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2606.31608" target="_blank" rel="noopener">https://arxiv.org/abs/2606.31608</a></div>
+  <div class="row"><b>Overview:</b> FOLLOW-UP of PQ-151 (your &#39;more&#39; from scan #32). The full text was retrievable, and it changes the framing materially. The original card said &#39;GPT-4o-mini approved 47.9% of clinically incorrect outputs&#39; — that was the BEST judge tested, not the story. Four judges spanning three model families were each given the full case, the complete rubric AND the gold-standard diagnosis, then approved between 47.9% and 100% of 142 expert-verified clinical failures: GPT-4o-mini 47.9% (68/142), DeepSeek-R1-Distill-Llama-8B 56.7% (80/141), Llama-3.1-8B-Instruct 88.7% (126/142), HuatuoGPT-o1-8B (medical specialist) 100.0% (138/138). The medically fine-tuned model was the worst judge and carried the largest self-preference bias (+0.096). Annotation: 4 raters (2 licensed physicians + 2 senior clinical interns), 7 dimensions on a 5-point ordinal scale, ICC = 0.802 pooled. Cases: 40 rare published case reports from MultiCaRe, no routine comparison arm.</div><div class="row"><b>Eval question:</b> Does an evaluation pipeline overestimate reliability because it rewards fluent-but-wrong reasoning — and can an LLM-judge be trusted to flag clinically incorrect outputs? The deep-dive answers the second half much more forcefully than the abstract did.</div><div class="row"><b>Methodology:</b> Expert annotation of 200 reasoning traces across 40 rare diagnostic cases (5,600 annotations; expert pairs double-scored balanced subsets, so not every instance got all 4 raters). Progressive information masking applied to the CASE PRESENTATION (not the reasoning trace) in five levels: full narrative → L0 diagnosis name removed → L1 strongest clue removed → L2 two strongest cues removed → L3 major cues generalised. Judge task was a binary pass/fail derived from a rubric score, passing = score ≥ 0.75; failure set = expert consensus ≤ 0.25.</div><div class="row"><b>Measurement:</b> Hallucination Approval Rate (HAR) per judge against a human-verified failure set; reasoning-output mismatch (ROM) computed programmatically as the fraction of failure cases where the gold diagnosis appears in the thinking trace; ICC = 0.802 for inter-rater reliability. Cohen&#39;s kappa and Krippendorff&#39;s alpha are mentioned in methods but NO values are reported.</div><div class="row"><b>Key findings:</b> Cross-family HAR range 47.9%–100%, with the medical-specialist model at 100% and the highest self-preference bias. Giving the judge the rubric and the answer key did not rescue it. GPT-4o-mini accuracy fell 95.0% → 32.5% under information scarcity; reasoning-output mismatch 68.6% (HuatuoGPT 44.0%). Status: v1 only, no venue, ZERO citations as of today.</div><div class="row"><b>Soft spots:</b> THE BOUNDING GAP: no false-rejection rate is reported. HAR is measured only on a known-failure set, so judge sensitivity and specificity cannot be assessed jointly — a maximally strict judge would score 0% HAR while being useless. This is a hazard demonstration, not a validation recipe. Also: every judge except GPT-4o-mini was 8B-class and GPT-4o-mini is itself mini-tier, so frontier-judge behaviour is untested. 4 annotators of whom 2 are interns; single pooled ICC not disaggregated by dimension; 40 curated rare cases with no routine arm; masking levels defined by unspecified human judgment with no agreement check; ROM adjudicated by an unspecified matching rule.</div><div class="row"><b>Strengths:</b> The cross-family comparison is a much harder anchor for &#39;an LLM-judge must be validated, not assumed&#39; than the abstract suggested — the answer key did not help, and domain-specialist fine-tuning made it worse rather than better. It converges with PQ-149 (self-preference bias in a different evaluator pool, different benchmark, different language): two independent 2026 preprints reaching the same conclusion by different routes.</div><div class="row"><b>Relevance:</b> Layer 1: LLM-as-judge validation; clinical-reasoning evaluation; robustness testing. Layer 2: if promoted → a KTP #8 false-approval anchor using the CROSS-FAMILY framing rather than the single 47.9% number, paired explicitly with the PQ-149 self-preference finding, plus a note that a medical-specialist model is not automatically a safer judge. Supports the producer≠measurer and certify-by-archetype positions in the LLM-judge monitoring framework. The masking ladder is worth teaching in KTP #9 as a concept, NOT adopting as a protocol.</div><div class="row"><b>Verdict reasoning:</b> The deep-dive STRENGTHENS the judge-validation case and WEAKENS the stress-test-protocol case. If you promote: import the cross-family HAR range, the specialist-is-worse result, and the &#39;answer key did not help&#39; detail — always as a hazard, never as a calibration target, and always with the no-false-rejection-rate caveat attached. Hold the masking protocol as a concept. Reasonable to skip if you would rather wait for peer review — it is v1 with zero citations.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-151-FU">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-151-FU">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-151-FU">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-152">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-152</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Kalinich M, Luccarelli J, Santa Maria J, Flathers M, Nguyen P, Song SH, et al. Conversational trajectory degrades large language model detection of suicidal ideation relative to clinicians: a preregistered study. medRxiv (preprint). 2026 Jul 14. doi:10.64898/2026.07.10.26357132.</div>
+  <div class="url"><a href="https://doi.org/10.64898/2026.07.10.26357132" target="_blank" rel="noopener">https://doi.org/10.64898/2026.07.10.26357132</a></div>
+  <div class="row"><b>Overview:</b> A preregistered test of whether short-prompt safety-classification performance survives realistic conversational context. 400 clinician-validated statements were inserted at depths from 0 to 200 speaker turns into five real psychotherapy transcripts and three synthetic ones; 12 top models extended to 1,500 turns. 49 LLMs compared against 8 clinicians on the same task, ~1.4 million inferences. Task type: binary safety classification (alerting-adjacent). Signal: interpretive. Setting: psychotherapy transcripts with a clinician comparator arm run under identical conditions.</div><div class="row"><b>Eval question:</b> Is a single-turn benchmark a valid proxy for deployed behaviour in a system that accumulates conversational context — and if performance degrades, is that a property of the model or of the task?</div><div class="row"><b>Methodology:</b> Factorial insertion of validated statements at controlled conversational depths (0–200 turns, 1,500 for a subset). Parallel clinician arm on the identical protocol. Contrast of adversarial (multi-shot jailbreak) vs ordinary therapy trajectories to separate content from length. Instruction-restatement tested as a mitigation arm rather than only documenting the failure.</div><div class="row"><b>Measurement:</b> F1 as the primary endpoint; mixed-effects models with depth, model scale and model version as effects; ΔF1 for the mitigation arm.</div><div class="row"><b>Key findings:</b> F1 declined with conversational depth across EVERY model family (p&lt;0.001). Clinicians showed NO decline — mean F1 0.86 at both 0 and 200 turns. Yet 8 of 9 proprietary models still exceeded clinician F1 at 200 turns: higher absolute performance, worse stability. Content, not length, drove the degradation — largest drop under adversarial context (p&lt;0.001). Restating instructions recovered ΔF1 +0.12 on therapy trajectories (89% median recovery) vs +0.08 on multi-shot jailbreak (38% recovery, p=0.04).</div><div class="row"><b>Soft spots:</b> Preprint. Binary classification of INSERTED statements is not naturalistic disclosure — real ideation is rarely a clean sentence dropped into a transcript. Only 8 clinicians. Synthetic transcripts mixed with real ones. The instruction-restatement recovery is measured within-study, not validated as a deployed mitigation.</div><div class="row"><b>Strengths:</b> Preregistration; a human comparator arm under an identical protocol (rare, and the reason the central claim is interpretable rather than an artifact); explicit separation of length from content; and a tested mitigation rather than a bare failure report.</div><div class="row"><b>Relevance:</b> Layer 1: classification / alerting; conversational and multi-turn systems; safety evaluation. Layer 2: extends the PQ-149 band-test caveat one step further — PQ-149 showed a judge can sit INSIDE the human band while lacking metacognition; this shows a model can EXCEED the human band in absolute terms while being less stable than humans along an axis the benchmark never varied. Directly relevant to the Missed Consultation Alert kit (alerting under accumulating context) and any conversational kit: add a depth/trajectory axis, and measure the human comparator at the same depths rather than assuming humans degrade equally.</div><div class="row"><b>Verdict reasoning:</b> The strongest methodological result in the window. Preregistered with a human arm measured identically, which is exactly what makes &#39;the models degrade and the clinicians don&#39;t&#39; defensible. The transferable contribution is the DESIGN — vary the deployment condition your benchmark holds fixed, and measure humans under the same variation. Cite the design and the direction; treat the specific F1 values as domain-bound.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-152">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-152">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-152">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-153">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-153</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Reis F, Kunde W, Balzer F, Boie SD. Physician epistemic framing alters the accuracy of large language models for medical second opinions. medRxiv (preprint). 2026 Jul 2. doi:10.64898/2026.06.30.26356911.</div>
+  <div class="url"><a href="https://doi.org/10.64898/2026.06.30.26356911" target="_blank" rel="noopener">https://doi.org/10.64898/2026.06.30.26356911</a></div>
+  <div class="row"><b>Overview:</b> A preregistered within-case factorial asking whether an LLM&#39;s accuracy is a property of the clinical case or of HOW THE CLINICIAN PHRASES THE REQUEST. Three frontier LLMs answered 499 MedQA-derived cases under five framings — neutral; confirmation-seeking with a correct hypothesis; confirmation-seeking with an incorrect hypothesis; doubt about a correct answer; doubt about an incorrect answer — producing 7,485 responses. Task type: classification / decision support. Signal: interpretive. Setting: MedQA-derived exam cases, not real clinical text.</div><div class="row"><b>Eval question:</b> Does neutral-benchmark accuracy generalise to the way clinicians actually ask questions — and is the sycophancy risk symmetric?</div><div class="row"><b>Methodology:</b> Within-case factorial: each case presented under all five framings, clinical content held constant so that only the epistemic stance of the request varies. Preregistered analysis plan.</div><div class="row"><b>Measurement:</b> Odds ratios vs the neutral baseline with 95% CIs, Holm-adjusted p-values; counts of exact adoption of an incorrect physician hypothesis and of correct→incorrect flips.</div><div class="row"><b>Key findings:</b> Baseline accuracy 93.79%. Confirmation-seeking with a CORRECT hypothesis 93.65%; with an INCORRECT hypothesis 93.72% — no sycophantic collapse. But doubt expressed about the CORRECT answer dropped accuracy to 88.51% (OR 0.51, 95% CI 0.43–0.61, Holm p&lt;0.001). Exact adoption of an incorrect physician hypothesis occurred in only 28/1,497 confirmation responses, but 86 responses flipped correct→incorrect under expressed doubt. Failures concentrated in ambiguous cases and were sometimes delivered with HIGH self-reported confidence.</div><div class="row"><b>Soft spots:</b> MedQA exam items rather than real clinical narrative; multiple-choice outcome; three models only; no human comparator arm. The 5.3-point drop is real but modest, and generalisation to free-text clinical queries is untested.</div><div class="row"><b>Strengths:</b> Preregistered with clinical content held constant, so the framing effect is cleanly attributable. The ASYMMETRY is the non-obvious contribution — the field&#39;s sycophancy narrative predicts that a confidently-asserted wrong hypothesis is the danger; this finds the opposite, that DOUBT is what degrades accuracy. The confidence-decoupling observation independently reinforces KTP #10.</div><div class="row"><b>Relevance:</b> Layer 1: classification / decision support; prompt-framing sensitivity; conversational systems. Layer 2: argues for a prompt-framing sensitivity check at the sanity-check or retrospective stage of any decision-support kit — run the same cases under neutral, confirming and doubting framings and report the spread, rather than evaluating only under a clean neutral prompt no clinician will ever type. Reinforces KTP #10 (self-reported confidence is not an abstention signal) and connects to PQ-149&#39;s metacognition gap. Relevant to Prompt_Optimization_Guide.md, where framing is not currently treated as a measured input-side factor.</div><div class="row"><b>Verdict reasoning:</b> A clean, preregistered result with a genuinely counter-intuitive asymmetry and a directly actionable implication for kit design. Cite the mechanism and the design; hold the specific percentages as MedQA-bound until someone repeats it on real clinical text.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-153">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-153">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-153">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-154">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-154</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Caruzzo C, Yoo D, Kim TS. Deceptive Grounding: Entity Attribution Failure in Clinical Retrieval-Augmented Generation. arXiv (preprint, v1). 2026 Jul 10. arXiv:2607.09349.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2607.09349" target="_blank" rel="noopener">https://arxiv.org/abs/2607.09349</a></div>
+  <div class="row"><b>Overview:</b> Names and measures a RAG failure mode the standard evaluation battery cannot see: the model cites a REAL document, hallucinates nothing, and scores near-perfect on faithfulness — but the evidence it cites is about the WRONG ENTITY (drug Y&#39;s evidence presented as if it were drug X&#39;s). Combines a controlled factorial benchmark across 13 models with production measurement over 740 drug–disease pairs in a deployed system, plus a causal ablation and a validated detector. Task type: extraction/generation with retrieval. Signal: explicit (attribution is checkable).</div><div class="row"><b>Eval question:</b> Are faithfulness, hallucination and citation-validity checks JOINTLY SUFFICIENT for a retrieval-grounded clinical system? The answer is no — all three are blind to attribution, so a system can pass every existing gate and still be wrong in a clinically consequential way.</div><div class="row"><b>Methodology:</b> Controlled factorial benchmark across 13 models under varying adversarial conditions. Causal ablation: remove entity-specific evidence from retrieved documents and observe the effect. Production measurement over 740 drug–disease pairs in a deployed system. Proposed entity-attribution verification step validated against human gold-standard labels.</div><div class="row"><b>Measurement:</b> Deceptive Grounding (DG) rate; detector precision and recall against an IPW-adjusted human gold standard.</div><div class="row"><b>Key findings:</b> DG rates 8–87% across models at peak adversarial conditions. Medical/biomedical FINE-TUNED models reach 86.7% — domain specialisation AMPLIFIES the failure. Ablation: removing entity-specific evidence eliminates attribution failure entirely and shifts everything to confabulation — same trigger, two distinct failure paths. Production system: 7.8% overall DG, rising to 13.6% for recently approved drugs (thinner evidence base → higher attribution failure). Entity-attribution verification detects DG at 97.0% precision / 98.7% recall.</div><div class="row"><b>Soft spots:</b> Preprint, no peer review; author affiliations not disclosed in the abstract. The production rate comes from a single deployed system. Drug–disease domain only — transfer to clinical notes, summaries or guideline retrieval is untested. The detector&#39;s performance is reported by its own authors on their own gold standard.</div><div class="row"><b>Strengths:</b> Identifies a measurable GAP IN THE STANDARD EVALUATION BATTERY rather than adding another metric to it; proves the mechanism by ablation instead of asserting it; ships a validated detector; and reports a real-world rate rather than a benchmark-only number. The &#39;domain fine-tuning makes it worse&#39; result is the SECOND such finding this cycle (cf. PQ-151-FU, where the medical-specialist model was the worst judge).</div><div class="row"><b>Relevance:</b> Layer 1: extraction and generation with retrieval; RAG evaluation; hallucination-adjacent safety. Layer 2: any kit with a retrieval component should add an entity-attribution check as a gate DISTINCT from faithfulness — they are not substitutes. The &#39;recently approved drugs&#39; gradient is a monitoring hint: attribution failure concentrates where the evidence base is thin, which is exactly where a clinical assistant is most likely to be consulted. Extends the Summarization §3 statement-level fact-verification material (PQ-45/PQ-47) with an attribution axis; pairs with KTP #9 as a distinct pre-deployment probe.</div><div class="row"><b>Verdict reasoning:</b> Actionable and well-evidenced for a preprint: it names a failure the existing gates cannot detect, demonstrates the mechanism causally, quantifies it in production, and provides a detection method. Cite the failure mode, the ablation logic and the production gradient; hold the detector&#39;s precision/recall as author-reported until independently replicated.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-154">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-154">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-154">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-155">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-155</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Leinonen JV, Knuuttila J, Pamilo S, Kurki S, Koskinen M. Uncertainty-aware extraction of clinical findings from Finnish EHRs using open large language models. medRxiv (preprint). 2026 Jul 9. doi:10.64898/2026.07.07.26355248.</div>
+  <div class="url"><a href="https://doi.org/10.64898/2026.07.07.26355248" target="_blank" rel="noopener">https://doi.org/10.64898/2026.07.07.26355248</a></div>
+  <div class="row"><b>Overview:</b> Tests whether run-to-run uncertainty can be converted into a CALIBRATED TRIAGE SIGNAL that tells you which extractions need expert review. Three open-weight models (gpt-oss-20b, DeepSeek-R1-Distill-Qwen-32B, medgemma-27b-text-it) extract four targets from full free-text records of 97 pediatric ischaemic stroke patients (Helsinki University Hospital, 2010–2023), English prompts on Finnish text, with 15 CALLS PER COMBINATION (5 temperatures × 3 repeats). External validation in an independent 88-patient neonatal cohort. Clinician reference standard.</div><div class="row"><b>Eval question:</b> Extraction kits face a review-budget problem: clinician review is the bottleneck. Can within-model uncertainty tell you WHICH cases to spend that budget on — i.e. buy near-complete error coverage for a fraction of the labelling cost?</div><div class="row"><b>Methodology:</b> Three open-weight models × 4 extraction targets, 15 calls per combination. Shannon entropy across the 15 calls as a within-model uncertainty signal. Inter-model disagreement as a second, independent ensemble signal. Entropy-ranked triage: review highest-entropy cases first, measure error coverage as a function of review fraction. External validation on an independent neonatal cohort.</div><div class="row"><b>Measurement:</b> Accuracy, recall, precision, F1 against a clinician reference standard; Shannon entropy as the triage statistic; error coverage vs percentage of patients reviewed.</div><div class="row"><b>Key findings:</b> gpt-oss-20b: recall 0.91–1.00, precision 0.83–0.92, F1 0.89–0.95. Entropy in MISCLASSIFIED cases was 2.4–3.4× that of correctly classified cases — the signal separates cleanly. Entropy-triage achieved complete error coverage while reviewing &lt;10% of patients for hemiplegia (8.3%) and headache (8.2%); 19.6% for seizure. External neonatal validation F1 0.95 (Apgar-1min, binary seizure) and 0.87 (4-class stroke subtype).</div><div class="row"><b>Soft spots:</b> Very small cohorts — &#39;complete error coverage&#39; at n=97 carries a wide confidence interval and is at real risk of OVERFITTING THE TRIAGE THRESHOLD to this sample. Single site plus one external cohort. Finnish, so non-English but not Hebrew. The 15-call structure multiplies inference cost, which matters for a production budget.</div><div class="row"><b>Strengths:</b> An explicit repeat structure rather than single-shot evaluation; two complementary and independent uncertainty signals (within-model entropy, cross-model disagreement); open-weight and locally runnable, so privacy-compatible; and an external validation cohort, which most extraction papers of this size skip.</div><div class="row"><b>Relevance:</b> Layer 1: extraction; uncertainty quantification; review-budget allocation. Layer 2: operationally the most directly usable find of the window for the extraction kits (VAP, Delirium, CTA-PR, POPC) — a concrete recipe for cutting clinician review load while preserving error coverage. Pairs with PQ-141-FU: Shyr gives the vocabulary and the measure-with-R protocol, this shows what the R repeats are FOR beyond reporting variability. IMPORTANT CONTRAST with KTP #10: this is entropy across repeated samples, not the model&#39;s SELF-REPORTED confidence — the former is a behavioural measurement, the latter is a claim, and only the former is defensible as a triage trigger.</div><div class="row"><b>Verdict reasoning:</b> Promote with an explicit small-N caveat on the triage threshold. The method is sound, the repeat structure is right, and the external cohort helps — but &#39;complete error coverage under 10% review&#39; is a small-sample result and should be reproduced on your own data before any review budget is cut on the strength of it. Import the method and the entropy-vs-self-reported-confidence distinction; treat the coverage percentages as a target to verify, not a planning number.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-155">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-155">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-155">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-156">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-156</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Mohajerani Y, Mohajerani SA, Strobel S, Mitges C, Brick C, Upadhye S, et al. Automated quality assurance for emergency department documentation: pilot comparison with physician peer review of simulated chest pain cases. CJEM. 2026 Jul 17. doi:10.1007/s43678-026-01230-2. PMID 42467160.</div>
+  <div class="url"><a href="https://doi.org/10.1007/s43678-026-01230-2" target="_blank" rel="noopener">https://doi.org/10.1007/s43678-026-01230-2</a></div>
+  <div class="row"><b>Overview:</b> A pilot testing an LLM auditor — customised to CPSO peer-review standards — against physician peer review for ED documentation quality. Seventeen simulated chest-pain notes scored on nine dimensions using a 3-POINT SCALE by the model, by six community emergency physicians, and by the original case writers. The methodological point of interest: the study MEASURES THE HUMAN–HUMAN AGREEMENT BAND FIRST and reports it as a primary result. Peer-reviewed (CJEM).</div><div class="row"><b>Eval question:</b> When human reviewers disagree widely with each other, what does &#39;the model agrees with humans&#39; actually mean — and is that a meaningful bar?</div><div class="row"><b>Methodology:</b> LLM auditor customised to CPSO peer-review standards; nine documentation-quality dimensions on a 3-point scale; three rater groups (model, six community EM physicians, original case writers); human–human concordance measured and reported alongside model–human concordance.</div><div class="row"><b>Measurement:</b> Lin&#39;s Concordance Correlation Coefficient for continuous agreement; RMSE against mean human scores; Cohen&#39;s kappa for categorical dimensions — three complementary statistics rather than one.</div><div class="row"><b>Key findings:</b> Human–human overall concordance ranged 0.28–0.86 — an enormous spread. Inter-human kappa ranged −0.12 to 0.68 (negative kappa = worse than chance on at least one dimension). Best model (guideline-customised Claude Sonnet 4): CCC 0.85, RMSE 0.25 vs mean human scores. Pass/fail agreement with humans 65–94%, kappa 0.27–0.85. The model&#39;s agreement with humans exceeded some humans&#39; agreement with each other.</div><div class="row"><b>Soft spots:</b> N=17; simulated cases only; and the confound that matters most — UNCALIBRATED HUMAN RATERS. An uncalibrated band is wide, and a wide band is an easy bar to clear. The authors acknowledge this, but it means &#39;the model beat some humans&#39; agreement with each other&#39; is a weaker claim than it sounds. Single specialty, single scenario type.</div><div class="row"><b>Strengths:</b> Reports the human band as a FIRST-CLASS RESULT rather than a footnote — exactly the practice the §1 band-test guidance asks for. Uses a 3-point scale (matching the house preference for inter-rater agreement). Reports kappa AND CCC AND RMSE, so agreement, reliability and error magnitude are visible separately rather than collapsed into one summary statistic.</div><div class="row"><b>Relevance:</b> Layer 1: rubric/scoring; LLM-as-judge for documentation quality; agreement measurement. Layer 2: the cleanest recent illustration of the caveat just added with PQ-149 — passing a human band is only as meaningful as the band is TIGHT. It supplies the other half of that caution: PQ-149 shows band-membership can hide behavioural gaps; this shows the band itself can be so wide that membership is nearly uninformative. Directly relevant to the Consultation Quality kit and to the §1 band-test subsection, where it would justify adding a step: report the WIDTH of the human band, and treat a very wide band as a task-well-posedness warning (cf. PB-08) rather than as a low bar to clear.</div><div class="row"><b>Verdict reasoning:</b> Not a Promote on evidence weight — 17 simulated cases with uncalibrated raters cannot carry a methodological recommendation on their own. But the framing is the contribution and is worth carding for that argument alone. If promoted, cite it ONLY for the band-width caution and the multi-statistic reporting pattern; do NOT cite the CCC 0.85 as evidence the tool works.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-156">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-156">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-156">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-157">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-157</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Braitsch K, Schmalbrock LK, Weltermann T, Berdel AF, Miller I, Tran K, et al. Information-seeking failures of large language models in agentic clinical reasoning. arXiv (preprint, v1). 2026 Jul 11. arXiv:2607.10275. (Technical University of Munich — Bressem, Adams, Makowski.)</div>
+  <div class="url"><a href="https://arxiv.org/abs/2607.10275" target="_blank" rel="noopener">https://arxiv.org/abs/2607.10275</a></div>
+  <div class="row"><b>Overview:</b> An agentic evaluation in hematologic oncology where models must PROACTIVELY REQUEST clinical data across three sequential rounds before committing to a diagnosis and treatment plan — rather than being handed a complete case as in static Q&amp;A. Thirty-two frontier models evaluated, with reasoning traces additionally rubric-scored. No clinician comparator arm.</div><div class="row"><b>Eval question:</b> Static benchmarks hand the model all the data. Real clinical reasoning requires deciding WHAT TO ASK FOR. Does benchmark knowledge predict performance when information must be actively sought?</div><div class="row"><b>Methodology:</b> Three sequential rounds in which the model must request clinical data before committing. Measurement of information utilisation — the fraction of available data actually requested. Rubric scoring of reasoning traces, analysed against accuracy.</div><div class="row"><b>Measurement:</b> Overall diagnostic accuracy; information-utilisation fraction; correlation R between the two; rubric threshold pass rate.</div><div class="row"><b>Key findings:</b> Best model reached only 68% accuracy. Information utilisation was the STRONGEST PREDICTOR of diagnostic accuracy (R=0.69, p&lt;0.001) — yet utilisation COLLAPSED from 57% to 26% by the final round, leaving molecular and cytogenetic data unexamined. Reasoning traces scored above a clinical reasoning rubric threshold 91% of the time WHILE DECORRELATING FROM ACCURACY. Named failure modes: search satisficing, anchoring, premature closure.</div><div class="row"><b>Soft spots:</b> Preprint; case count and rubric construction not available in the abstract — this is the main thing to check before promoting. Single specialty; no clinician comparator, so there is no way to know whether physicians show the same round-over-round decline. &#39;Information utilisation&#39; is defined against an available-data denominator the study itself constructs.</div><div class="row"><b>Strengths:</b> The rubric-passing-but-accuracy-decorrelated result is a direct, INDEPENDENT REPLICATION of the theme in PQ-150 and PQ-151 — different lab, different method, different specialty. Thirty-two models is real breadth. The failure taxonomy (satisficing, anchoring, premature closure) maps onto recognised human diagnostic errors, which makes it teachable.</div><div class="row"><b>Relevance:</b> Layer 1: agentic / multi-step evaluation; clinical reasoning; generation. Layer 2: the THIRD CONVERGENCE POINT on rubric-scored reasoning quality decorrelating from correctness (with PQ-150 and PQ-151/PQ-151-FU). That convergence is the reason to card it — it turns a single-paper observation into a pattern strong enough to state in Guidance: scoring the reasoning narrative is not a proxy for scoring the answer. Also relevant to any future agentic kit, where information utilisation is a candidate evaluation metric in its own right alongside outcome accuracy (cf. PQ-79, MedAgentBench).</div><div class="row"><b>Verdict reasoning:</b> Promote-worthy if the full text shows adequate case counts and a defensible rubric construction — both currently unverifiable from the abstract. Card it now because the convergence with PQ-150/PQ-151 is the methodologically important part and does not depend on the exact case count; check the case count before importing any specific number.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-157">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-157">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-157">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-158">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-158</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Silva L, Milani M, Bindra S, Ikramuddin SS, Tessmer M, Frederickson K, Datta A, Ergen H, Stangebye A, Cooper D, Kumar K, Yeung J, Lakshminarayan K, Streib C. Assessment of the Modified Rankin Scale in Electronic Health Records with a Fine-tuned Large Language Model. medRxiv (preprint). 2025 May 2. doi:10.1101/2025.04.30.25326777.</div>
+  <div class="url"><a href="https://doi.org/10.1101/2025.04.30.25326777" target="_blank" rel="noopener">https://doi.org/10.1101/2025.04.30.25326777</a></div>
+  <div class="row"><b>Overview:</b> LONG-PENDING LEAD, NOW RESOLVED. This has been the standing verify-before-carding lead since scan #30 — the strongest CLINICAL candidate for a same-cohort human inter-rater band test, blocked by 403 errors on four previous attempts. It fetched fine via the medRxiv details API this cycle (the scraper was blocked, not the record). Retrospective cohort at a single academic stroke service (Aug 2020–Jun 2023), 2,290 EHR passages, two fine-tuned models (7-class mRS; binary functional independence mRS 0–2 vs 3–6), four-fold cross-validation.</div><div class="row"><b>Eval question:</b> The lead was carried specifically to answer: does a real clinical study benchmark its model against a SAME-COHORT HUMAN INTER-RATER BAND, as VERA-MH (PQ-145) does outside patient care?</div><div class="row"><b>Methodology:</b> Fine-tuned LLM on 2,290 EHR passages; two model formulations; four-fold cross-validation; reference standard from two independent researchers assigning mRS at each time point.</div><div class="row"><b>Measurement:</b> Accuracy and weighted Cohen&#39;s kappa; class-specific accuracy for the multiclass model.</div><div class="row"><b>Key findings:</b> Multiclass: 77% accuracy, weighted Cohen&#39;s kappa 0.92. Binary functional independence: 92% accuracy, kappa 0.84. Class-specific accuracy highest for mRS 4 (90%) and LOWEST FOR mRS 2 (28%).</div><div class="row"><b>Soft spots:</b> THE ANSWER TO THE QUESTION THE LEAD WAS CARRIED FOR IS NO. Two independent researchers scored the passages and inter-rater variability is explicitly named as the motivating problem — but NO same-cohort human agreement figure is reported, so the model&#39;s kappa of 0.92 has nothing to be compared against. Compounding this: the 28% accuracy on mRS 2 sits at the clinically pivotal independence boundary, suggesting the weighted kappa is carried by easy extreme classes while the model fails precisely where the scale matters most. Weighted kappa on an ordinal scale rewards near-misses, so a high value is compatible with poor discrimination at the decision-relevant cut point. Single centre; preprint.</div><div class="row"><b>Strengths:</b> Real clinical EHR text at meaningful volume with cross-validation on a genuinely difficult ordinal target, and it reports CLASS-SPECIFIC ACCURACY rather than only the aggregate — which is the only reason the mRS-2 weakness is visible at all. That transparency is what makes it useful as a teaching case.</div><div class="row"><b>Relevance:</b> Layer 1: extraction / ordinal classification; agreement measurement. Layer 2: card this as the CAVEAT CASE, not a positive result. It closes the standing lead with a negative answer and becomes a concrete clinical example for the §1 band-test subsection&#39;s existing observation that clinical studies tend to skip the same-cohort human band — plus a second point worth adding: a headline weighted kappa can conceal failure at the decision-relevant threshold, so always report class-specific accuracy at the cut point that drives the clinical decision. Pairs with the Per-Criterion Evaluation guidance already in §1 and with PQ-73 (kappa paradoxes).</div><div class="row"><b>Verdict reasoning:</b> Worth carding to close a four-cycle lead and to serve as the clinical counter-example the band-test guidance currently lacks — but explicitly AS THE CAVEAT CASE. If promoted, the headline in Guidance should be the 0.92-kappa-with-28%-on-mRS-2 contrast and the missing human band, not the accuracy figures. One check worth doing before any promotion: the full text may report the human IRR even though the abstract does not.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-158">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-158">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-158">? More info</button>
+  </div>
+</section>
+</div>
+
+<div class="cart">
+  <div class="cart-inner">
+    <div class="cart-summary" id="summary">No choices yet. Tap a button on a card above.</div>
+    <button class="send-btn" id="sendBtn" disabled>Send 0 / 8 decisions</button>
+    <button class="clear-link" id="clearBtn">Clear all my choices</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const ALL_IDS = ["PQ-151-FU","PQ-152","PQ-153","PQ-154","PQ-155","PQ-156","PQ-157","PQ-158"];
+  const REPLY_TO = "tali.biron@gmail.com";
+  const REPLY_SUBJECT = "Re: Scout 2026-07-18 — 8 source(s) (PQ-151-FU, PQ-152, PQ-153, PQ-154, PQ-155, PQ-156, PQ-157, PQ-158)";
+  const STORAGE_KEY = "scout-cart-2026-07-18";
+
+  // Load saved state from localStorage (so refresh doesn't lose progress)
+  let choices = {};
+  try { choices = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) {}
+
+  function saveAndRender() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(choices));
+
+    // Re-style each card based on choice
+    document.querySelectorAll('.card').forEach(card => {
+      const id = card.dataset.id;
+      card.classList.remove('chosen-promote', 'chosen-skip', 'chosen-more');
+      card.querySelectorAll('.choice').forEach(b => b.classList.remove('active'));
+      const c = choices[id];
+      if (c) {
+        card.classList.add('chosen-' + c);
+        card.querySelector('.choice.' + c).classList.add('active');
+      }
+    });
+
+    // Update sticky summary + send button
+    const made = ALL_IDS.filter(id => choices[id]);
+    const pending = ALL_IDS.filter(id => !choices[id]);
+    const counts = { promote:0, skip:0, more:0 };
+    made.forEach(id => counts[choices[id]]++);
+
+    let html = '';
+    if (counts.promote) html += '<span class="badge promote">' + counts.promote + ' promote</span>';
+    if (counts.skip)    html += '<span class="badge skip">' + counts.skip + ' skip</span>';
+    if (counts.more)    html += '<span class="badge more">' + counts.more + ' more</span>';
+    if (pending.length) html += '<span class="badge pending">' + pending.length + ' pending</span>';
+    if (!made.length && !pending.length) html = 'No choices yet.';
+    document.getElementById('summary').innerHTML = html || 'No choices yet.';
+
+    const btn = document.getElementById('sendBtn');
+    btn.disabled = made.length === 0;
+    btn.textContent = 'Send ' + made.length + ' / ' + ALL_IDS.length + ' decisions';
+  }
+
+  // Wire button clicks
+  document.querySelectorAll('.choice').forEach(b => {
+    b.addEventListener('click', () => {
+      const id = b.dataset.id;
+      const choice = b.dataset.choice;
+      // Toggle off if same choice clicked again
+      if (choices[id] === choice) delete choices[id];
+      else choices[id] = choice;
+      saveAndRender();
+    });
+  });
+
+  // Send button — uses mailto on mobile (opens native Gmail app), Gmail web on desktop.
+  document.getElementById('sendBtn').addEventListener('click', () => {
+    const lines = ALL_IDS.filter(id => choices[id]).map(id => choices[id] + ' ' + id);
+    if (!lines.length) return;
+    const body = '# Scout decisions for ' + "2026-07-18" + '\n# Sent from the cart page\n\n' + lines.join('\n') + '\n';
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const url = isMobile
+      ? 'mailto:' + encodeURIComponent(REPLY_TO) + '?subject=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body)
+      : 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(REPLY_TO) + '&su=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body);
+    // mailto must be same-window on iOS; _blank is fine for https
+    if (isMobile) window.location.href = url;
+    else window.open(url, '_blank');
+  });
+
+  // Clear button
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    if (!confirm('Clear all your choices on this page?')) return;
+    choices = {};
+    saveAndRender();
+  });
+
+  saveAndRender();
+})();
+</script>
+</body>
+</html>
