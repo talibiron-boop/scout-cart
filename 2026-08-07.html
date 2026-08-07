@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scout decisions — 2026-08-07</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; padding:0 0 180px 0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; background:#f8fafc; color:#0f172a; }
+  .container { max-width:760px; margin:0 auto; padding:24px 16px; }
+  h1 { font-size:22px; margin:0 0 8px 0; color:#1e40af; }
+  .sub { font-size:13px; color:#64748b; margin-bottom:20px; }
+  .help { background:#ecfeff; border:2px solid #0891b2; border-radius:8px; padding:14px 16px; margin-bottom:20px; font-size:13px; color:#164e63; line-height:1.5; }
+  .card { border:1px solid #e2e8f0; border-radius:10px; padding:16px; margin-bottom:14px; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.03); }
+  .card.is-rollover { border-color:#fbbf24; background:#fffbeb; }
+  .card.chosen-promote { border-color:#059669; box-shadow:0 0 0 2px #05966933; }
+  .card.chosen-skip { border-color:#dc2626; box-shadow:0 0 0 2px #dc262633; }
+  .card.chosen-more { border-color:#64748b; box-shadow:0 0 0 2px #64748b33; }
+  .rollover-badge { background:#fde68a; color:#78350f; font-size:11px; font-weight:700; padding:5px 10px; border-radius:10px; display:inline-block; margin-bottom:10px; }
+  .card-head { display:flex; justify-content:space-between; align-items:baseline; }
+  .pq-id { font-size:14px; font-weight:700; color:#1e40af; }
+  .verdict { font-size:12px; font-weight:700; }
+  .citation { margin-top:8px; font-size:14px; line-height:1.5; font-weight:500; }
+  .url { margin-top:4px; font-size:12px; }
+  .url a { color:#2563eb; }
+  .row { margin-top:8px; font-size:13px; color:#334155; line-height:1.5; }
+  .row b { color:#0f172a; }
+  .choice-row { display:flex; gap:8px; margin-top:14px; }
+  .choice { flex:1; padding:14px 8px; border-radius:8px; border:2px solid transparent; font-size:14px; font-weight:700; cursor:pointer; background:#f1f5f9; color:#475569; transition:all .15s; font-family:inherit; }
+  .choice:hover { transform:translateY(-1px); }
+  .choice.promote.active { background:#059669; color:#fff; border-color:#047857; }
+  .choice.skip.active { background:#dc2626; color:#fff; border-color:#b91c1c; }
+  .choice.more.active { background:#64748b; color:#fff; border-color:#475569; }
+  /* Sticky bottom bar */
+  .cart { position:fixed; bottom:0; left:0; right:0; background:#fff; border-top:2px solid #e2e8f0; box-shadow:0 -4px 12px rgba(0,0,0,.08); padding:12px 16px; z-index:100; }
+  .cart-inner { max-width:760px; margin:0 auto; }
+  .cart-summary { font-size:13px; color:#475569; margin-bottom:8px; line-height:1.4; }
+  .cart-summary b { color:#0f172a; }
+  .cart-summary .badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:700; margin-right:6px; }
+  .badge.promote { background:#d1fae5; color:#065f46; }
+  .badge.skip { background:#fee2e2; color:#991b1b; }
+  .badge.more { background:#e2e8f0; color:#334155; }
+  .badge.pending { background:#fef3c7; color:#92400e; }
+  .send-btn { display:block; width:100%; padding:16px; border:none; border-radius:8px; background:#0891b2; color:#fff; font-size:16px; font-weight:700; cursor:pointer; font-family:inherit; }
+  .send-btn:hover:not(:disabled) { background:#0e7490; }
+  .send-btn:disabled { background:#cbd5e1; cursor:not-allowed; }
+  .clear-link { display:inline-block; margin-top:6px; font-size:12px; color:#64748b; text-decoration:underline; cursor:pointer; background:none; border:none; padding:0; font-family:inherit; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Scout decisions — 2026-08-07</h1>
+  <div class="sub">8 source(s) to review. Choices auto-save in this browser.</div>
+
+  <div class="help">
+    Tap <b style="color:#059669;">Promote</b>, <b style="color:#dc2626;">Skip</b>, or <b style="color:#475569;">More info</b> on each card. The bar at the bottom keeps a running list of your choices. When you're done, hit the cyan <b>Send</b> button — Gmail opens with one email containing all your decisions. Hit Send in Gmail and you're done.
+  </div>
+
+  
+<section class="card" data-id="PQ-169-FU">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-169-FU</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Gao X, Huang X, Hu R, Zhang L, Liu H, Zhang B, Wei C, Qiu W, Zhang M, Sun X. Evaluating Large Language Model-Based Automated Scoring in a Voice-Based Virtual Standardized Patient Platform for Medical Students: A Cross-Sectional Agreement Study. JMIR Med Educ. 2026 Jul 30. doi:10.2196/95578. PMID 42535722.</div>
+  <div class="url"><a href="https://doi.org/10.2196/95578" target="_blank" rel="noopener">https://doi.org/10.2196/95578</a></div>
+  <div class="row"><b>Overview:</b> FOLLOW-UP of your &#39;more&#39; on PQ-169 — Promote or Skip only, no third round. The full text could not be retrieved: the JMIR site, the DOI redirect target and the PDF endpoint all returned nothing, and EuropePMC records the article as subscription-required. What the deep-dive did recover is the complete structured abstract via the EuropePMC REST API, which is materially richer than the record the original card was built from and settles three of the six open questions. The study itself: 92 fourth-year medical students each completed one of three 15-minute voice-based virtual standardized patient cases (fever, diarrhea, cough); ten blinded faculty raters scored history-taking and communication (0-100 total, 0-50 per domain); AI scores came from DeepSeek-V3 with a calibrated prompt. Task type: rubric scoring / LLM-as-judge on an interpretive construct. Signal: interpretive (communication) and mixed (information gathering). Setting: medical education, not clinical care.</div><div class="row"><b>Eval question:</b> Before concluding that an LLM judge is unreliable, how much of the apparent disagreement is actually the humans disagreeing with each other? And — the reason this was worth a deep-dive — is the variance-partition machinery reported precisely enough to reproduce in a kit?</div><div class="row"><b>Methodology:</b> Confirmed at abstract level: cross-sectional agreement design; 10 blinded faculty raters (a real multi-rater comparator, far above the two-rater norm); three distinct cases so case heterogeneity is modelled rather than averaged away; mixed-effects models separating rater, case and residual variance; variance partition coefficients; mixed-effects Bland-Altman reporting mean bias AND limits-of-agreement width plus a proportional-bias test; agreement analysed separately for information gathering and communication rather than pooled; pre-planned sensitivity analysis restricted to the lowest-performing quartile as a ceiling-effect check.
+
+NOT recoverable without full text: the mixed-effects model specification (random-effects structure, whether case and rater were crossed or nested), how VPC was computed from it, the DeepSeek-V3 calibration procedure, and whether the faculty raters received any training or anchoring.</div><div class="row"><b>Measurement:</b> The full panel, now with the CIs the original card lacked. ICC(2,1) = 0.51 (95% CI 0.34-0.65). Spearman rho = 0.50 (95% CI 0.34-0.65). Regression beta = 0.37 (95% CI 0.26-0.48, P&lt;.001). MAE 3.11 points. Bland-Altman mean bias 1.26 points (non-significant) with limits of agreement -4.95 to +7.48, WIDTH 12.43 points. Proportional bias beta_mean = -0.55, P&lt;.001. VPC = 0.37 for rater variance in faculty total scores.
+
+Per domain — information gathering: beta 0.46, rho 0.49, ICC 0.54, VPC 0.23. Communication: beta 0.27, rho 0.28, ICC 0.29, VPC 0.52. Lowest-quartile sensitivity: ICC 0.38. Median totals AI 93.0 (IQR 6.0) vs faculty 94.0 (IQR 4.0).</div><div class="row"><b>Key findings:</b> THREE things the deep-dive adds.
+
+(1) The per-domain contrast is stronger than the original card conveyed and is now fully quantified. Communication: ICC 0.29 with 52% of residual variance attributable to rater identity. Information gathering: ICC 0.54 with 23%. Same model, same prompt, same raters, two domains — the model agrees least exactly where the humans agree least, and the VPC is what demonstrates that rather than asserting it. This is the cleanest within-study evidence in the collection for the objective/subjective gradient.
+
+(2) A DATA-INTEGRITY FLAG. The reported 95% CI for ICC(2,1) is 0.34-0.65 and the reported 95% CI for Spearman rho is ALSO 0.34-0.65. Two different statistics with identical interval endpoints to two decimal places is very unlikely to be coincidence; it is more consistent with a copy error in the abstract. This does not undermine the VPC result, which is the transferable contribution — but the ICC interval should not be quoted until someone checks the full text.
+
+(3) NO inter-faculty agreement statistic is reported at all — only VPC. VPC answers &#39;how much variance is rater-attributable&#39;; it does not give you the ICC or kappa AMONG the faculty, which is what a band test needs. So this paper measures rater heterogeneity without ever reporting the human band. No rater calibration or anchoring protocol is described either, which very plausibly inflates the 37%.</div><div class="row"><b>Soft spots:</b> Full text inaccessible — everything above is abstract-level, and the ICC/rho identical-CI anomaly is unresolved. Medical education, not clinical care: students being assessed, not patients being treated, so the construct and the consequences of error differ and transfer is by analogy only. Strong ceiling effects (medians 93-94 out of 100) mechanically compress variance and depress ICC, so some of the &#39;moderate agreement&#39; is a property of the score distribution rather than of the model. Single model, single calibrated prompt, no cross-family judge check, no prompt-sensitivity arm. Each student completed only ONE of three cases, so case and student are partially confounded, and 92 students across three cases is thin per case. The faculty comparator is itself uncalibrated. No error analysis of WHERE the model diverged — the statistics describe the disagreement without characterising it.</div><div class="row"><b>Strengths:</b> Reports the statistics that actually matter for a substitution decision TOGETHER: ICC for absolute agreement, Bland-Altman WIDTH not just bias, proportional-bias testing, and VPC for variance attribution. Most agreement studies report one of these. Variance partitioning is the standout contribution — it reframes &#39;the model agrees only moderately&#39; into &#39;37% of the disagreement is human, and the model is worst exactly where humans are worst&#39;. Ten blinded raters is a serious human comparator. Splits the analysis by domain and finds the interpretive/explicit gradient empirically rather than assuming it. The pre-planned lowest-quartile sensitivity analysis addresses the ceiling-effect objection directly instead of leaving it to the reader. Conclusions are appropriately scope-limited to formative use and tied to specific measured properties. Peer-reviewed.</div><div class="row"><b>Relevance:</b> Layer 1 — LLM-as-judge / automated scoring on interpretive constructs; agreement methodology.
+
+Layer 2 — Adds a statistical tool the Statistician_Guide does not carry: the VARIANCE PARTITION COEFFICIENT, for answering &#39;how much of this disagreement is the raters?&#39; before judging the model. That is the natural companion to the band test (PQ-149) and the band-WIDTH caveat (PQ-156): PQ-156 says report how wide the human band is, and this shows how to ATTRIBUTE the width. The Bland-Altman pattern — a non-significant mean bias of 1.26 points sitting on top of a 12.43-point limits-of-agreement width — is a directly reusable teaching artifact for the Consultation Quality and Nuclear Medicine kits, both of which score interpretive rubrics where average agreement could easily be reported without the spread.</div><div class="row"><b>Verdict reasoning:</b> The deep-dive strengthened the case rather than weakening it, but changed what to import. Promote for the VPC method and the domain-level contrast (ICC 0.54 / VPC 0.23 vs ICC 0.29 / VPC 0.52), which is genuinely additive — the knowledge base already knows judges do worse on subjective constructs; what it has been missing is a study that MEASURES how much of that gap belongs to the human raters. Three caveats travel with it: education-not-clinical-care; do NOT quote the ICC confidence interval until the identical-CI anomaly is checked in full text; and note that this study measures rater heterogeneity WITHOUT reporting a human band, so it complements the band test rather than demonstrating one. Skip is defensible if you judge the education setting too far from clinical care to be worth the shelf space.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-169-FU">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-169-FU">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-169-FU">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-170-FU">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-170-FU</span>
+    <span class="verdict" style="color:#dc2626;">Skip</span>
+  </header>
+  <div class="citation">Yu Y. Confidence Is Not Probability: Verification-Based Confidence Prediction for LLM-Generated Clinical Summaries. Preprints.org preprint. 2026 Jul 28. doi:10.20944/preprints202607.1999.v1.</div>
+  <div class="url"><a href="https://doi.org/10.20944/preprints202607.1999.v1" target="_blank" rel="noopener">https://doi.org/10.20944/preprints202607.1999.v1</a></div>
+  <div class="row"><b>Overview:</b> FOLLOW-UP of your &#39;more&#39; on PQ-170 — Promote or Skip only. The full text is NOT retrievable: the Preprints.org manuscript page, the abstract page and the publisher&#39;s PDF endpoint all return HTTP 403, and the paper is not mirrored on medRxiv, PMC or arXiv. The deep-dive recovered abstract-level content plus two stratified numbers surfaced through secondary indexing, and nothing more. The study: ClinTrust scores clinical summaries on 26 verification features across six families (coverage, factual consistency, NLI, numerical accuracy, semantic similarity, self-consistency) as an alternative to token-level confidence. Built on MIMIC-IV — 500 summarization tasks across four open-source LLMs (Qwen2.5-14B/32B, Phi-4, Llama-3.1-8B) producing 2,000 summaries plus 1,500 self-consistency samples, with 200 physician-validated.</div><div class="row"><b>Eval question:</b> This deep-dive was commissioned to answer exactly two questions, both of which determine whether the paper&#39;s headline survives: (a) what is the rubric behind &#39;problematic&#39; and &#39;fully trustworthy&#39;? and (b) do the two board-certified physicians agree with each other? NEITHER could be answered.</div><div class="row"><b>Methodology:</b> Unchanged from the original card and still abstract-level: ground-truth labels generated by Codex-GPT-5, then validated against two board-certified physicians on a 200-summary subsample; three-way label comparison (Codex-GPT-5 vs a second LLM judge, Phi-4, vs physicians) with pairwise agreement computed; the predictor evaluated TWICE — against LLM labels and against physician labels — rather than only against the cheaper reference; baselines include token log-probability and BERTScore-F1.
+
+NOT recoverable: the &#39;problematic&#39; rubric, the &#39;fully trustworthy&#39; threshold, how the 200-summary subsample was selected, and any inter-physician statistic.</div><div class="row"><b>Measurement:</b> Confirmed: AUROC 0.846 (95% CI 0.788-0.896) against Codex-GPT-5 labels vs only 0.695 (0.619-0.768) against physician labels; token log-probability 0.583, BERTScore-F1 0.607. Problematic-rates on identical summaries: Codex-GPT-5 93.4%, Phi-4 10.5%, physicians 59.5%. Pairwise kappa 0.009-0.151.
+
+NEW from this deep-dive, via secondary indexing only: a stratified analysis exists — AUROC 0.755 on the largest admission-type stratum — plus two descriptive findings, that the numeric support rate is near-uniformly high (&gt;=0.95) across all four producer LLMs and ROUGE-L is low (median 0.13) because the models paraphrase rather than copy.</div><div class="row"><b>Key findings:</b> The substantive findings are unchanged from the original card: three labelling sources scoring the SAME summaries produced problematic-rates of 93.4%, 10.5% and 59.5% with approximately-chance pairwise agreement; the predictor&#39;s apparent quality depends on which reference it is scored against (0.846 vs 0.695 — validating against the cheap reference would have overstated performance by ~0.15 AUROC); multi-source verification did beat token-level confidence even on the harder physician reference; and each physician independently identified only 1 of 200 summaries as fully trustworthy.
+
+WHAT THE DEEP-DIVE ESTABLISHES IS A NEGATIVE. The two questions that determine whether these numbers mean anything are not answerable at any accessible depth. The stratified AUROC of 0.755 is mildly reassuring — the predictor does not collapse on the largest stratum — but it does not touch either gap.</div><div class="row"><b>Soft spots:</b> Single author, Preprints.org, no peer review, no citations — the lowest evidence tier carded in either cycle. Only two physicians, and INTER-PHYSICIAN AGREEMENT IS NOT REPORTED, which is an unusually load-bearing omission in a paper whose central claim is that raters disagree: if the physician reference is itself unstable, the 59.5% is not a measurement. The 59.5% and the &#39;1 of 200 fully trustworthy&#39; figure depend entirely on an UNSTATED rubric and threshold — without those definitions the numbers are not comparable to anything, and &#39;1 of 200&#39; in particular is a figure whose meaning is set entirely by where the bar was drawn. Kappa between judges with marginal rates of 93.4% and 10.5% sits squarely in the KAPPA-PARADOX regime: near-zero kappa under extreme prevalence imbalance is partly a statistical artifact, and no percent agreement or prevalence-robust coefficient (Gwet&#39;s AC1/AC2, PABAK) appears alongside — the same reporting failure flagged in the S-01/S-05 guidance review. MIMIC-IV only; open-source producer models only, none frontier. ClinTrust is author-built and author-evaluated with no external validation.</div><div class="row"><b>Strengths:</b> Validated its own LLM-generated ground truth against physicians instead of assuming it — the exact step PQ-137 found 26.5% of healthcare LLM-judge studies skip entirely. Reported the predictor&#39;s performance against BOTH references, making the ~0.15 AUROC inflation from using the cheap reference visible rather than invisible. Included a second, weaker LLM judge (Phi-4), which is what exposes the full 10.5%-to-93.4% spread — a single-judge design would have shown none of this. Self-consistency sampling built into the feature set rather than bolted on. Honest baselines (token log-probability, BERTScore-F1). The negative finding is stated in the paper&#39;s own conclusion rather than softened.</div><div class="row"><b>Relevance:</b> Layer 1 — Summarization; LLM-as-judge validation; confidence and uncertainty estimation.
+
+Layer 2 — It converges with PQ-161 (Fleiss&#39; kappa 0.087-0.223 on evidence-conclusion coherence) from an independent direction. But PQ-161 is peer-reviewed, 1,000 real cases, and reports its construct; this is a single-author preprint whose construct is undefined. The convergence is ALREADY IN GUIDANCE via PQ-161 and does not need this source to stand. The one thing that would be additive — a quantified &#39;which judge you pick determines the answer&#39; at the LABEL level with a defensible rubric — is precisely what could not be verified.</div><div class="row"><b>Verdict reasoning:</b> Recommending Skip, which reverses the lean the &#39;more&#39; was meant to test. The reasoning is not that the paper is wrong — the direction is almost certainly right and matches four other sources in the collection. It is that the deep-dive was commissioned to close two specific gaps and closed NEITHER, and both are load-bearing: a paper arguing that raters disagree, which does not report whether its own two reference raters agreed, and which defines &#39;problematic&#39; nowhere accessible, cannot have its numbers cited. Add the kappa-paradox problem — the reported values sit in exactly the prevalence-imbalanced regime where kappa misbehaves, with no percent agreement or prevalence-robust coefficient alongside — and there is no figure here that can safely enter guidance. Everything it would contribute is already carried by PQ-161 with better provenance.
+
+Reasonable to Promote instead if you want the 93.4/10.5/59.5 spread on record as the widest yet observed. That is a legitimate call, which is why this is a recommendation rather than an automatic drop.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-170-FU">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-170-FU">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-170-FU">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-171">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-171</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Valente MJ, Sharobeam A, Vuong J, Chan WK. Diagnostic Accuracy of a locally deployed Large Language Model Algorithm for Automated Code Stroke Pathway Identification in Emergency Department Triage Notes. medRxiv (preprint). 2026 Aug 5. doi:10.64898/2026.08.03.26359639.</div>
+  <div class="url"><a href="https://doi.org/10.64898/2026.08.03.26359639" target="_blank" rel="noopener">https://doi.org/10.64898/2026.08.03.26359639</a></div>
+  <div class="row"><b>Overview:</b> A retrospective cross-sectional diagnostic-accuracy study at Monash Medical Centre, Melbourne. 3,023 de-identified REAL ED triage notes from a one-month period (Sept-Oct 2023) were run through a multi-pass LLM pipeline — sequential passes for translation, stroke symptom identification, mimic exclusion, baseline functional status, temporal window classification, and symptom resolution — to identify patients meeting Code Stroke activation criteria. Six locally deployed open-weight models were compared head to head.
+
+Task type: classification / criteria-based extraction from free-text triage notes. Systems: Qwen 2.5 14B, Qwen 3 14B, Llama 3.1 8B, Phi-4 14B, Mistral 3 14B, Nemotron-Nano-12B-v2, all run locally. Signal: mixed — some criteria explicit in the note, others (mimic exclusion, baseline function) interpretive. Setting: emergency department triage, single Australian tertiary centre. Target use: real-time automated pathway activation. Prevalence: 136/3,023 neurologist-labelled positive — 4.5%, a genuinely low-prevalence task. Clinician involvement: primary neurologist reference standard plus a blinded second neurologist for reliability. Human review: reference standard only.</div><div class="row"><b>Eval question:</b> This is the study the knowledge base has been asking for and rarely sees: what does an extraction/classification evaluation look like when the team MEASURES THE RELIABILITY OF ITS OWN REFERENCE STANDARD, and reports against TWO different reference standards rather than picking one and calling it truth?</div><div class="row"><b>Methodology:</b> 3,023 consecutive real ED triage notes — not vignettes, not synthetic. Multi-pass pipeline with each clinical sub-decision as its own pass, so failure is attributable to a stage rather than to &#39;the model&#39;. TWO reference standards reported separately: neurologist-labelled diagnosis, and documented ED Code Stroke activation (what the humans actually did). REFERENCE-STANDARD RELIABILITY MEASURED: blinded independent re-review of a stratified random sample of 200 presentations by a second neurologist. Six locally deployed models compared with pairwise McNemar testing and HOLM CORRECTION — a real multiplicity adjustment rather than an unadjusted leaderboard. Gwet&#39;s AC1 reported as a secondary outcome alongside sensitivity/specificity/PPV/NPV.</div><div class="row"><b>Measurement:</b> Sensitivity and specificity as primary; PPV, NPV and Gwet&#39;s AC1 as secondary. Reference-standard reliability: raw agreement 95.0%, Cohen&#39;s kappa 0.900 (95% CI 0.838-0.959). Best model (Qwen 2.5 14B): sensitivity 0.890 (95% CI 0.826-0.932), specificity 0.993 (0.989-0.996), PPV 0.858 (0.791-0.906), NPV 0.995 (0.991-0.997).</div><div class="row"><b>Key findings:</b> A locally deployed 14B open-weight model reached sensitivity 0.890 / specificity 0.993 on real ED triage free text at 4.5% prevalence.
+
+The reference standard was SHOWN TO BE RELIABLE BEFORE IT WAS USED TO JUDGE ANYTHING — kappa 0.900 on a blinded stratified re-review. This is the step PQ-158-FU (which you just promoted) documents the absence of, done correctly.
+
+The two reference standards do NOT describe the same thing: 140 ED Code Stroke activations occurred, of which only 83 (59.2%) had a confirmed stroke diagnosis. Human activation practice and neurologist ground truth diverge substantially, and the paper reports against both rather than choosing.
+
+Qwen 2.5 14B was statistically superior to Llama 3.1 8B, Phi-4 14B and Mistral 3 14B (all p&lt;0.001 Holm-corrected) but NOT distinguishable from Nemotron-Nano-12B-v2 or Qwen 3 14B — a leaderboard that honestly reports where the differences stop being real.
+
+Gwet&#39;s AC1 used as the agreement statistic, which is the correct choice at 4.5% prevalence where kappa misbehaves.</div><div class="row"><b>Soft spots:</b> Preprint, single centre, one month of data, one ED&#39;s triage-documentation conventions. Retrospective and offline — this measures diagnostic accuracy, not whether real-time activation would change door-to-needle time, and there is no prospective or workflow arm. PPV 0.858 at 4.5% prevalence is good, but prevalence-dependence means it will not transfer to a site with different case mix. The reliability sub-sample is 200 of 3,023 and stratified, so kappa 0.900 describes the sampled strata, not necessarily the whole corpus. No error analysis by pipeline stage is evident in the abstract, so which of the six passes drives the residual 11% of misses is unstated. And the models are open-weight and locally run, but the abstract does not state quantization, hardware, or run-to-run repeatability — after PQ-167/PQ-168 that omission is now a live question, not a nicety.</div><div class="row"><b>Strengths:</b> It MEASURES ITS OWN REFERENCE STANDARD&#39;S RELIABILITY — blinded, independent, stratified, with a confidence interval. This is the single practice most often missing in the clinical LLM literature and the one PQ-158-FU shows the cost of skipping.
+
+Two reference standards, reported separately, with the disagreement between them made visible (59.2%). Most studies pick the convenient one silently.
+
+Real EHR free text at meaningful volume on a genuinely low-prevalence target — the regime the rare-events guidance is written for.
+
+Gwet&#39;s AC1 at low prevalence, which is exactly what rare_events_evaluation.md recommends and what most published work gets wrong.
+
+Multiplicity-corrected model comparison that reports null differences AS null.
+
+Locally deployed open-weight models throughout — directly relevant to a deployment context where clinical text cannot leave the hospital.</div><div class="row"><b>Relevance:</b> Layer 1 — Classification / criteria-based extraction from free clinical text; alerting; low-prevalence evaluation.
+
+Layer 2 — This is the POSITIVE worked example that pairs with PQ-158-FU&#39;s negative one, and the pairing is the teaching artifact. PQ-158-FU shows what happens when adjudication destroys the band and non-consensus cases are discarded; PQ-171 shows the alternative — measure second-rater agreement on a stratified subsample, report it with a CI, and THEN use the standard. Three direct imports: (i) the reference-standard reliability sub-study as a standard kit component, sized as a stratified subsample rather than a full second pass; (ii) report against both the clinical-truth standard AND the current-practice standard where they differ, since the gap between them (here 59.2%) is itself a finding — directly applicable to the Missed Consultation Alert kit, where &#39;what the clinician actually did&#39; and &#39;what should have happened&#39; are different targets; (iii) Gwet&#39;s AC1 plus Wilson-style CIs at low prevalence, confirming the rare_events_evaluation.md recipe in a real published study. Also directly relevant to VAP, POPC and CTA-PR, all of which extract criteria-based labels from Hebrew free text at low prevalence with locally-run models.</div><div class="row"><b>Verdict reasoning:</b> Promote. It is a single-centre preprint and none of its accuracy numbers should travel, but the DESIGN is the closest thing in the collection to a template for what this repository&#39;s own extraction kits are trying to do: real free text, low prevalence, locally deployed open-weight models, a reference standard whose reliability is measured before it is trusted, two reference standards reported side by side, the right agreement statistic for the prevalence, and a model comparison honest about where differences stop being significant. Import the design wholesale; treat 0.890/0.993 as site-specific. The unreported repeatability is the one gap worth noting explicitly given what PQ-167 and PQ-168 established in the cycle you just approved.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-171">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-171">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-171">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-172">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-172</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Chanda T, Wies C, Schramm F, Nogueira Garcia C, Merl NB, Hetz MJ, Utikal JS, Tschandl P, Navarrete-Dechent C, Thiem A, Kather JN, et al., Brinker TJ. Large language models improve physician accuracy but lead to false reliance. arXiv (preprint, v1). 2026 Aug 1. arXiv:2608.00817.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2608.00817" target="_blank" rel="noopener">https://arxiv.org/abs/2608.00817</a></div>
+  <div class="row"><b>Overview:</b> A human-in-the-loop study of CORA, an agentic retrieval-augmented LLM built to give source-linked clinical support, run with 46 physicians. The question is not whether the model is accurate but whether DISPLAYING THE EVIDENCE behind an answer guides or distorts the physician&#39;s decision to accept it. Large multi-institution author group (DKFZ/Brinker, Kather, Tschandl, Utikal, Navarrete-Dechent).
+
+Task type: generation / RAG-based clinical decision support, evaluated on physician outcome rather than model output. Signal: interpretive. Setting: physician decision-making study. Target use: clinician-facing decision support. Clinician involvement: 46 physicians. Human review: the physicians ARE the endpoint, not the reference.</div><div class="row"><b>Eval question:</b> Existing guidance (PQ-118) says explanation format is a measured factor and that chain-of-thought explanations improve physician accuracy, because physicians audit reasoning rather than conclusions. This asks the obverse: WHAT HAPPENS WHEN THE AUDITABLE EVIDENCE SUPPORTS A WRONG ANSWER?</div><div class="row"><b>Methodology:</b> Benchmark arm: CORA evaluated for benchmark performance and, separately, on cases PUBLISHED AFTER THE MODELS&#39; TRAINING-DATA CUTOFFS — a contamination control most benchmark papers skip entirely.
+
+Human arm: 46 physicians answering with and without CORA, with accuracy measured in both conditions.
+
+The critical design element: physician behaviour is analysed conditional on whether the LLM answer APPEARED citation-supported AND on whether it was actually correct — a 2x2 that separates &#39;did the physician get it right&#39; from &#39;did the physician correctly decide whether to trust the model&#39;.</div><div class="row"><b>Measurement:</b> Physician accuracy unaided vs aided; the predictive value of supporting citations for answer correctness; adoption rate of correct advice and resistance rate to incorrect advice, each split by whether the answer appeared citation-supported.</div><div class="row"><b>Key findings:</b> Physician accuracy rose from 70.8% unaided to 82.6% with CORA — a real and substantial collaborative benefit, consistent with the RDA 1.13 anchor already in guidance.
+
+Supporting citations were genuinely informative about correctness: 87.7% of citation-supported answers were correct vs 65.5% otherwise.
+
+BUT THE ASYMMETRY IS THE FINDING. Perceived citation support increased adoption of CORRECT advice from 34% to 76.9% — and when an INCORRECT answer appeared citation-supported, PHYSICIAN RESISTANCE FELL FROM 92% TO 34.8%.
+
+CORA held benchmark performance and gained MORE on post-cutoff cases, arguing the retrieval layer is doing real work rather than surfacing memorised content.</div><div class="row"><b>Soft spots:</b> arXiv v1 preprint, no venue, no peer review. 46 physicians is a reasonable but not large human arm, and the abstract does not state specialty mix, seniority, country, or how cases were sampled — all of which bound how far &#39;physician resistance&#39; transfers. The study evaluates ONE RAG system, so the citation-asymmetry magnitude is CORA-specific even if the direction is not. &#39;Perceived support&#39; is a physician judgment about the display, not an objective property of the citation, and the abstract does not describe how it was elicited. No information on whether physicians were told the system could be wrong, which plausibly moves resistance rates substantially. And no error taxonomy for the cases where citation-supported answers were wrong — knowing WHAT KIND of wrong slips past physicians is the next question and is not answered here.</div><div class="row"><b>Strengths:</b> It MEASURES THE PHYSICIAN OUTCOME, NOT THE MODEL OUTPUT. The endpoint is whether the clinician made the right decision, which is what the benchmark-vs-deployment teaching point argues evaluation must ultimately measure and what most studies substitute a benchmark for.
+
+The post-training-cutoff arm is a contamination control that very few clinical RAG papers include.
+
+The 2x2 conditioning is what makes the result possible at all: reporting only &#39;accuracy improved 70.8% to 82.6%&#39; would have been true, publishable, and would have hidden the entire safety finding.
+
+Reports the harm and the benefit from the SAME mechanism, which is intellectually honest and unusual — citations both raise appropriate trust and lower appropriate scepticism, and the paper does not pretend to a clean win.
+
+Large, credible, multi-national clinical author group with a track record in physician-AI collaboration studies.</div><div class="row"><b>Relevance:</b> Layer 1 — Generation / RAG decision support; human-in-the-loop evaluation; explanation format; safety.
+
+Layer 2 — This is a direct, load-bearing extension of PQ-118 and it cuts against the natural reading of it. PQ-118 established that CoT explanations improve physician accuracy by +12.2%, mechanism being that physicians audit reasoning; the implicit lesson taken from it was &#39;show your reasoning&#39;. PQ-172 says the same channel that improves accuracy on correct answers DESTROYS THE PHYSICIAN&#39;S DEFENCE AGAINST WRONG ONES — resistance 92% to 34.8%. Two concrete consequences for any kit that displays sources or reasoning alongside output. (i) EVALUATE THE DISPLAYED EVIDENCE AS PART OF THE INTERVENTION: a citation is not a neutral transparency affordance; it changes physician behaviour asymmetrically, and a kit that adds citations has changed its risk profile even if model accuracy is unchanged. (ii) MEASURE RESISTANCE-TO-INCORRECT-ADVICE AS ITS OWN ENDPOINT, separately from accuracy. An intervention can raise aggregate accuracy while lowering the rate at which clinicians catch the residual errors — and only the second number tells you what happens to the errors that survive. Also relevant to safety_vs_effectiveness.md: this is an effectiveness gain with a paired safety cost in the same measurement, structurally the same pattern as PQ-166.</div><div class="row"><b>Verdict reasoning:</b> Promote — the most consequential finding of this window. The design is right for the question (physician outcome as endpoint, contamination control, behaviour conditioned on both correctness and perceived support), the effect is large and directional, and it sharpens existing guidance rather than merely adding to it. It is a v1 preprint with a modest and under-described physician sample, so import the mechanism and the two evaluation rules, NOT the percentages — 34.8% in particular is a single system with a single display design. Worth a follow-up read once peer-reviewed, specifically for the error taxonomy the abstract does not provide.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-172">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-172">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-172">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-173">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-173</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Mese I, Gunes ST, Coskun O, Keles A, Banaz T, Kazanbas MF, Kocak B. Reporting Quality of Large Language Model Studies: A Cross-Sectional Audit of High-Ranking Radiology and Medical Imaging Journals. Korean J Radiol. 2026 Aug 4. doi:10.3348/kjr.2026.0505. PMID 42551868.</div>
+  <div class="url"><a href="https://doi.org/10.3348/kjr.2026.0505" target="_blank" rel="noopener">https://doi.org/10.3348/kjr.2026.0505</a></div>
+  <div class="row"><b>Overview:</b> A cross-sectional audit of how well published LLM studies report what they actually did, scored against MI-CLEAR-LLM (Minimum Reporting Items for Clear Evaluation of Accuracy Reports of Large Language Models in Healthcare, 2025 update). 201 eligible original LLM studies published Jan-Dec 2025 in Q1 Web of Science &#39;Radiology, Nuclear Medicine, and Medical Imaging&#39; journals were identified via PubMed and Scopus; 102 were analysed after quota-based subsampling by journal publication volume. Scoring was two-round and consensus-based with third-reviewer adjudication.
+
+Task type: meta / reporting-quality audit. Note on scope: the studies audited are text-based LLM studies that happen to be published in imaging journals — this is not about imaging models. Volume: 102 studies scored.</div><div class="row"><b>Eval question:</b> Everything this knowledge base recommends — measure repeatability, state your prompt, record your model version — assumes those things get REPORTED. Do they? And which items are systematically missing?</div><div class="row"><b>Methodology:</b> Sampling frame: all original LLM research in Q1 radiology/imaging journals for a full calendar year, dual-database search (PubMed + Scopus). Quota-based subsampling proportional to journal publication volume — a defensible way to stop one high-volume journal dominating. All four eligible articles from the host journal (KJR) additionally included as a stated benchmark, declared rather than hidden. Two-round consensus scoring: one reviewer, then critical re-evaluation by secondary reviewers, with a third-reviewer adjudication route. Between-journal comparison by Kruskal-Wallis with Dunn post hoc and Holm-adjusted p-values.</div><div class="row"><b>Measurement:</b> Percentage adherence to MI-CLEAR-LLM items, overall and per item; between-journal differences tested statistically.</div><div class="row"><b>Key findings:</b> Overall adherence was moderate: mean 51.2% +/- 14.7%, range 22.2%-84.2%. Roughly HALF the minimum reporting items are missing in a typical published LLM study in a Q1 journal.
+
+Best-reported items: input data type (100%), test-data independence (80.2%), adaptation strategy (78.1%).
+
+THE WORST-REPORTED ITEMS ARE EXACTLY THE ONES THIS REPOSITORY DEPENDS ON: prompt execution setup 29.4%; STOCHASTICITY MANAGEMENT 33.1%; rationale for prompt wording 15.6%; TRAINING-DATA CUTOFF DATE 9.8%.
+
+Adherence varied significantly by journal (P = 0.011), with the host journal highest at 72.8% +/- 2.7%.</div><div class="row"><b>Soft spots:</b> Radiology and imaging journals only — the sampling frame is one specialty&#39;s publishing culture, and adherence in JAMIA or npj Digital Medicine could differ. Whether LLM studies published in imaging journals are representative of clinical LLM work generally is untested. Quota-based subsampling reduced 201 eligible studies to 102, which is efficient but carries sampling variance not obviously quantified in the abstract. The host journal&#39;s own four articles were added deliberately and scored highest (72.8%) — the authors declare this and present it as a benchmark rather than a result, but four articles from the journal publishing the audit, scoring well above the 51.2% mean, is a structure worth naming plainly. Scoring adherence is a judgment call per item; the two-round consensus process helps, but NO inter-rater agreement statistic for the scoring itself is reported in the abstract — a notable omission in a paper about reporting completeness. Single year (2025), so this is a snapshot, not a trend.</div><div class="row"><b>Strengths:</b> It QUANTIFIES A GAP the knowledge base has only been able to assert. &#39;Most studies don&#39;t report their stochasticity handling&#39; is now a number: 33.1%.
+
+Full-year, dual-database, Q1-restricted sampling frame — the audited population is well defined.
+
+Per-item reporting rather than a single adherence score, which is what makes the finding actionable: it is not that reporting is uniformly mediocre, it is that four specific items are near-absent.
+
+Multiplicity-corrected between-journal comparison.
+
+Declares its own conflict structure (including the host-journal articles) rather than burying it.</div><div class="row"><b>Relevance:</b> Layer 1 — Meta / reporting standards; applies across every task type.
+
+Layer 2 — This is the EMPIRICAL JUSTIFICATION for several things the repository already does and one it should do more explicitly. (i) Stochasticity management is reported in only 33.1% of studies — which is precisely why PQ-167&#39;s and PQ-168&#39;s repeat-run findings were surprising, and why the new guidance tells kits to MEASURE rather than assume: two thirds of the literature simply does not say. (ii) Training-data cutoff is reported 9.8% of the time, which bears on every benchmark number this knowledge base imports — without a cutoff date, contamination cannot be assessed, and PQ-172&#39;s post-cutoff arm is exactly the control the other 90% do not run. (iii) Rationale for prompt wording at 15.6% is a direct argument for the /optimize discipline of recording WHY each prompt change was made, not just what changed. (iv) Practically: MI-CLEAR-LLM is a citable checklist to attach to the Evaluation Kit template, alongside MEDAI-LLM-SUMM (PQ-74) for summarization — the two cover different scopes and are complementary.</div><div class="row"><b>Verdict reasoning:</b> Promote. It is not a methodological innovation and it will date, but it converts a standing assumption in this knowledge base into a measured quantity, and the per-item breakdown is more useful than the headline. The specialty-restricted frame and the self-benchmarking structure are real limits and should travel with any citation — read the 51.2% as &#39;Q1 imaging journals in 2025&#39;, not &#39;the field&#39;. The four low-adherence items are the durable contribution and are almost certainly not specialty-specific.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-173">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-173">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-173">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-174">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-174</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Ravichandran S, Romano M, Corga da Silva R, Mendes T, Absi N, Isidoro M, Kumar S, Van der Heijden M, Gnanapragasam VE. MTS-Bench: A Manchester Triage System Benchmark for Language Model Triage Safety. medRxiv (preprint). 2026 Aug 5. doi:10.64898/2026.08.04.26359651.</div>
+  <div class="url"><a href="https://doi.org/10.64898/2026.08.04.26359651" target="_blank" rel="noopener">https://doi.org/10.64898/2026.08.04.26359651</a></div>
+  <div class="row"><b>Overview:</b> A triage-safety benchmark mapping published emergency scenarios onto the Manchester Triage System, testing whether an agentic retrieval-augmented assistant undertriages less than a general-purpose model. 39 emergency cases covering all five MTS priority levels, each run in two variants (with and without an objective clinical data block: vitals, examination findings, labs) and permuted across two genders = 156 prompts per condition; three systems tested with and without a misleading GP referral statement prepended as an anchoring manipulation = 312 prompts per system, 936 total.
+
+Task type: classification / triage on an ordered five-level scale; alerting-adjacent. Systems: DR. INFO Baseline, DR. INFO with MTS retrieval, OpenAI GPT-5.1. Signal: interpretive. Setting: emergency triage, adapted published scenarios (not real patients). Human review: none in the loop; MTS priority level is the reference.</div><div class="row"><b>Eval question:</b> Two questions, and they are not equally well answered. The stated one: does retrieval over a curated clinical knowledge base reduce undertriage against a structured framework? The one the design actually answers better: WHAT DOES A PROPERLY-CONSTRUCTED TRIAGE-SAFETY BENCHMARK LOOK LIKE — ordered scale, error direction, adversarial anchoring, and dangerous misses counted separately?</div><div class="row"><b>Methodology:</b> Cases mapped to a structured, PUBLISHED triage framework (MTS) rather than an ad-hoc severity scale, so the reference standard is externally defined. UNDERTRIAGE RATE ON THE ORDERED SCALE as the primary outcome — error direction is the endpoint, not a post-hoc breakdown. This is exactly the reporting standard PQ-162 argued for. ANCHORING MANIPULATION: a misleading GP referral statement prepended, testing whether a plausible-but-wrong prior collapses triage safety. INFORMATION-AVAILABILITY MANIPULATION: each case with and without objective clinical data, isolating what the model does when vitals and labs are absent. Gender permutation as a fairness control. DANGEROUS MISSES COUNTED AS A SEPARATE OUTCOME, not folded into undertriage. Fisher&#39;s exact test on the primary comparison.</div><div class="row"><b>Measurement:</b> Undertriage rate with 95% CI and Fisher&#39;s exact p; dangerous-miss count and rate; stratified undertriage by MTS priority level; effect of the anchoring statement and of the objective-data block.</div><div class="row"><b>Key findings:</b> GPT-5.1 undertriaged 44.2% of cases (69/156; 95% CI 36.7-52.1), including 75.0% of Red and 73.4% of Orange presentations — the highest-acuity levels, where undertriage is most dangerous.
+
+Both DR. INFO configurations undertriaged 11.5% (18/156; 95% CI 7.4-17.5), p = 1.0x10^-10 vs GPT-5.1.
+
+GPT-5.1 produced 6 dangerous misses (3.8%); both DR. INFO configurations produced none (p = 0.030).
+
+UNDER THE ANCHORING MANIPULATION, GPT-5.1 UNDERTRIAGED 8 OF 8 RED CASES — a plausible-sounding wrong prior eliminated its performance on the most acute tier entirely.
+
+Adding objective clinical data reduced undertriage in DR. INFO + MTS retrieval from 19.2% to 3.8% (p = 0.005), with no comparable change in the other two systems. No significant gender effect.</div><div class="row"><b>Soft spots:</b> THE CONFLICT OF INTEREST IS THE FIRST THING TO READ. DR. INFO is the system evaluated in PQ-135-FU (Ravichandran et al., HealthBench in Action), and Ravichandran is first author on both. This is a vendor benchmarking its own product against a competitor, using a benchmark the vendor constructed, and reporting a ~4x advantage and a clean zero on the dangerous-miss count. Nothing in the design is visibly rigged — the manipulations are the kind that usually HURT the system under test — but the result cannot be read as independent, and the appropriate weight is &#39;worth replicating&#39;, not &#39;established&#39;.
+
+Beyond that: 39 scenarios ADAPTED from another published study rather than real patients; MTS priority as reference standard with no inter-rater check on the mapping (who assigned the MTS level to each adapted case, and did anyone else agree?); NO HUMAN TRIAGE-NURSE COMPARATOR ARM, so &#39;44.2% undertriage&#39; has no human baseline to sit against — the PQ-156 band-width caution applies with full force; one competitor model tested; preprint, no venue; and permuting 39 cases into 936 prompts means the effective independent sample is 39, not 936, which the CIs may or may not reflect.</div><div class="row"><b>Strengths:</b> Undertriage on an ORDERED SCALE as the primary endpoint — independently arriving at the reporting standard PQ-162 proposed, and the right endpoint for a task with asymmetric error cost.
+
+Dangerous misses counted SEPARATELY rather than absorbed into an aggregate rate. A 44.2% undertriage rate and a 3.8% dangerous-miss rate are different facts and both are needed.
+
+The anchoring manipulation is the best-designed element and generalises well beyond this benchmark: prepending a plausible but wrong clinical prior is cheap, realistic (patients arrive with referral letters and prior opinions), and here it was catastrophic — 8/8 Red cases undertriaged.
+
+Stratifying undertriage BY ACUITY LEVEL exposes that failure concentrates where it matters most; an aggregate rate would have hidden the 75% Red figure.
+
+The information-availability arm produces a genuinely useful operational finding — retrieval helped only when objective data was present. Gender permutation included as a control rather than assumed away.</div><div class="row"><b>Relevance:</b> Layer 1 — Classification / triage on an ordinal scale; safety evaluation; alerting; adversarial and anchoring robustness.
+
+Layer 2 — THE BENCHMARK DESIGN IS THE IMPORTABLE PART, AND IT IS IMPORTABLE INDEPENDENTLY OF THE PRODUCT COMPARISON. Four elements are directly reusable for the Missed Consultation Alert kit and any future triage or severity-grading kit: (i) primary endpoint = error rate in the HARMFUL DIRECTION on the ordered scale, not exact agreement; (ii) dangerous misses as a separate hard-gate count; (iii) an anchoring / misleading-prior arm as standard adversarial testing — this extends the PQ-153 epistemic-framing check from &#39;doubt about the correct answer&#39; to &#39;a confident wrong referral&#39;, and note the two point in DIFFERENT directions, which is worth reconciling; (iv) a stratified-by-acuity report rather than an aggregate. The GPT-5.1 anchoring result also independently reinforces PQ-125-FU (benign input variation shifts safety-critical coverage) with a hostile-prior variant.</div><div class="row"><b>Verdict reasoning:</b> Not a Promote, and the reason is provenance rather than design. The benchmark structure is genuinely good — arguably the best-specified triage-safety design in the collection, and the anchoring result (8/8 Red cases undertriaged under a misleading referral) is the kind of finding that should change how alerting kits are stress-tested. But a vendor-constructed benchmark on which the vendor&#39;s product records zero dangerous misses against a single competitor, from the first author of the earlier DR. INFO paper already in the knowledge base, is not independent evidence — and the absence of any human triage-nurse baseline means even the 44.2% figure has nothing to be measured against.
+
+MY RECOMMENDATION: promote the DESIGN ELEMENTS ONLY. If you reply &#39;promote&#39;, the guidance entry I write will cite the four benchmark-construction rules and explicitly NOT the comparative performance numbers. Reply &#39;more&#39; if you would rather I chase an independent replication first.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-174">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-174">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-174">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-175">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-175</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Hou Z, Liu Y, Wang P, Liu Z, Zhu G, Liu Z, Cai S, Xie C, Sang Z, Zeng K, Yang H. Evaluating Counterfactual Sensitivity to Patient Information in Medication-Safety Reasoning. arXiv (preprint, v1). 2026 Aug 4. arXiv:2608.03028.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2608.03028" target="_blank" rel="noopener">https://arxiv.org/abs/2608.03028</a></div>
+  <div class="row"><b>Overview:</b> Introduces MedPIC-Bench, a benchmark built to separate RECALLING a drug-risk association from DECIDING WHETHER THE RULE APPLIES to this patient. It pairs guideline-following questions with counterfactual twins in which a controlled change to patient information flips whether a medication-safety rule applies. 467 questions, source-verifiable recommendations, expert-validated, annotated along six clinical and reasoning dimensions, run across 28 medical-specific, general, and proprietary LLMs.
+
+Task type: classification / conditional rule application in medication-safety reasoning. Signal: mixed — the rule is explicit, the applicability judgment is interpretive. Setting: medication safety, guideline-anchored. Volume: 467 questions x 28 models. Human review: expert validation of questions.</div><div class="row"><b>Eval question:</b> A model can answer a medication-safety question correctly by pattern-matching a familiar contraindication without ever using the patient&#39;s information to decide whether the rule applies. HOW DO YOU BUILD AN EVALUATION THAT CAN TELL THE DIFFERENCE?</div><div class="row"><b>Methodology:</b> PAIRED COUNTERFACTUAL DESIGN: each guideline-following question has a twin in which one controlled change to patient information changes whether the rule applies. The pairing is the mechanism — it holds the drug-risk association constant and varies only applicability. Source-verifiable recommendations and expert-validated questions, so the reference is anchored to guidance rather than to model consensus. 467 questions annotated along six clinical and reasoning dimensions, enabling per-dimension breakdown rather than a single score. 28 models across three tiers (medical-specific, general open, proprietary), which is what makes the fine-tuning comparison possible. Analysis of model RATIONALES separately from final answers.</div><div class="row"><b>Measurement:</b> Accuracy on guideline-following questions vs paired counterfactual questions, per model and in aggregate; per-dimension breakdown; comparison of medical-specific vs general model families; qualitative analysis of rationale-vs-answer consistency.</div><div class="row"><b>Key findings:</b> EVERY ONE OF THE 28 MODELS PERFORMED WORSE ON COUNTERFACTUAL QUESTIONS. Mean accuracy fell from 63.6% to 45.1% — an 18.5-point drop, uniform across the field rather than a property of weak models.
+
+The failure is DIRECTIONAL: models do well when an explicit patient attribute directly signals a familiar contraindication, and badly when patient information should NARROW OR WITHDRAW a safety warning. Adding a reason to worry is easy; removing one is hard.
+
+Rationales often acknowledge the changed patient information WHILE THE FINAL ANSWER RETAINS THE PREVIOUS SAFETY JUDGMENT — the reasoning text registers the change and the decision does not follow it.
+
+Medical-specific LLMs trailed general LLMs on counterfactual performance.</div><div class="row"><b>Soft spots:</b> arXiv v1, no venue, no peer review. Benchmark questions are expert-validated but CONSTRUCTED — this is not real prescribing data, and the counterfactual twins are deliberately clean, which is both the design&#39;s strength and its ceiling: real patient records do not present controlled single-attribute changes. 467 questions across six dimensions means some dimension cells are thin, and the abstract does not give per-dimension n. &#39;Expert-validated&#39; is not further specified — how many experts, what agreement. NO HUMAN COMPARATOR ARM, so there is no way to know whether clinicians also find rule-withdrawal harder than rule-application (plausibly they do, which would reframe the finding). The medical-specific-vs-general comparison is observational across heterogeneous models, not a controlled fine-tuning ablation, so it is suggestive rather than causal. Benchmark availability not stated in the abstract.</div><div class="row"><b>Strengths:</b> THE PAIRED COUNTERFACTUAL DESIGN IS THE CONTRIBUTION, and it is the cleanest available answer to a problem this knowledge base keeps circling: how to test whether a model USED the input rather than recognised the pattern. Holding the association constant and varying only applicability is a genuine identification strategy, not just a harder test set.
+
+28 models is real breadth, and the fact that ALL of them degrade converts this from a model-selection observation into a property of the current field.
+
+The rationale-vs-answer dissociation is independently valuable and lands squarely on KTP #11: here the reasoning text is not merely uncorrelated with correctness, it explicitly CONTAINS the information the answer ignores.
+
+The asymmetry finding (narrowing a warning is harder than applying one) is specific, mechanistic and testable, rather than a generic &#39;models struggle with reasoning&#39;. Guideline-anchored, source-verifiable question construction.</div><div class="row"><b>Relevance:</b> Layer 1 — Classification; extraction-adjacent conditional logic; clinical reasoning; safety.
+
+Layer 2 — Three imports. (i) THE COUNTERFACTUAL-TWIN DESIGN IS DIRECTLY PORTABLE TO THIS REPOSITORY&#39;S CRITERIA-BASED KITS. POPC, VAP and Lung Cancer Screening Eligibility all ask &#39;does criterion X apply to this patient&#39;, and all are currently evaluated on cases as they come. A paired-counterfactual arm — same note, one controlled attribute changed so the criterion should flip — would test whether the model is APPLYING the criterion or RECOGNISING a surface pattern, which is exactly what the &#39;explicit signal is a hypothesis, not a property&#39; guidance says to check. (ii) The directional asymmetry is a specific failure mode to test for: models are worse at WITHDRAWING a flag than raising one, which for an OR-composite rare-events task like POPC predicts over-firing — the same shape as the criterion that turned an AND into an OR in that kit&#39;s prompt v2 history. (iii) A FOURTH data point in the domain-fine-tuning watch (with PQ-151-FU, PQ-154, and the Corso lead) — and importantly, on the JUDGEMENT axis rather than the textual-similarity axis, which is precisely the distinction that makes the flagged Monfared counter-case a non-contradiction.</div><div class="row"><b>Verdict reasoning:</b> Promote for the design and the two mechanisms. It is an unreviewed preprint on constructed questions with no human comparator, so NO NUMBER HERE IS A THRESHOLD — 63.6%/45.1% describes this benchmark, and without a clinician arm the 18.5-point drop cannot be read as &#39;worse than humans would do&#39;. What transfers is the counterfactual-twin construction, which is cheap to build for an existing kit and answers a question the current evaluations cannot; the narrow-vs-apply asymmetry, which is a concrete thing to look for in error analysis; and the fine-tuning data point, which is now consistent enough across four independent sources to be worth stating narrowly in guidance.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-175">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-175">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-175">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-176">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-176</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Sulaiman MA, Oyeyemi BF, Sarafadeen H. Architectural Safety Mechanisms for Multi-Agent Clinical LLM Systems Under Knowledge Base Distribution Shift. medRxiv (preprint). 2026 Aug 3. doi:10.64898/2026.07.31.26359439.</div>
+  <div class="url"><a href="https://doi.org/10.64898/2026.07.31.26359439" target="_blank" rel="noopener">https://doi.org/10.64898/2026.07.31.26359439</a></div>
+  <div class="row"><b>Overview:</b> A controlled evaluation asking whether multi-agent LLM architectures with explicit safety verification keep following guidelines when their KNOWLEDGE BASE drifts — because thresholds were updated, or because a new institution uses different terminology. 50,000 synthetic type 2 diabetes patients with CKD and hypertension comorbidities (500 per experimental condition), four architecture modes x four shift regimes x two embedding models x two LLM backends. Clinical task: medication reconciliation with contraindication detection.
+
+Task type: agentic / multi-agent decision support; retrieval-grounded. Systems: single-agent, naive RAG, linear multi-agent, and a stateful graph with a safety floor; Llama3-8B and Mistral-7B backends; all-MiniLM-L6-v2 and PubMedBERT embeddings. Signal: explicit (guideline compliance). Setting: FULLY SYNTHETIC. Human review: none.</div><div class="row"><b>Eval question:</b> Post-deployment monitoring guidance in this repository treats drift as a data or performance phenomenon. This asks a different question: when the KNOWLEDGE BASE shifts underneath a retrieval-grounded system, what determines whether safety survives — the retrieval quality, the model, or the architecture?</div><div class="row"><b>Methodology:</b> Four shift regimes: baseline; temporal drift (updated eGFR thresholds); institutional vocabulary transformation (11 term-pair substitutions producing a quantified 0.36 cosine-similarity degradation); and metadata erasure. Quantifying the perturbation rather than asserting it is the design&#39;s best feature. Four architecture modes compared under identical conditions, isolating architecture as the variable. Two embedding models and two LLM backends CROSSED, so the finding is not one stack&#39;s artifact. Latency measured alongside compliance. Reproducible on consumer hardware with no external API dependencies.</div><div class="row"><b>Measurement:</b> Guideline Compliance Score (GCS) per architecture per shift regime; latency per patient.</div><div class="row"><b>Key findings:</b> Under institutional vocabulary shift, the linear pipeline&#39;s GCS COLLAPSED FROM 1.00 TO 0.36 — retrieval degradation made critical contraindication guidelines unretrievable, and the pipeline had no way to notice.
+
+The stateful graph architecture held GCS = 1.00 across ALL shift conditions via a regime-aware safety floor that operates INDEPENDENTLY OF RETRIEVAL QUALITY.
+
+The pattern held across BOTH LLM backends and BOTH embedding models — so this is architectural, not stack-specific.
+
+The authors&#39; framing is the useful part: architectural choice — specifically whether audit findings are routed back to the summary agent — determined compliance under shift MORE THAN retrieval quality or model scale.
+
+The safety floor cost 32.2 s per patient under shift vs 12.5 s for single-agent mode, and the authors are explicit that its value is compliance maintenance, NOT improved semantic fidelity.</div><div class="row"><b>Soft spots:</b> ENTIRELY SYNTHETIC. 50,000 synthetic type 2 diabetes patients is a large number that conveys much less than it appears to — the cases are generated, the comorbidity structure is designed, and the &#39;distribution shift&#39; is applied by the authors as a controlled transformation rather than observed in the wild. A GCS of 1.00 sustained across every condition is itself a signal that the task may be too clean: real guideline compliance is not perfectly achievable, and a metric that saturates at 1.00 cannot distinguish good from excellent. The 11 term-pair vocabulary substitution is a reasonable model of institutional variation but is a single, hand-specified perturbation. Small open models only (Llama3-8B, Mistral-7B), no frontier arm, so it is unknown whether a stronger model recovers from the shift without architectural help. One clinical task, in a single disease triad. GCS is the authors&#39; own construct and its clinical validity is not established against outcomes or clinician judgment. Preprint, no venue. And the 32.2 s/patient latency is a real deployment cost the abstract does not weigh against the compliance gain in any operational framing.</div><div class="row"><b>Strengths:</b> ISOLATES ARCHITECTURE AS THE VARIABLE with everything else held constant — the comparison most deployment discussions assert without testing.
+
+Crossing two embedding models and two LLM backends is what turns &#39;our architecture is better&#39; into &#39;this is a property of the architecture class&#39;, and it is the reason the result is worth reading at all.
+
+Quantifies the perturbation (0.36 cosine similarity degradation) rather than describing it qualitatively, making the shift regime reproducible.
+
+Reports the COST (32.2 s vs 12.5 s) rather than presenting the safety mechanism as free.
+
+Honest scoping: the authors state the safety floor&#39;s value is compliance maintenance, NOT semantic fidelity improvement — a narrower and more credible claim than the setup invites.
+
+Fully reproducible on consumer hardware with no external API dependency, which matters for a privacy-constrained deployment context.</div><div class="row"><b>Relevance:</b> Layer 1 — Agentic / multi-agent systems; retrieval-grounded decision support; post-deployment monitoring and drift; safety architecture.
+
+Layer 2 — The transferable idea is that A SAFETY CHECK WHOSE VALIDITY DEPENDS ON THE SAME RETRIEVAL PATH IT IS CHECKING IS NOT AN INDEPENDENT CHECK. The linear pipeline failed not because the model got worse but because the guideline it needed became unretrievable — and nothing in the pipeline was positioned to detect the absence. That generalises directly to any kit with a retrieval or knowledge-base component (the RAG attribution gate from PQ-154 sits in the same space): a guardrail should be able to fire on the basis of something the retrieval layer cannot silently remove. It also adds a KNOWLEDGE-BASE DRIFT regime to the monitoring vocabulary in context_dependency.md, alongside data drift and performance drift — vocabulary change at a new institution and threshold updates in a guideline are both realistic, and NEITHER shows up as a distribution shift in the input data. Connects to the tiered LLM-judge monitoring framework: an audit step routed back into the pipeline is structurally the same move as routing split verdicts to a human (PQ-161&#39;s unanimity tier).</div><div class="row"><b>Verdict reasoning:</b> Not a Promote. The synthetic-data foundation is disqualifying for anything numerical — a GCS of 1.00 held across all conditions on generated patients is a statement about the simulation, not about clinical safety, and the abstract offers no evidence that the synthetic cases are hard enough for the result to be informative.
+
+What earns the card is the STRUCTURAL claim, which is well-isolated by the crossed design and which the knowledge base does not currently state anywhere: under knowledge-base drift, architecture beats retrieval quality and model scale, because a safety check downstream of a degraded retrieval path inherits the degradation. That is worth surfacing for a decision and worth watching for a non-synthetic replication. If you reply &#39;promote&#39;, the guidance entry will carry the structural principle and the knowledge-base-drift regime, and NONE of the GCS figures.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-176">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-176">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-176">? More info</button>
+  </div>
+</section>
+</div>
+
+<div class="cart">
+  <div class="cart-inner">
+    <div class="cart-summary" id="summary">No choices yet. Tap a button on a card above.</div>
+    <button class="send-btn" id="sendBtn" disabled>Send 0 / 8 decisions</button>
+    <button class="clear-link" id="clearBtn">Clear all my choices</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const ALL_IDS = ["PQ-169-FU","PQ-170-FU","PQ-171","PQ-172","PQ-173","PQ-174","PQ-175","PQ-176"];
+  const REPLY_TO = "tali.biron@gmail.com";
+  const REPLY_SUBJECT = "Re: Scout 2026-08-07 — 8 source(s) (PQ-169-FU, PQ-170-FU, PQ-171, PQ-172, PQ-173, PQ-174, PQ-175, PQ-176)";
+  const STORAGE_KEY = "scout-cart-2026-08-07";
+
+  // Load saved state from localStorage (so refresh doesn't lose progress)
+  let choices = {};
+  try { choices = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) {}
+
+  function saveAndRender() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(choices));
+
+    // Re-style each card based on choice
+    document.querySelectorAll('.card').forEach(card => {
+      const id = card.dataset.id;
+      card.classList.remove('chosen-promote', 'chosen-skip', 'chosen-more');
+      card.querySelectorAll('.choice').forEach(b => b.classList.remove('active'));
+      const c = choices[id];
+      if (c) {
+        card.classList.add('chosen-' + c);
+        card.querySelector('.choice.' + c).classList.add('active');
+      }
+    });
+
+    // Update sticky summary + send button
+    const made = ALL_IDS.filter(id => choices[id]);
+    const pending = ALL_IDS.filter(id => !choices[id]);
+    const counts = { promote:0, skip:0, more:0 };
+    made.forEach(id => counts[choices[id]]++);
+
+    let html = '';
+    if (counts.promote) html += '<span class="badge promote">' + counts.promote + ' promote</span>';
+    if (counts.skip)    html += '<span class="badge skip">' + counts.skip + ' skip</span>';
+    if (counts.more)    html += '<span class="badge more">' + counts.more + ' more</span>';
+    if (pending.length) html += '<span class="badge pending">' + pending.length + ' pending</span>';
+    if (!made.length && !pending.length) html = 'No choices yet.';
+    document.getElementById('summary').innerHTML = html || 'No choices yet.';
+
+    const btn = document.getElementById('sendBtn');
+    btn.disabled = made.length === 0;
+    btn.textContent = 'Send ' + made.length + ' / ' + ALL_IDS.length + ' decisions';
+  }
+
+  // Wire button clicks
+  document.querySelectorAll('.choice').forEach(b => {
+    b.addEventListener('click', () => {
+      const id = b.dataset.id;
+      const choice = b.dataset.choice;
+      // Toggle off if same choice clicked again
+      if (choices[id] === choice) delete choices[id];
+      else choices[id] = choice;
+      saveAndRender();
+    });
+  });
+
+  // Send button — uses mailto on mobile (opens native Gmail app), Gmail web on desktop.
+  document.getElementById('sendBtn').addEventListener('click', () => {
+    const lines = ALL_IDS.filter(id => choices[id]).map(id => choices[id] + ' ' + id);
+    if (!lines.length) return;
+    const body = '# Scout decisions for ' + "2026-08-07" + '\n# Sent from the cart page\n\n' + lines.join('\n') + '\n';
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const url = isMobile
+      ? 'mailto:' + encodeURIComponent(REPLY_TO) + '?subject=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body)
+      : 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(REPLY_TO) + '&su=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body);
+    // mailto must be same-window on iOS; _blank is fine for https
+    if (isMobile) window.location.href = url;
+    else window.open(url, '_blank');
+  });
+
+  // Clear button
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    if (!confirm('Clear all your choices on this page?')) return;
+    choices = {};
+    saveAndRender();
+  });
+
+  saveAndRender();
+})();
+</script>
+</body>
+</html>
