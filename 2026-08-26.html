@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scout decisions — 2026-08-26</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; padding:0 0 180px 0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; background:#f8fafc; color:#0f172a; }
+  .container { max-width:760px; margin:0 auto; padding:24px 16px; }
+  h1 { font-size:22px; margin:0 0 8px 0; color:#1e40af; }
+  .sub { font-size:13px; color:#64748b; margin-bottom:20px; }
+  .help { background:#ecfeff; border:2px solid #0891b2; border-radius:8px; padding:14px 16px; margin-bottom:20px; font-size:13px; color:#164e63; line-height:1.5; }
+  .card { border:1px solid #e2e8f0; border-radius:10px; padding:16px; margin-bottom:14px; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.03); }
+  .card.is-rollover { border-color:#fbbf24; background:#fffbeb; }
+  .card.chosen-promote { border-color:#059669; box-shadow:0 0 0 2px #05966933; }
+  .card.chosen-skip { border-color:#dc2626; box-shadow:0 0 0 2px #dc262633; }
+  .card.chosen-more { border-color:#64748b; box-shadow:0 0 0 2px #64748b33; }
+  .rollover-badge { background:#fde68a; color:#78350f; font-size:11px; font-weight:700; padding:5px 10px; border-radius:10px; display:inline-block; margin-bottom:10px; }
+  .card-head { display:flex; justify-content:space-between; align-items:baseline; }
+  .pq-id { font-size:14px; font-weight:700; color:#1e40af; }
+  .verdict { font-size:12px; font-weight:700; }
+  .citation { margin-top:8px; font-size:14px; line-height:1.5; font-weight:500; }
+  .url { margin-top:4px; font-size:12px; }
+  .url a { color:#2563eb; }
+  .row { margin-top:8px; font-size:13px; color:#334155; line-height:1.5; }
+  .row b { color:#0f172a; }
+  .choice-row { display:flex; gap:8px; margin-top:14px; }
+  .choice { flex:1; padding:14px 8px; border-radius:8px; border:2px solid transparent; font-size:14px; font-weight:700; cursor:pointer; background:#f1f5f9; color:#475569; transition:all .15s; font-family:inherit; }
+  .choice:hover { transform:translateY(-1px); }
+  .choice.promote.active { background:#059669; color:#fff; border-color:#047857; }
+  .choice.skip.active { background:#dc2626; color:#fff; border-color:#b91c1c; }
+  .choice.more.active { background:#64748b; color:#fff; border-color:#475569; }
+  /* Sticky bottom bar */
+  .cart { position:fixed; bottom:0; left:0; right:0; background:#fff; border-top:2px solid #e2e8f0; box-shadow:0 -4px 12px rgba(0,0,0,.08); padding:12px 16px; z-index:100; }
+  .cart-inner { max-width:760px; margin:0 auto; }
+  .cart-summary { font-size:13px; color:#475569; margin-bottom:8px; line-height:1.4; }
+  .cart-summary b { color:#0f172a; }
+  .cart-summary .badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:700; margin-right:6px; }
+  .badge.promote { background:#d1fae5; color:#065f46; }
+  .badge.skip { background:#fee2e2; color:#991b1b; }
+  .badge.more { background:#e2e8f0; color:#334155; }
+  .badge.pending { background:#fef3c7; color:#92400e; }
+  .send-btn { display:block; width:100%; padding:16px; border:none; border-radius:8px; background:#0891b2; color:#fff; font-size:16px; font-weight:700; cursor:pointer; font-family:inherit; }
+  .send-btn:hover:not(:disabled) { background:#0e7490; }
+  .send-btn:disabled { background:#cbd5e1; cursor:not-allowed; }
+  .clear-link { display:inline-block; margin-top:6px; font-size:12px; color:#64748b; text-decoration:underline; cursor:pointer; background:none; border:none; padding:0; font-family:inherit; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Scout decisions — 2026-08-26</h1>
+  <div class="sub">1 source(s) to review. Choices auto-save in this browser.</div>
+
+  <div class="help">
+    Tap <b style="color:#059669;">Promote</b>, <b style="color:#dc2626;">Skip</b>, or <b style="color:#475569;">More info</b> on each card. The bar at the bottom keeps a running list of your choices. When you're done, hit the cyan <b>Send</b> button — Gmail opens with one email containing all your decisions. Hit Send in Gmail and you're done.
+  </div>
+
+  
+<section class="card" data-id="PQ-190">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-190</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Li L, Li D, Chen C, Ma R, Yu R, Lin M, Yin R, Fan L, Shyr C, Ma S, Liu M, Bethard S. LLM-as-a-Judge in Healthcare: A Scoping Analysis of Applications, Methods, and Human Alignment. arXiv preprint. 2026 May 24. arXiv:2605.25273</div>
+  <div class="url"><a href="https://arxiv.org/abs/2605.25273" target="_blank" rel="noopener">https://arxiv.org/abs/2605.25273</a></div>
+  <div class="row"><b>Overview:</b> A PRISMA-guided scoping review of how LLM-as-a-Judge is actually used in healthcare and how well those judgments align with human experts. Five databases, studies from January 2023 to February 2026, 541 records screened, 134 studies included and coded by health scenario, judge configuration, technical approach and validation design. Use is concentrated in clinical decision support, clinical NLP, medical knowledge and QA, and medical communication. OpenAI models are the most frequent judges; prompt engineering appears in nearly all studies, with ensemble, multi-agent and retrieval-augmented designs as common extensions. Evidence weight: the largest and most recent synthesis of this specific question. arXiv preprint (cs.CY), CC-BY, 36 pages, 12 authors across USF, UF, Vanderbilt, Michigan, Minnesota, Arizona.</div><div class="row"><b>Eval question:</b> When is an LLM judge trustworthy enough to stand in for expert review — and what does the published evidence actually say about how closely judges track experts?</div><div class="row"><b>Methodology:</b> PRISMA-guided scoping review across five databases. Studies coded on four axes: health scenario, judge configuration (single / ensemble / multi-agent), technical approach, and validation design. For the alignment synthesis the authors restrict to three widely reported metrics — raw agreement rate, Cohen&#39;s kappa, and correlation — and present agreement as a FOREST PLOT with 95% CIs and per-study N, which is unusual and useful for a scoping review.</div><div class="row"><b>Measurement:</b> Agreement rate with 95% CIs across 13 studies reporting it; Cohen&#39;s kappa across 10 studies; correlation where reported. Metrics deliberately kept separate rather than pooled, because task structure, output format and rating scale differ.</div><div class="row"><b>Key findings:</b> AGREEMENT RATE: 13 studies, range 0.66-0.96, median and mean both 0.83. Lowest is fine-grained biomedical entity linking (GPT-5.2, 0.66, n=150); highest is a four-model ensemble on guideline-grounded MCQs (0.96, n=500). ENSEMBLES CLUSTER AT THE TOP — a three-judge ensemble reaches 0.90 on rubric-anchored adequacy and safety items. ANCHORED RUBRICS BEAT OPEN-ENDED: structured factuality checks on Brief Hospital Course narratives reach 0.89 across 13,290 propositions, while mental-health counselling rubrics with more subjective language reach 0.73. COHEN&#39;S KAPPA: 10 studies, range 0.59-0.88. THE TWO FINDINGS THAT MATTER MOST HERE: (1) the same judge scored 0.83 agreement against &#39;at least one expert&#39; and dropped to 0.51 against &#39;majority of experts&#39; — the definition of the reference standard nearly halved the apparent reliability; (2) Claude-Opus-4.6 scored kappa 0.78 on unperturbed medical concept validation and kappa 0.24 on perturbed concepts — robustness collapse under perturbation. FAILURE MODES catalogued: shared model-family bias between generator and judge (correlated blind spots inflate scores); conflating surface presentation with substantive quality (fluency rewarded over factual accuracy — in clinical summarization LLM judges sometimes correlate LESS with experts than BERTScore); insufficient depth in clinical semantic reasoning; and evaluation hallucination. Also: &#39;ExaminerGPT&#39; graded leniently until explicitly instructed to mark strictly.</div><div class="row"><b>Soft spots:</b> arXiv preprint, not peer reviewed. A scoping review characterises the literature rather than adjudicating it, so the 0.83 median agreement is a description of what gets published, not an estimate of what LLM judges achieve — and publication bias runs toward judges that worked. The three synthesised metrics are not commensurable across tasks and the authors say so; the forest plot pools studies with N from 49 to 13,290. Only 13 of 134 studies reported agreement rate and only 10 reported kappa, so the alignment synthesis rests on a small and self-selected subset. No prevalence-robust coefficient anywhere in the synthesis, which matters given the kappa paradox at low prevalence.</div><div class="row"><b>Strengths:</b> The largest synthesis of this exact question, and it reports alignment with confidence intervals and per-study N rather than as a bare range. The failure-mode taxonomy in section 4.2 is the most useful part and is mechanism-level rather than a list of caveats. Crucially it treats SHARED MODEL FAMILY between generator and judge as a named, first-class failure mode — independent external support for the producer-is-not-measurer rule this repository already runs on. The reference-standard finding (0.83 versus at-least-one-expert, 0.51 versus majority-of-experts) is reported plainly rather than buried.</div><div class="row"><b>Relevance:</b> LLM-as-a-judge across every task type; most directly the generation and summarization kits, and the LLM-J Monitor / Panel work. FOUR SPECIFIC CONNECTIONS. (1) KTP #8 gains its largest evidence base — 134 studies — and a defensible reference band: agreement 0.66-0.96, median 0.83; kappa 0.59-0.88. (2) THE 0.83-TO-0.51 REFERENCE-STANDARD FINDING GOES STRAIGHT INTO THE OPEN S-01/S-05 QUESTION. It is the same lesson from a different angle: an agreement number is meaningless without stating what it was measured against. It also pairs with PQ-178 (the reference standard&#39;s provenance is a context variable). (3) The shared-model-family failure mode is external validation of the producer-is-not-measurer design in the Panel app, and the ensemble finding argues for multi-judge panels over single judges — which is what Panel already does. (4) The &#39;ExaminerGPT grades leniently until told to mark strictly&#39; observation is the SAME PHENOMENON as PQ-186 in the current cart, where decremental scoring inflated relative to clinicians and incremental tracked them. Two independent lines now say the judge&#39;s scoring instruction changes the score. COMPANION TO PQ-137 (MedJUDGE, Li C et al., 49 studies, through ~2026-04) — different group, and this is the larger and later review. If promoted, the two should be cross-referenced rather than either replacing the other.</div><div class="row"><b>Verdict reasoning:</b> This is the reference synthesis for LLM-as-a-Judge in healthcare, and the KB currently holds only the smaller sibling (PQ-137). Import the failure-mode taxonomy, the agreement and kappa bands as a REFERENCE RANGE FOR WHAT THE LITERATURE REPORTS (explicitly not as a performance claim), the reference-standard sensitivity finding, and the ensemble-beats-single-judge pattern. Quarantine the median 0.83 from being cited as &#39;LLM judges agree with experts 83% of the time&#39; — it is the median of 13 self-selected published studies across incommensurable tasks, and the same review shows one of them halving when the reference standard was redefined. Preprint status argues for citing mechanism and range, not point estimates.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-190">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-190">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-190">? More info</button>
+  </div>
+</section>
+</div>
+
+<div class="cart">
+  <div class="cart-inner">
+    <div class="cart-summary" id="summary">No choices yet. Tap a button on a card above.</div>
+    <button class="send-btn" id="sendBtn" disabled>Send 0 / 1 decisions</button>
+    <button class="clear-link" id="clearBtn">Clear all my choices</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const ALL_IDS = ["PQ-190"];
+  const REPLY_TO = "tali.biron@gmail.com";
+  const REPLY_SUBJECT = "Re: Scout 2026-08-26 — 1 source(s) (PQ-190)";
+  const STORAGE_KEY = "scout-cart-2026-08-26";
+
+  // Load saved state from localStorage (so refresh doesn't lose progress)
+  let choices = {};
+  try { choices = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) {}
+
+  function saveAndRender() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(choices));
+
+    // Re-style each card based on choice
+    document.querySelectorAll('.card').forEach(card => {
+      const id = card.dataset.id;
+      card.classList.remove('chosen-promote', 'chosen-skip', 'chosen-more');
+      card.querySelectorAll('.choice').forEach(b => b.classList.remove('active'));
+      const c = choices[id];
+      if (c) {
+        card.classList.add('chosen-' + c);
+        card.querySelector('.choice.' + c).classList.add('active');
+      }
+    });
+
+    // Update sticky summary + send button
+    const made = ALL_IDS.filter(id => choices[id]);
+    const pending = ALL_IDS.filter(id => !choices[id]);
+    const counts = { promote:0, skip:0, more:0 };
+    made.forEach(id => counts[choices[id]]++);
+
+    let html = '';
+    if (counts.promote) html += '<span class="badge promote">' + counts.promote + ' promote</span>';
+    if (counts.skip)    html += '<span class="badge skip">' + counts.skip + ' skip</span>';
+    if (counts.more)    html += '<span class="badge more">' + counts.more + ' more</span>';
+    if (pending.length) html += '<span class="badge pending">' + pending.length + ' pending</span>';
+    if (!made.length && !pending.length) html = 'No choices yet.';
+    document.getElementById('summary').innerHTML = html || 'No choices yet.';
+
+    const btn = document.getElementById('sendBtn');
+    btn.disabled = made.length === 0;
+    btn.textContent = 'Send ' + made.length + ' / ' + ALL_IDS.length + ' decisions';
+  }
+
+  // Wire button clicks
+  document.querySelectorAll('.choice').forEach(b => {
+    b.addEventListener('click', () => {
+      const id = b.dataset.id;
+      const choice = b.dataset.choice;
+      // Toggle off if same choice clicked again
+      if (choices[id] === choice) delete choices[id];
+      else choices[id] = choice;
+      saveAndRender();
+    });
+  });
+
+  // Send button — uses mailto on mobile (opens native Gmail app), Gmail web on desktop.
+  document.getElementById('sendBtn').addEventListener('click', () => {
+    const lines = ALL_IDS.filter(id => choices[id]).map(id => choices[id] + ' ' + id);
+    if (!lines.length) return;
+    const body = '# Scout decisions for ' + "2026-08-26" + '\n# Sent from the cart page\n\n' + lines.join('\n') + '\n';
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const url = isMobile
+      ? 'mailto:' + encodeURIComponent(REPLY_TO) + '?subject=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body)
+      : 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(REPLY_TO) + '&su=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body);
+    // mailto must be same-window on iOS; _blank is fine for https
+    if (isMobile) window.location.href = url;
+    else window.open(url, '_blank');
+  });
+
+  // Clear button
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    if (!confirm('Clear all your choices on this page?')) return;
+    choices = {};
+    saveAndRender();
+  });
+
+  saveAndRender();
+})();
+</script>
+</body>
+</html>
