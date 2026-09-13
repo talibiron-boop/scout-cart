@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scout decisions — 2026-09-13</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; padding:0 0 180px 0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; background:#f8fafc; color:#0f172a; }
+  .container { max-width:760px; margin:0 auto; padding:24px 16px; }
+  h1 { font-size:22px; margin:0 0 8px 0; color:#1e40af; }
+  .sub { font-size:13px; color:#64748b; margin-bottom:20px; }
+  .help { background:#ecfeff; border:2px solid #0891b2; border-radius:8px; padding:14px 16px; margin-bottom:20px; font-size:13px; color:#164e63; line-height:1.5; }
+  .card { border:1px solid #e2e8f0; border-radius:10px; padding:16px; margin-bottom:14px; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.03); }
+  .card.is-rollover { border-color:#fbbf24; background:#fffbeb; }
+  .card.chosen-promote { border-color:#059669; box-shadow:0 0 0 2px #05966933; }
+  .card.chosen-skip { border-color:#dc2626; box-shadow:0 0 0 2px #dc262633; }
+  .card.chosen-more { border-color:#64748b; box-shadow:0 0 0 2px #64748b33; }
+  .rollover-badge { background:#fde68a; color:#78350f; font-size:11px; font-weight:700; padding:5px 10px; border-radius:10px; display:inline-block; margin-bottom:10px; }
+  .card-head { display:flex; justify-content:space-between; align-items:baseline; }
+  .pq-id { font-size:14px; font-weight:700; color:#1e40af; }
+  .verdict { font-size:12px; font-weight:700; }
+  .citation { margin-top:8px; font-size:14px; line-height:1.5; font-weight:500; }
+  .url { margin-top:4px; font-size:12px; }
+  .url a { color:#2563eb; }
+  .row { margin-top:8px; font-size:13px; color:#334155; line-height:1.5; }
+  .row b { color:#0f172a; }
+  .choice-row { display:flex; gap:8px; margin-top:14px; }
+  .choice { flex:1; padding:14px 8px; border-radius:8px; border:2px solid transparent; font-size:14px; font-weight:700; cursor:pointer; background:#f1f5f9; color:#475569; transition:all .15s; font-family:inherit; }
+  .choice:hover { transform:translateY(-1px); }
+  .choice.promote.active { background:#059669; color:#fff; border-color:#047857; }
+  .choice.skip.active { background:#dc2626; color:#fff; border-color:#b91c1c; }
+  .choice.more.active { background:#64748b; color:#fff; border-color:#475569; }
+  /* Sticky bottom bar */
+  .cart { position:fixed; bottom:0; left:0; right:0; background:#fff; border-top:2px solid #e2e8f0; box-shadow:0 -4px 12px rgba(0,0,0,.08); padding:12px 16px; z-index:100; }
+  .cart-inner { max-width:760px; margin:0 auto; }
+  .cart-summary { font-size:13px; color:#475569; margin-bottom:8px; line-height:1.4; }
+  .cart-summary b { color:#0f172a; }
+  .cart-summary .badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:700; margin-right:6px; }
+  .badge.promote { background:#d1fae5; color:#065f46; }
+  .badge.skip { background:#fee2e2; color:#991b1b; }
+  .badge.more { background:#e2e8f0; color:#334155; }
+  .badge.pending { background:#fef3c7; color:#92400e; }
+  .send-btn { display:block; width:100%; padding:16px; border:none; border-radius:8px; background:#0891b2; color:#fff; font-size:16px; font-weight:700; cursor:pointer; font-family:inherit; }
+  .send-btn:hover:not(:disabled) { background:#0e7490; }
+  .send-btn:disabled { background:#cbd5e1; cursor:not-allowed; }
+  .clear-link { display:inline-block; margin-top:6px; font-size:12px; color:#64748b; text-decoration:underline; cursor:pointer; background:none; border:none; padding:0; font-family:inherit; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Scout decisions — 2026-09-13</h1>
+  <div class="sub">9 source(s) to review. Choices auto-save in this browser.</div>
+
+  <div class="help">
+    Tap <b style="color:#059669;">Promote</b>, <b style="color:#dc2626;">Skip</b>, or <b style="color:#475569;">More info</b> on each card. The bar at the bottom keeps a running list of your choices. When you're done, hit the cyan <b>Send</b> button — Gmail opens with one email containing all your decisions. Hit Send in Gmail and you're done.
+  </div>
+
+  
+<section class="card" data-id="PQ-185-FU">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-185-FU</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Modenesi B, Lin JL, Kaphingst KA, Zhu A, Wheeler M, Zhang P, Fagerlin A. Prompting is not enough: supervised baselines and leakage control for measuring shared decision-making with LLMs in pediatric encounters. arXiv preprint. 2026 Aug 14. arXiv:2608.14792</div>
+  <div class="url"><a href="https://arxiv.org/abs/2608.14792" target="_blank" rel="noopener">https://arxiv.org/abs/2608.14792</a></div>
+  <div class="row"><b>Overview:</b> Follow-up requested 2026-08-26. Full text read end to end (arXiv v1 — no revision exists). It answers two of the three deep-dive questions and explicitly declines the third. 21 audio-recorded paediatric surgical decision encounters, 19 patients, 7,566 utterance segments, 12 shared-decision-making behaviours. Arms: zero-shot Qwen 2.5 32B (4-bit, local, temperature 0); supervised logistic regressions over frozen Qwen3 embeddings; a logistic stack of both.
+Task type: classification, interpretive signal, multi-label · LLM: Qwen 2.5 32B, local, zero-shot · Setting: paediatric outpatient surgery · Volume: 7,566 segments / 19 patients · Human review: trained coders, macro κ 0.695 (per behaviour 0.41–0.83)
+Evidence weight: Single site, 19 patients, arXiv v1, no peer review, no external test set. The evaluation protocol is unusually careful for the size.</div><div class="row"><b>Eval question:</b> Three deep-dive questions: (1) the full leakage taxonomy, (2) whether the supervised baseline survives a frontier model, (3) whether there is a clean mitigation worth a standing rule.</div><div class="row"><b>Methodology:</b> • 19 patient-grouped outer folds (leave-one-patient-out)
+• Inner 5-fold patient-grouped cross-fitting; stacker weights and per-behaviour thresholds (0.05–0.95) fitted only on out-of-fold predictions
+• Cluster bootstrap resampling PATIENTS — 1,000 draws for marginal CIs, 5,000 for paired differences
+• Descriptive learning curve over patient subsamples (6–18 patients, 3 replicates each)</div><div class="row"><b>Measurement:</b> Macro Cohen&#39;s κ pooled over outer folds, with patient-cluster CIs; paired Δκ with its own CI. Human–human macro κ 0.695 reported as CONTEXT, explicitly not as a ceiling, because the model target is the union of coder labels while the human figure compares two coders — different reference constructions.</div><div class="row"><b>Key findings:</b> • (1) THREE leakage paths, not two: sibling recordings (2 patients contributed 2 recordings each); exemplar leakage — excluding the held-out recording still admitted the sibling recording (fired for 3 of 21 recordings); outer-fold leakage through a PRECOMPUTED PROMPT CACHE — for 3 of 19 outer folds, labelled exemplars from the outer held-out patient had entered cached predictions later used to fit the stacker. The affected few-shot results were excluded from the primary analysis. No per-path effect size is given.
+• (2) Frontier question NOT answered: one quantised open model, one prompt family. The authors decline any general LLM-vs-supervised ranking.
+• (3) Clean mitigation stated: every labelled artefact used to build features — prompt exemplars AND cached LLM outputs — must be generated inside the appropriate outer fold; report patient counts beside recording counts.
+• New in the full text: &#39;patient self-efficacy&#39; has 126 labelled segments but only 10 contiguous spans across 6 patients — κ ≈ 0 for every approach despite human κ 0.764. The segment count overstates the independent evidence.
+• Zero-shot was not uniformly worse: it beat the supervised model on &#39;definition of option&#39; (0.302 vs 0.198).
+• The authors state the CIs do not include uncertainty from choosing the model and prompt on this same corpus.</div><div class="row"><b>Soft spots:</b> Still v1 and unreviewed. 19 patients, no external test set. The union reference favours sensitivity and is not an adjudicated consensus. No per-behaviour CIs. The leakage paths are identified but not quantified. The frontier-model question stays open.</div><div class="row"><b>Strengths:</b> Treats the evaluation protocol as part of the method. Reports its own failures, including a behaviour it could not measure. Refuses to call human κ a ceiling when the reference constructions differ — a distinction almost no paper makes.</div><div class="row"><b>Relevance:</b> Layer 1: classification (interpretive), and any few-shot pipeline.
+Layer 2: (a) /optimize — the direct hit. Cases used to pick few-shot examples, tune thresholds or iterate a prompt must not be the cases that measure the gate, and cached model outputs reused across evaluation rounds count as leakage too. Candidate standing rule for Prompt_Optimization_Guide.md. (b) Unit of analysis: the 126-segments-but-10-spans finding is the same problem as POPC&#39;s 100 cases = 75 patients — count independent units, not rows. (c) Consultation Quality / Missed Consultation Alert: a cheap supervised baseline remains the missing comparator.</div><div class="row"><b>Verdict reasoning:</b> The follow-up delivered what it was for. The leakage taxonomy grew from two paths to three, and the third (the prompt cache) is the one most likely to occur in /optimize. The mitigation is stated cleanly enough to become a rule. Import: the three paths, the inside-the-fold rule, and the count-independent-units point. Quarantine: every κ value. It is one small corpus, and the frontier question was never tested.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-185-FU">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-185-FU">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-185-FU">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-187-FU">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-187-FU</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Aldis R, Wang S, Sage M, Metzmaker M, Galvin H. Performance of an Ambient Generative AI Documentation Tool in a Linguistically Diverse Clinical Setting. medRxiv preprint. 2026 Aug 17. doi:10.64898/2026.08.14.26360467</div>
+  <div class="url"><a href="https://www.medrxiv.org/content/10.64898/2026.08.14.26360467v1.full-text" target="_blank" rel="noopener">https://www.medrxiv.org/content/10.64898/2026.08.14.26360467v1.full-text</a></div>
+  <div class="row"><b>Overview:</b> Follow-up requested 2026-08-26. The medRxiv full text was reachable this time and was read end to end. Cambridge Health Alliance: a safety-net system serving about 140,000 patients a year, where over half speak a language other than English at home. 54,160 outpatient encounters, March 2024 – August 2025. English 72.9%, Portuguese 11.8%, Spanish 8.4%, Haitian Creole 4.3%. An interpreter was present in 23.1% of encounters and a certified bilingual provider in 4.0%. The tool generates an English note from encounters in 28 languages.
+Task type: summarization / ambient documentation · LLM system: Abridge (ASR + diarization + LLM pipeline) · Setting: outpatient, US safety-net · Volume: 54,160 encounters · Human review: provider editing is the instrument
+Evidence weight: Large, real-world and retrospective. One system and one vendor. Preprint.</div><div class="row"><b>Eval question:</b> Three deep-dive questions: (1) are individual languages separable from the &#39;non-English&#39; bucket, (2) is there any accuracy or safety endpoint behind the edit-rate proxy, (3) what is the tool?</div><div class="row"><b>Methodology:</b> • Retrospective cross-sectional cohort
+• Outcome = Percent Effort Reduction (PER): vendor-reported % of final-note words generated by the tool and kept as-is (HPI + assessment/plan, word-weighted), dichotomised at ≥80% per the VENDOR&#39;s operational benchmark
+• GEE, binomial logit, exchangeable correlation within patient
+• Within-language bilingual-vs-interpreter Wald contrasts; omnibus Type III interaction test</div><div class="row"><b>Measurement:</b> Odds ratios with 95% CIs from GEE.</div><div class="row"><b>Key findings:</b> • (1) YES, separable, and the gap is consistent: Spanish OR 0.76 (0.71–0.81), Portuguese 0.79 (0.74–0.83), Haitian Creole 0.75 (0.69–0.82). Unadjusted ≥80 PER: English 57.6%, Spanish 51.1%, Portuguese 51.0%, Haitian Creole 50.5%, other 48.7%. A language of lesser diffusion performed like the major ones.
+• (2) NO accuracy or safety endpoint exists behind the proxy. The authors name PDQI-9 as future work.
+• (3) The tool is Abridge — whose own engineering blogs are already in the KB as PB-01/PB-02.
+• Bilingual provider vs interpreter within language: Spanish 0.91 (0.79–1.06), Portuguese 1.21 (0.82–1.79), Haitian Creole 1.00 (0.83–1.21), other 1.00 (0.49–2.05). Not significant, but several intervals are too wide to call a true null.
+• ⚠️ CORRECTION TO THE PARENT CARD: &#39;21–25% less likely&#39; is the authors&#39; wording for an ODDS ratio of 0.75–0.79. With the outcome near 55%, odds and probability diverge. The absolute gap is about 6.5–9 percentage points (57.6% vs 48.7–51.1%), a risk ratio of about 0.85–0.89 — roughly 11–15% less likely, not 21–25%. The parent card repeated the misstatement.</div><div class="row"><b>Soft spots:</b> The measurer is the producer: vendor-defined metric, vendor-defined threshold, and outcome data delivered by the vendor in weekly files. Android encounters were excluded because only iOS was EHR-integrated. Use was voluntary for providers and patients. No adjustment for specialty, visit complexity, acoustic environment or individual editing habits. PER mixes tool quality with how hard a provider edits. The pipeline has three layers (ASR, diarization, LLM), and the gap cannot be assigned to any one of them.</div><div class="row"><b>Strengths:</b> Scale, a real safety-net population, a per-language breakdown, and clustering handled correctly. The full text makes its own limitations explicit.</div><div class="row"><b>Relevance:</b> Layer 1: summarization / documentation.
+Layer 2: KTP #12 gains its largest anchor — scoped as &#39;language is an axis that must be measured, and edit rate by language is a cheap monitoring signal&#39;, not as an effect size. KTP #14 (evaluate the layers): here is a gap nobody can locate because only the end-to-end output was measured. Producer ≠ measurer (the Panel design): a vendor-supplied metric is not an independent endpoint. Statistician_Guide.md: a clean teaching example of odds-ratio-read-as-risk-ratio when the outcome is common.</div><div class="row"><b>Verdict reasoning:</b> The deep-dive answered all three questions and found a reporting error the parent card had inherited. Import: the language axis, the per-language consistency, and stratified edit rate as a monitoring instrument — each with the vendor-metric caveat attached. Cite the gap only as OR 0.75–0.79 or about 6.5–9 absolute points. Never as &#39;21–25% less likely&#39;.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-187-FU">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-187-FU">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-187-FU">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-191">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-191</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Fox S, Markham L, Lail R, Karotsieris M. LLM Judges Verify Presence, Not Absence: Omission Blindness in AI Clinical Notes and What Recovers It. arXiv preprint. 2026 Aug 31. arXiv:2608.31016</div>
+  <div class="url"><a href="https://arxiv.org/abs/2608.31016" target="_blank" rel="noopener">https://arxiv.org/abs/2608.31016</a></div>
+  <div class="row"><b>Overview:</b> Asks whether the standard safety check for AI-drafted clinical notes — an LLM judge reading the note against the transcript — can detect omissions. Builds a benchmark of 500 single-error note pairs from audited fact sheets: 298 with a named fact certainly absent, 202 added-or-altered controls. Tests eight judge designs using paired discrimination (does the flawed note score below its clean twin; 0.5 = coin flip). Authors are from Composo, an evaluation-tooling company. The conflict is disclosed, and the measurement path does not use their product.
+Task type: LLM-as-judge for summarization / documentation · LLM system: eight judge designs, frontier models · Signal type: explicit (fact present / absent) · Setting: ambient-scribe notes (benchmark + real vendor notes) · Clinician involvement: physician author validated 70 items; a second, non-author clinician graded the severity rubric blind
+Evidence weight: arXiv preprint, not peer reviewed. Constructed single-error benchmark plus a transfer test on real vendor notes. Vendor-of-evaluation-tooling authors.</div><div class="row"><b>Eval question:</b> Can an LLM judge detect what a note leaves out — and if not, what recovers it?</div><div class="row"><b>Methodology:</b> • Paired single-error twins isolate the construct (omission vs addition/alteration)
+• Eight judge designs; wording changes, voting and GEPA prompt optimisation all tested as fixes
+• Task restructured: enumerate the facts the transcript establishes, then check the note for each — as (a) a per-fact pipeline and (b) a GEPA-evolved single-call prompt
+• Threshold transfer tested on real notes from the companion census (PQ-192)</div><div class="row"><b>Measurement:</b> Paired discrimination (0.5 = chance); detection rate at a stated false-alarm rate; physician adjudication of disagreements.</div><div class="row"><b>Key findings:</b> • Paired discrimination 0.79–0.94 on added or altered content, but 0.50–0.63 on OMISSIONS — near chance
+• On single notes, no design flags omissions reliably more often than it flags perfect notes
+• Wording changes, voting and GEPA prompt optimisation move the operating point without creating detection
+• Restructuring recovers it: per-fact pipeline at 2.7% false alarms; single call detects more (36.9% vs 24.6%, p=0.002) at 6.2% false alarms and a tenth of the cost
+• Physician sided with the pipeline 10 of 10 times where the two routes disagreed (p=0.002)
+• No benchmark threshold transferred to real vendor notes — recalibration was required
+• Omissions whose fact is restated elsewhere in the note defeat both routes</div><div class="row"><b>Soft spots:</b> Constructed benchmark with one error per note — real notes carry several. Even the recovered detection rate is only about 37%: an improvement, not a solution. The physician validator is an author. English only. GEPA optimisation was run against the same benchmark it is evaluated on. Unreviewed.</div><div class="row"><b>Strengths:</b> The twin design isolates exactly one construct. It tests the obvious fixes and reports that they fail. It offers a mechanism: absence supplies nothing for the model to attend to. The threshold-transfer failure is reported honestly. Benchmark, prompts and judgements are released.</div><div class="row"><b>Relevance:</b> Layer 1: summarization, generation, LLM-as-judge.
+Layer 2: (a) Nuclear Medicine Summarization kit — its item-level binary rubric IS the enumerate-then-check design this paper finds necessary. That is external confirmation of the kit&#39;s central choice. (b) Discharge Letter kit — any LLM judge used there to catch omissions is, by this evidence, close to blind unless it is given the list of required facts. (c) The Panel app (LLM-J Monitor) — omission-type rubric criteria need an enumerated fact list, not a holistic check. (d) Prompt_Optimization_Guide.md — prompt optimisation cannot fix a structural blind spot; restructure the task.</div><div class="row"><b>Verdict reasoning:</b> Well designed for its question. It identifies a failure mode that matters for every summarization kit here and shows that the usual fixes don&#39;t work. Import the method and the mechanism. Quarantine the percentages: constructed benchmark, vendor-affiliated authors, no peer review.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-191">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-191">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-191">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-192">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-192</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Fox S, Markham L, Lail R, Karotsieris M. One note in three: a verified census of three deployed AI scribes, and the instrument that counted it. arXiv preprint. 2026 Aug 31. arXiv:2608.31017</div>
+  <div class="url"><a href="https://arxiv.org/abs/2608.31017" target="_blank" rel="noopener">https://arxiv.org/abs/2608.31017</a></div>
+  <div class="row"><b>Overview:</b> Audits three unnamed commercial ambient scribes on the same 142 consultations (recorded UK primary care, US ambulatory, and authored scenarios): 565 notes. Twelve discovery passes proposed 13,678 candidate errors. The 5,898 that cleared an importance filter went to an adversarial panel of two models from different families, each told to refute what it could; 618 survived. Then the paper turns the instrument into the object of study. Same group as PQ-191. Found through the web channel (a secondary write-up on the Pebblous blog) — the arXiv channel was down this cycle.
+Task type: summarization / documentation — error census · LLM system: 3 commercial scribes; 2-family adversarial review panel · Setting: UK primary care, US ambulatory · Volume: 142 consultations, 565 notes, 618 verified findings · Clinician involvement: physician author (21 findings) and an independent clinician (12), blind, disjoint samples
+Evidence weight: arXiv preprint. Real recorded consultations, but with no human-written control arm. Very small clinician validation samples.</div><div class="row"><b>Eval question:</b> How often do deployed scribes fail — and how much of any published failure rate is the instrument rather than the scribe?</div><div class="row"><b>Methodology:</b> • Census with a multi-pass discovery stage and a cross-family adversarial verification panel
+• Instrument experiments holding model, evidence and settings fixed while varying ONE factor: the review instruction, or the reviewer&#39;s model family
+• Blind, disjoint clinician adjudication of verified findings</div><div class="row"><b>Measurement:</b> Share of notes with ≥1 verified failure, with 95% intervals; share of candidates verified under each instrument condition.</div><div class="row"><b>Key findings:</b> • 31.3% [27.0–35.6] of notes carry ≥1 verified failure; 24.8% [20.8–29.0] excluding invented identity and dates (a patient record would have prefilled those)
+• Failures concentrate in allergy and medication information, invented patient identity, and history written up as examination on telephone consultations
+• A new failure class: a treatment the clinician retracted, recorded as delivered care
+• Physician author upheld 20/21 findings (95.2% [77.3–99.2]); independent clinician 12/12 ([75.8–100])
+• THE REVIEW INSTRUCTION ALONE moves the share of candidates verified from 9.3% to 79.0%; at a fixed instruction, the reviewer&#39;s family moves the share of notes flagged from 27.8% to 54.8%
+• Between 28% and 97% of sampled notes carry a failure, depending on the standard applied
+• Published audits put omission at 54–86% of errors against 23.1% here — a spread that instrument differences alone can produce
+• Every reference note in two public corpora (PriMock57, ACI-Bench) carried at least one material discrepancy with its own transcript</div><div class="row"><b>Soft spots:</b> No human-written control arm, so it says nothing about scribes vs clinicians. Discovery recall was never measured: 7,780 of 13,678 candidates were dropped by the importance filter and never opened. The products cannot be ranked because their input formats differ. The clinician validation samples are tiny (21 and 12). The omission share is probably an undercount, given PQ-191&#39;s own finding. Vendor-of-evaluation-tooling authors.</div><div class="row"><b>Strengths:</b> It measures the instrument instead of assuming it. Every factor except one is held fixed in the sensitivity experiments. Verification is cross-family and adversarial, so producer ≠ measurer by construction. All 618 findings, prompts, model versions and the pipeline are released.</div><div class="row"><b>Relevance:</b> Layer 1: summarization, generation, LLM-as-judge.
+Layer 2: KTP #15 (an agreement number is meaningless without its reference standard) gets its strongest evidence yet. PQ-190 showed 0.83 vs 0.51 by aggregation rule; here the review instruction alone swings the verified rate from 9.3% to 79.0%. PQ-186 (the judge&#39;s prompt is a design parameter) gets its largest measured effect. For Discharge Letter and Nuclear Medicine: pre-specify the review standard, and report it next to every error rate. PQ-178 (reference provenance): public reference notes are themselves discrepant.</div><div class="row"><b>Verdict reasoning:</b> The census is secondary. The instrument experiment is the contribution, and it converges with PQ-190, PQ-193 and the Heidi companion study (paired AI vs clinician notes: 61.0% vs 21.8% error burden depending on detection method). Import the rule &#39;an error rate is a property of the instrument; report the standard with the rate&#39;. Quarantine 31.3% — the products are unnamed and the rate is not portable.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-192">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-192">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-192">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-193">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-193</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Bergman H, Liu V, Austin B, Sangera R. Are automated documentation-error judges fit to measure ambient AI scribes? A pre-registered, blinded human-validation study. medRxiv preprint. 2026 Aug 17. doi:10.64898/2026.08.14.26360441</div>
+  <div class="url"><a href="https://doi.org/10.64898/2026.08.14.26360441" target="_blank" rel="noopener">https://doi.org/10.64898/2026.08.14.26360441</a></div>
+  <div class="row"><b>Overview:</b> Heidi Health (a scribe vendor; all authors are employees, fully funded by Heidi) validates the automated false-positive screen and severity panel used in its own multi-country AI-vs-clinician note simulation (companion paper: doi 10.64898/2026.08.18.26360701). Ten external GPs, blinded to note authorship, flag source, the pipeline&#39;s verdict and severity tier, adjudicated a stratified deterministic sample of 434 flags (236 retained, 198 screened out), 131 of them double-rated. English setting only. Pre-registered; reported per GRRAS.
+Task type: LLM-as-judge certification · LLM system: 3-stage pipeline (identification, false-positive screen, 3-model severity panel) · Signal type: interpretive (is this span a genuine error?) · Setting: simulated consultations, English · Clinician involvement: 10 external GPs; 565 adjudications
+Evidence weight: Pre-registered, blinded, external raters. Simulated consultations. Sponsor-built judges validated by the sponsor. Preprint.</div><div class="row"><b>Eval question:</b> When no gold standard exists, what does &#39;validating&#39; an automated judge even mean — and can it license a comparison anyway?</div><div class="row"><b>Methodology:</b> • Validation reframed as DEFENSIBILITY, tested as three falsifiable propositions: (A) envelope parity — judge–clinician agreement vs clinician–clinician; (B) non-differential behaviour across the arms being compared (AI vs clinician notes); (C) concordance on clinician-consensus cases
+• Pre-specified decision rule: unfit if behaviour is differential by arm or systematically diverges from consensus
+• Forced binary genuineness decision, with no &#39;uncertain&#39; option
+• Gwet&#39;s AC1 for binary agreement WITH raw agreement; weighted κ plus mean signed difference for severity; Wilson intervals
+• Sample size set by precision: 131 double-rated items give about an 8-point Wilson half-width on raw inter-clinician agreement
+• Bayesian latent-class (Hui–Walter) triangulation of the genuine-error prevalence</div><div class="row"><b>Measurement:</b> Raw agreement and AC1; kept-precision and removed-confirmed rates by arm; severity signed gap; consensus concordance; latent-class prevalence with a credible interval.</div><div class="row"><b>Key findings:</b> • Inter-clinician agreement on genuineness: raw 59% (50–67), AC1 0.24 — there is no human consensus to serve as truth
+• Judge–clinician agreement 64% (60–68), overlapping the expert envelope
+• Near-symmetric across arms: kept-precision 74% (AI) vs 81% (clinician); severity signed gap +0.06 vs −0.09 tiers
+• One asymmetry: removed-confirmed 56% vs 42% — the screen over-removes on clinician notes, which is conservative for the parent study&#39;s contrast
+• Consensus concordance 70% (59–79) on 77 items
+• The screen&#39;s cost: only 48% (42–54) of screened-out flags were confirmed non-errors
+• Clinicians disagree far more on WHETHER something is an error than on how severe it is
+• Latent-class genuine-error prevalence 68% (94% CrI 48–83)
+• Dropping one reviewer (independence attested only by the PI) moved AC1 from 0.24 to 0.13</div><div class="row"><b>Soft spots:</b> The sponsor built the judges and ran the validation (mitigated by pre-registration and external blinded raters, not removed). The forced binary depresses agreement. The latent-class model assumes conditional independence, which shared model lineage violates — the authors say so. English only, although the parent study spans five languages. AC1 on 131 items is imprecise and moves with one rater. Data are not public. &#39;Non-differential&#39; rests on point estimates with overlapping intervals.</div><div class="row"><b>Strengths:</b> Pre-registered falsification criteria, stated before the data. AC1 and raw agreement reported together (the S-01/S-05 quartet in practice, minus κ). It reports the one asymmetry that runs against the sponsor. It bounds the error rate instead of point-estimating it, and states the conditions of the non-differential-misclassification argument rather than assuming it.</div><div class="row"><b>Relevance:</b> Layer 1: LLM-as-judge; summarization / documentation.
+Layer 2: (a) The Panel app (LLM-J Monitor) — envelope parity + non-differential across arms + consensus concordance is a usable certification triad for any judge, where &#39;accuracy&#39; cannot be defined. (b) S-07 (Passonneau &amp; Carpenter) — latent-class modelling is the practical form of &#39;model the annotation, don&#39;t collapse it&#39;. (c) S-01/S-05 — AC1 plus raw agreement at a skewed prevalence, done correctly. (d) Discharge Letter / Nuclear Medicine — pilot the &#39;is this an error?&#39; question first; it is the hard judgement (AC1 0.24), severity is not. (e) Echoes POPC: disagreement sits at the threshold, not in the attribution.</div><div class="row"><b>Verdict reasoning:</b> The framing is the contribution, and it transfers to every judge the kits use. It is honest about its ceiling. Import: the defensibility triad, bounded error rates, and the non-differential-misclassification argument with its conditions. Quarantine every absolute rate: vendor-sponsored, simulated consultations, English only.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-193">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-193">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-193">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-194">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-194</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Chin AT, Zhu N, Vangala S, Woo H, Wisk LE, Kingsley T, Mafi JN, Lukac PJ. A Pragmatic Randomized Trial of an EHR-Integrated Generative AI Chart Summarization Tool for Ambulatory Clinicians. medRxiv preprint. 2026 Aug 31. doi:10.64898/2026.08.26.26361496</div>
+  <div class="url"><a href="https://doi.org/10.64898/2026.08.26.26361496" target="_blank" rel="noopener">https://doi.org/10.64898/2026.08.26.26361496</a></div>
+  <div class="row"><b>Overview:</b> The first RCT of an EHR-embedded generative chart summarizer (Epic Outpatient Insights). 284 outpatient clinicians across 42 specialties at one academic health system were randomised 1:1 to the tool or usual care for 90 days (23 Feb – 23 May 2026). NCT07438743.
+Task type: summarization (pre-charting) · LLM system: Epic Outpatient Insights (vendor-embedded) · Setting: ambulatory, 42 specialties · Volume: 284 clinicians; 74,474 summaries · Human review: clinicians reviewing summaries in routine work
+Evidence weight: Randomised and pragmatic, with a prespecified primary outcome. Single system, 90 days, unblinded, primary outcome self-reported.</div><div class="row"><b>Eval question:</b> Once a vendor summarizer is actually deployed, what does it deliver — and which endpoint shows it?</div><div class="row"><b>Methodology:</b> • Covariate-constrained randomisation, stratified by AI-scribe licence and balanced on baseline task load and chart time
+• Primary outcome: physician task load (NASA-TLX adapted to pre-charting, 0–400)
+• Exploratory outcomes: Professional Fulfillment Index, usability, safety reports, EHR time (Caboodle / Signal logs)
+• Mixed models with arm × period interaction; learning-curve month separated from steady state
+• Free-text concerns coded qualitatively</div><div class="row"><b>Measurement:</b> Adjusted between-arm differences with 95% CIs; engagement from EHR logs; net promoter score.</div><div class="row"><b>Key findings:</b> • Of 74,474 summaries generated, only 14.2% were ever interacted with — falling from 21.5% in month 1 to 10.5% in month 3
+• Clinicians using it at least once a month: 88.7% → 66.2%
+• Task load −27.4 (−49.4 to −5.3; P=0.02); burnout −0.20 (−0.38 to −0.01); work exhaustion −0.24 (−0.47 to −0.02)
+• NO time saving at steady state: −1.2 s per encounter (−19.0 to 16.6)
+• Net promoter score −22
+• 57.1% of free-text respondents reported a concern — including ATTRIBUTION errors (a family member&#39;s diagnosis written as the patient&#39;s) and STATUS errors (an ordered-but-incomplete action written as done)
+• No adverse safety events were reported</div><div class="row"><b>Soft spots:</b> The primary outcome is self-reported by clinicians who know their arm, so expectation bias is plausible. Exploratory outcomes are not adjusted for multiplicity. Safety was captured only by voluntary reporting, so &#39;no events reported&#39; is not evidence of safety. With only 14% engagement, the task-load effect is either heavily diluted or partly a participation effect. Ninety days; accuracy never systematically measured.</div><div class="row"><b>Strengths:</b> Randomised, pragmatic and prespecified. Engagement decay was measured objectively from logs rather than self-report. It reports the unflattering results — no time saving, a negative net promoter score — alongside the favourable one.</div><div class="row"><b>Relevance:</b> Layer 1: summarization.
+Layer 2: (a) §1 &#39;Adoption is a primary monitoring endpoint&#39; (PQ-184) gains a second independent anchor, and the first that is randomised and in summarization: interaction fell 21.5% → 10.5%, mirroring PQ-184&#39;s 68% → 30%. (b) The attribution and status error classes match PQ-192&#39;s findings (history written as examination; a retracted treatment written as delivered) — an error taxonomy converging across independent studies. (c) Discharge Letter kit: interaction rate belongs in the monitoring plan. (d) safety_vs_effectiveness.md: &#39;no safety events reported&#39; under passive reporting says nothing about safety.</div><div class="row"><b>Verdict reasoning:</b> A real RCT of the kind the KB rarely gets. Its most important result is the one a benchmark cannot produce: most summaries are never opened. Import the engagement-decay pattern and the error classes. Treat the task-load and burnout effects as fragile (self-reported, unblinded).</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-194">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-194">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-194">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-195">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-195</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Humphries C, Brett J, Gruber F, James E, McKendrick TI, McNairn KC, Miell A, O&#39;Brien R, Rahman F, et al. Half of alcohol, drug, and self-harm presentations cannot be identified in coded emergency department data: a diagnostic accuracy study of a large language model. medRxiv preprint. 2026 Aug 31. doi:10.64898/2026.08.26.26361443</div>
+  <div class="url"><a href="https://doi.org/10.64898/2026.08.26.26361443" target="_blank" rel="noopener">https://doi.org/10.64898/2026.08.26.26361443</a></div>
+  <div class="row"><b>Overview:</b> A two-phase diagnostic accuracy study in one UK Type 1 emergency department (adults ≥16). Phase 1, a validation week covering EVERY attendance (n=2,256), compares three strategies — routine clinical coding, blinded clinician review, and a blinded, locally deployed Llama 3.1 70B (temperature 0, no fine-tuning, no retrieval, free text only). Phase 2 applies the LLM to all 105,096 attendances in the year and corrects the prevalence for the LLM&#39;s measured error.
+Task type: classification from notes (3 domains + subdomains) · LLM system: Llama 3.1 70B, local · Signal type: mixed · Setting: emergency department, UK · Prevalence: 12.1% (reference standard) · Volume: 2,256 (validation) / 105,096 (year) · Human review: clinician comparator + senior adjudicator
+Evidence weight: Unselected single-site population with no spectrum selection; a full year of application. The reference standard has a known structural bias (see soft spots).</div><div class="row"><b>Eval question:</b> When routinely coded data are themselves the failing reference, how do you measure both the coding gap and the LLM — and how should the reference standard be built?</div><div class="row"><b>Methodology:</b> • Two-phase: validation week on every attendance, then full-year application with error-corrected prevalence
+• A reliability gate was enforced: two junior raters missed the pre-specified Krippendorff&#39;s α ≥ 0.800 (0.795) and were replaced by a more senior clinician
+• REFERENCE STANDARD: where clinician and LLM agreed, that answer was accepted; only their DISAGREEMENTS went to a senior toxicology-trained EM adjudicator
+• LLM blinded to clinician outputs and codes; identical prompt across the whole dataset</div><div class="row"><b>Measurement:</b> Balanced accuracy, sensitivity and specificity per strategy; paired comparisons; adjusted annual prevalence with CIs.</div><div class="row"><b>Key findings:</b> • Reference prevalence 12.1%; coding identified 6.0%, clinicians 10.0%, the LLM 15.6%
+• LLM vs clinician balanced accuracy: alcohol 0.942 vs 0.930 (p=0.635); drugs 0.959 vs 0.791 (p&lt;0.001); self-harm 0.982 vs 0.908 (p=0.004)
+• Coding recorded 1.07 domains per identified patient, against 1.32 in the reference — co-occurrence is erased
+• Across the full year, the LLM identified 14.3% of attendances against 4.1% by coding, in every month
+• About 12,890 domain involvements a year are not identifiable from coded data
+• At least 81.6% of self-harm attendances needed medical assessment before psychiatric review</div><div class="row"><b>Soft spots:</b> ⚠️ DISCREPANT-RESOLUTION BIAS. Accepting clinician–LLM agreement as truth, and adjudicating only disagreements, means any case where BOTH were wrong is scored as correct. That inflates the apparent accuracy of both tests and makes the LLM-vs-clinician comparison non-independent. The authors acknowledge the reference is &#39;not fully independent&#39;. The LLM&#39;s 15.6% against a 12.1% reference also shows it over-calls. Single site, one model.</div><div class="row"><b>Strengths:</b> An unselected population, so no spectrum bias. A pre-specified reliability threshold actually enforced. Full-year application with prevalence corrected for measured error. Local deployment. Coding included as a comparator rather than silently used as truth.</div><div class="row"><b>Relevance:</b> Layer 1: classification / extraction from notes; moderate-to-low prevalence.
+Layer 2: (a) Any kit that uses ICD or coded data as its sampling frame or reference is exposed. Here coding captured about half — directly relevant to POPC and VAP sampling design. (b) rare_events_evaluation.md: &#39;discrepant resolution&#39; deserves a named anti-pattern — never build the reference standard by adjudicating only where the tests under evaluation disagree; adjudicate a random sample of the concordant cases too. (c) Statistician_Guide.md: correcting prevalence for classifier error is a worked example. (d) KTP #15: the reference standard here was partly constructed FROM the LLM being evaluated.</div><div class="row"><b>Verdict reasoning:</b> Promote as a teaching case, not as a performance result. The coding-gap finding is robust (coding played no part in building the reference). The design flaw is instructive and common. Import: the coded-data warning, the discrepant-resolution anti-pattern, and the error-corrected-prevalence pattern. Quarantine every LLM accuracy number.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-195">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-195">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-195">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-196">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-196</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Aimyshev T, Arupzhanov I, Zhakhina G, Rakhmankulova A, Smagul S, Gaipov A. Structured extraction from Russian/Kazakh discharge summaries: three model families at the human-agreement ceiling. medRxiv preprint. 2026 Sep 7. doi:10.64898/2026.09.03.26362149</div>
+  <div class="url"><a href="https://doi.org/10.64898/2026.09.03.26362149" target="_blank" rel="noopener">https://doi.org/10.64898/2026.09.03.26362149</a></div>
+  <div class="row"><b>Overview:</b> Nazarbayev University, Astana. Stroke discharge summaries in mixed Russian and Kazakh — Kazakh is agglutinative, and 63% of section headers are unique, so no template can be assumed. Three model families under identical inputs: a multilingual BERT-style encoder with CRF heads, a locally fine-tuned Qwen3-4B, and zero-shot GPT-5.5. Three tasks of increasing granularity: section segmentation (4,327 documents), seven-field medication records (708), and dated lab tuples (1,888). All arms share a block-ID representation (extraction as tagging over a fixed segmentation).
+Task type: extraction (segmentation → entities → full records) · LLM system: encoder+CRF / fine-tuned Qwen3-4B / zero-shot GPT-5.5 · Signal type: explicit · Setting: inpatient stroke, Kazakhstan · Language: Russian / Kazakh · Human review: blind re-annotation of 50 documents per task
+Evidence weight: Single centre, one condition, preprint. The human ceiling rests on 50 documents per task. Paired same-document tests with Holm correction.</div><div class="row"><b>Eval question:</b> How do you claim &#39;human-level&#39; extraction honestly — and does it hold outside English?</div><div class="row"><b>Methodology:</b> • Human-agreement ceiling measured by blind re-annotation of 50 documents per task
+• Model-vs-ceiling claims tested with paired same-document tests, Holm-corrected
+• Full-record assembly re-scored SYMMETRICALLY against a blind annotator as a common reference, so models and gold annotators are judged the same way
+• Identical input representation across all three families</div><div class="row"><b>Measurement:</b> Agreement / F1 against the gold standard and against the measured human ceiling.</div><div class="row"><b>Key findings:</b> • Section segmentation: every arm within ±0.03 of the 0.905 ceiling (models 0.919–0.932)
+• Medication detection: the cloud model is above the ceiling (0.966 vs 0.959)
+• Full-record assembly, scored against a common blind reference: fine-tuned LLM and cloud model 0.344, gold annotators only 0.183 — &#39;above human&#39; because humans barely agree on the convention
+• Lab assembly: fine-tuned LLM matches the ceiling (0.898 vs 0.902); the encoder falls far below (0.476)
+• Residual errors concentrate in annotation conventions the annotators themselves could not agree on
+• Authors&#39; conclusion: annotation guidelines and task representation, not model capacity, are the binding constraints</div><div class="row"><b>Soft spots:</b> A 50-document ceiling is imprecise. Single centre, stroke only. At the assembly level, human agreement of 0.183 means the task is ill-posed there — that is not a model triumph, and the authors say as much. Preprint.</div><div class="row"><b>Strengths:</b> Every model claim is made against a measured ceiling with paired tests. Symmetric re-scoring against a common reference is exactly the discipline PQ-185-FU says is usually missing. Three families under identical representation, in a non-English and morphologically hard language. It locates the error in the guideline.</div><div class="row"><b>Relevance:</b> Layer 1: extraction.
+Layer 2: (a) CTA-PR (Hebrew CTA report extraction), paused at two open labelling-protocol questions — this is direct evidence to resolve the annotation conventions BEFORE measuring the model; otherwise &#39;errors&#39; are guideline disagreements. (b) KTP #12 (language axis) gains a FOURTH anchor, and a balancing one: measured in-language, detection transfers at the ceiling while assembly does not, and the cause is the guideline, not the language. (c) KTP #15: &#39;above human agreement&#39; must be read against what the guideline fixed. (d) §1 tier table: at human agreement this low, the tier rule already says stop — ill-posed.</div><div class="row"><b>Verdict reasoning:</b> Small, but well designed for its question, and it is the rare paper that makes &#39;human-level&#39; falsifiable. The CTA-PR connection is concrete and timely. Import the measured-ceiling-plus-paired-test pattern and the guideline-as-binding-constraint lesson. Quarantine the scores (one centre, one condition).</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-196">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-196">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-196">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-197">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-197</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Jeong I, Kim Y, Park J-H, Lee H. MISP-Bench: Decomposing User-Provided False Priors into Answer, Rationale, and Guard Effects. medRxiv preprint (v2). 2026 Aug 23. doi:10.64898/2026.05.07.26352627</div>
+  <div class="url"><a href="https://doi.org/10.64898/2026.05.07.26352627" target="_blank" rel="noopener">https://doi.org/10.64898/2026.05.07.26352627</a></div>
+  <div class="row"><b>Overview:</b> Decomposes a user-supplied false prior into its parts — the wrong answer the user states, the reason they give, and a &#39;guard&#39; safety prompt — varying each separately while holding the question and correct answer fixed. 1,724 audited items (1,430 medical multiple-choice, 294 free-form math), 10 open-weight models (1B–27B), 13 prompt conditions. Replicated on two frontier models (GPT-5.6, Gemini-2.5-Pro). Corpus, response records and code released.
+Task type: medical QA under a user-supplied false prior (sycophancy) · LLM system: 10 open-weight models + 2 frontier replications · Signal type: explicit (multiple-choice key) · Setting: benchmark, not a clinical workflow · Human review: a six-category item audit removed 770 flawed source items
+Evidence weight: Benchmark study with a factorial design. Mostly small open models. No clinical workflow and no clinician adjudication. v2 preprint.</div><div class="row"><b>Eval question:</b> When a user states a wrong belief, which part of it causes the harm — and does a &#39;verify first&#39; guard prompt actually help?</div><div class="row"><b>Methodology:</b> • Factorial manipulation: wrong answer, wrong rationale, and guard prompt varied separately
+• The &#39;error-prone option&#39; is identified by a strong reference model
+• Within-model reasoning-budget sweep
+• Frontier replication; distractors regenerated with a different model as a robustness check</div><div class="row"><b>Measurement:</b> Accuracy drop; adoption rate of the user&#39;s wrong answer; interaction (additivity) tests across models.</div><div class="row"><b>Key findings:</b> • Wrong answer plus wrong rationale do LESS damage than the sum of each alone (sub-additive on 7 of 10 models)
+• The popular guard prompt &#39;verify the reasoning first&#39; splits models into recovery, no-effect and reversal groups — it made outcomes WORSE on 4 of 10; the split tracks reasoning capacity
+• Models adopt the user&#39;s wrong answer 78% of the time when it matches an option the model itself tends to get wrong, but only 39% when it does not — two attacks with the same accuracy drop, very different behaviour
+• Model size explains none of these effects in the 1B–27B range
+• The findings replicate on two frontier models and survive regenerating the distractors
+• The source-item audit removed 770 flawed items, 732 of them multi-answer items that single-best-answer scoring cannot handle</div><div class="row"><b>Soft spots:</b> Multiple-choice and math, not clinical decisions. Mostly small open models. Defining &#39;error-prone&#39; with a reference model is partly circular. No clinician involvement. The code repository is anonymised.</div><div class="row"><b>Strengths:</b> The factorial decomposition turns &#39;sycophancy&#39; into separable, testable parts. It tests a widely recommended guard prompt and finds it can reverse. Everything is released. A frontier replication was run. The item audit is itself a warning about benchmark quality.</div><div class="row"><b>Relevance:</b> Layer 1: conversational / decision support; prompt optimisation.
+Layer 2: (a) The OPEN PQ-174 vs PQ-153 contradiction. This suggests a mechanism under which both can be true: a wrong prior collapses performance when it coincides with the model&#39;s own error-prone option (78%), and much less otherwise (39%). See the flagged contradiction in this email. (b) Prompt_Optimization_Guide.md: a generic safety instruction can reverse on some models, so test guard prompts per model, never assume them. (c) Evaluations should report HOW a model fails (adoption), not only the accuracy lost.</div><div class="row"><b>Verdict reasoning:</b> Not clinical, so it cannot settle a clinical question. But it offers the first concrete, testable mechanism for a contradiction that has been open for five cycles, and the guard-prompt reversal is directly usable. Import it as a hypothesis for KTP #9, not as evidence.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-197">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-197">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-197">? More info</button>
+  </div>
+</section>
+</div>
+
+<div class="cart">
+  <div class="cart-inner">
+    <div class="cart-summary" id="summary">No choices yet. Tap a button on a card above.</div>
+    <button class="send-btn" id="sendBtn" disabled>Send 0 / 9 decisions</button>
+    <button class="clear-link" id="clearBtn">Clear all my choices</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const ALL_IDS = ["PQ-185-FU","PQ-187-FU","PQ-191","PQ-192","PQ-193","PQ-194","PQ-195","PQ-196","PQ-197"];
+  const REPLY_TO = "tali.biron@gmail.com";
+  const REPLY_SUBJECT = "Re: Scout 2026-09-13 — 9 source(s) (PQ-185-FU, PQ-187-FU, PQ-191, PQ-192, PQ-193, PQ-194, PQ-195, PQ-196, PQ-197)";
+  const STORAGE_KEY = "scout-cart-2026-09-13";
+
+  // Load saved state from localStorage (so refresh doesn't lose progress)
+  let choices = {};
+  try { choices = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) {}
+
+  function saveAndRender() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(choices));
+
+    // Re-style each card based on choice
+    document.querySelectorAll('.card').forEach(card => {
+      const id = card.dataset.id;
+      card.classList.remove('chosen-promote', 'chosen-skip', 'chosen-more');
+      card.querySelectorAll('.choice').forEach(b => b.classList.remove('active'));
+      const c = choices[id];
+      if (c) {
+        card.classList.add('chosen-' + c);
+        card.querySelector('.choice.' + c).classList.add('active');
+      }
+    });
+
+    // Update sticky summary + send button
+    const made = ALL_IDS.filter(id => choices[id]);
+    const pending = ALL_IDS.filter(id => !choices[id]);
+    const counts = { promote:0, skip:0, more:0 };
+    made.forEach(id => counts[choices[id]]++);
+
+    let html = '';
+    if (counts.promote) html += '<span class="badge promote">' + counts.promote + ' promote</span>';
+    if (counts.skip)    html += '<span class="badge skip">' + counts.skip + ' skip</span>';
+    if (counts.more)    html += '<span class="badge more">' + counts.more + ' more</span>';
+    if (pending.length) html += '<span class="badge pending">' + pending.length + ' pending</span>';
+    if (!made.length && !pending.length) html = 'No choices yet.';
+    document.getElementById('summary').innerHTML = html || 'No choices yet.';
+
+    const btn = document.getElementById('sendBtn');
+    btn.disabled = made.length === 0;
+    btn.textContent = 'Send ' + made.length + ' / ' + ALL_IDS.length + ' decisions';
+  }
+
+  // Wire button clicks
+  document.querySelectorAll('.choice').forEach(b => {
+    b.addEventListener('click', () => {
+      const id = b.dataset.id;
+      const choice = b.dataset.choice;
+      // Toggle off if same choice clicked again
+      if (choices[id] === choice) delete choices[id];
+      else choices[id] = choice;
+      saveAndRender();
+    });
+  });
+
+  // Send button — uses mailto on mobile (opens native Gmail app), Gmail web on desktop.
+  document.getElementById('sendBtn').addEventListener('click', () => {
+    const lines = ALL_IDS.filter(id => choices[id]).map(id => choices[id] + ' ' + id);
+    if (!lines.length) return;
+    const body = '# Scout decisions for ' + "2026-09-13" + '\n# Sent from the cart page\n\n' + lines.join('\n') + '\n';
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const url = isMobile
+      ? 'mailto:' + encodeURIComponent(REPLY_TO) + '?subject=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body)
+      : 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(REPLY_TO) + '&su=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body);
+    // mailto must be same-window on iOS; _blank is fine for https
+    if (isMobile) window.location.href = url;
+    else window.open(url, '_blank');
+  });
+
+  // Clear button
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    if (!confirm('Clear all your choices on this page?')) return;
+    choices = {};
+    saveAndRender();
+  });
+
+  saveAndRender();
+})();
+</script>
+</body>
+</html>
