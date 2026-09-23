@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scout decisions — 2026-09-23</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; padding:0 0 180px 0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; background:#f8fafc; color:#0f172a; }
+  .container { max-width:760px; margin:0 auto; padding:24px 16px; }
+  h1 { font-size:22px; margin:0 0 8px 0; color:#1e40af; }
+  .sub { font-size:13px; color:#64748b; margin-bottom:20px; }
+  .help { background:#ecfeff; border:2px solid #0891b2; border-radius:8px; padding:14px 16px; margin-bottom:20px; font-size:13px; color:#164e63; line-height:1.5; }
+  .card { border:1px solid #e2e8f0; border-radius:10px; padding:16px; margin-bottom:14px; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.03); }
+  .card.is-rollover { border-color:#fbbf24; background:#fffbeb; }
+  .card.chosen-promote { border-color:#059669; box-shadow:0 0 0 2px #05966933; }
+  .card.chosen-skip { border-color:#dc2626; box-shadow:0 0 0 2px #dc262633; }
+  .card.chosen-more { border-color:#64748b; box-shadow:0 0 0 2px #64748b33; }
+  .rollover-badge { background:#fde68a; color:#78350f; font-size:11px; font-weight:700; padding:5px 10px; border-radius:10px; display:inline-block; margin-bottom:10px; }
+  .card-head { display:flex; justify-content:space-between; align-items:baseline; }
+  .pq-id { font-size:14px; font-weight:700; color:#1e40af; }
+  .verdict { font-size:12px; font-weight:700; }
+  .citation { margin-top:8px; font-size:14px; line-height:1.5; font-weight:500; }
+  .url { margin-top:4px; font-size:12px; }
+  .url a { color:#2563eb; }
+  .row { margin-top:8px; font-size:13px; color:#334155; line-height:1.5; }
+  .row b { color:#0f172a; }
+  .choice-row { display:flex; gap:8px; margin-top:14px; }
+  .choice { flex:1; padding:14px 8px; border-radius:8px; border:2px solid transparent; font-size:14px; font-weight:700; cursor:pointer; background:#f1f5f9; color:#475569; transition:all .15s; font-family:inherit; }
+  .choice:hover { transform:translateY(-1px); }
+  .choice.promote.active { background:#059669; color:#fff; border-color:#047857; }
+  .choice.skip.active { background:#dc2626; color:#fff; border-color:#b91c1c; }
+  .choice.more.active { background:#64748b; color:#fff; border-color:#475569; }
+  /* Sticky bottom bar */
+  .cart { position:fixed; bottom:0; left:0; right:0; background:#fff; border-top:2px solid #e2e8f0; box-shadow:0 -4px 12px rgba(0,0,0,.08); padding:12px 16px; z-index:100; }
+  .cart-inner { max-width:760px; margin:0 auto; }
+  .cart-summary { font-size:13px; color:#475569; margin-bottom:8px; line-height:1.4; }
+  .cart-summary b { color:#0f172a; }
+  .cart-summary .badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:700; margin-right:6px; }
+  .badge.promote { background:#d1fae5; color:#065f46; }
+  .badge.skip { background:#fee2e2; color:#991b1b; }
+  .badge.more { background:#e2e8f0; color:#334155; }
+  .badge.pending { background:#fef3c7; color:#92400e; }
+  .send-btn { display:block; width:100%; padding:16px; border:none; border-radius:8px; background:#0891b2; color:#fff; font-size:16px; font-weight:700; cursor:pointer; font-family:inherit; }
+  .send-btn:hover:not(:disabled) { background:#0e7490; }
+  .send-btn:disabled { background:#cbd5e1; cursor:not-allowed; }
+  .clear-link { display:inline-block; margin-top:6px; font-size:12px; color:#64748b; text-decoration:underline; cursor:pointer; background:none; border:none; padding:0; font-family:inherit; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Scout decisions — 2026-09-23</h1>
+  <div class="sub">7 source(s) to review. Choices auto-save in this browser.</div>
+
+  <div class="help">
+    Tap <b style="color:#059669;">Promote</b>, <b style="color:#dc2626;">Skip</b>, or <b style="color:#475569;">More info</b> on each card. The bar at the bottom keeps a running list of your choices. When you're done, hit the cyan <b>Send</b> button — Gmail opens with one email containing all your decisions. Hit Send in Gmail and you're done.
+  </div>
+
+  
+<section class="card" data-id="PQ-198">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-198</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Xu Z, Zeng J, Zhou S, Zhang Z, Heintz T, Tonneau M, Yaghoubi A, Ye B, Goddla V, Lehmann L, Chen Y-H, Kozono D, Revette A, Maues J, Brown T, Catalano P, Mak RH, Dligach D, Bitterman D. Validating LLM judges for automated oversight of patient communication. medRxiv preprint. 2026 Sep 17. doi:10.64898/2026.09.16.26363176</div>
+  <div class="url"><a href="https://doi.org/10.64898/2026.09.16.26363176" target="_blank" rel="noopener">https://doi.org/10.64898/2026.09.16.26363176</a></div>
+  <div class="row"><b>Overview:</b> Uses informed consent for clinical trials as a deliberately demanding test case for judge validation — it requires conveying complex information to lay audiences under ethical and safety constraints, stressing safety, factual accuracy and communication quality at once. A stakeholder-informed SEVEN-CRITERION rubric was built, clinician reference ratings established (strong interrater reliability reported across all criteria), and 19 LLM judges benchmarked across multiple implementation strategies on the Informed CONsent Benchmark (ICON-Bench). Crucially, PATIENT ADVOCATES rated the same material as a third, independent rater class. Task type: LLM-as-judge, patient-facing generation. Signal: mixed, explicit (factual verification) through interpretive (communication quality).</div><div class="row"><b>Eval question:</b> Not &#39;does an LLM judge agree with experts&#39; but: does it agree PER CRITERION — and whose expert judgment is the right reference in the first place?</div><div class="row"><b>Methodology:</b> Stakeholder-informed rubric across safety, reliability and communication quality (7 criteria). Clinician reference ratings established first with interrater reliability reported per criterion. 19 judges benchmarked across multiple implementation strategies, including safety-specialised guard models. Patient advocates rated the same material independently, creating a second human reference to compare against.</div><div class="row"><b>Measurement:</b> Spearman rho of judge-vs-clinician agreement reported PER CRITERION: rho &gt; 0.80 for safety screening and factual verification; rho &lt; 0.60 for communication quality. Clinician interrater reliability reported as strong across all criteria, which is what makes the judge figures interpretable.</div><div class="row"><b>Key findings:</b> (1) The per-criterion split falls exactly where the KB&#39;s existing objective/interpretive gradient predicts — judges are usable for safety screening and factual verification, not for communication quality. (2) Safety-specialised GUARD MODELS UNDERPERFORMED general-purpose models: a model marketed for the safety job was worse at the safety job. (3) PATIENT ADVOCATES RATED COMMUNICATION QUALITY LOWER THAN BOTH CLINICIANS AND LLM JUDGES — the judge was validated against clinicians, and clinicians were themselves more generous than the people the communication is for. The authors conclude the results support judges for scalable oversight while demonstrating the need for recalibration to patient-centred standards.</div><div class="row"><b>Soft spots:</b> Preprint. Single and atypical task domain — informed consent documents are longer and more templated than clinical notes, so factual verification may be easier here than in free clinical text. Not all seven per-criterion rho values are in the abstract, and the clinician IRR coefficient and CI need checking in the full text. Spearman rho is correlation, not absolute agreement, so the PQ-78 caution applies (ranking vs replacing raters). Number of patient advocates not stated.</div><div class="row"><b>Strengths:</b> Three things most judge-validation studies do not do: reports agreement PER CRITERION rather than pooled (PQ-160&#39;s rule applied prospectively); establishes and reports the human band FIRST, so the judge is measured against something; and introduces a third rater class whose standard differs systematically — a genuinely new axis for this KB, not a variant of an existing one.</div><div class="row"><b>Relevance:</b> Layer 1: LLM-as-judge; generation and patient-facing communication. Layer 2: (a) KTP #8 gains a second prospective per-criterion validation and a NEW BOUND — the choice of human reference is itself a design parameter. Every judge-validation design in this KB validates against clinicians; this says that for anything patient-facing, clinician agreement may be the wrong target. It is a harder version of KTP #15: here two LEGITIMATE references disagree directionally. (b) Guard models underperforming converges with PQ-151-FU (specialist judge approved 100% of known failures) and PQ-154 (domain fine-tuning degraded attribution) — now THREE independent lines saying a purpose-built evaluator is not automatically a better evaluator. Directly relevant to KTP #13 and to the PQ-202 contradiction flagged above. (c) Panel / LLM-J Monitor: per-criterion certification and the guard-model result both bear on certify-by-archetype. (d) Discharge Letter / Nuclear Medicine: any patient-facing output scored here needs a non-clinician rater arm.</div><div class="row"><b>Verdict reasoning:</b> Well designed for its question, and it answers one this KB has been circling. The per-criterion result is a clean prospective replication of PQ-160; the guard-model finding is a third independent hit on the &#39;specialised evaluator&#39; assumption; the patient-advocate divergence opens an axis the KB does not currently have at all. Quarantine the rho values (single atypical domain, preprint, correlation not agreement). Import the DESIGN — per-criterion validation plus a second human reference class — and the two directional findings.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-198">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-198">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-198">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-199">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-199</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Bergman H, Liu V, Austin B, Sanghera R. Beyond word error rate: clinical risk as the necessary standard for ambient AI scribe evaluation: evidence from 77 global languages. medRxiv preprint. 2026 Sep 14. doi:10.64898/2026.09.10.26362715</div>
+  <div class="url"><a href="https://doi.org/10.64898/2026.09.10.26362715" target="_blank" rel="noopener">https://doi.org/10.64898/2026.09.10.26362715</a></div>
+  <div class="row"><b>Overview:</b> Tests whether the metric the ambient-scribe field actually reports — word error rate and its relatives — tracks the thing anyone cares about: clinically consequential errors. Five clinical dictation scripts spanning a deliberate COMPLEXITY GRADIENT were translated into 99 languages, rendered to synthetic speech under three acoustic conditions, and transcribed by a production ambient scribe. Six frequency metrics computed. Three independent LLM raters from external providers then assessed clinically meaningful error patterns in context using a Severity x Likelihood framework informed by UK digital clinical-safety risk-management principles. 59,819 genuine transcription-error occurrences. Vendor-affiliated (Heidi — the same organisation behind PQ-193).</div><div class="row"><b>Eval question:</b> Is the reported metric a valid proxy for the endpoint? Concretely: does variation in WER-family metrics track the sparse tail of errors that could actually harm a patient?</div><div class="row"><b>Methodology:</b> Controlled multilingual corpus: 5 scripts x complexity gradient x 99 languages x 3 acoustic conditions. Six frequency metrics per condition. Three independent LLM raters from EXTERNAL providers (a cross-family design) apply a Severity x Likelihood risk framework in context. Association between frequency metrics and serious-risk rate tested across languages, with complexity and language-resource level modelled separately.</div><div class="row"><b>Measurement:</b> Spearman rho between frequency metrics and serious clinical risk: absolute rho &lt; 0.16, none statistically detectable. Severity x Likelihood SUM vs WER: rho = 0.80. Language-resource effect on WER at complexity level 3: beta = +0.078 (95% CI +0.045 to +0.111, p&lt;0.0001). Same contrast for CRITICAL/HIGH risk: OR 1.21 (95% CI 0.43 to 3.43, p=0.72). Complexity effect on serious risk: OR 3.06 per level, p&lt;0.0001.</div><div class="row"><b>Key findings:</b> (1) Of 59,819 errors, 58,329 (97.5%) were LOW risk and only 251 (0.42%) CRITICAL or HIGH — the thing that matters is a 0.42% tail. (2) NO frequency metric, including WER, showed a detectable association with serious clinical risk. (3) SEVERITY-WEIGHTING DID NOT RESCUE IT: a Severity x Likelihood sum still correlated rho=0.80 with WER, i.e. the aggregate stayed dominated by benign errors. Weighting an aggregate is not the same as isolating the tail. (4) The two axes come apart cleanly: low-resource languages had worse WER (beta=+0.078) with NO detectable difference in serious risk (OR 1.21), while CONSULTATION COMPLEXITY was the principal predictor of serious risk (OR 3.06 per level).</div><div class="row"><b>Soft spots:</b> Synthetic speech and translated scripts, NOT real consultations — accent, disfluency, crosstalk and code-switching are exactly where real multilingual transcription fails and none of it is present. The risk ratings are LLM-generated, so the study&#39;s outcome variable is itself an unvalidated judge output: no clinician arm, no human-vs-judge agreement for the severity framework. Vendor-affiliated. The 0.42% tail means risk-side estimates rest on 251 events across 77 languages, so the language-contrast null (CI 0.43 to 3.43) is WIDE, not tight — &#39;no detectable difference&#39; here is inconclusive, not reassuring. Preprint.</div><div class="row"><b>Strengths:</b> The design isolates the question properly: holding content fixed while varying language, acoustics and complexity independently lets it show DISSOCIATION rather than just weak correlation. Reporting that severity-weighting ALSO failed is the kind of negative result that usually goes unpublished, and it forecloses the obvious fix. The complexity-vs-language-resource split relocates the risk driver from who is speaking to how complicated the consultation is. A reusable instrument is offered rather than just a critique.</div><div class="row"><b>Relevance:</b> Layer 1: summarization / ambient documentation; and metric selection for any task. Layer 2: (a) KTP #4 (&#39;name the endpoint your metric is a proxy for&#39;) gets its strongest quantitative anchor yet plus a new sharpening — WEIGHTING AN AGGREGATE DOES NOT ISOLATE A RARE SEVERE TAIL. That generalises well beyond transcription; it is the same structure as the F1-vs-recall problem in rare_events_evaluation.md. (b) KTP #12 (language axis): this cuts AGAINST the simple reading — measured properly, worse transcription quality in low-resource languages did NOT translate into more serious risk. With PQ-196 (degradation localised to the annotation guideline, not the language), the KB now has two sources saying &#39;worse in our language&#39; needs decomposing before it is believed. Relevant to every Hebrew kit here — but note the wide CI: a reason to measure, not to relax. (c) rare_events_evaluation.md: a 0.42% severe tail measured with an aggregate metric is the Bayesian-PPV-trap family one level up. (d) Same vendor group as PQ-193 — note for independence when both are cited.</div><div class="row"><b>Verdict reasoning:</b> The question is the right one and the design can actually answer it, which is rare for proxy-validity work. The dissociation result and the failed severity-weighting fix are both importable as mechanism. Quarantine every number, and the language-axis null especially — the CI is wide, the speech is synthetic, and the outcome variable is an unvalidated LLM rating. Import the framing, the complexity-as-risk-driver insight and the reusable Severity x Likelihood structure; do NOT import &#39;WER is fine in low-resource languages&#39;.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-199">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-199">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-199">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-200">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-200</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Srirag D, Zhao H, Kumar A, Hopper E, Dalton M, Nguyen QD, Joshi A, Kanhere SS, Narasimhan P. LLMs anchor on chief complaint and fail to integrate evidence in sequential clinical triage. arXiv preprint. 2026 Sep 19. arXiv:2609.22904</div>
+  <div class="url"><a href="https://arxiv.org/abs/2609.22904" target="_blank" rel="noopener">https://arxiv.org/abs/2609.22904</a></div>
+  <div class="row"><b>Overview:</b> Triage is a SEQUENTIAL decision that unfolds turn by turn, but every existing LLM triage evaluation uses completed retrospective records — and reports near-physician performance. This study re-poses the task as predicting an acuity label from a GROWING PREFIX of a nurse-patient conversation, evaluating six LLMs at five sequential checkpoints on two corpora: 425 LLM-generated (SIMULATED) and 50 physician-authored (CLINICIAN) conversations, both labelled under the Emergency Severity Index. Controlled perturbations then locate why it fails. Three expert clinicians labelled the same conversations, so there IS a measured human band — the thing PQ-174 conspicuously lacked.</div><div class="row"><b>Eval question:</b> Does performance measured on completed records survive the evaluation window the system will actually face? This is PQ-180&#39;s evaluation-window question instantiated as a hard result, plus a mechanism for why the aggregate was flattering.</div><div class="row"><b>Methodology:</b> Task reformulated: predict ESI from a growing conversation prefix at five checkpoints. Six LLMs, two corpora, same labelling scheme. CONTROLLED PERTURBATIONS to test whether the label is driven by the chief-complaint exchanges. Prompting interventions tested as a candidate fix. Ensembling tested as a candidate fix. Surprisal of the true label tracked across checkpoints to separate &#39;did not extract the content&#39; from &#39;did not integrate it&#39;. Three expert clinicians labelled the same conversations to establish the band.</div><div class="row"><b>Measurement:</b> Quadratic weighted kappa — the correct statistic for an ordered severity scale, penalising distant errors more than adjacent ones. Human band: QWK 0.887 to 0.929 across three clinicians. Best model: 0.295. Plus label-surprisal trajectories across checkpoints and perturbation deltas.</div><div class="row"><b>Key findings:</b> (1) EVERY model degrades from moderate-to-substantial agreement on completed records to fair-to-moderate at EVERY sequential checkpoint — the standard evaluation design was measuring a condition the system will never meet. (2) The label is ANCHORED ON THE CHIEF-COMPLAINT exchanges at every checkpoint, established by controlled perturbation rather than inferred. (3) PROMPTING INTERVENTIONS FAIL to lift the plateau. (4) The mechanism is INTEGRATION, NOT EXTRACTION: models do extract clinically relevant content from later turns, yet the surprisal of the true label RISES across checkpoints — the information is present and not used. (5) ENSEMBLING MAKES IT WORSE: models agree with each other more than with ground truth, so averaging amplifies the shared error. (6) The human gap is enormous and measured on the same material: 0.887-0.929 vs 0.295. Predictions concentrate at ESI-2 and ESI-3.</div><div class="row"><b>Soft spots:</b> 425 of 475 conversations are LLM-GENERATED, so the primary corpus is synthetic dialogue; the physician-authored arm that anchors realism is only 50 conversations. Three clinicians is a small band, though a tight one. Six models, one triage scale, one language. Preprint, v1. The simulated/clinician split in the headline degradation is not fully separable from the abstract. Whether the human raters saw prefixes or completed conversations matters a great deal for interpreting 0.887-0.929 and needs checking in the full text.</div><div class="row"><b>Strengths:</b> This is the design PQ-174 should have had. It measures the human band ON THE SAME MATERIAL, uses QWK for an ordered scale, and — most valuable — TESTS THE OBVIOUS FIXES AND REPORTS THAT THEY FAIL, including the counter-intuitive ensembling result. The extraction-vs-integration separation via surprisal is a genuine mechanism, not a restatement of the error rate. And it makes a falsifiable claim about evaluation DESIGN: offline benchmarks structurally cannot see this failure.</div><div class="row"><b>Relevance:</b> Layer 1: classification, ordered-scale triage/severity grading; multi-turn and conversational tasks. Layer 2: (a) CANDIDATE CITABLE REPLACEMENT for the mechanism now missing from your KTP #9 conditional. The conditional says the hazard depends on whether a wrong prior coincides with the model&#39;s own error mode; PQ-200 supplies a MEASURED version of the adjacent claim — the model anchors on the earliest framing and does not revise on later evidence, and prompting cannot fix it. If promoted, KTP #9&#39;s provenance note upgrades from &#39;hypothesis&#39; to &#39;hypothesis plus a measured anchoring mechanism&#39;. (b) PQ-174 (design-import-only) gains the comparator it lacked — three clinicians on the same material, so the triage subsection can cite a real band. (c) Converges with PQ-191: prompting moves the operating point without fixing a blind spot. Two independent sources, different tasks, same lesson — this strengthens the new &#39;structural vs promptable&#39; rule in Prompt_Optimization_Guide.md. (d) THIRD independent hit on &#39;the jury is not a bias fix&#39; (with PQ-160, PQ-161), and the sharpest: here ensembling is actively HARMFUL because errors are correlated. Every multi-judge design in this KB should read this. (e) PQ-180 gets a hard empirical anchor. (f) Missed Consultation Alert: an alerting system firing on a growing record has exactly this structure.</div><div class="row"><b>Verdict reasoning:</b> The most methodologically important card in this cart. It reframes an evaluation design rather than reporting a score, measures its human band properly, and reports three negative results — prompting, ensembling, and the benchmark-vs-sequential gap — that each independently matter to this repository. Quarantine the QWK values (largely synthetic corpus, 50 real conversations, three raters, preprint). Import the sequential-checkpoint design, the anchoring mechanism, and all three negative results.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-200">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-200">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-200">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-201">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-201</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Linzmayer R, Elhadad N. Untangling the mechanisms of misleading context in medical question answering. arXiv preprint. 2026 Sep 2 (v2). arXiv:2609.02754</div>
+  <div class="url"><a href="https://arxiv.org/abs/2609.02754" target="_blank" rel="noopener">https://arxiv.org/abs/2609.02754</a></div>
+  <div class="row"><b>Overview:</b> RE-SURFACED DELIBERATELY. This source was screened but not carded in scan #39, recorded as &#39;cited as context in the PQ-174 vs PQ-153 note only; not citable evidence&#39;. That rationale assumed PQ-197 would carry the mechanism — PQ-197 was then skipped, so the conditional you adopted now has no citable mechanism at all. Offered as the replacement candidate, with the reversal recorded so the selection stays auditable. The study decomposes &#39;misleading context&#39; into its parts and asks which part does the damage. On the medical-reasoning subset of MedMisBench (clinician-reviewed, 8,627 questions), two cue types are injected — FABRICATED EVIDENCE and a BARE ASSERTION — across three reasoning models, two exposing full reasoning traces and one frontier model exposing only its response.</div><div class="row"><b>Eval question:</b> Which component of a misleading prior corrupts the answer, is the corruption visible, and where do you have to look to catch it? It separates three things this KB currently treats as one: susceptibility, disclosure, and detectability.</div><div class="row"><b>Methodology:</b> Two cue types injected into the same questions — a clean paired contrast. Susceptibility measured as adoption-rate shift. DISCLOSURE MEASURED SEPARATELY IN TRACES AND IN RESPONSES (the key design move). Resampling from reasoning traces without disclosure to locate WHERE in the reasoning the corruption enters. An LLM monitor evaluated at a stated false-positive rate, reading traces vs responses.</div><div class="row"><b>Measurement:</b> Adoption-rate differences between cue types: +10 to +27 points for assertion over fabricated evidence. Disclosure rates: 81-98% of TRACES vs only 7-90% of RESPONSES. Monitor performance: 78% of corrupted decisions caught at 5% false positives from an open trace with guidance, vs at most 32% from any response.</div><div class="row"><b>Key findings:</b> (1) The BARE ASSERTION IS MORE CORRUPTING than fabricated evidence — all three models adopted the asserted answer 10-27 points more often. The LESS evidence-like cue is the more dangerous one. (2) AND IT IS DISCLOSED LEAST — the cue models are most susceptible to is the one least likely to appear in the response. (3) The two cues corrupt reasoning at DIFFERENT POINTS: evidence enters early and accumulates; the assertion redirects the conclusion near its end. Two different failure mechanisms wearing the same label. (4) Monitorability is ACCESS-DEPENDENT: 78% at 5% FPR from an open reasoning trace, under 32% from any response — so practical detectability depends on a vendor&#39;s disclosure policy.</div><div class="row"><b>Soft spots:</b> QA benchmark, not clinical narrative or real conversation — the PQ-153 caution (MedQA exam items) applies here too. Three models, one benchmark, preprint with no venue. The monitor is itself an LLM judge evaluated without a human arm, so &#39;78% caught&#39; inherits every judge caveat in KTP #8. Disclosure ranges are very wide (7-90% for responses), suggesting strong per-model variation that a pooled figure hides. No clinician adjudication of the corrupted answers&#39; clinical severity.</div><div class="row"><b>Strengths:</b> It decomposes a construct the KB has been treating as monolithic, and the decomposition is actionable: WHICH cue, WHERE in the reasoning, VISIBLE WHERE. Testing disclosure in traces and responses separately is the insight — it converts &#39;is the model sycophantic?&#39; into &#39;is the sycophancy observable, and from what?&#39; The finding that the most dangerous cue is the least disclosed is a properly uncomfortable result, and the paired-cue design supports it.</div><div class="row"><b>Relevance:</b> Layer 1: conversational tasks; input-side safety probes for any task ingesting prior clinical opinion. Layer 2: (a) THE CANDIDATE CITABLE MECHANISM for your KTP #9 conditional — it supplies what PQ-197 would have: a measured account of WHICH kind of wrong prior does the damage. It also REFINES the conditional: the hazard axis is not only &#39;does it match the model&#39;s error mode&#39; but &#39;how evidence-like is the cue&#39;, with bare assertions worse. If promoted, KTP #9&#39;s provenance note upgrades from hypothesis to measured mechanism, with this refinement added. (b) It sits AWKWARDLY beside PQ-153 rather than simply confirming it: PQ-153 found a confidently-asserted incorrect hypothesis barely moved accuracy on MedQA items, while this finds bare assertions highly corrupting on MedMisBench. Both are assertion-type cues, so the divergence needs explaining — likely benchmark and model-generation differences. That is a genuine open question worth stating in the guidance rather than papering over. (c) KTP #10 and KTP #9 monitorability: the trace-vs-response disclosure gap is a new, concrete argument for preferring open-trace models where safety monitoring matters — a PROCUREMENT-relevant finding, unusual for this KB. (d) Panel / LLM-J Monitor: a monitor reading traces at 78%/5% FPR is a design worth knowing, as is its collapse to under 32% on responses alone.</div><div class="row"><b>Verdict reasoning:</b> Promote for the mechanism and the decomposition, which fill a gap your own decision just created. The trace-vs-response disclosure asymmetry is the most operationally useful single finding. Quarantine all rates (QA benchmark, three models, preprint, LLM monitor with no human arm). And note explicitly that its assertion result sits awkwardly beside PQ-153&#39;s null — promote it as a mechanism AND an open question, not as a settled reconciliation.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-201">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-201">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-201">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-202">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-202</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Buckley TA, Kanjee Z, Brodeur PG, Crowe B, Pettinato AM, Shah AP, Haimovich AD, McCoy LG, Restrepo D, Goh E, Chen JH, Zwaan L, et al. Scaling clinical judgment to evaluate medical AI. arXiv preprint. 2026 Sep 11. arXiv:2609.12822</div>
+  <div class="url"><a href="https://arxiv.org/abs/2609.12822" target="_blank" rel="noopener">https://arxiv.org/abs/2609.12822</a></div>
+  <div class="row"><b>Overview:</b> Attacks the cost wall behind &#39;validate the judge first&#39;. Blinded physician evaluation is the accepted gold standard for clinical reasoning but does not scale, so studies rely on small single-institution panels — which limits what can be asked and leaves reproducibility unknown. The authors release GRAND-ROUNDS, a physician-annotated benchmark of 9,217 scores by 11 physicians across seven studies, and PrecepTron, a 32-billion-parameter model LoRA fine-tuned on a small number of physician examples for physician-level evaluation of open-ended responses. They then reproduce headline findings from five influential studies in JAMA, Science and Nature Medicine WITHOUT NEW HUMAN GRADING, and ask questions previously infeasible — including diagnostic accuracy when cases are revealed piecemeal, even token by token. All code, data and labels released.</div><div class="row"><b>Eval question:</b> Can the expensive human arm be replaced by a fine-tuned evaluator without losing physician-level agreement — and can published evaluation results be reproduced at all?</div><div class="row"><b>Methodology:</b> Benchmark construction: 9,217 scores from 11 physicians across seven studies, released publicly. Baseline: frontier LLMs as judges, measured against physicians AND against each other. Intervention: LoRA fine-tuning of a 32B model on a small number of physician examples. External validity test: reproduce headline findings of five published studies with no new human grading. Novel application: diagnostic accuracy under piecemeal / token-by-token case presentation.</div><div class="row"><b>Measurement:</b> Agreement of judges with physicians and with each other (frontier judges: &#39;often disagree&#39; with both); post-fine-tuning, &#39;physician-level consistent scoring across tasks&#39;. Reproduction of five studies&#39; headline findings as the external check. IMPORTANT: specific coefficients are NOT in the abstract and must be read from the full text before any number is used.</div><div class="row"><b>Key findings:</b> (1) Frontier LLMs in typical LLM-as-a-judge setups often disagree with physicians AND WITH EACH OTHER — independent confirmation of PQ-161&#39;s judge-to-judge reproducibility problem on a much larger annotation base. (2) LoRA fine-tuning on a small number of physician examples reached PHYSICIAN-LEVEL CONSISTENT SCORING across tasks. (3) Five influential studies&#39; headline findings were reproduced with no new human grading — a genuine external-validity argument, not an internal metric. (4) The piecemeal / token-by-token experiment is a new evaluation capability, and it CONVERGES WITH PQ-200&#39;s sequential-checkpoint finding from a completely different direction. (5) Full public release of code, data and labels.</div><div class="row"><b>Soft spots:</b> THE AUTHORS BUILT THE MODEL THEY ARE VALIDATING, and &#39;physician-level consistent&#39; is their characterisation — coefficients, CIs and the comparison to the 11-physician inter-rater band all need extracting from the full text before anything is cited. The 11 physicians are the reference AND the training source, so the judge is calibrated to this particular panel; generalisation to another institution&#39;s physicians is untested — precisely the limitation the paper criticises in others. Reproducing a headline finding is weaker than reproducing an effect size with its CI. Preprint, no venue. And a judge fine-tuned on seven studies&#39; scoring conventions may be learning THOSE CONVENTIONS rather than clinical judgment — the PQ-196 lesson (the guideline is the binding constraint) applies here with some force.</div><div class="row"><b>Strengths:</b> It targets the actual bottleneck rather than the measurement. The external reproduction of five published studies is a far stronger validation move than another agreement coefficient, and it makes the claim falsifiable by others. Releasing 9,217 physician scores is a substantial public good — this KB could use GRAND-ROUNDS directly as a reference band. Reporting that frontier judges disagree WITH EACH OTHER on a large annotation base adds independent weight to an existing KB position.</div><div class="row"><b>Relevance:</b> Layer 1: LLM-as-judge; clinical reasoning; generation. Layer 2: (a) IT CONTRADICTS KTP #13 AND PQ-151-FU — see the flagged contradiction above; nothing applied. (b) KTP #8 would gain its largest human-annotation base and, if the contradiction resolves in its favour, a COST LEVER beside PQ-147 (which-items) and PQ-140 (how-many): fine-tune the judge on a small physician sample as a third route. (c) PQ-161 (judge-to-judge reproducibility) gets independent confirmation at much larger scale. (d) PQ-124 (Brodeur et al., Science) SHARES AUTHORS with this paper and is plausibly one of the five reproduced studies — worth confirming in the full text, because a self-reproduction is weaker evidence than an independent one. (e) PQ-200 converges on piecemeal/sequential presentation from an entirely different method. (f) Panel / LLM-J Monitor: a fine-tuned certified judge is an architectural option the SPEC does not currently contemplate.</div><div class="row"><b>Verdict reasoning:</b> Promote — the benchmark release, the reproduction design and the scale make this the most consequential judge paper of the cycle. But promote WITH THE CONTRADICTION ATTACHED: its central claim runs against a Key Teaching Point you adopted deliberately and narrowly five weeks ago. Quarantine every number (none are in the abstract; the model is the authors&#39; own; the judge is calibrated to one 11-physician panel). Do not update KTP #13 on this card alone.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-202">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-202">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-202">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-203">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-203</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Tareaf RB, Al-Rajab M, Loucif S. The widening evaluation gap in medical large language model research 2023 to 2026. arXiv preprint. 2026 Sep 10. arXiv:2609.11770</div>
+  <div class="url"><a href="https://arxiv.org/abs/2609.11770" target="_blank" rel="noopener">https://arxiv.org/abs/2609.11770</a></div>
+  <div class="row"><b>Overview:</b> Surfaced in scan #39&#39;s screened-but-not-carded list with no stated rejection rationale — effectively held over, and carded now. Asks a structural question about the field this KB reads: models are superseded every few quarters while clinical evidence takes years, so is medical research keeping pace with the systems it evaluates? 11,628 PubMed records (January 2023 to June 2026) across fourteen clinical domains were analysed for design type and for EVALUATION LAG — the interval from a study&#39;s newest named model release to the study&#39;s own publication.</div><div class="row"><b>Eval question:</b> Is the evidence we rely on about the systems we actually deploy? A question about the validity of the whole literature rather than of any one study.</div><div class="row"><b>Methodology:</b> 11,628 PubMed records, 14 clinical domains, Jan 2023 to Jun 2026. Design classified (randomised / controlled / prospective vs other). Evaluation lag computed per study from newest named model release to publication. COUNTERFACTUAL CONTROL: because discontinued models age mechanically with time, the drift was benchmarked against a counterfactual holding MODEL COMPOSITION FIXED — this separates &#39;the field is slow&#39; from &#39;the field keeps choosing old models&#39;. Lag then compared across design types.</div><div class="row"><b>Measurement:</b> Record growth 45-fold. Share with randomised/controlled/prospective design: 2.5%. Evaluation lag: 1.33 to 6.08 quarters. Share of drift explained by migration to newer systems: 56% (95% CI 50-65). Lag difference for randomised trials: median 4.6 quarters older, P = 3 x 10^-19. Share of randomised trials evaluating a discontinued model family: 62%.</div><div class="row"><b>Key findings:</b> (1) 45-fold growth, and only 2.5% of it randomised, controlled or prospective. (2) Evaluation lag MORE THAN QUADRUPLED, 1.33 to 6.08 quarters. (3) The counterfactual is the real contribution: migrating to newer systems offset only 56% (CI 50-65) of the drift — so this is MODEL SELECTION, not slow research pipelines. (4) RIGOUR AND CURRENCY ARE IN TENSION: randomised trials evaluated models a median 4.6 quarters older (P=3x10^-19), and 62% of randomised trials evaluated a DISCONTINUED model family. (5) But the tension is not inevitable: among studies naming a model still under development, no design differed from any other. Rigorous studies CAN be current; most just are not.</div><div class="row"><b>Soft spots:</b> Bibliometric, so it measures naming and indexing practice, not evaluation quality — a study naming an old model may still be methodologically excellent, and &#39;newest named model&#39; is a fragile proxy (papers often name several, or a family rather than a version). Design classification from metadata is coarse. PubMed-only, so preprints are excluded — where much of this literature actually lives, including most of this cart — which likely UNDERSTATES currency. No assessment of whether evaluating an older model actually changed any conclusion. Preprint, no venue.</div><div class="row"><b>Strengths:</b> The counterfactual control is what elevates this above a complaint: it distinguishes a mechanical artefact from a choice, and finds a choice. The rigour-vs-currency tension is stated as a measured trade-off with a hard P-value rather than as commentary. And the final finding — that studies naming in-development models show no design penalty — turns the paper from a diagnosis into something actionable.</div><div class="row"><b>Relevance:</b> Layer 1: all task types — this is about how to read the evidence base itself. Layer 2: (a) DIRECTLY RELEVANT TO HOW THIS REPOSITORY CITES. The KB deliberately prefers peer-reviewed and randomised evidence, and this quantifies the cost: 62% of randomised trials evaluated a discontinued model family. The KB&#39;s practice of carding preprints with quarantined numbers looks BETTER in this light — but it also means a &#39;peer-reviewed&#39; tag is not automatically the stronger citation for a currency-sensitive claim. (b) context_dependency.md: model version is a context variable, and this measures how stale the literature&#39;s version coverage is. (c) Bears on KTP #12 and every &#39;no magnitude transfers&#39; note: if the evidence base is 6 quarters behind, magnitudes are even less transferable than already assumed — and the KB&#39;s habit of importing mechanisms rather than numbers is the correct response, now with a measured justification. (d) Relevant to the 40-minute clinician talk: &#39;45-fold growth, 2.5% randomised, 6 quarters behind&#39; is a single-slide framing of why evaluation methodology matters. (e) Reviewer.md periodic review: an argument for shortening the review interval on any card whose value rests on a specific model&#39;s behaviour.</div><div class="row"><b>Verdict reasoning:</b> Promote for the framing and the counterfactual, which give the KB a measured account of a problem it has been handling by instinct. These are bibliometric descriptors rather than performance figures, and the &#39;newest named model&#39; proxy is soft. Cite the TENSION and the COUNTERFACTUAL finding; do not use the lag figure as a quality score for any individual paper.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-203">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-203">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-203">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-204">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-204</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">McKinney SE, Vu P, Justice SA, Humphries C, Pradhan A, Keyes TJ, Mercaldo SF, Hillis JM. A primer on evaluation methods for large language models in healthcare. arXiv preprint. 2026 Sep 13 (v2). arXiv:2609.14819</div>
+  <div class="url"><a href="https://arxiv.org/abs/2609.14819" target="_blank" rel="noopener">https://arxiv.org/abs/2609.14819</a></div>
+  <div class="row"><b>Overview:</b> A structured review covering four areas of healthcare-LLM evaluation: principles of study design, statistical methods, capability evaluation, and clinical-context evaluation. Capability evaluation covers multiple-choice, agentic and multi-turn benchmarks alongside operational metrics such as token usage. Clinical-context evaluation covers establishing accuracy of free-text outputs — human review and LLM-as-a-judge — and clinical-trial approaches. Throughout it describes underlying concepts and pitfalls while emphasising ALIGNING THE EVALUATION METHOD TO THE RESEARCH QUESTION.</div><div class="row"><b>Eval question:</b> What does a rigorous healthcare-LLM evaluation consist of, and how do you choose among the methods? The same question this repository exists to answer — which makes it both useful and a check on the KB&#39;s own coverage.</div><div class="row"><b>Methodology:</b> Narrative review organised into four areas. NO systematic search protocol, inclusion criteria or PRISMA-style reporting described in the abstract — so this is an expert synthesis rather than a systematic review and should not be cited as one. Worth confirming in the full text.</div><div class="row"><b>Measurement:</b> None of its own. What matters is WHICH statistical methods it recommends and on what basis — that needs checking against Statistician_Guide.md before anything is imported, especially on agreement coefficients, where this KB holds a deliberately non-default position (AC1 preferred, kappa demoted to a flag per the S-01/S-05 closure).</div><div class="row"><b>Key findings:</b> (1) Organises evaluation into CAPABILITY vs CLINICAL-CONTEXT evaluation — a cut this KB does not currently make explicitly, and one that maps roughly onto benchmark-vs-deployment. (2) Includes OPERATIONAL METRICS such as token usage as a first-class evaluation axis; the KB has almost nothing on cost and latency as evaluation endpoints. (3) Covers AGENTIC AND MULTI-TURN benchmarks, where the KB is thin. (4) Its central principle — align the method to the research question — is the same principle as this repository&#39;s editorial standard (&#39;is this study well-designed for the question it&#39;s asking?&#39;), arrived at independently.</div><div class="row"><b>Soft spots:</b> A narrative review with no described search protocol, so coverage may be idiosyncratic and there is no way to assess what it omitted. Preprint. Reviews date quickly in this field — and by PQ-203&#39;s own finding, a review&#39;s model coverage is likely already behind. Most importantly: a primer&#39;s recommendations may CONFLICT with positions here that were adopted for specific reasons (the AC1-over-kappa decision, the two-way gate structure, the band test). Any conflict needs surfacing as a contradiction rather than silent adoption.</div><div class="row"><b>Strengths:</b> The four-area structure is clean and the explicit &#39;align method to question&#39; framing is the right organising principle. Emphasising PITFALLS rather than only recipes matches how this repository teaches. And the two areas where it is strong and the KB is weak — operational metrics, agentic/multi-turn benchmarks — make it genuinely complementary rather than redundant.</div><div class="row"><b>Relevance:</b> Layer 1: all task types. Layer 2: (a) A COVERAGE AUDIT for this KB — its four-area structure can be diffed against evaluation_methods_by_task.md and Statistician_Guide.md to find gaps. Two are already visible from the abstract: operational metrics (token usage, cost, latency) and agentic / multi-turn benchmark design. (b) Candidate teaching resource for the 40-minute clinician talk — a published primer is a useful &#39;where to read more&#39; pointer for that audience. (c) POTENTIAL CONFLICT SURFACE with the S-01/S-05 closure: if its statistical section recommends kappa thresholds as decision rules, that directly opposes the position adopted 2026-08-30 (AC1 for gating, kappa as a diagnostic flag). Needs checking before any import.</div><div class="row"><b>Verdict reasoning:</b> Not Promote, for a specific reason: as a narrative review with no stated search protocol it is a SECONDARY source, and this KB&#39;s convention is to cite primary evidence for methods and thresholds. Its real value is as a structural audit and a teaching pointer, which needs a full-text read to confirm — particularly whether its statistical recommendations conflict with the AC1-over-kappa position. If promoted it should be tagged orientation-only and must never become the citation behind any threshold. Reply &#39;more PQ-204&#39; if a full-text read against Statistician_Guide.md would be useful.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-204">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-204">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-204">? More info</button>
+  </div>
+</section>
+</div>
+
+<div class="cart">
+  <div class="cart-inner">
+    <div class="cart-summary" id="summary">No choices yet. Tap a button on a card above.</div>
+    <button class="send-btn" id="sendBtn" disabled>Send 0 / 7 decisions</button>
+    <button class="clear-link" id="clearBtn">Clear all my choices</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const ALL_IDS = ["PQ-198","PQ-199","PQ-200","PQ-201","PQ-202","PQ-203","PQ-204"];
+  const REPLY_TO = "tali.biron@gmail.com";
+  const REPLY_SUBJECT = "Re: Scout 2026-09-23 — 7 source(s) (PQ-198, PQ-199, PQ-200, PQ-201, PQ-202, PQ-203, PQ-204)";
+  const STORAGE_KEY = "scout-cart-2026-09-23";
+
+  // Load saved state from localStorage (so refresh doesn't lose progress)
+  let choices = {};
+  try { choices = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) {}
+
+  function saveAndRender() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(choices));
+
+    // Re-style each card based on choice
+    document.querySelectorAll('.card').forEach(card => {
+      const id = card.dataset.id;
+      card.classList.remove('chosen-promote', 'chosen-skip', 'chosen-more');
+      card.querySelectorAll('.choice').forEach(b => b.classList.remove('active'));
+      const c = choices[id];
+      if (c) {
+        card.classList.add('chosen-' + c);
+        card.querySelector('.choice.' + c).classList.add('active');
+      }
+    });
+
+    // Update sticky summary + send button
+    const made = ALL_IDS.filter(id => choices[id]);
+    const pending = ALL_IDS.filter(id => !choices[id]);
+    const counts = { promote:0, skip:0, more:0 };
+    made.forEach(id => counts[choices[id]]++);
+
+    let html = '';
+    if (counts.promote) html += '<span class="badge promote">' + counts.promote + ' promote</span>';
+    if (counts.skip)    html += '<span class="badge skip">' + counts.skip + ' skip</span>';
+    if (counts.more)    html += '<span class="badge more">' + counts.more + ' more</span>';
+    if (pending.length) html += '<span class="badge pending">' + pending.length + ' pending</span>';
+    if (!made.length && !pending.length) html = 'No choices yet.';
+    document.getElementById('summary').innerHTML = html || 'No choices yet.';
+
+    const btn = document.getElementById('sendBtn');
+    btn.disabled = made.length === 0;
+    btn.textContent = 'Send ' + made.length + ' / ' + ALL_IDS.length + ' decisions';
+  }
+
+  // Wire button clicks
+  document.querySelectorAll('.choice').forEach(b => {
+    b.addEventListener('click', () => {
+      const id = b.dataset.id;
+      const choice = b.dataset.choice;
+      // Toggle off if same choice clicked again
+      if (choices[id] === choice) delete choices[id];
+      else choices[id] = choice;
+      saveAndRender();
+    });
+  });
+
+  // Send button — uses mailto on mobile (opens native Gmail app), Gmail web on desktop.
+  document.getElementById('sendBtn').addEventListener('click', () => {
+    const lines = ALL_IDS.filter(id => choices[id]).map(id => choices[id] + ' ' + id);
+    if (!lines.length) return;
+    const body = '# Scout decisions for ' + "2026-09-23" + '\n# Sent from the cart page\n\n' + lines.join('\n') + '\n';
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const url = isMobile
+      ? 'mailto:' + encodeURIComponent(REPLY_TO) + '?subject=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body)
+      : 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(REPLY_TO) + '&su=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body);
+    // mailto must be same-window on iOS; _blank is fine for https
+    if (isMobile) window.location.href = url;
+    else window.open(url, '_blank');
+  });
+
+  // Clear button
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    if (!confirm('Clear all your choices on this page?')) return;
+    choices = {};
+    saveAndRender();
+  });
+
+  saveAndRender();
+})();
+</script>
+</body>
+</html>
