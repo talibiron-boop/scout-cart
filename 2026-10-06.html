@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scout decisions — 2026-10-06</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; padding:0 0 180px 0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; background:#f8fafc; color:#0f172a; }
+  .container { max-width:760px; margin:0 auto; padding:24px 16px; }
+  h1 { font-size:22px; margin:0 0 8px 0; color:#1e40af; }
+  .sub { font-size:13px; color:#64748b; margin-bottom:20px; }
+  .help { background:#ecfeff; border:2px solid #0891b2; border-radius:8px; padding:14px 16px; margin-bottom:20px; font-size:13px; color:#164e63; line-height:1.5; }
+  .card { border:1px solid #e2e8f0; border-radius:10px; padding:16px; margin-bottom:14px; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.03); }
+  .card.is-rollover { border-color:#fbbf24; background:#fffbeb; }
+  .card.chosen-promote { border-color:#059669; box-shadow:0 0 0 2px #05966933; }
+  .card.chosen-skip { border-color:#dc2626; box-shadow:0 0 0 2px #dc262633; }
+  .card.chosen-more { border-color:#64748b; box-shadow:0 0 0 2px #64748b33; }
+  .rollover-badge { background:#fde68a; color:#78350f; font-size:11px; font-weight:700; padding:5px 10px; border-radius:10px; display:inline-block; margin-bottom:10px; }
+  .card-head { display:flex; justify-content:space-between; align-items:baseline; }
+  .pq-id { font-size:14px; font-weight:700; color:#1e40af; }
+  .verdict { font-size:12px; font-weight:700; }
+  .citation { margin-top:8px; font-size:14px; line-height:1.5; font-weight:500; }
+  .url { margin-top:4px; font-size:12px; }
+  .url a { color:#2563eb; }
+  .row { margin-top:8px; font-size:13px; color:#334155; line-height:1.5; }
+  .row b { color:#0f172a; }
+  .choice-row { display:flex; gap:8px; margin-top:14px; }
+  .choice { flex:1; padding:14px 8px; border-radius:8px; border:2px solid transparent; font-size:14px; font-weight:700; cursor:pointer; background:#f1f5f9; color:#475569; transition:all .15s; font-family:inherit; }
+  .choice:hover { transform:translateY(-1px); }
+  .choice.promote.active { background:#059669; color:#fff; border-color:#047857; }
+  .choice.skip.active { background:#dc2626; color:#fff; border-color:#b91c1c; }
+  .choice.more.active { background:#64748b; color:#fff; border-color:#475569; }
+  /* Sticky bottom bar */
+  .cart { position:fixed; bottom:0; left:0; right:0; background:#fff; border-top:2px solid #e2e8f0; box-shadow:0 -4px 12px rgba(0,0,0,.08); padding:12px 16px; z-index:100; }
+  .cart-inner { max-width:760px; margin:0 auto; }
+  .cart-summary { font-size:13px; color:#475569; margin-bottom:8px; line-height:1.4; }
+  .cart-summary b { color:#0f172a; }
+  .cart-summary .badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:700; margin-right:6px; }
+  .badge.promote { background:#d1fae5; color:#065f46; }
+  .badge.skip { background:#fee2e2; color:#991b1b; }
+  .badge.more { background:#e2e8f0; color:#334155; }
+  .badge.pending { background:#fef3c7; color:#92400e; }
+  .send-btn { display:block; width:100%; padding:16px; border:none; border-radius:8px; background:#0891b2; color:#fff; font-size:16px; font-weight:700; cursor:pointer; font-family:inherit; }
+  .send-btn:hover:not(:disabled) { background:#0e7490; }
+  .send-btn:disabled { background:#cbd5e1; cursor:not-allowed; }
+  .clear-link { display:inline-block; margin-top:6px; font-size:12px; color:#64748b; text-decoration:underline; cursor:pointer; background:none; border:none; padding:0; font-family:inherit; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Scout decisions — 2026-10-06</h1>
+  <div class="sub">6 source(s) to review. Choices auto-save in this browser.</div>
+
+  <div class="help">
+    Tap <b style="color:#059669;">Promote</b>, <b style="color:#dc2626;">Skip</b>, or <b style="color:#475569;">More info</b> on each card. The bar at the bottom keeps a running list of your choices. When you're done, hit the cyan <b>Send</b> button — Gmail opens with one email containing all your decisions. Hit Send in Gmail and you're done.
+  </div>
+
+  
+<section class="card" data-id="PQ-205">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-205</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Gershon R, Ben-Shlomo Y, Yitzhaki S, Sberro A, Tausky O, Golan N, Rabinovitch M, Hasidim AA, Arianu I, Dagan M, Balicer R, Dagan N. Large language models as judges for clinical generative AI evaluation. *npj Digit Med*. 2026 Sep 25. doi:10.1038/s41746-026-03248-3</div>
+  <div class="url"><a href="https://doi.org/10.1038/s41746-026-03248-3" target="_blank" rel="noopener">https://doi.org/10.1038/s41746-026-03248-3</a></div>
+  <div class="row"><b>Overview:</b> Most LLM-as-judge evidence comes from benchmarks or constrained documentation tasks. This study validates judges against clinicians on a **deployed** system: PANDA, a retrieval-augmented clinical decision-support tool in a tertiary paediatric hospital in Israel (Clalit). **118 clinician-authored, protocol-grounded queries**; five physicians and seven LLMs graded every query–response pair on **seven clinically selected rubrics**, giving 4,130 physician ratings, 17,346 ordinal and 8,496 binary LLM ratings.
+- **Task type:** LLM-as-judge; RAG clinical decision support
+- **LLM system:** PANDA (RAG) under evaluation; seven LLM judges
+- **Signal type:** mixed — text comparison (faithfulness, completeness) to interpretive (reasoning, safety)
+- **Setting:** tertiary paediatric hospital, deployed system
+- **Clinician involvement:** five physicians grading all pairs
+- **Human review:** full, all 118 pairs</div><div class="row"><b>Eval question:</b> On a real deployed system, **which rubric dimensions can a judge be trusted on**, and do the usual reliability tricks (repeat runs, panels) help?</div><div class="row"><b>Methodology:</b> Peer-reviewed (*npj Digital Medicine*). Real deployed system, five physicians, seven judges, full crossing. Bounded by 118 queries in one hospital and one specialty; queries were clinician-authored rather than sampled from live traffic.
+
+- Seven clinically selected rubrics, each graded by all five physicians and all seven judges
+- Ordinal and binary formats both collected from the judges
+- Repeated runs and multi-model panels compared with single judges</div><div class="row"><b>Measurement:</b> Physician–judge concordance per rubric; ordinal vs binary format compared; single judge vs repeated runs vs panels. *Coefficients per rubric and the physician band need extracting from the full text before any number is used.*</div><div class="row"><b>Key findings:</b> - **High concordance on text-comparison rubrics** (faithfulness, completeness); **weaker on interpretive ones — reasoning and safety.**
+- ⚠️ **Repeated runs and multi-model panels did not systematically beat the best single judge.**
+- ⚠️ **Binary pass/fail grading exposed misalignments that ordinal scales did not show.**
+- Authors: support for **cautious, rubric-aware** use as a scalable evaluation layer.</div><div class="row"><b>Soft spots:</b> 118 queries, one hospital, one specialty (paediatrics). Clinician-authored, protocol-grounded queries are cleaner than live traffic. The abstract does not give the physician inter-rater band per rubric, so &quot;high concordance&quot; is not yet readable against how well the physicians agreed with each other (PQ-156 caution). Safety being among the *weak* dimensions is important but needs the per-rubric figures before it is quoted.</div><div class="row"><b>Strengths:</b> Deployed system, not a benchmark — rare in this literature (PQ-137: ~2% production deployment). Full crossing of raters and judges. Tests the two most common &quot;make the judge more reliable&quot; moves and reports they did not help. Directly compares binary with ordinal formats on the same material.</div><div class="row"><b>Relevance:</b> **Layer 1:** LLM-as-judge; RAG decision support; generation.
+
+**Layer 2:**
+- **KTP #8** — a deployed-system replication of the objective/interpretive gradient, and a third source (with PQ-160 and PQ-200) saying **a panel is not a reliability fix**. ⚠️ If promoted, this further qualifies KTP #8(f) &quot;prefer multi-judge ensembles&quot; (PQ-190), which was already qualified this cycle by PQ-200.
+- **Binary vs ordinal:** independent support for the house preference for item-level binary rubrics (Nuclear Medicine kit). It compares binary with ordinal only — it says nothing about 3- vs 5-point scales.
+- **Safety as a weak judge dimension** — matters for every kit where safety is a hard gate: the judge cannot be the safety gate.
+- **Hebrew / Israeli setting:** the system runs in an Israeli hospital. Whether queries were in Hebrew is not stated in the abstract — worth checking, because KTP #12 still has no Hebrew clinical anchor.
+- **Panel / LLM-J Monitor** — certify per rubric, and do not assume a panel beats the best single judge.</div><div class="row"><b>Verdict reasoning:</b> Peer-reviewed, real deployment, full crossing, and two practically important negative results (panels and repeats did not help; ordinal scales hid misalignment). ⚠️ Quarantine per-rubric numbers until read from the full text, and check the physician band before citing &quot;high concordance.&quot;</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-205">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-205">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-205">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-206">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-206</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Daneshjou R, Natarajan S, Ansari Z, Yip V, Lin C, Udash A, Garvey M, Fanous A. The judge is not impartial: self-preference in medical LLM evaluation. *Research Square* [preprint]. 2026 Sep 17. doi:10.21203/rs.3.rs-11022502/v1</div>
+  <div class="url"><a href="https://doi.org/10.21203/rs.3.rs-11022502/v1" target="_blank" rel="noopener">https://doi.org/10.21203/rs.3.rs-11022502/v1</a></div>
+  <div class="row"><b>Overview:</b> Measures **same-model affinity** in medical LLM judging. Eight models (two each from OpenAI, Anthropic, Google, Qwen) answered and judged **620 real point-of-care questions from clinicians** (Real-POCQi) and generated and judged **200 standardised patient–clinician scenarios** of up to 8 turns (MedSP1000) — 13,760 judgments in total. Three self-preference measures are defined.
+- **Task type:** LLM-as-judge; single-turn QA and multi-turn encounters
+- **LLM system:** 8 models, 4 vendors
+- **Signal type:** interpretive
+- **Human review:** none — the measure is relative (own-model judge vs outside judges)</div><div class="row"><b>Eval question:</b> Does a medical LLM judge favour outputs from its own model independent of clinical quality — and do rubrics or identity disclosure remove it?</div><div class="row"><b>Methodology:</b> Preprint (Research Square). Systematic: 8 models × 2 formats × 13,760 judgments with a within-response design (the same fixed response ranked by its own-model judge vs outside judges), which controls for answer quality without needing a human reference. Bounded: no clinical-quality ground truth, so it measures bias, not accuracy.
+
+- **Answer Rank Bias** (primary): rank given to a fixed response by its own-model judge minus its mean rank from outside judges
+- **Answer Score Bias**: the same contrast on rubric scores
+- **Own-Answer Win Rate**: how often a judge ranks its own model above a competitor
+- With and without a grading rubric; with and without revealing generator identities; by conversation length</div><div class="row"><b>Measurement:</b> Real-POCQi pooled Answer Rank Bias **+1.22 positions**; **all eight judges** favoured their own answers. Revealing identities changed it by **−0.094 positions**. MedSP1000 **+0.53 to +0.62 positions**, no clear length effect (p = 0.17).</div><div class="row"><b>Key findings:</b> - ⚠️ **Every judge favoured its own model.**
+- ⚠️ **A grading rubric did not remove it.**
+- Telling the judge who generated each answer barely helped.
+- Persisted in multi-turn encounters, not affected by length.</div><div class="row"><b>Soft spots:</b> Preprint. Self-preference is measured relative to other LLM judges, which may share biases among themselves (the outside-judge mean is not a clinical truth). Two of eight models per vendor means vendor and model effects are partly confounded. No clinical consequence measured — whether the preference changes a *decision* is not shown. Daneshjou and colleagues also built the Real-POCQi data used, so the benchmark is theirs.</div><div class="row"><b>Strengths:</b> A clean within-response design that isolates self-preference from answer quality without a human reference. Medical-domain, real clinician questions, four vendors. Three complementary, reusable bias metrics. Tests the two obvious mitigations (rubric, identity disclosure) and reports both fail.</div><div class="row"><b>Relevance:</b> **Layer 1:** LLM-as-judge, all task types.
+
+**Layer 2:**
+- **KTP #8(g) failure mode 1 (shared generator/judge family)** gains its most direct medical measurement — self-preference in all 8 judges, across 4 vendors. Joins PQ-149 and PQ-151-FU.
+- **The rubric does not fix it** — closes a mitigation the KB had not tested.
+- **LLM-judge monitoring framework (producer ≠ measurer)** and **Panel / LLM-J Monitor**: Answer Rank Bias is a ready-made certification metric for cross-family judge selection.
+- **`/optimize`:** a judge from the same family as the prompt-development model will favour it — the PQ-189 lineage-exclusion rule now has a direct measurement behind it.</div><div class="row"><b>Verdict reasoning:</b> Well designed for exactly its question, with a design that sidesteps the need for a human reference. Strengthens an existing KB rule with a direct medical measurement and closes the &quot;just add a rubric&quot; mitigation. ⚠️ Quarantine the rank-bias values (preprint, relative measure).</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-206">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-206">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-206">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-207">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-207</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Lange F, Mardi S, Binder T, Reich MM, Odorfer T, Volkmann J. Real-world use and evaluation of a generative AI chatbot for Parkinson&#39;s disease information: a prospective observational study. *Lancet Reg Health Eur*. 2026 Nov;70:101866. doi:10.1016/j.lanepe.2026.101866. PMID: 42761851</div>
+  <div class="url"><a href="https://doi.org/10.1016/j.lanepe.2026.101866" target="_blank" rel="noopener">https://doi.org/10.1016/j.lanepe.2026.101866</a></div>
+  <div class="row"><b>Overview:</b> Prospective, conversation-level evaluation of **jAImes**, a retrieval-augmented Parkinson&#39;s disease information chatbot deployed publicly in Germany, over its **first 129 days** (all **2,035 conversations**, 6,146 messages). Introduces **CARE-LLM**, a post-market surveillance framework: automated triage of every conversation, structured expert review of flagged cases, a **random sampling audit of the &quot;good&quot; class** to estimate what triage misses, and a failure-class feedback loop.
+- **Task type:** conversational, patient-facing; post-market monitoring
+- **LLM system:** RAG chatbot; AI-assisted triage as the screening layer
+- **Signal type:** interpretive
+- **Setting:** public deployment, Germany
+- **Prevalence:** 0.4% &quot;inadequate&quot; by triage; critical events rare
+- **Clinician involvement:** structured expert review of flagged and sampled conversations
+- **Human review:** sometimes — flagged + random sample</div><div class="row"><b>Eval question:</b> How do you monitor a deployed patient-facing LLM so that you estimate what your automated screen **misses**, not just what it flags?</div><div class="row"><b>Methodology:</b> Peer-reviewed (*Lancet Regional Health – Europe*), prospective, complete census of real conversations. Single product, single disease. The miss estimate rests on 100 sampled conversations (4 events), so it is imprecise — and the authors report the CI and scope it correctly.
+
+- Automated triage of 100% of conversations (good / partially adequate / inadequate)
+- Expert review of all 45 flagged conversations
+- **Independent re-review of 100 randomly sampled &quot;good&quot; conversations** — a sampling-based sensitivity check on the screen
+- Failure classes fed back into the system</div><div class="row"><b>Measurement:</b> Triage: 88.6% good, 11.0% partially adequate, 0.4% inadequate. Flagged review: 5 critical events in 45. Random audit of &quot;good&quot;: **4/100 critical (4%, 95% CI 1.6–9.8)** — explicitly a **conditional false-negative rate within the &quot;good&quot; stratum**, not an overall critical-event rate.</div><div class="row"><b>Key findings:</b> - Favourable automated triage coexisted with **clinically critical failures invisible to the automated metrics.**
+- **Four critical misses in 100 &quot;good&quot;-rated conversations** — the screen&#39;s blind spot, quantified.
+- Nine confirmed critical events across three failure classes (knowledge boundary, robustness, escalation), including an inappropriate memantine recommendation in Parkinson&#39;s disease dementia and **explicit suicidal ideation that did not trigger the emergency response.**</div><div class="row"><b>Soft spots:</b> One product, one disease, one country, 129 days. 100-conversation audit → wide CI. The triage layer&#39;s own validation is not described beyond the audit. Expert-review agreement (more than one reviewer? κ/AC1?) is not in the abstract. Funded partly by the foundation that commissioned the chatbot. Overall critical-event rate cannot be computed from the abstract alone (needs weighting the stratum rates — which is the point the authors make).</div><div class="row"><b>Strengths:</b> This is two-phase sampling done right in a live deployment: screen everything, review all positives, **sample the negatives**, and report the conditional rate with a CI and correct scoping. It names the failure classes and feeds them back. Peer-reviewed, prospective, complete census.</div><div class="row"><b>Relevance:</b> **Layer 1:** conversational / patient-facing; monitoring for any deployed task.
+
+**Layer 2:**
+- **`rare_events_evaluation.md` and §1 two-phase sampling (PQ-121/122)** — a published deployed worked example of auditing the screen-negative stratum, reported as a conditional rate. Directly teachable.
+- **Missed Consultation Alert — continuous evaluation design (Path B)** — this is close to the exact architecture she tilted toward: deploy, screen, audit flagged + a sample of unflagged.
+- **`safety_vs_effectiveness.md`** — escalation failure (suicidal ideation) as a separate hard-gate class; automated quality metrics are not a safety endpoint (joins PQ-194&#39;s &quot;no safety events reported&quot; lesson).
+- **Panel / LLM-J Monitor** — the triage layer is a judge; the random audit is how you measure its miss rate.</div><div class="row"><b>Verdict reasoning:</b> Peer-reviewed, prospective, real deployment, and methodologically exemplary on the one thing most monitoring papers get wrong: it measures what the screen misses and scopes the number honestly. ⚠️ The 4% is imprecise (CI 1.6–9.8) and stratum-specific — cite the design, not the rate.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-207">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-207">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-207">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-208">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-208</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Zhang Y, Zhou J, Zhang Z, Zhang J, Wan R, Guo H, Cui X, Fu B, Meng J, Yue B. A multicenter assessment of human oversight of generative AI outputs in simulated clinical decision making. *npj Digit Med*. 2026 Sep 24. doi:10.1038/s41746-026-03294-x</div>
+  <div class="url"><a href="https://doi.org/10.1038/s41746-026-03294-x" target="_blank" rel="noopener">https://doi.org/10.1038/s41746-026-03294-x</a></div>
+  <div class="row"><b>Overview:</b> Tests the assumption behind &quot;clinician-in-the-loop&quot; safeguards: that clinicians reliably catch LLM hallucinations. Multicentre cross-sectional study: GPT-4o hallucinations were detected and classified across diverse clinical scenarios, then **junior clinicians&#39;** detection was measured across clinical categories and risk levels.
+- **Task type:** decision support; human oversight of generation
+- **LLM system:** GPT-4o
+- **Signal type:** interpretive
+- **Setting:** simulated clinical scenarios, multiple centres
+- **Clinician involvement:** junior clinicians as the overseers (N not in abstract)
+- **Human review:** the human review *is* the object of study</div><div class="row"><b>Eval question:</b> Can a reviewing clinician be counted as a mitigation — how often do they actually catch the error?</div><div class="row"><b>Methodology:</b> Peer-reviewed (*npj Digital Medicine*), multicentre. Simulated scenarios; junior clinicians only; participant and scenario counts not in the abstract.
+
+- Hallucinations generated, detected and classified by category and risk level
+- Junior clinicians reviewed outputs; detection rate measured per category and risk level
+- Variance decomposed into between-clinician vs between-scenario</div><div class="row"><b>Measurement:</b> Overall detection **15.8%** of hallucinations; **13.1%** of clinicians detected none in any scenario; detection by risk level (no increase with risk); variance partition (mainly between clinicians).</div><div class="row"><b>Key findings:</b> - ⚠️ **Only 15.8% of hallucinations were caught.**
+- ⚠️ **Detection did not improve as clinical risk rose** — the errors that matter most were not caught more often.
+- Variability came **mainly from the clinician, not the scenario** — who reviews matters more than what is reviewed.
+- Authors call for structured human–AI workflows and **tiered clinical certification**.</div><div class="row"><b>Soft spots:</b> Simulated scenarios; junior clinicians only, so senior oversight is untested; counts not in the abstract; GPT-4o only. Detection in a study setting (where participants may know hallucinations are present) could be *higher* than in routine use, so 15.8% may be optimistic — or lower, if task design differed from practice; direction of bias unclear.</div><div class="row"><b>Strengths:</b> Measures an assumption that most safety cases rely on but rarely test. Multicentre. The risk-stratified result and the variance decomposition are the decision-relevant findings, not just the headline rate.</div><div class="row"><b>Relevance:</b> **Layer 1:** any task with a human-review safeguard; decision support and generation.
+
+**Layer 2:**
+- **`safety_vs_effectiveness.md`** — &quot;a clinician reviews the output&quot; is **not** a mitigation unless the reviewer&#39;s detection rate has been measured. Bears on every kit whose risk argument leans on review.
+- **KTP #8(d) / PQ-169-FU VPC** — same pattern on the human side: most variance is *which reviewer you drew*. Argues for reviewer calibration and certification, as the KB already argues for judges.
+- **Missed Consultation / Treatment Gaps (MTG)** — MTG&#39;s #1 risk is a harmful alert; if the backstop is a clinician reading the alert, this says to measure that backstop.</div><div class="row"><b>Verdict reasoning:</b> Peer-reviewed, multicentre, and it tests the assumption the KB&#39;s safety reasoning most often leans on. ⚠️ Quarantine 15.8% (simulated, junior-only, counts not in abstract); import the risk-stratified non-improvement and the between-clinician variance finding.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-208">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-208">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-208">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-209">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-209</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Surdilla D, Michaels B, Michael C, Wimer D, He Y, Baptiste N, Coralic Z. Impact of AI assistance on pharmacist and pharmacy trainee accuracy and automation bias during medication order verification: a randomized simulation trial. *Am J Health Syst Pharm*. 2026 Sep 25:zxag259. doi:10.1093/ajhp/zxag259. PMID: 42788619</div>
+  <div class="url"><a href="https://doi.org/10.1093/ajhp/zxag259" target="_blank" rel="noopener">https://doi.org/10.1093/ajhp/zxag259</a></div>
+  <div class="row"><b>Overview:</b> Randomised simulation trial. 77 participants (29 students, 14 PGY1, 11 PGY2 residents, 23 pharmacists) completed 10 medication-order verification scenarios; each question was randomly assigned to unassisted or **GPT-4o-assisted** (binary verify / not-verify recommendation plus explanation). Primary outcome: accuracy against a validated ground truth. Crucially, the AI was **sometimes wrong**, so performance can be split by AI correctness.
+- **Task type:** classification (verify / not verify) with decision support
+- **LLM system:** GPT-4o
+- **Signal type:** interpretive
+- **Setting:** pharmacy order verification, simulation
+- **Clinician involvement:** 77 pharmacists and trainees as users
+- **Human review:** the human decision is the outcome</div><div class="row"><b>Eval question:</b> How large is the benefit of AI assistance, and how much of it reverses when the AI is wrong — i.e. how big is automation bias?</div><div class="row"><b>Methodology:</b> Peer-reviewed, randomised at the question level, validated ground truth. Small (77 participants × 10 scenarios), simulation, single LLM.
+
+- Question-level randomisation to assisted vs unassisted
+- Accuracy against a validated ground truth, adjusted model
+- Stratification by AI correctness and by training level
+- Concordance with AI (accept rate) measured for correct and incorrect recommendations</div><div class="row"><b>Measurement:</b> Assisted vs unassisted accuracy **aOR 1.58 (95% CI 1.16–2.15)**. User accuracy **80.2% when AI correct vs 26.1% when AI incorrect**. Acceptance **80.2% of correct and 73.9% of incorrect** recommendations. Accuracy when overriding the AI **21.7%**.</div><div class="row"><b>Key findings:</b> - Overall benefit, largest in students, smallest in PGY2 residents.
+- ⚠️ **Users accepted three in four wrong recommendations.**
+- ⚠️ **Accuracy fell to 26.1% when the AI was wrong** — the aggregate benefit hides a large harm on the AI&#39;s error cases.
+- When users disagreed with the AI, they were usually wrong (21.7%).</div><div class="row"><b>Soft spots:</b> Small; simulation; 10 scenarios, so the AI-wrong stratum is small and scenario-dependent; the AI error rate was set by the study, so the net benefit depends on how often the deployed AI is wrong — the aggregate aOR does not transfer. Single model; one profession.</div><div class="row"><b>Strengths:</b> Randomised, and **stratified by AI correctness** — the design that makes automation bias measurable rather than inferred. Reports acceptance of incorrect advice directly. Peer-reviewed.</div><div class="row"><b>Relevance:</b> **Layer 1:** classification and alerting with a human decision-maker; human–AI team evaluation.
+
+**Layer 2:**
+- **KTP #7 (human-in-the-loop testing)** — the net effect of an assistive tool depends on the **AI error rate times the acceptance of wrong advice**; report the two strata separately, never only the aggregate. Same &quot;aggregate hides harm&quot; structure as KTP #4.
+- **Missed Consultation Alert / MTG** — clinicians accepting alerts: the harm case is the wrong alert accepted. This design is how you would measure it.
+- Pairs with the screened-but-not-carded **Wojcik** (credential vs accuracy) and **ALLIANCE** (Kremer) — candidates for a human–AI team cluster.</div><div class="row"><b>Verdict reasoning:</b> Small but well designed for its question, and the AI-correct / AI-wrong stratification is the reusable design. ⚠️ Quarantine the percentages (simulation, 10 scenarios, study-set AI error rate); import the stratified design and the &quot;aggregate hides harm on AI-error cases&quot; rule.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-209">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-209">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-209">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-210">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-210</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">US Food and Drug Administration, Center for Devices and Radiological Health. Considerations for the regulation of generative AI-enabled medical devices: discussion paper and request for feedback. Docket FDA-2026-N-7874. 2026 Aug 18. Comments due 2026 Oct 19.</div>
+  <div class="url"><a href="https://www.fda.gov/news-events/press-announcements/fda-seeks-public-feedback-inform-regulatory-approach-generative-ai-enabled-medical-devices" target="_blank" rel="noopener">https://www.fda.gov/news-events/press-announcements/fda-seeks-public-feedback-inform-regulatory-approach-generative-ai-enabled-medical-devices</a></div>
+  <div class="row"><b>Overview:</b> ⚠️ **Outside the 30-day window (published 2026-08-18) and missed by scans #38–#40.** Carded because it is a primary regulatory document on exactly this repository&#39;s scope, and the comment period is still open. ⚠️ **Only the FDA press release was read**, not the discussion paper itself — hence &quot;Interesting, verify&quot;. Reply `more PQ-210` for a full read.
+
+CDRH discussion paper requesting public feedback on how to regulate generative-AI-enabled medical devices. Per the press release: a **two-axis risk-assessment framework**; premarket evaluation built on **&quot;competency assessment, inspired at a high level by how physicians are trained and evaluated&quot;**, comprising **non-clinical device benchmarking** and **clinical confirmation**; **risk-proportionate post-market monitoring**; and considerations for **foundation models and agentic AI**.
+- **Task type:** regulatory, all generative task types
+- **Human review:** n/a</div><div class="row"><b>Eval question:</b> What evaluation evidence will the US regulator expect for a generative-AI device, and how does it scale with risk?</div><div class="row"><b>Methodology:</b> Primary regulatory document, but a **discussion paper** — not guidance, not binding, and explicitly open for comment. Content known here only from the press release.
+
+Proposed framework (not empirical): two risk axes → premarket competency assessment (benchmark + clinical confirmation) → risk-proportionate post-market monitoring.</div><div class="row"><b>Measurement:</b> None. Whether the paper names metrics, thresholds or sample-size expectations is **unknown until the paper is read.**</div><div class="row"><b>Key findings:</b> - Premarket = **benchmarking plus clinical confirmation**, framed as competency assessment.
+- Post-market monitoring **proportionate to risk** — several approaches described.
+- Foundation models and agentic systems named as raising risks distinct from traditional AI devices.</div><div class="row"><b>Soft spots:</b> Press-release content only. A discussion paper can change substantially before guidance. US-specific. Non-binding.</div><div class="row"><b>Strengths:</b> Primary source from the regulator on the precise scope of this repository. The &quot;benchmark + clinical confirmation&quot; structure mirrors the KB&#39;s cumulative-stage logic (benchmark evidence alone insufficient — KTP #7).</div><div class="row"><b>Relevance:</b> **Layer 1:** all task types.
+
+**Layer 2:**
+- **KTP #7** — regulatory alignment for &quot;benchmark evaluation alone is insufficient.&quot;
+- **Monitoring framework / Missed Consultation continuous evaluation** — &quot;risk-proportionate post-market monitoring&quot; is the regulatory frame for staged audit designs like PQ-207.
+- **40-minute clinician talk and the evaluation tutorial** — a current regulatory anchor.
+- Note: the tool does not generate regulatory submissions (CLAUDE.md boundary); this card is for methodology alignment only.</div><div class="row"><b>Verdict reasoning:</b> High relevance, primary source, but only the press release was read — the KB rule is to read before citing. A full read would establish whether the paper names specific evaluation methods, metrics or monitoring designs worth importing. Time-sensitive only if you want to comment (deadline 2026-10-19).</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-210">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-210">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-210">? More info</button>
+  </div>
+</section>
+</div>
+
+<div class="cart">
+  <div class="cart-inner">
+    <div class="cart-summary" id="summary">No choices yet. Tap a button on a card above.</div>
+    <button class="send-btn" id="sendBtn" disabled>Send 0 / 6 decisions</button>
+    <button class="clear-link" id="clearBtn">Clear all my choices</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const ALL_IDS = ["PQ-205","PQ-206","PQ-207","PQ-208","PQ-209","PQ-210"];
+  const REPLY_TO = "tali.biron@gmail.com";
+  const REPLY_SUBJECT = "Re: Scout 2026-10-06 — 6 source(s) (PQ-205, PQ-206, PQ-207, PQ-208, PQ-209, PQ-210)";
+  const STORAGE_KEY = "scout-cart-2026-10-06";
+
+  // Load saved state from localStorage (so refresh doesn't lose progress)
+  let choices = {};
+  try { choices = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) {}
+
+  function saveAndRender() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(choices));
+
+    // Re-style each card based on choice
+    document.querySelectorAll('.card').forEach(card => {
+      const id = card.dataset.id;
+      card.classList.remove('chosen-promote', 'chosen-skip', 'chosen-more');
+      card.querySelectorAll('.choice').forEach(b => b.classList.remove('active'));
+      const c = choices[id];
+      if (c) {
+        card.classList.add('chosen-' + c);
+        card.querySelector('.choice.' + c).classList.add('active');
+      }
+    });
+
+    // Update sticky summary + send button
+    const made = ALL_IDS.filter(id => choices[id]);
+    const pending = ALL_IDS.filter(id => !choices[id]);
+    const counts = { promote:0, skip:0, more:0 };
+    made.forEach(id => counts[choices[id]]++);
+
+    let html = '';
+    if (counts.promote) html += '<span class="badge promote">' + counts.promote + ' promote</span>';
+    if (counts.skip)    html += '<span class="badge skip">' + counts.skip + ' skip</span>';
+    if (counts.more)    html += '<span class="badge more">' + counts.more + ' more</span>';
+    if (pending.length) html += '<span class="badge pending">' + pending.length + ' pending</span>';
+    if (!made.length && !pending.length) html = 'No choices yet.';
+    document.getElementById('summary').innerHTML = html || 'No choices yet.';
+
+    const btn = document.getElementById('sendBtn');
+    btn.disabled = made.length === 0;
+    btn.textContent = 'Send ' + made.length + ' / ' + ALL_IDS.length + ' decisions';
+  }
+
+  // Wire button clicks
+  document.querySelectorAll('.choice').forEach(b => {
+    b.addEventListener('click', () => {
+      const id = b.dataset.id;
+      const choice = b.dataset.choice;
+      // Toggle off if same choice clicked again
+      if (choices[id] === choice) delete choices[id];
+      else choices[id] = choice;
+      saveAndRender();
+    });
+  });
+
+  // Send button — uses mailto on mobile (opens native Gmail app), Gmail web on desktop.
+  document.getElementById('sendBtn').addEventListener('click', () => {
+    const lines = ALL_IDS.filter(id => choices[id]).map(id => choices[id] + ' ' + id);
+    if (!lines.length) return;
+    const body = '# Scout decisions for ' + "2026-10-06" + '\n# Sent from the cart page\n\n' + lines.join('\n') + '\n';
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const url = isMobile
+      ? 'mailto:' + encodeURIComponent(REPLY_TO) + '?subject=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body)
+      : 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(REPLY_TO) + '&su=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body);
+    // mailto must be same-window on iOS; _blank is fine for https
+    if (isMobile) window.location.href = url;
+    else window.open(url, '_blank');
+  });
+
+  // Clear button
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    if (!confirm('Clear all your choices on this page?')) return;
+    choices = {};
+    saveAndRender();
+  });
+
+  saveAndRender();
+})();
+</script>
+</body>
+</html>
