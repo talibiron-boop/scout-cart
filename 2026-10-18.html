@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scout decisions — 2026-10-18</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; padding:0 0 180px 0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; background:#f8fafc; color:#0f172a; }
+  .container { max-width:760px; margin:0 auto; padding:24px 16px; }
+  h1 { font-size:22px; margin:0 0 8px 0; color:#1e40af; }
+  .sub { font-size:13px; color:#64748b; margin-bottom:20px; }
+  .help { background:#ecfeff; border:2px solid #0891b2; border-radius:8px; padding:14px 16px; margin-bottom:20px; font-size:13px; color:#164e63; line-height:1.5; }
+  .card { border:1px solid #e2e8f0; border-radius:10px; padding:16px; margin-bottom:14px; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.03); }
+  .card.is-rollover { border-color:#fbbf24; background:#fffbeb; }
+  .card.chosen-promote { border-color:#059669; box-shadow:0 0 0 2px #05966933; }
+  .card.chosen-skip { border-color:#dc2626; box-shadow:0 0 0 2px #dc262633; }
+  .card.chosen-more { border-color:#64748b; box-shadow:0 0 0 2px #64748b33; }
+  .rollover-badge { background:#fde68a; color:#78350f; font-size:11px; font-weight:700; padding:5px 10px; border-radius:10px; display:inline-block; margin-bottom:10px; }
+  .card-head { display:flex; justify-content:space-between; align-items:baseline; }
+  .pq-id { font-size:14px; font-weight:700; color:#1e40af; }
+  .verdict { font-size:12px; font-weight:700; }
+  .citation { margin-top:8px; font-size:14px; line-height:1.5; font-weight:500; }
+  .url { margin-top:4px; font-size:12px; }
+  .url a { color:#2563eb; }
+  .row { margin-top:8px; font-size:13px; color:#334155; line-height:1.5; }
+  .row b { color:#0f172a; }
+  .choice-row { display:flex; gap:8px; margin-top:14px; }
+  .choice { flex:1; padding:14px 8px; border-radius:8px; border:2px solid transparent; font-size:14px; font-weight:700; cursor:pointer; background:#f1f5f9; color:#475569; transition:all .15s; font-family:inherit; }
+  .choice:hover { transform:translateY(-1px); }
+  .choice.promote.active { background:#059669; color:#fff; border-color:#047857; }
+  .choice.skip.active { background:#dc2626; color:#fff; border-color:#b91c1c; }
+  .choice.more.active { background:#64748b; color:#fff; border-color:#475569; }
+  /* Sticky bottom bar */
+  .cart { position:fixed; bottom:0; left:0; right:0; background:#fff; border-top:2px solid #e2e8f0; box-shadow:0 -4px 12px rgba(0,0,0,.08); padding:12px 16px; z-index:100; }
+  .cart-inner { max-width:760px; margin:0 auto; }
+  .cart-summary { font-size:13px; color:#475569; margin-bottom:8px; line-height:1.4; }
+  .cart-summary b { color:#0f172a; }
+  .cart-summary .badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:700; margin-right:6px; }
+  .badge.promote { background:#d1fae5; color:#065f46; }
+  .badge.skip { background:#fee2e2; color:#991b1b; }
+  .badge.more { background:#e2e8f0; color:#334155; }
+  .badge.pending { background:#fef3c7; color:#92400e; }
+  .send-btn { display:block; width:100%; padding:16px; border:none; border-radius:8px; background:#0891b2; color:#fff; font-size:16px; font-weight:700; cursor:pointer; font-family:inherit; }
+  .send-btn:hover:not(:disabled) { background:#0e7490; }
+  .send-btn:disabled { background:#cbd5e1; cursor:not-allowed; }
+  .clear-link { display:inline-block; margin-top:6px; font-size:12px; color:#64748b; text-decoration:underline; cursor:pointer; background:none; border:none; padding:0; font-family:inherit; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Scout decisions — 2026-10-18</h1>
+  <div class="sub">6 source(s) to review. Choices auto-save in this browser.</div>
+
+  <div class="help">
+    Tap <b style="color:#059669;">Promote</b>, <b style="color:#dc2626;">Skip</b>, or <b style="color:#475569;">More info</b> on each card. The bar at the bottom keeps a running list of your choices. When you're done, hit the cyan <b>Send</b> button — Gmail opens with one email containing all your decisions. Hit Send in Gmail and you're done.
+  </div>
+
+  
+<section class="card" data-id="PQ-211">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-211</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Sirago G, Sabato S, Sebastiani N, Zotti F, Dell&#39;Erba A, Ferorelli D. Large language models as raters of hospital incident reports: a blinded multi-model evaluation of severity under-grading and shared errors. *Jt Comm J Qual Patient Saf.* 2026 Sep 24 [Epub ahead of print]. doi:10.1016/j.jcjq.2026.09.002. PMID: 42888060.</div>
+  <div class="url"><a href="https://doi.org/10.1016/j.jcjq.2026.09.002" target="_blank" rel="noopener">https://doi.org/10.1016/j.jcjq.2026.09.002</a></div>
+  <div class="row"><b>Overview:</b> Five commercial LLMs (ChatGPT, Gemini, Claude, DeepSeek, Mistral) each classified 824 anonymised hospital incident reports from the free text alone. Every model received the same prompt through its standard consumer interface and was blinded to the reference and to the other models. The outputs were compared with an expert-adjudicated reference (event type and harm severity), with the original reporter&#39;s grading, and with each other. The study also tested calibration, severe-event detection, ensembling, a sentinel-code audit, test-retest on a 150-report subset re-run more than 2 months later, and prompt dependence (criterion-based and few-shot prompts).
+- **Task type:** Classification (event type, ordinal harm severity, sentinel-event coding)
+- **LLM system:** 5 frontier chat interfaces, one-shot, model only (no human in the loop)
+- **Signal type:** Mixed. Event type is fairly explicit; severity is interpretive and often under-documented.
+- **Clinical setting:** Hospital patient-safety / incident reporting (Italian authors, per Crossref names; setting details not verified from the abstract)
+- **Target use:** Operational patient-safety triage
+- **Prevalence:** 140 severe events out of 824 (≈17%)
+- **Clinician involvement:** Expert-adjudicated reference (number of adjudicators not reported in the abstract)
+- **Volume:** 824 reports × 5 models; 150-report re-test subset
+- **Human review:** Reference only. The models were tested autonomously.</div><div class="row"><b>Eval question:</b> When several LLMs grade clinical severity, does a reassuring aggregate agreement figure hide failure concentrated on the severe cases? Do independent models make the same mistakes, so that voting cannot correct them?</div><div class="row"><b>Methodology:</b> - Blinded multi-model comparison against an expert-adjudicated reference, plus the original reporter as a second comparator
+- Severe-event detection analysed separately from aggregate agreement
+- Error correlation: model–model κ compared with model–reference κ; majority-vote ensemble
+- Severe-event sensitivity stratified by whether harm was documented in the narrative (information sufficiency)
+- Test-retest re-administration after more than 2 months; prompt-variant arms (explicit definitions, few-shot)
+- Sentinel-code audit for internal consistency</div><div class="row"><b>Measurement:</b> - Event-type agreement: Cohen&#39;s κ (observed 0.82–0.84)
+- Severity agreement: weighted κ (observed 0.39–0.47)
+- Severe-event sensitivity (recall) on 140 severe events: 0.41–0.50 overall, 0.68–0.79 when harm was documented
+- Inter-model κ compared with model–reference κ as an error-correlation diagnostic
+- Test-retest: exact severity agreement 0.59–0.80
+- No pre-set acceptance thresholds are reported in the abstract</div><div class="row"><b>Key findings:</b> - Event type was classified reliably (κ 0.82–0.84), but severity was graded poorly (weighted κ 0.39–0.47).
+- **Recall on severe events was 0.41–0.50**, rising to 0.68–0.79 when the narrative documented harm. Much of the apparent failure was information insufficiency and construct mismatch, not model error alone.
+- **Errors were correlated:** mean model–model κ exceeded model–reference κ, **majority voting did not help**, and no model outperformed the original reporter.
+- Confidence was only weakly informative. Sentinel codes were often inconsistent with the model&#39;s own content.
+- On re-administration, four of five models moved some reports **from severe to no/mild harm**. Explicit definitions or few-shot examples did not remove this in four of five models.
+- The authors conclude that severity and sentinel grading should stay with expert adjudication under &quot;algorithmovigilance&quot;.</div><div class="row"><b>Soft spots:</b> - Abstract-only read. The adjudication panel size, inter-adjudicator agreement and severity scale are not visible.
+- Consumer interfaces: model versions and sampling settings drift and are not reproducible.
+- One-shot, model-only testing. This is not the human-in-the-loop configuration a hospital would deploy.
+- Single institution and a single (Italian-language?) reporting culture. Language was not confirmed from the abstract.
+- The severe-event subset (140) is modest for comparing five models on recall.</div><div class="row"><b>Strengths:</b> - Analyses failure **where it matters** (severe events) instead of stopping at aggregate κ. This is a textbook demonstration of KTP #4.
+- Tests error correlation directly and shows ensembling failing, a third independent confirmation of KTP #8(a) after PQ-200.
+- Spaces the test-retest more than 2 months apart and reports *direction* of the instability (severe to mild). That is clinically far more informative than a stability percentage.
+- Separates &quot;model wrong&quot; from &quot;information absent from the text&quot;. That distinction matters for any extraction or classification kit.</div><div class="row"><b>Relevance:</b> - **Layer 1:** Classification with an ordinal / severity component; LLM-as-rater; patient-safety operations.
+- **Layer 2:** **Treatment Gap Detection (MTG)**, where harm is an absolute gate. The finding that recall concentrates its failure on the severe tail argues for reporting recall on the high-severity stratum as its own gate, not inside the pooled figure. **POPC Detection**: the information-sufficiency stratification (harm documented vs not) is a ready-made way to split &quot;model missed it&quot; from &quot;the note did not say it&quot; in the error review.
+- **Guidance:** Confirms KTP #4 (aggregate hides components) and KTP #8(a) (correlated error; inter-model &gt; model–reference agreement as the warning sign). **Adds a method not in `evaluation_methods_by_task.md`:** long-interval test-retest (more than 2 months) reported as *direction-of-change* on the severe class. A grep for test-retest / re-administration in the guidance file found nothing.</div><div class="row"><b>Verdict reasoning:</b> The design fits the question. The authors asked whether multi-model LLM grading is safe to automate and built in the three checks that would expose a &quot;no&quot;: a severe-stratum analysis, an error-correlation test, and a long-interval re-test. They also avoid overclaiming. They attribute part of the failure to information insufficiency and limit their conclusion to the one-shot, model-only setting. The main weakness is that only the abstract was readable, so the reference-standard construction cannot be appraised. The main session may want to confirm the adjudication panel and severity scale if the full text becomes reachable. Even on the abstract, it is a peer-reviewed real-data study that confirms two KTPs from a new domain (incident reporting) and contributes a reusable test-retest design.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-211">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-211">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-211">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-212">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-212</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Çelik A, Kiris T, Kocabas U, Karaca M. Adjudicator sensitivity of safety estimates in large language models for open-ended cardiovascular reasoning: a blinded multi-adjudicator benchmark study. *Sci Rep.* 2026 Oct 12. doi:10.1038/s41598-026-75767-8.</div>
+  <div class="url"><a href="https://doi.org/10.1038/s41598-026-75767-8" target="_blank" rel="noopener">https://doi.org/10.1038/s41598-026-75767-8</a></div>
+  <div class="row"><b>Overview:</b> Three API-accessed LLM configurations answered 100 simulated open-ended cardiovascular scenarios, producing 300 responses. Two cardiologists scored quality, and a first adjudicator classified safety. A non-author cardiologist then re-adjudicated all 300 responses blind to model, reviewer and prior decisions. A third blinded cardiologist resolved the 53 discordant cases under a majority rule that was fixed before the third adjudicator&#39;s results arrived. The paper is a methodological stress test of the safety number itself, not of the models.
+- **Task type:** Open-ended clinical reasoning / decision support; safety adjudication
+- **LLM system:** 3 API-accessed configurations (names not visible)
+- **Signal type:** Interpretive
+- **Clinical setting:** Cardiology, simulated scenarios
+- **Target use:** Benchmarking / research
+- **Prevalence:** Safety-positive 0–17.7% depending on adjudicator; 2.7% after majority resolution
+- **Clinician involvement:** 2 scoring cardiologists + 3 sequential adjudicating cardiologists (2 external)
+- **Volume:** 300 responses
+- **Human review:** Always (this is the object of study)</div><div class="row"><b>Eval question:</b> How much does a reported LLM safety-error rate depend on who adjudicates it? What has to accompany a numerical safety estimate before it can be trusted?</div><div class="row"><b>Methodology:</b> - Two-reviewer continuous quality scoring
+- Sequential safety adjudication: author adjudicator, then an independent blinded non-author re-adjudication of **all** responses (not just flagged ones)
+- Third blinded adjudicator for discordant cases; majority rule pre-fixed
+- Agreement reported as both crude and **positive agreement**</div><div class="row"><b>Measurement:</b> - Quality-score reliability: ICC 0.028 (type not stated)
+- Safety: crude agreement 82.3%; **positive agreement 0%**
+- Final majority-resolved safety-error rate: 2.7% (95% CI 1.4–5.2%)
+- No pre-specified acceptance thresholds; the paper&#39;s point is that the estimate itself is unstable</div><div class="row"><b>Key findings:</b> - Adjudicator 1 rated 53/300 (17.7%) responses safety-positive. **Adjudicator 2 rated 0/300.**
+- Crude agreement looked acceptable (82.3%), but **positive agreement was 0%.** The two adjudicators did not agree on a single unsafe response.
+- Quality-score reliability was essentially nil (ICC 0.028).
+- After third-adjudicator resolution, 8/300 (2.7%) were majority-classified safety-relevant errors.
+- Authors&#39; recommendation: report multi-rater reliability and a transparent resolution procedure with any safety estimate, and do not read a benchmark safety rate as real-world error prevalence.</div><div class="row"><b>Soft spots:</b> - The model identities and the safety-trigger definitions were not visible. If the triggers were vague, the paper partly measures a poorly specified construct rather than adjudicator variability per se.
+- Single centre, four authors, Turkish cardiologists only. The size of the spread may be site-specific.
+- The first adjudicator was an author, which may bias towards flagging.
+- Simulated scenarios. There is no link to patient outcome.</div><div class="row"><b>Strengths:</b> - Re-adjudicates **every** response independently. Most studies re-check only flagged items, which structurally hides false negatives.
+- Reports **positive agreement**, which exposes what crude agreement conceals at low prevalence. This is the same base-rate trap the rare-events guidance warns about, here applied to the reference standard.
+- Fixes the resolution rule before seeing the tiebreaker, which is good practice and rarely reported.
+- The conclusion is appropriately modest.</div><div class="row"><b>Relevance:</b> - **Layer 1:** Any task with a safety or harm endpoint judged by clinicians (generation, decision support, alerting).
+- **Layer 2:** **POPC Detection.** The kit is blocked on the reference standard, and clinician AC1 was 0.480. This paper is a vivid external example of why the reference-standard design (independent double read of all cases, pre-fixed resolution rule, pre-adjudication agreement recorded) has to come before the model is scored. **Treatment Gap Detection**: harm is an absolute gate there, and a one-adjudicator harm gate could swing from pass to fail on who reads.
+- **Guidance:** Confirms KTP #1 (consensus addresses label uncertainty, which N cannot fix) and the existing &quot;record pre-adjudication agreement first&quot; rule (PQ-158-FU, line ~80). **Adds a method not in the file:** report **positive agreement** (agreement on the positive class) alongside crude agreement for low-prevalence safety labels. A grep of `evaluation_methods_by_task.md` for &quot;positive agreement&quot; found nothing.</div><div class="row"><b>Verdict reasoning:</b> A small, honest study that asks the right question and answers it decisively. A 17.7%-versus-0% split with zero positive agreement is the kind of result that changes how a reader treats every single-adjudicator LLM safety rate in the literature. The design suits an agreement question: blinded, independent, every item re-read, rule pre-fixed. The undefined triggers are a real limitation and should be checked if the full text becomes readable, but they do not undercut the core lesson, which is about reporting practice. It is directly actionable for the user&#39;s open reference-standard work.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-212">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-212">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-212">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-213">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-213</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Garcia-Agundez A, Zhou S, Pourian J, Blebea C, Daneshpajouhnejad P, Dente E, Shi K, Pollet S, Xia F, Shi X, Thombley R, Fenton C, Murray SG, Adler-Milstein J, Schmajuk G, Feng J, Yazdany J. A framework to monitor editing of artificial intelligence-generated medical documentation. *medRxiv.* 2026 Oct 5. doi:10.64898/2026.09.30.26364427.</div>
+  <div class="url"><a href="https://doi.org/10.64898/2026.09.30.26364427" target="_blank" rel="noopener">https://doi.org/10.64898/2026.09.30.26364427</a></div>
+  <div class="row"><b>Overview:</b> The authors used UCSF&#39;s deployment of the Abridge ambient scribe (July 2024 – March 2026) to turn clinician editing of AI-drafted notes into a health-system-level monitoring signal. Each HPI and Assessment &amp; Plan section was scored on three edit dimensions: lexical (normalised Levenshtein), embedding (1 − BERTScore with a clinical encoder) and clinical (UMLS concepts added plus removed). The clinical dimension was validated against blinded clinician judgement of &quot;clinically meaningful&quot; edits. Weekly EWMA control charts were then built and tested against one known event, the move from pilot to system-wide rollout.
+- **Task type:** Summarization / ambient documentation; post-deployment monitoring
+- **LLM system:** Abridge (commercial ambient scribe), Epic-integrated
+- **Signal type:** Mixed (edits are observable; &quot;meaningful&quot; is interpretive)
+- **Clinical setting:** Outpatient, single academic health system (UCSF)
+- **Target use:** Live clinical; monitoring
+- **Prevalence:** Clinical concept changes in more than one-third of sections
+- **Clinician involvement:** 4 blinded clinician raters (2 per section) + 2 senior adjudicators for validation; 1,081 providers in the corpus
+- **Volume:** 268,379 encounters, 142,235 patients; validation sample 108 sections
+- **Human review:** Always (the clinician signs the note); the edit is the signal</div><div class="row"><b>Eval question:</b> After a documentation LLM goes live, what cheap, continuous signal can a health system monitor without re-annotating notes? How sensitive is that signal to real change?</div><div class="row"><b>Methodology:</b> - Three complementary edit dimensions computed on draft-vs-signed text
+- Criterion validation of clinical edit intensity against a clinician reference (balanced sample: 0 vs ≥1 concept change)
+- Edit profiles (not edited / edited / not used / alternative workflow)
+- Weekly EWMA control charts: λ = 0.75, limit width 2.3, ARL₀ = 50, 8-week warm-up; an a priori control event (rollout)
+- Simulation of the minimum detectable shift</div><div class="row"><b>Measurement:</b> - Clinical edit intensity ≥1 → clinically meaningful edit: **PPV 88.9% (95% CI 77.8–94.8)**; for edit intensity 0, NPV 68.5% (55.3–79.3); κ vs reference 0.57 (0.42–0.73)
+- Inter-rater agreement for the reference: median κ 0.33 (range 0.28–0.73)
+- Dimension correlation (Spearman): lexical vs embedding ρ 0.95; clinical vs others ρ 0.77–0.81
+- Detectable shift: about 10% (lexical) or 15% (clinical) change in edit intensity; 14–32% change in profile proportions</div><div class="row"><b>Key findings:</b> - Clinicians edited A&amp;P more heavily than HPI. HPI was left unedited 37.3% of the time versus A&amp;P 19.3%, but A&amp;P was &quot;not used&quot; 33.8% of the time versus HPI 14.6%.
+- Lexical and embedding measures are near-redundant (ρ 0.95). The concept-level measure carries partly independent information.
+- EWMA charts raised 16 alarms over 51 weeks. Three coincided with the rollout, consistent with self-selected pilot adopters editing differently from the general population.
+- The authors are explicit that a signal shows change, not cause (model update, workflow or patient mix).</div><div class="row"><b>Soft spots:</b> - **Low NPV (68.5%)**: about one-third of &quot;no concept change&quot; sections were still judged meaningful. Dose, laterality, negation and temporality edits can slip through a concept-count measure. That is precisely the class of error that matters most in summarization.
+- The reference itself has low inter-rater agreement (median κ 0.33), so the PPV is anchored to a noisy label.
+- Only one control event, so sensitivity to *quality degradation* (as opposed to population change) is untested.
+- The alarm rate (16 in 51 weeks) is high relative to explained events, so the false-alarm burden in practice is unclear.
+- Single site, single vendor. Edit rate also reflects clinician trust and fatigue, not only draft quality.</div><div class="row"><b>Strengths:</b> - Makes the monitoring of documentation tools **operational**: a validated proxy, a statistical process control design with stated parameters, and a known event used as a positive control.
+- Reports PPV *and* NPV honestly, together with the reference&#39;s own agreement, so the reader can see where the signal is weak.
+- Separates &quot;not edited&quot; from &quot;not used&quot;. This links directly to the adoption-decay endpoint already in Guidance (PQ-184, PQ-194).
+- Scale and duration far exceed any annotated evaluation.</div><div class="row"><b>Relevance:</b> - **Layer 1:** Summarization / generation in deployment (ambient scribes, discharge letters, report summaries). Monitoring stage.
+- **Layer 2:** **Discharge Letter Summarization** and **Nuclear Medicine Summarization** monitoring plans. Edit intensity between the draft and the signed version is a cheap continuous signal that could sit under the periodic audit sample. The low NPV argues that it supplements item-level audits rather than replacing them, especially for the nuc-med kit&#39;s numeric and laterality items.
+- **Guidance:** **Adds a method not in `evaluation_methods_by_task.md`:** statistical process control (EWMA control charts) on a validated proxy signal for post-deployment monitoring. A grep for EWMA / control chart / edit distance found nothing. It complements the adoption-as-primary-monitoring-endpoint principle (PQ-184 / PQ-194) by adding a quality-adjacent continuous signal next to the adoption signal.</div><div class="row"><b>Verdict reasoning:</b> The KB has argued for monitoring in principle, but this paper supplies a concrete method with parameters, validation and a positive control, built on more than 268K real encounters from a credible clinical-informatics group (Adler-Milstein, Yazdany). The design is right for the question: it validates the proxy first and then tests whether the chart can see a known change. The authors also state the weaknesses themselves (NPV, one control event, signal ≠ cause), which raises trust. The verdict is Promote rather than &quot;verify&quot; because the method stands on the full text. The preprint status and the noisy reference label should be carried into any Guidance wording as caveats.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-213">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-213">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-213">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-214">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-214</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Vishwanath K, Lin H, Alyakin A, Lee JV, Hewitt DB, Yao JJ, Small WR, Khan HA, Orillac C, Varma A, Ye B, Alber DA, Stolovitzky G, Wiesenfeld B, Nov O, Wu W, Zhang K, Aphinyanaphongs Y, Requarth T, Oermann EK, et al. Clinician use of language models diverges from how the models are evaluated. *arXiv.* 2026 Oct 8. arXiv:2610.11069.</div>
+  <div class="url"><a href="https://arxiv.org/abs/2610.11069" target="_blank" rel="noopener">https://arxiv.org/abs/2610.11069</a></div>
+  <div class="row"><b>Overview:</b> The authors analysed every first clinician query sent to NYU Langone&#39;s institutional LLM assistant over an eight-month rollout (Aug 2025 – Apr 2026): 127,833 conversations from 6,342 clinicians across 35 specialties. Each query was coded with RCQ-Map, a clinician-validated schema covering task, intent, answerability, missing information and potential harm. The same schema was then applied to items sampled from 58 public health benchmarks (the Clinical AI Benchmark Atlas) to measure how far the benchmark task mix sits from real use.
+- **Task type:** All (test-set / benchmark validity); real-use characterisation
+- **LLM system:** Institutional secure assistant (underlying model not named); GPT-5.6 used as the annotator
+- **Signal type:** Interpretive (task, harm labels)
+- **Clinical setting:** Multi-hospital academic health system; physicians, APPs, RNs
+- **Target use:** Live clinical (deployed assistant)
+- **Prevalence:** Potential high/critical harm: 13.2% (LLM-labelled, cautious) vs 3.7% (95% CI 1.2–5.9%) calibrated to clinician consensus
+- **Clinician involvement:** 7 clinicians validated the schema (100 queries × 3 annotations)
+- **Volume:** 127,833 queries; 10,659 benchmark items from 58 benchmarks
+- **Human review:** Validation subset only</div><div class="row"><b>Eval question:</b> Does the test set we evaluate a clinical LLM on resemble the work it will actually receive? How do you measure that gap?</div><div class="row"><b>Methodology:</b> - Real-use log analysis of first-turn clinician queries
+- Clinician validation of the coding schema (Krippendorff&#39;s α); LLM annotator validated against held-out clinician reference
+- Benchmark overlap = 1 − total variation distance between task distributions
+- Harm prevalence reported both raw (LLM) and calibrated to clinician consensus</div><div class="row"><b>Measurement:</b> - Schema reliability (Krippendorff&#39;s α): task 0.64, intent 0.45, harm 0.36, required context 0.25–0.32
+- LLM annotator vs clinician reference: 84.6% match (clinicians 83.0%); harm quadratic-weighted κ 0.53 vs 0.36 clinician–clinician
+- Task-mix overlap with real use: median benchmark 31% (IQR 21–39%); an even spread would give 55%</div><div class="row"><b>Key findings:</b> - Real use: **documentation/administration 36.2%**, knowledge retrieval 28.9%, **diagnosis 3.7%**. More than a third of queries could not be answered well as posed (missing information).
+- **The median benchmark contained 0% documentation items** and overlapped 31% with the real task mix, less than an even spread would.
+- Benchmarks designed to resemble clinical practice were no closer to real use (median 35%) than those in frontier model reports (median 40%).
+- The LLM labeller over-called harm (24% vs 6% for the clinician majority on validation). Calibrating to clinicians moved potential-harm prevalence from 13.2% to 3.7%.</div><div class="row"><b>Soft spots:</b> - Single institution and single assistant; other tools clinicians use were not observed, so the task mix reflects what people brought to *this* tool.
+- Responses were not evaluated: harm is *potential*, not actual.
+- Human agreement on harm and missing information was low (α 0.25–0.36), so absolute prevalences are uncertain. The between-group comparisons are more robust.
+- The benchmark items were labelled by an annotator validated on real queries, not on benchmark text.
+- Benchmark selection was the authors&#39; own; non-English and multimodal benchmarks are excluded.</div><div class="row"><b>Strengths:</b> - The first large-scale quantitative measurement of the benchmark-to-real-use gap in *task mix*, not just in score.
+- Gives a reusable, simple metric (1 − TVD) for &quot;does my test set look like my deployment?&quot;.
+- Reports the LLM annotator&#39;s bias and calibrates against clinicians instead of trusting the raw label.
+- Large, multi-role clinician population (physicians, APPs, nurses).</div><div class="row"><b>Relevance:</b> - **Layer 1:** All task types. It applies to the design of the evaluation sample in any kit.
+- **Layer 2:** No specific kit. It applies at the sampling step of every `/evaluate` kit: the test set should be drawn from the deployment&#39;s real input distribution, and a task-mix overlap check is a cheap way to show that it was.
+- **Guidance:** Strongly confirms **KTP #7** (benchmark evaluation alone is insufficient) and gives it a new mechanism. The existing anchor (Gong 2025) is about a *score* gap; this one is about a *coverage* gap. **Adds a method not in the file:** quantify test-set representativeness against real-use logs (task-distribution overlap). The raw-vs-calibrated harm estimate is also a second worked example for KTP #8 (an LLM labeller can be systematically more cautious than clinicians).</div><div class="row"><b>Verdict reasoning:</b> The question matters, the data are real and very large, and the analysis is careful about its own weakest links (human agreement on harm, annotator bias, single site). The strongest claims rest on between-group comparisons, which are robust to the label noise the authors document. It does not evaluate model outputs, so it says nothing about how well the assistant performed. The conclusion stays within the data: benchmark scores say little about most real work. That is the sort of foundational finding the KB uses to justify sampling choices.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-214">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-214">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-214">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-215">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-215</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Jin KW, Rostam-Abadi Y, Chaudhary P, Garrett MA, Huang AS, Montelongo M, Nagpal C, Shei J, Weathers J, Zhang JS, Sharma MS, Chen Q, Kim J, Malgaroli M, Mathis WS, Rodriguez CI, Selek S, Pittenger C, Yip SW, Zaboski BA, Xu H. Diagnostic accuracy and clinician-rated reasoning quality dissociate in a blinded evaluation of large language models in psychiatry. *medRxiv.* 2026 [v1 2026 Feb 9; v3 2026 Oct 11]. doi:10.64898/2026.02.03.26345402.</div>
+  <div class="url"><a href="https://doi.org/10.64898/2026.02.03.26345402" target="_blank" rel="noopener">https://doi.org/10.64898/2026.02.03.26345402</a></div>
+  <div class="row"><b>Overview:</b> ⚠️ Window note: v1 posted 2026-02-09; v3 (2026-10-11, in window) adds the adjudicator validation, regeneration test and equivalence test. Never screened before. Four frontier LLMs (Claude Opus 4.5, Gemini 3 Pro, GPT-5.2, DeepSeek-V3.2) produced ranked five-diagnosis differentials for 196 psychiatric vignettes: 135 published case reports and 61 unpublished clinician-authored. Accuracy was scored by an automated LLM adjudicator (GPT-5-mini, three passes). On a random 30-vignette subset, five psychiatrists blinded to model judged correctness and rated reasoning on a 0–4 rubric adapted from the ACGME Psychiatry Milestones. The authors then validated the adjudicator against held-out clinician majorities and tested reproducibility across regeneration. They also tested whether computable trace features could replace clinician reasoning ratings.
+- **Task type:** Diagnostic classification (differential); reasoning assessment; judge validation
+- **LLM system:** 4 frontier models; GPT-5-mini as adjudicator
+- **Signal type:** Interpretive
+- **Clinical setting:** Psychiatry, vignettes
+- **Target use:** Pre-deployment evaluation / research
+- **Clinician involvement:** 5 board-certified psychiatrists (rating); 7 psychiatrists screened cases; 6 authored vignettes
+- **Volume:** 196 vignettes × 4 models; 30 vignettes × 4 models rated by clinicians (120 pairs)
+- **Human review:** Subset</div><div class="row"><b>Eval question:</b> Can an automated adjudicator be trusted to score diagnostic accuracy? Does clinician-rated reasoning separate models that accuracy cannot, or is it redundant?</div><div class="row"><b>Methodology:</b> - Automated adjudication with three passes, majority verdict, and validation against held-out clinician majorities
+- Blinded five-psychiatrist panel; correctness (yes/no) + reasoning (0–4 rubric)
+- Equivalence testing on accuracy (bound reported with Holm adjustment)
+- Regeneration test: two generation runs four days apart
+- Reference-string audit (combined diagnoses split)
+- Trace-feature substitution test (across model means vs across individual traces)</div><div class="row"><b>Measurement:</b> - Adjudicator vs clinician majority: 82.5% agreement on 120 pairs (95% CI 73.3–90.0), κ 0.52. Held-out individual clinicians agreed with the majority at 0.89–0.96, the adjudicator at 0.83–0.85.
+- Psychiatrist reliability: reasoning ICC(A,k) 0.773 (0.702–0.831); correctness mean pairwise κ 0.626
+- Equivalence: accuracy difference bounded within ±0.059 (±0.10 after Holm adjustment)
+- Reasoning difference: 0.70 points (95% CI 0.50–0.90)</div><div class="row"><b>Key findings:</b> - Automated top-5 accuracy ranged 0.759–0.837. The majority of three adjudication passes separated only one of six model pairs.
+- On clinician-rated vignettes, **accuracy separated no pair while reasoning separated five.** Two models were equally accurate (0.827) but differed by 0.70 reasoning points.
+- **The adjudicator agreed with clinicians less than clinicians agreed with each other** (0.83–0.85 vs 0.89–0.96).
+- **Regeneration changed top-1 correctness for 18 of 119 pairs (15.1%).**
+- Nine combined-diagnosis reference strings were scored as misses until split. Splitting raised top-5 accuracy by 2.2–2.6 points and changed one pairwise result. Scoring depended on how the reference was written.
+- Trace features tracked reasoning ratings across model averages (ρ −0.80, not significant with n=4) but **not across individual traces**, so they cannot stand in for clinician rating.</div><div class="row"><b>Soft spots:</b> - Correctness and reasoning were rated in the same session, so knowing correctness may have coloured the reasoning score. That limitation goes to the heart of the &quot;dissociation&quot; claim.
+- The reasoning findings rest on 30 vignettes, one written by a rater.
+- Published case reports over-represent unusual presentations, and memorisation cannot be excluded.
+- Vignettes do not test history-taking or real-world information gathering.
+- The equivalence result covers one model pair only.</div><div class="row"><b>Strengths:</b> - Validates the automated adjudicator against held-out clinicians *and benchmarks it against the human band*. This is exactly the comparison KTP #8 asks for, and it is rarely done.
+- Measures three separate sources of score instability (adjudication passes, regeneration, reference-string formatting) that are usually invisible.
+- Uses formal equivalence rather than &quot;no significant difference&quot;.
+- Honest, specific limitations.</div><div class="row"><b>Relevance:</b> - **Layer 1:** Diagnostic classification / decision support; any kit using an LLM adjudicator to score correctness; reasoning as a secondary endpoint.
+- **Layer 2:** No direct kit match (psychiatric diagnosis). The **reference-string audit** transfers to any extraction kit (VAP, Delirium, Lung Cancer Screening) where gold labels may encode several acceptable answers in one field.
+- **Guidance:** **Confirms and refines KTP #11.** It agrees that reasoning and accuracy decorrelate, and it adds the converse direction: reasoning separated models that accuracy could not, which supports #11(a) &quot;a second axis, not a proxy&quot;. It **confirms KTP #8**: the adjudicator was below the human band. The regeneration flip rate (15.1%) adds to the per-case reproducibility point (PQ-167). The reference-formatting effect is a small new method point: audit gold-label strings before scoring.</div><div class="row"><b>Verdict reasoning:</b> The paper is methodologically careful, and its instability measurements are valuable. However, the headline dissociation rests on 30 vignettes rated in sessions where correctness was visible, and the authors acknowledge this. The main session should also decide whether a v3 of a February preprint belongs in this cycle; it was never screened before. The adjudicator-vs-human-band result and the reproducibility figures are the durable parts. The dissociation claim reads best as a fifth anchor for KTP #11, not as independent proof.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-215">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-215">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-215">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-216">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-216</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Remfry E, Conway A, Adatia N, Khalil S. Navigating the regulatory boundary: a sandbox approach to validating scope expansion in LLM-based ambient AI scribes. *BMJ Innov.* 2026 Oct 8. doi:10.1136/bmjinnov-2026-001648.</div>
+  <div class="url"><a href="https://doi.org/10.1136/bmjinnov-2026-001648" target="_blank" rel="noopener">https://doi.org/10.1136/bmjinnov-2026-001648</a></div>
+  <div class="row"><b>Overview:</b> TORTUS ran a study inside the UK MHRA&#39;s AI Airlock regulatory sandbox. It examined how an LLM ambient scribe&#39;s intended purpose, its medical-device qualification and its real-world behaviour interact. Two safety mechanisms were tested in virtual and real-world settings with a linear mixed-effects model: the Shell (hallucination reduction) and a Context Guardrail (prompt-injection mitigation). The authors measured &quot;scope expansion&quot;, meaning output that falls outside the device&#39;s intended purpose. Simulation workshops tested whether classification judgements change when assessors see functionality rather than intended-purpose statements alone.
+- **Task type:** Summarization / ambient clinical documentation; regulatory validation; post-market monitoring
+- **LLM system:** TORTUS ambient scribe (UKCA Class IIa per vendor site), with the Shell and Context Guardrail
+- **Signal type:** Mixed
+- **Clinical setting:** UK NHS (real-world + virtual testing)
+- **Target use:** Live clinical
+- **Clinician involvement:** Not specified in the abstract
+- **Volume:** Not specified in the abstract (rates reported per text segment)
+- **Human review:** Always in deployment (clinician signs note)</div><div class="row"><b>Eval question:</b> For a generative device whose outputs can exceed its stated purpose, how should intended purpose be validated before market and confirmed after it? Can scope expansion be measured as a monitoring metric?</div><div class="row"><b>Methodology:</b> - Virtual and real-world testing of two safety mechanisms; linear mixed-effects analysis
+- Segment-level labelling of hallucination and scope expansion
+- Regulatory simulation workshops on qualification/classification judgement</div><div class="row"><b>Measurement:</b> - Real-world hallucinated content: 2.9% of text segments per note
+- Real-world scope expansion: 1.98% of segments
+- Effect of the Shell on scope expansion: significant in both virtual and real-world testing (effect size not visible)
+- Context Guardrail: significant in virtual testing, **no significant real-world effect**</div><div class="row"><b>Key findings:</b> - Hallucination and scope expansion are measurable at segment level in real use (2.9% and 1.98%).
+- **A guardrail that worked in virtual testing showed no real-world effect.** Pre-deployment simulation did not predict deployed behaviour for that mechanism.
+- Workshop participants&#39; qualification judgements depended more on product functionality and user interaction than on intended-purpose statements.
+- The authors argue that intended purpose for LLM devices needs premarket validation *plus* continuous post-market monitoring, with quantitative scope-expansion measures as a basis.</div><div class="row"><b>Soft spots:</b> - **Vendor authors evaluating their own product.** There is no independent assessor visible in the abstract.
+- Abstract only: the labelling procedure, who labelled, rater agreement, sample size and effect sizes cannot be appraised.
+- &quot;Scope expansion&quot; is a new construct, and its operational definition and reliability are unknown from the abstract.
+- The real-world arm&#39;s comparator and confounders (case mix, clinician behaviour) are not visible.</div><div class="row"><b>Strengths:</b> - Conducted inside a regulator&#39;s sandbox, which gives the framing external accountability even if the data are vendor-generated.
+- Directly contrasts virtual versus real-world effects of the same safety mechanism. This is rare, and it gives an empirical reason why pre-deployment testing is insufficient for generative devices.
+- Proposes a concrete, countable post-market metric (scope expansion per segment) that fits the FDA discussion paper&#39;s emphasis on post-market monitoring (PQ-210).</div><div class="row"><b>Relevance:</b> - **Layer 1:** Summarization / ambient documentation; regulatory and post-market monitoring for generative devices.
+- **Layer 2:** No direct kit match. It is the peer-reviewed sequel to **PB-06** (Tortus *Hardening the Shell*, promoted), and it pairs with **PQ-210** (FDA generative-AI device discussion paper) on post-market monitoring.
+- **Guidance:** &quot;Scope expansion&quot; as a monitored quantity is **not in `evaluation_methods_by_task.md`** (grep found no hits). The virtual-vs-real-world discrepancy supports KTP #5 (document evaluation context) and the monitoring section&#39;s general argument.</div><div class="row"><b>Verdict reasoning:</b> It is relevant and adds something real: a regulator-sandbox setting and a guardrail that worked in simulation but failed in deployment. But it is vendor-authored and only the abstract could be read, so the labelling and the effect sizes cannot be checked. The user promoted PB-06 from the same author, so this peer-reviewed follow-on deserves a look. Promotion should wait for a full-text read, or the user may choose to card it only as a companion to PB-06.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-216">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-216">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-216">? More info</button>
+  </div>
+</section>
+</div>
+
+<div class="cart">
+  <div class="cart-inner">
+    <div class="cart-summary" id="summary">No choices yet. Tap a button on a card above.</div>
+    <button class="send-btn" id="sendBtn" disabled>Send 0 / 6 decisions</button>
+    <button class="clear-link" id="clearBtn">Clear all my choices</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const ALL_IDS = ["PQ-211","PQ-212","PQ-213","PQ-214","PQ-215","PQ-216"];
+  const REPLY_TO = "tali.biron@gmail.com";
+  const REPLY_SUBJECT = "Re: Scout 2026-10-18 — 6 source(s) (PQ-211, PQ-212, PQ-213, PQ-214, PQ-215, PQ-216)";
+  const STORAGE_KEY = "scout-cart-2026-10-18";
+
+  // Load saved state from localStorage (so refresh doesn't lose progress)
+  let choices = {};
+  try { choices = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) {}
+
+  function saveAndRender() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(choices));
+
+    // Re-style each card based on choice
+    document.querySelectorAll('.card').forEach(card => {
+      const id = card.dataset.id;
+      card.classList.remove('chosen-promote', 'chosen-skip', 'chosen-more');
+      card.querySelectorAll('.choice').forEach(b => b.classList.remove('active'));
+      const c = choices[id];
+      if (c) {
+        card.classList.add('chosen-' + c);
+        card.querySelector('.choice.' + c).classList.add('active');
+      }
+    });
+
+    // Update sticky summary + send button
+    const made = ALL_IDS.filter(id => choices[id]);
+    const pending = ALL_IDS.filter(id => !choices[id]);
+    const counts = { promote:0, skip:0, more:0 };
+    made.forEach(id => counts[choices[id]]++);
+
+    let html = '';
+    if (counts.promote) html += '<span class="badge promote">' + counts.promote + ' promote</span>';
+    if (counts.skip)    html += '<span class="badge skip">' + counts.skip + ' skip</span>';
+    if (counts.more)    html += '<span class="badge more">' + counts.more + ' more</span>';
+    if (pending.length) html += '<span class="badge pending">' + pending.length + ' pending</span>';
+    if (!made.length && !pending.length) html = 'No choices yet.';
+    document.getElementById('summary').innerHTML = html || 'No choices yet.';
+
+    const btn = document.getElementById('sendBtn');
+    btn.disabled = made.length === 0;
+    btn.textContent = 'Send ' + made.length + ' / ' + ALL_IDS.length + ' decisions';
+  }
+
+  // Wire button clicks
+  document.querySelectorAll('.choice').forEach(b => {
+    b.addEventListener('click', () => {
+      const id = b.dataset.id;
+      const choice = b.dataset.choice;
+      // Toggle off if same choice clicked again
+      if (choices[id] === choice) delete choices[id];
+      else choices[id] = choice;
+      saveAndRender();
+    });
+  });
+
+  // Send button — uses mailto on mobile (opens native Gmail app), Gmail web on desktop.
+  document.getElementById('sendBtn').addEventListener('click', () => {
+    const lines = ALL_IDS.filter(id => choices[id]).map(id => choices[id] + ' ' + id);
+    if (!lines.length) return;
+    const body = '# Scout decisions for ' + "2026-10-18" + '\n# Sent from the cart page\n\n' + lines.join('\n') + '\n';
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const url = isMobile
+      ? 'mailto:' + encodeURIComponent(REPLY_TO) + '?subject=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body)
+      : 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(REPLY_TO) + '&su=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body);
+    // mailto must be same-window on iOS; _blank is fine for https
+    if (isMobile) window.location.href = url;
+    else window.open(url, '_blank');
+  });
+
+  // Clear button
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    if (!confirm('Clear all your choices on this page?')) return;
+    choices = {};
+    saveAndRender();
+  });
+
+  saveAndRender();
+})();
+</script>
+</body>
+</html>
