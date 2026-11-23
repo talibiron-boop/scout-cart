@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scout decisions — 2026-11-23</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; padding:0 0 180px 0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; background:#f8fafc; color:#0f172a; }
+  .container { max-width:760px; margin:0 auto; padding:24px 16px; }
+  h1 { font-size:22px; margin:0 0 8px 0; color:#1e40af; }
+  .sub { font-size:13px; color:#64748b; margin-bottom:20px; }
+  .help { background:#ecfeff; border:2px solid #0891b2; border-radius:8px; padding:14px 16px; margin-bottom:20px; font-size:13px; color:#164e63; line-height:1.5; }
+  .card { border:1px solid #e2e8f0; border-radius:10px; padding:16px; margin-bottom:14px; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.03); }
+  .card.is-rollover { border-color:#fbbf24; background:#fffbeb; }
+  .card.chosen-promote { border-color:#059669; box-shadow:0 0 0 2px #05966933; }
+  .card.chosen-skip { border-color:#dc2626; box-shadow:0 0 0 2px #dc262633; }
+  .card.chosen-more { border-color:#64748b; box-shadow:0 0 0 2px #64748b33; }
+  .rollover-badge { background:#fde68a; color:#78350f; font-size:11px; font-weight:700; padding:5px 10px; border-radius:10px; display:inline-block; margin-bottom:10px; }
+  .card-head { display:flex; justify-content:space-between; align-items:baseline; }
+  .pq-id { font-size:14px; font-weight:700; color:#1e40af; }
+  .verdict { font-size:12px; font-weight:700; }
+  .citation { margin-top:8px; font-size:14px; line-height:1.5; font-weight:500; }
+  .url { margin-top:4px; font-size:12px; }
+  .url a { color:#2563eb; }
+  .row { margin-top:8px; font-size:13px; color:#334155; line-height:1.5; }
+  .row b { color:#0f172a; }
+  .choice-row { display:flex; gap:8px; margin-top:14px; }
+  .choice { flex:1; padding:14px 8px; border-radius:8px; border:2px solid transparent; font-size:14px; font-weight:700; cursor:pointer; background:#f1f5f9; color:#475569; transition:all .15s; font-family:inherit; }
+  .choice:hover { transform:translateY(-1px); }
+  .choice.promote.active { background:#059669; color:#fff; border-color:#047857; }
+  .choice.skip.active { background:#dc2626; color:#fff; border-color:#b91c1c; }
+  .choice.more.active { background:#64748b; color:#fff; border-color:#475569; }
+  /* Sticky bottom bar */
+  .cart { position:fixed; bottom:0; left:0; right:0; background:#fff; border-top:2px solid #e2e8f0; box-shadow:0 -4px 12px rgba(0,0,0,.08); padding:12px 16px; z-index:100; }
+  .cart-inner { max-width:760px; margin:0 auto; }
+  .cart-summary { font-size:13px; color:#475569; margin-bottom:8px; line-height:1.4; }
+  .cart-summary b { color:#0f172a; }
+  .cart-summary .badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:700; margin-right:6px; }
+  .badge.promote { background:#d1fae5; color:#065f46; }
+  .badge.skip { background:#fee2e2; color:#991b1b; }
+  .badge.more { background:#e2e8f0; color:#334155; }
+  .badge.pending { background:#fef3c7; color:#92400e; }
+  .send-btn { display:block; width:100%; padding:16px; border:none; border-radius:8px; background:#0891b2; color:#fff; font-size:16px; font-weight:700; cursor:pointer; font-family:inherit; }
+  .send-btn:hover:not(:disabled) { background:#0e7490; }
+  .send-btn:disabled { background:#cbd5e1; cursor:not-allowed; }
+  .clear-link { display:inline-block; margin-top:6px; font-size:12px; color:#64748b; text-decoration:underline; cursor:pointer; background:none; border:none; padding:0; font-family:inherit; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Scout decisions — 2026-11-23</h1>
+  <div class="sub">9 source(s) to review. Choices auto-save in this browser.</div>
+
+  <div class="help">
+    Tap <b style="color:#059669;">Promote</b>, <b style="color:#dc2626;">Skip</b>, or <b style="color:#475569;">More info</b> on each card. The bar at the bottom keeps a running list of your choices. When you're done, hit the cyan <b>Send</b> button — Gmail opens with one email containing all your decisions. Hit Send in Gmail and you're done.
+  </div>
+
+  
+<section class="card" data-id="PQ-215-FU">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-215-FU</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Jin KW, Rostam-Abadi Y, Chaudhary P, Garrett MA, Huang AS, Montelongo M, et al. Diagnostic accuracy and clinician-rated reasoning quality dissociate in a blinded evaluation of large language models in psychiatry. medRxiv [preprint]. 2026 [v1 Feb 9; v3 Oct 11]. doi:10.64898/2026.02.03.26345402</div>
+  <div class="url"><a href="https://doi.org/10.64898/2026.02.03.26345402" target="_blank" rel="noopener">https://doi.org/10.64898/2026.02.03.26345402</a></div>
+  <div class="row"><b>Overview:</b> Follow-up. Read depth: full main text of v3 plus Supplementary Appendix S3-S7 (S1-S2 seen only through the table of contents). Four frontier LLMs produced 5-diagnosis differentials for 196 psychiatric vignettes. A GPT-5-mini adjudicator scored them in three passes, and 5 blinded psychiatrists rated 120 pairs. The full text adds four things: the adjudicator&#39;s exact disagreement pattern, a validation choice made after looking at the data (top-1 instead of the planned top-5), refusals scored as misses, and undated model snapshots. Task: diagnostic classification / judge validation. Signal: interpretive. Human review: subset.</div><div class="row"><b>Eval question:</b> Can an automated adjudicator stand in for clinicians when scoring correctness? And how much do repeat adjudication, regeneration of outputs and the wording of reference strings move the score?</div><div class="row"><b>Methodology:</b> Two-tier matching: string similarity of 90 or more, otherwise the LLM adjudicator; 3 passes, with the majority verdict used for comparisons. The adjudicator was benchmarked exactly like each clinician, against the majority of the remaining four raters. Failed calls were retried 4 times and then scored as non-matches (sensitivity analysis: scored as matches). An unplanned test-retest compared two generation runs 4 days apart.</div><div class="row"><b>Measurement:</b> Percent agreement, Cohen&#39;s kappa, prevalence-adjusted kappa, and McNemar for the direction of disagreement. Held-out-majority agreement serves as the human band: clinicians 0.89-0.96, adjudicator 0.83-0.85. Rater reliability: correctness pairwise kappa 0.626 (0.46-0.83); reasoning single-rater ICC 0.41-0.51, five-rater ICC 0.773.</div><div class="row"><b>Key findings:</b> Adjudicator vs clinician majority (our arithmetic). As a detector of correct answers: recall 0.84 (81/97), precision 0.94 (81/86). As a detector of WRONG answers: recall 0.78 (18/23), precision 0.53 (18/34), so about half of what it called wrong, clinicians accepted. The bias is one-directional (16 vs 5, p=0.027) and cut one model&#39;s accuracy by up to 16.7 points. Top-1 validation was chosen post hoc. The planned top-5 comparison gave 74.2% agreement with kappa 0.02, against kappa 0.52 for top-1: same judge, a different definition of &#39;correct&#39;. Repeat adjudication of identical outputs changed 12-22 of 196 top-1 verdicts per model (up to 5.6 points). Regeneration flipped top-1 on 18/119 pairs (15.1%) and changed which model ranked best. Refusals (paraphilic disorders) were scored as misses. 23.3% of traces drew a non-unanimous clinician verdict.</div><div class="row"><b>Soft spots:</b> The headline 82.5% / kappa 0.52 comes from a post-hoc comparison; the planned comparison gives kappa 0.02. Correctness and reasoning were rated in the same session. 30 vignettes, one written by a rater. Equivalence was shown for one pair, chosen post hoc. 3 of the 4 models were called through undated aliases, so regeneration cannot be separated from provider updates. Refusals scored as misses are a quiet bias.</div><div class="row"><b>Strengths:</b> The judge is benchmarked against held-out clinician majorities by the same procedure as each human, the cleanest operational band test in the KB. Three instability sources are measured separately. The authors report the planned kappa of 0.02 even though it undercuts their headline.</div><div class="row"><b>Relevance:</b> Layer 1: any kit using an LLM-J or a matcher to score correctness, and any gate that rests on one run. Layer 2 (our reasoning): the held-out-majority judge validation ports to the Hebrew kits but needs 3 or more clinicians. The reference-string audit ports to Population Flags, VAP and MTG (combined Hebrew labels, mixed Hebrew and Latin-script terms). A regeneration flip check suits the MTG and POPC gate samples. An English-validated adjudicator must be re-validated on Hebrew (KTP #12). The reasoning-rubric finding does not port to the classification and extraction kits. Related: 2 citing works (JMIR AI 2026 review; a Chinese diagnostic-agreement study), neither challenging. Converges with PQ-190, PQ-167, PQ-161 and PQ-149. Guidance target if promoted: evaluation_methods_by_task.md KTP #15 (second anchor: kappa 0.52 vs 0.02); KTP #8 new (l) (held-out-majority benchmarking, error-direction precision, refusals as a judge failure mode); Section 2 reproducibility rule 2 (regeneration flip, dated snapshots); Section 1 interpretive (audit reference strings).</div><div class="row"><b>Verdict reasoning:</b> The full text strengthens the parts worth importing and weakens the headline. The dissociation claim stays a supporting anchor for KTP #11. What is new is a number-level demonstration that one adjudicator on one set of outputs gives kappa 0.52 or 0.02 depending only on how &#39;correct&#39; is defined. It also shows an error-detection precision of about 0.53, and that repeat adjudication and regeneration each move scores as much as the gaps between models. These are design lessons, which a small, honest preprint can carry. Import the procedures and the instability figures; quarantine the 0.70-point reasoning gap and the equivalence margin.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-215-FU">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-215-FU">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-215-FU">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-224-FU">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-224-FU</span>
+    <span class="verdict" style="color:#dc2626;">Skip</span>
+  </header>
+  <div class="citation">Matheson J, Castillo B, Shin AY, Scheinker D. An ambiguity taxonomy for evaluating large language model performance on clinical registry abstraction: a multi-site prospective study. arXiv [preprint]. 2026 Jun 23 (v2 Aug 25). arXiv:2608.20373. doi:10.48550/arXiv.2608.20373</div>
+  <div class="url"><a href="https://arxiv.org/abs/2608.20373" target="_blank" rel="noopener">https://arxiv.org/abs/2608.20373</a></div>
+  <div class="row"><b>Overview:</b> Follow-up. Read depth: full arXiv v2 PDF (22 pages) including Supplementary Methods and Tables S1-S3; parts of the S3 layout were garbled. A vendor-run (Carta Healthcare) two-site study. Claude Sonnet 4.6 (complex questions) and Haiku 3.5 (simple questions) answered ACC-NCDR CathPCI questions from unprocessed EMR: 232 questions x 25 patients = 4,214 observations. Abstractors assigned each question to one of six ambiguity categories before outputs were seen. Task: extraction. Signal: explicit to interpretive. Human review: reference only.</div><div class="row"><b>Eval question:</b> Does LLM extraction accuracy fall as the label requires more interpretation, and should results be reported per ambiguity category rather than pooled?</div><div class="row"><b>Methodology:</b> Dual independent abstraction reconciled to a consensus answer (about 98% agreement before reconciliation, not measured per category). Six-category taxonomy assigned before outputs (second categoriser kappa 0.89 on a 10% sample). Document-context targeting per question group. Scoring: exact, partial, mismatch or abstain. Kruskal-Wallis and Mann-Whitney tests across categories, treating questions as independent.</div><div class="row"><b>Measurement:</b> Per-question accuracy over 157 questions with 20 or more observations, plus category means; no CIs and no clustering by patient. The &#39;precision&#39; and &#39;recall&#39; in Table S3 are undefined and are NOT clinical recall and precision. Recall is about 100% everywhere and precision equals accuracy, consistent with answer rate and correct-among-answered (our inference). No numeric abstention threshold: the prompt said &#39;answer when confident&#39;.</div><div class="row"><b>Key findings:</b> 87% exact, 2% partial, 9% mismatch, 1% abstain. Weighted accuracy 89.6% vs 84.0% as the mean over 232 questions, a 5.6-point gap. Category means: Medication/Event Flag 96.1%, Binary Clinical Presence 94.9%, Administrative 93.7%, Quantitative 90.1%, Clinical Interpretation 76.6%, Event Timing 62.0% (only 4 questions). The two hardest categories did not differ from each other (p=0.39). New confounds: the &#39;All Documents, unfiltered&#39; context was used for exactly the 3 timing questions (arrival, discharge, procedure start), so the lowest-accuracy category is essentially the only one given the whole record; and Sonnet/Haiku routing follows complexity, with the split not reported. Abstention reached 4.9% at most, far below the error rate (cath-lab indication: 12% accuracy, answered every time). History of MI, a &#39;simple&#39; question, scored 68%.</div><div class="row"><b>Soft spots:</b> The headline gradient is confounded by document scope and model routing. Event Timing rests on 4 questions x about 25 patients. No per-category human IRR, so it cannot say whether the model falls below the human band in the hard strata. Precision and recall are mislabelled, and the text&#39;s &#39;&lt;60% precision&#39; claim does not match Table S3. Questions are treated as independent although they are clustered within 25 patients. Vendor-run and vendor-abstracted.</div><div class="row"><b>Strengths:</b> Categories fixed before outputs, with kappa reported. Real unprocessed EMR across two sites, two registries and two EMR systems. Reports the weighted-vs-unweighted gap. Candid limitations section.</div><div class="row"><b>Relevance:</b> Layer 1: extraction and classification; per-component reporting. Layer 2 (our reasoning): the procedure ports but the numbers do not. Assign each POPC criterion, Population Flag and CTA-PR field to explicit / interpretive / timing before any run. Report recall and precision per stratum, with human AC1 per stratum, and hold document scope and model constant across strata. Hebrew timing fields are a plausible hard stratum for POPC (a hypothesis). Related: 0 citing works. The authors cite supporting gradients (van der Loo 2026 EHJ-DH; Lee 2025 JMIR Form Res). Already in the KB: KTP #8(d) / PQ-169-FU (measured gradient plus rater-variance decomposition), Section 1 step 4 / PQ-149 (never abstains on hard items), KTP #4 / PQ-181. Guidance target if promoted anyway: evaluation_methods_by_task.md KTP #4, one line on unweighted vs weighted means (84.0 vs 89.6) and stratifying by label type with scope and model held constant; optional Section 1 step 4 cross-reference after PQ-149.</div><div class="row"><b>Verdict reasoning:</b> The first card suggested promoting the design and treating the numbers as indicative. The full text changes that. The design idea is already in the KB (KTP #2, #4, #8(d)), and this paper&#39;s data cannot strengthen it. Its gradient is confounded by two of its own choices: the hardest category alone got the unscoped record, and model routing follows complexity. It also lacks per-category human agreement. The failed-abstention finding duplicates PQ-149. The one new item, the weighted-vs-question-mean gap, is too small to carry a card. An editorial board would ask for per-category IRR and an unconfounded design.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-224-FU">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-224-FU">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-224-FU">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-225-FU">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-225-FU</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Qazi IA, Ali A, Khawaja AU, Akhtar MJ, Sheikh AZ, Alizai MH. Mitigating automation bias in physician-LLM diagnostic reasoning using behavioral nudges: a randomized controlled trial. medRxiv [preprint]. 2026 Jun 2 (v2 Jun 5). doi:10.64898/2026.06.01.26354596</div>
+  <div class="url"><a href="https://doi.org/10.64898/2026.06.01.26354596" target="_blank" rel="noopener">https://doi.org/10.64898/2026.06.01.26354596</a></div>
+  <div class="row"><b>Overview:</b> Follow-up. Read depth: full main text of v2, plus the supplement (.docx) Tables S1-S5, S10-S14, figure captions and protocol/SAP extracts; main Tables 1-3 are images, but their numbers are restated in the text. NEJM AI companion: abstract only (the site returned 403). 72 AI-literacy-trained physicians in Pakistan were randomised 1:1 and worked 6 vignettes with optional ChatGPT-5.1 advice, 3 of the 6 containing planted errors. The treatment arm saw an anchor (benchmark accuracy 81.2%) and a traffic light built from the mean confidence of Claude Sonnet 4.5, Gemini 2.5 Pro and GPT-4o: red below 81.2, orange from 81.2 to below 100, green at 100. Task: decision support. Signal: interpretive. Human review: always.</div><div class="row"><b>Eval question:</b> Can a point-of-care LLM-J signal reduce automation bias while keeping the benefit of correct advice, and how good must that signal be?</div><div class="row"><b>Methodology:</b> Randomised, single-blind, with a pre-registered SAP (NCT07328815; submitted 2025-12-26, posted 2026-01-09; recruitment ran 2026-01-01 to 05-22). Mixed-effects ITT model with random intercepts for participant and case. The rubric score was graded by the 3 physicians who also wrote the vignettes, planted the errors and built the rubric, blinded to arm. Power assumed SD 16.2%. The split by error condition was post hoc. The subgroups were pre-specified but descriptive.</div><div class="row"><b>Measurement:</b> Mean difference in pp with 95% CI. Robustness checks with bootstrap and clustered OLS (7.64-7.96 pp). Grader Krippendorff alpha 0.889 (primary) and 0.911 (top-choice). Judge-signal thresholds: red if ensemble mean below 81.2%.</div><div class="row"><b>Key findings:</b> Primary +7.6 pp (1.4-13.9); top-choice +10.9 pp (1.7-20.0). Error cases +10.3 pp (0.5-20.0); error-free cases +5.0 (-1.5 to 11.6), both post hoc. Judge-signal quality (our arithmetic, Tables S11-S13): ensemble mean 93.3-98.3 on all correct recommendations and 35.0-60.7 on all error versions, so as an error flag it had recall 6/6 and precision 6/6. The flag was perfect, and no case showed green. GPT-4o alone gave error versions 90 and 80, and would have missed 1 of 6. No benefit in physicians with more than 8 years of practice (-1.9) or in men (-3.2). Observed SD was 24.7-28.7%, against 16.2% assumed. Difference from the NEJM AI trial (10.1056/AIoa2501001; n=44, ChatGPT-4o, 2025): that trial randomised exposure to errors and measured the harm (-14.0 pp reasoning, -18.3 pp top-choice). This one gave errors to both arms and randomised the mitigation.</div><div class="row"><b>Soft spots:</b> The trial ran with an oracle-quality flag on planted errors, so its effect is a best case, and the paper does not say so. The graders also authored the errors (blinded to arm but not to which recommendations were wrong). The error split behind the &#39;no cost on correct advice&#39; claim is post hoc and n.s. No effect in experienced or male physicians. The two cues are bundled. 50% error rate; single session. SD underestimated in the power plan.</div><div class="row"><b>Strengths:</b> Randomised with blinded scoring, a pre-registered SAP and three concordant analysis specifications. Per-model judge scores are published, which is what exposes the oracle issue. It forms a matched harm-then-mitigation pair with the group&#39;s NEJM AI trial.</div><div class="row"><b>Relevance:</b> Layer 1: decision support and alerting; human oversight; an LLM-J used as a live signal. Layer 2 (our reasoning): for MTG alerts and Missed Consultation, the planted-error design is a worked example of the PQ-208 rule. New: any LLM-J badge shown next to an alert needs its recall and precision on natural errors, in Hebrew (KTP #12), validated as a prerequisite gate, because clinician benefit is bounded by it. The GPT-4o single-judge miss is an anecdotal (n=6) argument for a cross-family panel as a live signal. Related: Zeng et al. 2026 npj Digit Med meta-analysis (OR 10.19 for correct vs incorrect advice; &#39;evaluate oversight as error-interception capability&#39;) cites it. Qazi and Ali NEJM AI letter 10.1056/AIltr2601100 not readable. KB: PQ-208, PQ-209, PQ-172-FU. Guidance target if promoted: safety_vs_effectiveness.md section &#39;A Reviewing Clinician Is Not a Mitigation Until Their Detection Rate Is Measured (PQ-208)&#39;, new rule 4 (a displayed judge signal raises detection only as far as its own recall and precision allow; validate on natural errors in the deployment language). Cross-reference in evaluation_methods_by_task.md KTP #8(j). Optional second anchor at Section 4 Generation rule 2 (resistance to incorrect advice).</div><div class="row"><b>Verdict reasoning:</b> The supplement exposes what the abstract hides: the nudge worked when the LLM-J flag was perfect. That turns a modest effect-size claim into a strong design rule. A judge signal shown to clinicians is part of the intervention, and its recall and precision on the real error mix bound the benefit. It is a well-run vignette RCT and, with the NEJM AI trial, a rare harm-then-mitigation pair on one instrument. Import the design and the rule; quarantine +7.6 / +10.3 pp and the post-hoc &#39;no cost&#39; claim.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-225-FU">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-225-FU">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-225-FU">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-226">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-226</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Carvalho e Silva M, Carvalho e Silva F, de Paula Gomes Nunes de Castro R, Gonçalves A, Figueiredo Delgado A. Large language models are unstable as autonomous medical evaluators across clinical tasks. J Am Med Inform Assoc. 2026 Nov 6. doi:10.1093/jamia/ocag190</div>
+  <div class="url"><a href="https://doi.org/10.1093/jamia/ocag190" target="_blank" rel="noopener">https://doi.org/10.1093/jamia/ocag190</a></div>
+  <div class="row"><b>Overview:</b> Read depth: abstract only (full text not read). A methods study of LLM judges. Ten LLMs (3 locally served open-source, 7 API models from the Claude, GPT and DeepSeek families) acted as autonomous judges on three tasks that already have human reference labels: answer quality (LiveQA-Med, 300 cases), research appraisal (PubMedQA, 300) and emergency triage level (ESI on MIMIC-IV-Ext, 256). The question is whether a judge that does well on one task still does well on a structurally different one.
+Task: LLM-J validation · LLM: 10 judges · Signal: interpretive · Setting: public datasets (one from real ED records) · Target use: evaluation/monitoring · Volume: 856 cases, each scored 3 times per model at temperature 0 = 25,680 judgments · Human review: reference labels only.</div><div class="row"><b>Eval question:</b> If an LLM judge has been validated against clinicians on one task, can that validation be carried over to a different task?</div><div class="row"><b>Methodology:</b> Evidence weight: peer-reviewed (JAMIA), 10 judges x 3 tasks, public datasets, no live deployment.
+
+- Same 10 judges run on three tasks with human reference labels.
+- Each case scored 3 times at temperature 0.
+- Judges ranked per task; rank shifts between tasks are the outcome.
+- Cluster-bootstrap confidence intervals; false-discovery-rate correction.</div><div class="row"><b>Measurement:</b> Quadratic-weighted Cohen kappa against the human reference, compared with the human inter-rater range for triage. Rank position per task. Under-triage rate at the highest acuity level (ESI 1).</div><div class="row"><b>Key findings:</b> No judge ranked in the top 3 on all three tasks. Every judge moved by 3 or more rank positions between at least one pair of tasks. On triage, ESI level 1 (resuscitation) cases were under-triaged in 89.1% of evaluations, by all 10 models (range 70.2%-96.9%). The best triage agreement only reached the human inter-rater range (Claude Opus weighted kappa 0.60, CI 0.54-0.66). Small local models (7-27B) were cost-efficient on the two text tasks but sat at the low-agreement end on triage.</div><div class="row"><b>Soft spots:</b> Public datasets, two of them question-answering sets rather than clinical records. &quot;Structurally different&quot; is the authors&#39; label; the three tasks also differ in dataset, label scale and difficulty, so task structure is not isolated as the cause. Temperature 0 with 3 repeats says little about run-to-run spread at production settings. English only. Model versions and prompts not visible in the abstract.</div><div class="row"><b>Strengths:</b> Tests transfer directly, which most judge papers assume. Ten judges across families, so the result is not one model&#39;s quirk. Uses the human inter-rater range as the yardstick. The severity finding (the most urgent cases graded too low by every model) is consistent across all judges.</div><div class="row"><b>Relevance:</b> Layer 1: any kit that uses an LLM-J. Layer 2 (our reasoning): supports certify-per-task in the LLM-judge monitoring framework: a judge certified on one kit (say, Discharge Letter) would need its own check on another (say, Missed Consultation). The under-grading of the most severe cases repeats PQ-211 (severe incident reports under-graded) in a second setting. Guidance target if promoted: evaluation_methods_by_task.md KTP #8, new sub-rule (judge validation does not transfer across tasks; re-validate per task and per severity stratum); second anchor for KTP #8(k).</div><div class="row"><b>Verdict reasoning:</b> A simple design answering a question the KB currently handles by assumption. The headline (no judge is stable across tasks) is well supported by the ranking data. The causal reading (task structure drives it) is weaker, because the tasks differ in several ways at once. Worth importing as a rule about what a judge validation covers, not as numbers.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-226">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-226">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-226">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-227">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-227</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">MacKay EJ, Kaplan MS, Yuan M, Chen AL, Ge Y, Canales L, Yu E, Shad R, Zhang B, Pouch AM. Building an auditable reference standard for clinical information extraction from transesophageal echocardiography reports. medRxiv [preprint]. 2026 Nov 20. doi:10.64898/2026.11.19.26368500</div>
+  <div class="url"><a href="https://doi.org/10.64898/2026.11.19.26368500" target="_blank" rel="noopener">https://doi.org/10.64898/2026.11.19.26368500</a></div>
+  <div class="row"><b>Overview:</b> Read depth: abstract only (full text not read). A reference-standard study, written for teams about to evaluate NLP or LLM extraction. No LLM is evaluated. Four trained abstractors labelled 300 intraoperative echo reports from two US hospitals (150 each, drawn from 925 by random sampling plus deliberate enrichment for hard documentation) using a shared 39-variable codebook. Every disagreement went to structured expert adjudication, and each one was given a reason.
+Task: extraction (reference standard) · LLM: none · Signal: explicit to interpretive · Setting: intraoperative echo reports, 2 sites · Target use: research / evaluation · Clinicians: 4 abstractors + expert adjudicators · Volume: 300 reports, 11,583 paired comparison cells.</div><div class="row"><b>Eval question:</b> When two human labellers disagree, is it a labelling mistake or a problem in the label definition? And can the pattern of disagreement tell you which definitions to fix before evaluating a model?</div><div class="row"><b>Methodology:</b> Evidence weight: preprint, not peer-reviewed. Two sites, 300 reports, 4 abstractors. Methods paper, no model.
+
+- Independent paired labelling on 297 reports.
+- Every disagreement adjudicated by an expert and classified by reason (codebook/schema ambiguity, interpretation difference, abstraction error, and others).
+- Agreement reported per variable, per reviewer pair, and re-weighted back to the source population to check whether enrichment distorted it.</div><div class="row"><b>Measurement:</b> Exact agreement and unweighted Cohen kappa per categorical variable; exact agreement and mean absolute difference for the numeric variable (ejection fraction). Spearman correlation between a variable&#39;s kappa and its adjudication burden. Sampling-weighted kappa as a check on enrichment.</div><div class="row"><b>Key findings:</b> 88.9% of comparison cells (10,293 of 11,583) were settled by agreement; 11.1% (1,290) needed adjudication. Of those, 40.8% were caused by codebook or schema ambiguity and 25.2% by interpretation differences: two thirds of disagreement came from the definitions, not from careless labelling. Kappa per variable ranged from 0.364 to 0.960 and fell as adjudication burden rose (rho = -0.884, CI -0.955 to -0.734). Disagreement clustered in a few variables (aortic dissection, valve type, post-intervention findings). Re-weighting for the enriched sample moved kappa by no more than 0.05 for 32 of 35 variables.</div><div class="row"><b>Soft spots:</b> Preprint. Uses Cohen kappa, which behaves badly for rare findings (several echo variables are rare); AC1 or positive agreement is not reported in the abstract. The reason categories were assigned by the adjudicators themselves, with no agreement check on the reasons visible. The codebook is &quot;V1&quot;: the paper identifies fixes but the abstract does not show a re-labelled V2 proving agreement improved. English, cardiac echo only.</div><div class="row"><b>Strengths:</b> Treats disagreement as data about the label definition, with counts. Per-variable reporting instead of one pooled figure. Checks whether enriching the sample for hard cases distorted the agreement estimate, and shows it mostly did not. Two institutions.</div><div class="row"><b>Relevance:</b> Layer 1: extraction and classification; reference-standard design. Layer 2 (our reasoning): this is the situation in POPC (clinician AC1 0.48, traced to threshold disagreement) and Population Flags (definitions changed after Stage 0). It offers a worked procedure: log a reason for every adjudicated disagreement, count reasons per criterion, and fix the definition where &quot;ambiguity&quot; dominates before measuring the model. The enrichment check is useful for the Delirium re-evaluation and VAP, where the labelled sample is deliberately enriched. For rare criteria use AC1 and positive agreement, not kappa (2026-11-06 decision). Guidance target if promoted: evaluation_methods_by_task.md Section 1 (reference standard: classify disagreement reasons per variable); Statistician_Guide.md note on checking agreement under enriched sampling.</div><div class="row"><b>Verdict reasoning:</b> Not an LLM study, but it is about the thing every extraction kit here depends on, and it puts numbers on a point the KB states only as a principle (a low agreement score can be a definition problem). The design is sound for the question. Held back from a stronger verdict by preprint status and by kappa on rare variables.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-227">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-227">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-227">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-228">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-228</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Rekhert M. Agreement between large language models and human coders on psychological and clinical text: a systematic review and multilevel meta-analysis. Zenodo [preprint]. 2026 Oct 24. doi:10.5281/zenodo.23613737</div>
+  <div class="url"><a href="https://doi.org/10.5281/zenodo.23613737" target="_blank" rel="noopener">https://doi.org/10.5281/zenodo.23613737</a></div>
+  <div class="row"><b>Overview:</b> Read depth: abstract only (full text not read). A preregistered systematic review and meta-analysis by a single author, posted on Zenodo and not peer-reviewed. It pools studies where a generative LLM and human coders labelled the same text units with the same scheme, across four task families (codebook coding, assessment scoring, clinical rating, helper evaluation), and compares LLM-human agreement with human-human agreement on identical texts.
+Task: classification / rating of text · LLM: many · Signal: mostly interpretive · Setting: psychological and clinical text · Volume: 377 studies (416 reports); 107 studies with chance-corrected agreement; 23 studies with a matched human-human comparison.</div><div class="row"><b>Eval question:</b> On average, how close does LLM-human agreement come to human-human agreement on the same items, and is it improving with newer models?</div><div class="row"><b>Methodology:</b> Evidence weight: single-author preprint on a repository; preregistered (OSF); the author rates certainty as low to very low (GRADE).
+
+- Nine sources searched to 2026-10-21 plus citation searching.
+- Multilevel models with cluster-robust variance, because one study contributes many estimates.
+- Matched comparison in the 23 studies reporting both LLM-human and human-human agreement on the same units.
+- Moderators: task, model release date, manifest vs latent construct, human reliability.</div><div class="row"><b>Measurement:</b> Pooled kappa-family agreement with 95% CI and 95% prediction interval. Difference in kappa (LLM-human minus human-human) with an equivalence margin of +/-0.10. Meta-regression slopes.</div><div class="row"><b>Key findings:</b> Pooled chance-corrected agreement 0.62 (CI 0.58-0.65), but the prediction interval is 0.15 to 1.00: a new study could land almost anywhere. In the 23 matched studies LLMs agreed with humans less than humans agreed with each other (difference -0.11, CI -0.18 to -0.03); equivalence within 0.10 could not be shown even for 2025 models. No improvement with model release date (+0.02 per year, p = 0.28). LLM-human agreement tracked human reliability (slope 0.63): where humans agree less, the model agrees less too. Agreement was higher for manifest than latent constructs (+0.09). Raw percentage agreement ran 0.24 above kappa in the same configurations.</div><div class="row"><b>Soft spots:</b> One author, no peer review, no second screener visible, which is a real weakness for a 377-study review. Text is mostly psychological; clinical records are a minority and Hebrew is unlikely to be represented. Kappa-family statistics pooled together (Cohen, weighted, Fleiss) mix different scales. Only 23 studies carry the key matched comparison. Low to very low certainty by the author&#39;s own grading.</div><div class="row"><b>Strengths:</b> Asks the right comparison (against humans on the same items), and reports how rarely studies provide it (23 of 377). Preregistered. Reports a prediction interval, which shows that the pooled average is not a usable benchmark for any single project. Reports a result against the popular expectation (no gain with newer models).</div><div class="row"><b>Relevance:</b> Layer 1: any kit comparing a model or an LLM evaluator with clinicians. Layer 2 (our reasoning): two points bear on the human-band test. First, the model&#39;s agreement tracks the humans&#39; own agreement, so a low human AC1 (POPC 0.48) predicts a low model score for reasons that are not the model&#39;s fault. Second, the wide prediction interval is an argument for measuring the human band inside each kit and against borrowing a literature figure (compare PQ-158-FU, which borrowed one). The 0.24 gap between percentage agreement and kappa is a ready teaching figure. Guidance target if promoted: evaluation_methods_by_task.md Section 1 human-band step, one supporting line; no rule change.</div><div class="row"><b>Verdict reasoning:</b> The findings line up with positions the KB already holds, which is a reason for caution, not comfort: a single-author repository preprint should not be the anchor for anything. The two ideas worth keeping (model agreement tracks human agreement; pooled averages do not transfer) are design points that do not depend on the exact numbers. Suggest &quot;more&quot; if you want the methods checked in full text before deciding.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-228">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-228">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-228">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-229">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-229</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Gupta N, Edakunni NU, Okaly V, Datta S, Penubadi N, Swanson KE, Sharma S. Objectify, don&#39;t delete: complaint-derived evaluation of ambient clinical notes. arXiv [preprint]. 2026 Nov 14. arXiv:2611.19525. (Accepted, GenAI4Health workshop, NeurIPS 2026, non-archival.)</div>
+  <div class="url"><a href="https://arxiv.org/abs/2611.19525" target="_blank" rel="noopener">https://arxiv.org/abs/2611.19525</a></div>
+  <div class="row"><b>Overview:</b> Read depth: abstract only (full text not read). A methods paper on how to write criteria for an LLM judge of AI-scribe notes. Criteria are mined from what clinicians actually complain about. The usual next step is to drop criteria a judge cannot apply reliably. The authors show that the dropped ones are the most frequent complaints, because a common complaint is really several questions joined together. Their fix (&quot;objectification&quot;) rewrites each one into a set of narrow yes/no decisions. Tested on planted defects in a public note benchmark (ACI-bench) and on 1,446 production notes.
+Task: generation / summarization (LLM-J rubric design) · Signal: mixed · Setting: ambient clinical notes · Target use: monitoring · Volume: 11 planted defect types; 40 clinician-reviewed reference notes; 1,446 production notes.</div><div class="row"><b>Eval question:</b> When a judge criterion is too broad to be applied reliably, is it better to delete it or to split it into narrow decisions? And how much does one question per call matter?</div><div class="row"><b>Methodology:</b> Evidence weight: arXiv preprint, workshop paper (non-archival). Planted-defect experiment plus a production sample. Code and data released.
+
+- Mine criteria from clinician complaints; rewrite composite criteria into scoped decisions.
+- Plant 11 defect types into reference notes; measure whether judges find them.
+- Compare one broad question against one section-pair question per call, with prompt effort matched.
+- Clinician review of the benchmark&#39;s own reference notes.
+- On production notes, relate defect burden to clinician ratings.</div><div class="row"><b>Measurement:</b> Recall of planted defects (median across defect types). False-flag rate on unperturbed notes. Youden&#39;s J for the broad vs narrow comparison. Spearman correlation between defect burden and clinician rating. Change in reference-overlap metrics as a contrast.</div><div class="row"><b>Key findings:</b> Objectified judges found planted defects with median recall 0.95, while reference-overlap metrics moved by at most 0.037. Asked the complaint as one broad question, the same judges still found every planted defect but also flagged 70% of the clean reference notes. One narrow question per call raised Youden&#39;s J from 0.30 to 0.72 (a gain of 0.19-0.26 when prompt effort was matched). In the benchmark&#39;s own gold notes, clinicians found hallucinations in 32 of 40 and omitted discussed facts in 40 of 40. On production notes the link between defect burden and clinician rating was weak (rho = -0.15).</div><div class="row"><b>Soft spots:</b> Planted defects are easier to find than natural ones (see PQ-225-FU for the same issue). Precision on natural production defects is not reported in the abstract; the only production result is a weak correlation. Workshop paper, not archival peer review. English, one note type. Author affiliation not checked.</div><div class="row"><b>Strengths:</b> Isolates one design choice (broad vs narrow question) with effort matched, and reports the cost of the broad version as a false-flag rate. Starts from real clinician complaints. Audits the benchmark&#39;s reference notes and reports that they are flawed. Releases code and data.</div><div class="row"><b>Relevance:</b> Layer 1: generation and summarization; LLM-J rubric design. Layer 2 (our reasoning): supports the item-level binary rubric used in the Nuclear Medicine and Discharge Letter kits, and adds a specific reason: a broad judge question keeps recall but loses precision (70% of clean notes flagged). It also adds a caution for any kit that scores against reference documents: check the references first. Guidance target if promoted: evaluation_methods_by_task.md KTP #8, one line (one scoped decision per judge call; split composite criteria, do not drop them); Section 3 note on auditing reference notes.</div><div class="row"><b>Verdict reasoning:</b> A useful, concrete design lesson with a clean comparison behind it. The evidence is strongest where it matters least (planted defects) and thinnest where it matters most (production notes, rho -0.15). A workshop paper should not carry a rule alone. Worth a full-text read to see the production precision and who the authors are.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-229">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-229">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-229">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-230">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-230</span>
+    <span class="verdict" style="color:#059669;">Promote</span>
+  </header>
+  <div class="citation">Artemenko E, Koltsova O, Nikolenko S, Surkov A, Probst A. Agreement among large language models does not track medical truth in health claim verification. Sci Rep. 2026 Nov 14. doi:10.1038/s41598-026-79438-6</div>
+  <div class="url"><a href="https://doi.org/10.1038/s41598-026-79438-6" target="_blank" rel="noopener">https://doi.org/10.1038/s41598-026-79438-6</a></div>
+  <div class="row"><b>Overview:</b> Read depth: abstract only (full text not read). Tests the assumption behind judge ensembles: that when several models agree, the answer is more likely right. Ten LLMs (frontier, Russian-specific and medical-specialised) classified 108 short health claims as true, false or disputed, in Russian and in a validated English translation, across temperatures and 3 runs (about 90,000 judgments). The claims were validated by multi-stage physician review.
+Task: classification (claim verification) · LLM: 10 models · Signal: interpretive · Setting: online health claims, not clinical records · Volume: 108 claims (40 true, 40 false, 28 disputed) · Human review: physician-validated reference.</div><div class="row"><b>Eval question:</b> Is agreement among several LLMs evidence that their shared answer is correct?</div><div class="row"><b>Methodology:</b> Evidence weight: peer-reviewed (Scientific Reports). Small item set (108), large number of judgments, two languages.
+
+- 10 models x 2 languages x several temperatures x 3 runs.
+- Per-model performance against the physician reference.
+- Majority vote and unanimity among the three strongest models, checked against the reference.
+- Robustness to prompt wording and language.</div><div class="row"><b>Measurement:</b> Macro-F1 per model (the paper&#39;s metric). Share of unanimous verdicts that were wrong. Rate at which each label was assigned vs its true base rate.</div><div class="row"><b>Key findings:</b> The three frontier models were unanimous on 90 of 108 claims, and 31% of those unanimous verdicts were wrong. Majority voting did not help. Models over-used &quot;disputed&quot;: 59.8% of judgments against a 26% true base rate, and false claims were systematically missed. Of 28 unanimous &quot;disputed&quot; verdicts, 26 were on claims that were actually true (14) or false (12). The pattern held across prompt wording and across Russian and English.</div><div class="row"><b>Soft spots:</b> Only 108 claims. Health claims from the web, not clinical notes, so it does not port directly to chart tasks. A three-way label with a &quot;disputed&quot; class has a soft reference standard by construction. The reported metric is macro-F1; recall and precision per class are not in the abstract. Hedging to &quot;disputed&quot; may be partly a safety-tuning effect specific to consumer health questions.</div><div class="row"><b>Strengths:</b> Directly tests an assumption that is usually taken for granted. Ten models across families, two languages, repeated runs. Shows the failure is shared (models agree on the wrong answer), which is the mechanism that defeats voting.</div><div class="row"><b>Relevance:</b> Layer 1: any kit using more than one LLM as judge or labeller. Layer 2 (our reasoning): another anchor for the revised KTP #8(f) (your &quot;revise 8f&quot; decision of 2026-11-06): members of an ensemble can agree with each other more than with clinicians. A non-English language pair is represented. It also bears on LLM-first sampling (Delirium re-evaluation): agreement between models is not a substitute for the clinician label. Guidance target if promoted: evaluation_methods_by_task.md KTP #8(f), add as a sixth source (after PQ-160, PQ-200, PQ-205, PQ-211, PQ-218); no wording change.</div><div class="row"><b>Verdict reasoning:</b> Narrow but clean. It adds an independent, peer-reviewed, non-English data point to a rule you have already decided, and changes nothing else. The distance from clinical records is the main limit, so promote as a supporting anchor only.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-230">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-230">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-230">? More info</button>
+  </div>
+</section>
+
+<section class="card" data-id="PQ-231">
+  
+  <header class="card-head">
+    <span class="pq-id">PQ-231</span>
+    <span class="verdict" style="color:#ca8a04;">Interesting, verify</span>
+  </header>
+  <div class="citation">Aguirre-Chavez J, Malkasian S, Sankaran R, Crabb B, Hsiao A. Distinguishing extraction failures and clinical discordance with LLM uncertainty on radiology reports. arXiv [preprint]. 2026 Nov 7 (v2). arXiv:2611.10502. (Spotlight, ML4H 2026; Proc Mach Learn Res 346.)</div>
+  <div class="url"><a href="https://arxiv.org/abs/2611.10502" target="_blank" rel="noopener">https://arxiv.org/abs/2611.10502</a></div>
+  <div class="row"><b>Overview:</b> Read depth: abstract only (full text not read). An LLM extracted vessel-level stenosis severity from coronary CT angiography reports (5,225 vessels, 1,045 patients). The authors asked whether the model&#39;s own uncertainty can tell apart two different things: (a) the LLM extracted the report wrongly, and (b) the report was extracted correctly but the CT finding disagreed with later invasive angiography. Two uncertainty signals were compared: token-level (from output probabilities) and self-reported confidence.
+Task: extraction · Signal: explicit · Setting: CT angiography reports, single centre · Target use: research data structuring · Volume: extraction-failure analysis on 1,077 vessels / 253 patients with expert annotation; discordance analysis on 1,641 vessels / 729 patients.</div><div class="row"><b>Eval question:</b> Can an uncertainty score pick out the extractions that need human review? And does it flag only extraction mistakes, or also cases where the source document itself is clinically wrong?</div><div class="row"><b>Methodology:</b> Evidence weight: conference paper (ML4H spotlight, PMLR), single centre, text of imaging reports (not images).
+
+- Extraction failure = LLM value differs from expert annotation.
+- Clinical discordance = CT report and invasive angiography disagree on obstructive disease.
+- Logistic models adjusted for stenosis severity, calcium burden and vessel; incremental discrimination over those baseline factors.</div><div class="row"><b>Measurement:</b> Adjusted odds ratio and change in AUC for each uncertainty signal. Nested check of whether clinically discordant vessels had been extracted correctly.</div><div class="row"><b>Key findings:</b> The token-level margin was the strongest signal for extraction failure (adjusted OR 4.15, CI 2.57-6.69) and improved discrimination modestly (AUC +0.06, CI +0.03 to +0.09). It did not help identify clinical discordance (AUC +0.01, n.s.). In a nested set of 138 vessels, 38 of 42 clinically discordant vessels (90%) had been extracted correctly. Reading: uncertainty flags the model&#39;s extraction errors, and is silent when the source report is itself wrong.</div><div class="row"><b>Soft spots:</b> A gain of 0.06 in AUC is small; the abstract gives no recall or precision at a review threshold, so the practical saving in human review is unknown. The abstract reports the discordance odds ratio as 1.22 (CI 1.04-1.43) with P = 0.118, which do not agree with each other. Token-level probabilities need API access that not every deployment has. Single centre, English. Model not named in the abstract.</div><div class="row"><b>Strengths:</b> Separates two failure sources that are usually lumped together (extraction error vs a wrong source document). Uses an external reference (invasive angiography) for the second. Compares token-level with self-reported confidence. Large vessel count.</div><div class="row"><b>Relevance:</b> Layer 1: extraction. Layer 2 (our reasoning): closest match is the CTA-PR kit (extraction from Hebrew CTA reports). Two takeaways: an uncertainty score could prioritise which extractions a clinician re-checks, but needs its own recall and precision measured first; and no extraction evaluation can detect an error that is already in the report, which is a scope statement worth writing into the kit. Related: PQ-149 (models rarely abstain on hard items). Guidance target if promoted: evaluation_methods_by_task.md Section 2 Extraction, one line on uncertainty-targeted review and its limit.</div><div class="row"><b>Verdict reasoning:</b> A well-posed question and a sensible design, with a modest effect and an abstract that contains an internal inconsistency. The conceptual split is worth having; the numbers are not strong enough to change how a kit is run. Full text would settle the inconsistency and show the threshold-level figures.</div>
+  <div class="choice-row">
+    <button class="choice promote" data-choice="promote" data-id="PQ-231">✓ Promote</button>
+    <button class="choice skip" data-choice="skip" data-id="PQ-231">✗ Skip</button>
+    <button class="choice more" data-choice="more" data-id="PQ-231">? More info</button>
+  </div>
+</section>
+</div>
+
+<div class="cart">
+  <div class="cart-inner">
+    <div class="cart-summary" id="summary">No choices yet. Tap a button on a card above.</div>
+    <button class="send-btn" id="sendBtn" disabled>Send 0 / 9 decisions</button>
+    <button class="clear-link" id="clearBtn">Clear all my choices</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const ALL_IDS = ["PQ-215-FU","PQ-224-FU","PQ-225-FU","PQ-226","PQ-227","PQ-228","PQ-229","PQ-230","PQ-231"];
+  const REPLY_TO = "tali.biron@gmail.com";
+  const REPLY_SUBJECT = "Re: Scout 2026-11-23 — 9 source(s) (PQ-215-FU, PQ-224-FU, PQ-225-FU, PQ-226, PQ-227, PQ-228, PQ-229, PQ-230, PQ-231)";
+  const STORAGE_KEY = "scout-cart-2026-11-23";
+
+  // Load saved state from localStorage (so refresh doesn't lose progress)
+  let choices = {};
+  try { choices = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) {}
+
+  function saveAndRender() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(choices));
+
+    // Re-style each card based on choice
+    document.querySelectorAll('.card').forEach(card => {
+      const id = card.dataset.id;
+      card.classList.remove('chosen-promote', 'chosen-skip', 'chosen-more');
+      card.querySelectorAll('.choice').forEach(b => b.classList.remove('active'));
+      const c = choices[id];
+      if (c) {
+        card.classList.add('chosen-' + c);
+        card.querySelector('.choice.' + c).classList.add('active');
+      }
+    });
+
+    // Update sticky summary + send button
+    const made = ALL_IDS.filter(id => choices[id]);
+    const pending = ALL_IDS.filter(id => !choices[id]);
+    const counts = { promote:0, skip:0, more:0 };
+    made.forEach(id => counts[choices[id]]++);
+
+    let html = '';
+    if (counts.promote) html += '<span class="badge promote">' + counts.promote + ' promote</span>';
+    if (counts.skip)    html += '<span class="badge skip">' + counts.skip + ' skip</span>';
+    if (counts.more)    html += '<span class="badge more">' + counts.more + ' more</span>';
+    if (pending.length) html += '<span class="badge pending">' + pending.length + ' pending</span>';
+    if (!made.length && !pending.length) html = 'No choices yet.';
+    document.getElementById('summary').innerHTML = html || 'No choices yet.';
+
+    const btn = document.getElementById('sendBtn');
+    btn.disabled = made.length === 0;
+    btn.textContent = 'Send ' + made.length + ' / ' + ALL_IDS.length + ' decisions';
+  }
+
+  // Wire button clicks
+  document.querySelectorAll('.choice').forEach(b => {
+    b.addEventListener('click', () => {
+      const id = b.dataset.id;
+      const choice = b.dataset.choice;
+      // Toggle off if same choice clicked again
+      if (choices[id] === choice) delete choices[id];
+      else choices[id] = choice;
+      saveAndRender();
+    });
+  });
+
+  // Send button — uses mailto on mobile (opens native Gmail app), Gmail web on desktop.
+  document.getElementById('sendBtn').addEventListener('click', () => {
+    const lines = ALL_IDS.filter(id => choices[id]).map(id => choices[id] + ' ' + id);
+    if (!lines.length) return;
+    const body = '# Scout decisions for ' + "2026-11-23" + '\n# Sent from the cart page\n\n' + lines.join('\n') + '\n';
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const url = isMobile
+      ? 'mailto:' + encodeURIComponent(REPLY_TO) + '?subject=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body)
+      : 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(REPLY_TO) + '&su=' + encodeURIComponent(REPLY_SUBJECT) + '&body=' + encodeURIComponent(body);
+    // mailto must be same-window on iOS; _blank is fine for https
+    if (isMobile) window.location.href = url;
+    else window.open(url, '_blank');
+  });
+
+  // Clear button
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    if (!confirm('Clear all your choices on this page?')) return;
+    choices = {};
+    saveAndRender();
+  });
+
+  saveAndRender();
+})();
+</script>
+</body>
+</html>
